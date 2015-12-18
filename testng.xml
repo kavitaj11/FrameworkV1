@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="GoogleSuite">
+<suite name="CollectiveSuite">
     <listeners>
-        <listener class-name="org.framework.utils.ReportGenerator"/>
+        <listener class-name="org.collective.utils.ReportGenerator"/>
     </listeners>
-  <test name="RandomTesting">
-    <classes>
-        <class name="org.framework.testmethods.GoogleSearchTest"/>
+  <test name="SmokeTesting">
+    <classes>        
+        <class name="org.collective.testmethods.CollectiveSanityTestCustomer"/>
+        <class name="org.collective.testmethods.CollectiveSanityTestAdmin"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

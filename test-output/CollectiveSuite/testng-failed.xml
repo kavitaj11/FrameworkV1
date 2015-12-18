@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CollectiveSuite]">
+  <listeners>
+    <listener class-name="org.collective.utils.ReportGenerator"/>
+  </listeners>
+  <test name="SmokeTesting(failed)">
+    <classes>
+      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
+        <methods>
+          <include name="tc023_evaluateAdminTabs_FeatureCollection"/>
+          <include name="tc014_evaluateAdminTabs_Returns"/>
+          <include name="tc018_evaluateAdminTabs_Settings"/>
+          <include name="tc020_evaluateAdminTabs_Users"/>
+          <include name="tc015_evaluateAdminTabs_Carousel"/>
+          <include name="tc012_collective_adminLogin"/>
+          <include name="tc022_evaluateAdminTabs_Store"/>
+          <include name="tc017_evaluateAdminTabs_Products"/>
+          <include name="tc013_collective_admin_reports_OrderTotalsSheet"/>
+          <include name="tc016_evaluateAdminTabs_Orders"/>
+          <include name="tc019_evaluateAdminTabs_Promotions"/>
+          <include name="tc021_evaluateAdminTabs_Blog"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
+      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
+        <methods>
+          <include name="tc002_collective_login"/>
+          <include name="checkForLogin"/>
+          <include name="tc009_collective_orderLessOrEqualThan20000"/>
+          <include name="tc010_collective_orderPlacement"/>
+          <include name="tc011_collective_womenTab"/>
+          <include name="tc005_collective_accessories_Filter_Brand"/>
+          <include name="tc003_collective_blog"/>
+          <include name="tc008_collective_orderGreaterThan20000"/>
+          <include name="screenshotCleanUp"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="tc004_collective_accessories"/>
+          <include name="checkForAdminLogout"/>
+          <include name="tc001_collective_signup"/>
+          <include name="tc006_collective_accessories_pagination"/>
+          <include name="takeScreenshot"/>
+          <include name="tc007_collective_sales"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+    </classes>
+  </test> <!-- SmokeTesting(failed) -->
+</suite> <!-- Failed suite [CollectiveSuite] -->

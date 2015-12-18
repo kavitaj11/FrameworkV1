@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -36,8 +36,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-GoogleSuite">
-              <span class="suite-name border-skipped">GoogleSuite</span>
+            <a href="#" class="navigator-link" panel-name="suite-CollectiveSuite">
+              <span class="suite-name border-failed">CollectiveSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -47,37 +47,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-GoogleSuite">
-                    <span>G:\Frameworks\WebAppFramework\testng.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-CollectiveSuite">
+                    <span>F:\Collective\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="testlist-CollectiveSuite">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="group-CollectiveSuite">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="times-CollectiveSuite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="reporter-CollectiveSuite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-CollectiveSuite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-GoogleSuite">
+                  <a href="#" class="navigator-link " panel-name="chronological-CollectiveSuite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -90,21 +90,149 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">23 methods, 2 failed,  11 skipped,  10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-CollectiveSuite" class="hide-methods failed suite-CollectiveSuite"> (hide)</a> <!-- hide-methods failed suite-CollectiveSuite -->
+                      <a href="#" panel-name="suite-CollectiveSuite" class="show-methods failed suite-CollectiveSuite"> (show)</a> <!-- show-methods failed suite-CollectiveSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-CollectiveSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc009_collective_orderLessOrEqualThan20000">tc009_collective_orderLessOrEqualThan20000</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc010_collective_orderPlacement">tc010_collective_orderPlacement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-CollectiveSuite -->
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
                     <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-GoogleSuite" class="hide-methods skipped suite-GoogleSuite"> (hide)</a> <!-- hide-methods skipped suite-GoogleSuite -->
-                      <a href="#" panel-name="suite-GoogleSuite" class="show-methods skipped suite-GoogleSuite"> (show)</a> <!-- show-methods skipped suite-GoogleSuite -->
+                      <a href="#" panel-name="suite-CollectiveSuite" class="hide-methods skipped suite-CollectiveSuite"> (hide)</a> <!-- hide-methods skipped suite-CollectiveSuite -->
+                      <a href="#" panel-name="suite-CollectiveSuite" class="show-methods skipped suite-CollectiveSuite"> (show)</a> <!-- show-methods skipped suite-CollectiveSuite -->
                     </span>
-                    <div class="method-list-content skipped suite-GoogleSuite">
+                    <div class="method-list-content skipped suite-CollectiveSuite">
                       <span>
                         <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-GoogleSuite" title="org.framework.testmethods.GoogleSearchTest" hash-for-method="HM_1254">HM_1254</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc013_collective_admin_reports_OrderTotalsSheet">tc013_collective_admin_reports_OrderTotalsSheet</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-GoogleSuite -->
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc014_evaluateAdminTabs_Returns">tc014_evaluateAdminTabs_Returns</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc015_evaluateAdminTabs_Carousel">tc015_evaluateAdminTabs_Carousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc016_evaluateAdminTabs_Orders">tc016_evaluateAdminTabs_Orders</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc017_evaluateAdminTabs_Products">tc017_evaluateAdminTabs_Products</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc018_evaluateAdminTabs_Settings">tc018_evaluateAdminTabs_Settings</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc019_evaluateAdminTabs_Promotions">tc019_evaluateAdminTabs_Promotions</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc020_evaluateAdminTabs_Users">tc020_evaluateAdminTabs_Users</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc021_evaluateAdminTabs_Blog">tc021_evaluateAdminTabs_Blog</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc022_evaluateAdminTabs_Store">tc022_evaluateAdminTabs_Store</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc023_evaluateAdminTabs_FeatureCollection">tc023_evaluateAdminTabs_FeatureCollection</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-CollectiveSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-CollectiveSuite" class="hide-methods passed suite-CollectiveSuite"> (hide)</a> <!-- hide-methods passed suite-CollectiveSuite -->
+                      <a href="#" panel-name="suite-CollectiveSuite" class="show-methods passed suite-CollectiveSuite"> (show)</a> <!-- show-methods passed suite-CollectiveSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-CollectiveSuite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc001_collective_signup">tc001_collective_signup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc002_collective_login">tc002_collective_login</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc003_collective_blog">tc003_collective_blog</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc004_collective_accessories">tc004_collective_accessories</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc005_collective_accessories_Filter_Brand">tc005_collective_accessories_Filter_Brand</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc006_collective_accessories_pagination">tc006_collective_accessories_pagination</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc007_collective_sales">tc007_collective_sales</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc008_collective_orderGreaterThan20000">tc008_collective_orderGreaterThan20000</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestCustomer" hash-for-method="tc011_collective_womenTab">tc011_collective_womenTab</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CollectiveSuite" title="org.collective.testmethods.CollectiveSanityTestAdmin" hash-for-method="tc012_collective_adminLogin">tc012_collective_adminLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-CollectiveSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -115,126 +243,747 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-GoogleSuite" class="panel GoogleSuite">
-          <div class="suite-GoogleSuite-class-skipped">
+        <div panel-name="suite-CollectiveSuite" class="panel CollectiveSuite">
+          <div class="suite-CollectiveSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">org.framework.testmethods.GoogleSearchTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">org.collective.testmethods.CollectiveSanityTestCustomer</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="HM_1254">
-                  </a> <!-- HM_1254 -->
-                  <span class="method-name">HM_1254</span>
+                  <a name="tc009_collective_orderLessOrEqualThan20000">
+                  </a> <!-- tc009_collective_orderLessOrEqualThan20000 -->
+                  <span class="method-name">tc009_collective_orderLessOrEqualThan20000</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for visibility of Proxy element for: org.openqa.selenium.support.pagefactory.DefaultElementLocator@72d6b3ba
+Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf323ce037c5f92db6c1bba601c2ac43ad8&apos;, time: &apos;2014-10-23 13:11:40&apos;
+System info: host: &apos;codebrahma&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir10056_5760}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e0127119570959af425e9c0e777e8d18
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at org.collective.utils.Waiting.explicitWaitVisibilityOfElement(Waiting.java:34)
+	at org.collective.customer.pageobjects.CollectiveShoppingCartPageObjects.enterFirstName(CollectiveShoppingCartPageObjects.java:83)
+	at org.collective.testmethods.CollectiveSanityTestCustomer.tc009_collective_orderLessOrEqualThan20000(CollectiveSanityTestCustomer.java:151)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;order_bill_address_attributes_firstname&apos;]&quot;}
+  (Session info: chrome=47.0.2526.106)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf323ce037c5f92db6c1bba601c2ac43ad8&apos;, time: &apos;2014-10-23 13:11:40&apos;
+System info: host: &apos;codebrahma&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir10056_5760}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e0127119570959af425e9c0e777e8d18
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:227)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:213)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 30 more
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc010_collective_orderPlacement">
+                  </a> <!-- tc010_collective_orderPlacement -->
+                  <span class="method-name">tc010_collective_orderPlacement</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a[href=&apos;/login&apos;]&quot;}
+  (Session info: chrome=47.0.2526.106)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf323ce037c5f92db6c1bba601c2ac43ad8&apos;, time: &apos;2014-10-23 13:11:40&apos;
+System info: host: &apos;codebrahma&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir10056_5760}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e0127119570959af425e9c0e777e8d18
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:425)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.collective.customer.pageobjects.CollectiveHomePageObjects.clickLoginLink(CollectiveHomePageObjects.java:89)
+	at org.collective.testmethods.CollectiveSanityTestCustomer.tc010_collective_orderPlacement(CollectiveSanityTestCustomer.java:174)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-GoogleSuite-class-skipped -->
-        </div> <!-- panel GoogleSuite -->
-        <div panel-name="test-xml-GoogleSuite" class="panel">
+          </div> <!-- suite-CollectiveSuite-class-failed -->
+          <div class="suite-CollectiveSuite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">org.collective.testmethods.CollectiveSanityTestAdmin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc013_collective_admin_reports_OrderTotalsSheet">
+                  </a> <!-- tc013_collective_admin_reports_OrderTotalsSheet -->
+                  <span class="method-name">tc013_collective_admin_reports_OrderTotalsSheet</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc014_evaluateAdminTabs_Returns">
+                  </a> <!-- tc014_evaluateAdminTabs_Returns -->
+                  <span class="method-name">tc014_evaluateAdminTabs_Returns</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc015_evaluateAdminTabs_Carousel">
+                  </a> <!-- tc015_evaluateAdminTabs_Carousel -->
+                  <span class="method-name">tc015_evaluateAdminTabs_Carousel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc016_evaluateAdminTabs_Orders">
+                  </a> <!-- tc016_evaluateAdminTabs_Orders -->
+                  <span class="method-name">tc016_evaluateAdminTabs_Orders</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc017_evaluateAdminTabs_Products">
+                  </a> <!-- tc017_evaluateAdminTabs_Products -->
+                  <span class="method-name">tc017_evaluateAdminTabs_Products</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc018_evaluateAdminTabs_Settings">
+                  </a> <!-- tc018_evaluateAdminTabs_Settings -->
+                  <span class="method-name">tc018_evaluateAdminTabs_Settings</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc019_evaluateAdminTabs_Promotions">
+                  </a> <!-- tc019_evaluateAdminTabs_Promotions -->
+                  <span class="method-name">tc019_evaluateAdminTabs_Promotions</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc020_evaluateAdminTabs_Users">
+                  </a> <!-- tc020_evaluateAdminTabs_Users -->
+                  <span class="method-name">tc020_evaluateAdminTabs_Users</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc021_evaluateAdminTabs_Blog">
+                  </a> <!-- tc021_evaluateAdminTabs_Blog -->
+                  <span class="method-name">tc021_evaluateAdminTabs_Blog</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc022_evaluateAdminTabs_Store">
+                  </a> <!-- tc022_evaluateAdminTabs_Store -->
+                  <span class="method-name">tc022_evaluateAdminTabs_Store</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc023_evaluateAdminTabs_FeatureCollection">
+                  </a> <!-- tc023_evaluateAdminTabs_FeatureCollection -->
+                  <span class="method-name">tc023_evaluateAdminTabs_FeatureCollection</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CollectiveSuite-class-skipped -->
+          <div class="suite-CollectiveSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.collective.testmethods.CollectiveSanityTestAdmin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc012_collective_adminLogin">
+                  </a> <!-- tc012_collective_adminLogin -->
+                  <span class="method-name">tc012_collective_adminLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CollectiveSuite-class-passed -->
+          <div class="suite-CollectiveSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.collective.testmethods.CollectiveSanityTestCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc001_collective_signup">
+                  </a> <!-- tc001_collective_signup -->
+                  <span class="method-name">tc001_collective_signup</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc002_collective_login">
+                  </a> <!-- tc002_collective_login -->
+                  <span class="method-name">tc002_collective_login</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc003_collective_blog">
+                  </a> <!-- tc003_collective_blog -->
+                  <span class="method-name">tc003_collective_blog</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc004_collective_accessories">
+                  </a> <!-- tc004_collective_accessories -->
+                  <span class="method-name">tc004_collective_accessories</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc005_collective_accessories_Filter_Brand">
+                  </a> <!-- tc005_collective_accessories_Filter_Brand -->
+                  <span class="method-name">tc005_collective_accessories_Filter_Brand</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc006_collective_accessories_pagination">
+                  </a> <!-- tc006_collective_accessories_pagination -->
+                  <span class="method-name">tc006_collective_accessories_pagination</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc007_collective_sales">
+                  </a> <!-- tc007_collective_sales -->
+                  <span class="method-name">tc007_collective_sales</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc008_collective_orderGreaterThan20000">
+                  </a> <!-- tc008_collective_orderGreaterThan20000 -->
+                  <span class="method-name">tc008_collective_orderGreaterThan20000</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="tc011_collective_womenTab">
+                  </a> <!-- tc011_collective_womenTab -->
+                  <span class="method-name">tc011_collective_womenTab</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CollectiveSuite-class-passed -->
+        </div> <!-- panel CollectiveSuite -->
+        <div panel-name="test-xml-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">G:\Frameworks\WebAppFramework\testng.xml</span>
+            <span class="header-content">F:\Collective\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;GoogleSuite&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;CollectiveSuite&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;org.framework.utils.ReportGenerator&quot;/&gt;
+    &lt;listener class-name=&quot;org.collective.utils.ReportGenerator&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test name=&quot;RandomTesting&quot;&gt;
+  &lt;test name=&quot;SmokeTesting&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;org.framework.testmethods.GoogleSearchTest&quot;/&gt;
+      &lt;class name=&quot;org.collective.testmethods.CollectiveSanityTestCustomer&quot;/&gt;
+      &lt;class name=&quot;org.collective.testmethods.CollectiveSanityTestAdmin&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- RandomTesting --&gt;
-&lt;/suite&gt; &lt;!-- GoogleSuite --&gt;
+  &lt;/test&gt; &lt;!-- SmokeTesting --&gt;
+&lt;/suite&gt; &lt;!-- CollectiveSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-GoogleSuite" class="panel">
+        <div panel-name="testlist-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for GoogleSuite</span>
+            <span class="header-content">Tests for CollectiveSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">RandomTesting (1 class)</span>
+                <span class="test-name">SmokeTesting (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-GoogleSuite" class="panel">
+        <div panel-name="group-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for GoogleSuite</span>
+            <span class="header-content">Groups for CollectiveSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-GoogleSuite" class="panel">
+        <div panel-name="times-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for GoogleSuite</span>
+            <span class="header-content">Times for CollectiveSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_GoogleSuite');
-function tableData_GoogleSuite() {
+suiteTableInitFunctions.push('tableData_CollectiveSuite');
+function tableData_CollectiveSuite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(23);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'HM_1254')
-data.setCell(0, 2, 'org.framework.testmethods.GoogleSearchTest')
-data.setCell(0, 3, 0);
-window.suiteTableData['GoogleSuite']= { tableData: data, tableDiv: 'times-div-GoogleSuite'}
+data.setCell(0, 1, 'tc008_collective_orderGreaterThan20000')
+data.setCell(0, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(0, 3, 65181);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'tc009_collective_orderLessOrEqualThan20000')
+data.setCell(1, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(1, 3, 60029);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'tc012_collective_adminLogin')
+data.setCell(2, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(2, 3, 43564);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'tc003_collective_blog')
+data.setCell(3, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(3, 3, 23006);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'tc010_collective_orderPlacement')
+data.setCell(4, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(4, 3, 20057);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'tc001_collective_signup')
+data.setCell(5, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(5, 3, 19339);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'tc002_collective_login')
+data.setCell(6, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(6, 3, 9957);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'tc006_collective_accessories_pagination')
+data.setCell(7, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(7, 3, 8904);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'tc007_collective_sales')
+data.setCell(8, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(8, 3, 8351);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'tc004_collective_accessories')
+data.setCell(9, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(9, 3, 7890);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'tc005_collective_accessories_Filter_Brand')
+data.setCell(10, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(10, 3, 7358);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'tc011_collective_womenTab')
+data.setCell(11, 2, 'org.collective.testmethods.CollectiveSanityTestCustomer')
+data.setCell(11, 3, 5240);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'tc020_evaluateAdminTabs_Users')
+data.setCell(12, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(12, 3, 1);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'tc022_evaluateAdminTabs_Store')
+data.setCell(13, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(13, 3, 1);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'tc018_evaluateAdminTabs_Settings')
+data.setCell(14, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(14, 3, 1);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'tc021_evaluateAdminTabs_Blog')
+data.setCell(15, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'tc019_evaluateAdminTabs_Promotions')
+data.setCell(16, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'tc014_evaluateAdminTabs_Returns')
+data.setCell(17, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'tc017_evaluateAdminTabs_Products')
+data.setCell(18, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'tc013_collective_admin_reports_OrderTotalsSheet')
+data.setCell(19, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(19, 3, 0);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'tc023_evaluateAdminTabs_FeatureCollection')
+data.setCell(20, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(20, 3, 0);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'tc015_evaluateAdminTabs_Carousel')
+data.setCell(21, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(21, 3, 0);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'tc016_evaluateAdminTabs_Orders')
+data.setCell(22, 2, 'org.collective.testmethods.CollectiveSanityTestAdmin')
+data.setCell(22, 3, 0);
+window.suiteTableData['CollectiveSuite']= { tableData: data, tableDiv: 'times-div-CollectiveSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
-              <div id="times-div-GoogleSuite">
-              </div> <!-- times-div-GoogleSuite -->
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <div id="times-div-CollectiveSuite">
+              </div> <!-- times-div-CollectiveSuite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-GoogleSuite" class="panel">
+        <div panel-name="reporter-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for GoogleSuite</span>
+            <span class="header-content">Reporter output for CollectiveSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-GoogleSuite" class="panel">
+        <div panel-name="ignored-methods-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">org.collective.testmethods.CollectiveSanityTestAdmin</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">screenshotCleanUp</span>
+                <br/>
+                <span class="ignored-method-name">tearDownClass</span>
+                <br/>
+                <span class="ignored-method-name">beforeTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-GoogleSuite" class="panel">
+        <div panel-name="chronological-CollectiveSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">org.framework.testmethods.GoogleSearchTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">org.collective.testmethods.CollectiveSanityTestCustomer</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">screenshotCleanUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">64 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">2721 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">2794 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc001_collective_signup</span>
+                <span class="method-start">16731 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">36078 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc001_collective_signup status=SUCCESS method=CollectiveSanityTestCustomer.tc001_co...)</span>
+                <span class="method-start">36125 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">36126 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">36144 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc002_collective_login</span>
+                <span class="method-start">39240 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">49198 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc002_collective_login status=SUCCESS method=CollectiveSanityTestCustomer.tc002_col...)</span>
+                <span class="method-start">69269 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">69271 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">89307 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc003_collective_blog</span>
+                <span class="method-start">135010 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">158018 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc003_collective_blog status=SUCCESS method=CollectiveSanityTestCustomer.tc003_coll...)</span>
+                <span class="method-start">178060 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">178060 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">198092 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc004_collective_accessories</span>
+                <span class="method-start">278473 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">286364 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc004_collective_accessories status=SUCCESS method=CollectiveSanityTestCustomer.tc0...)</span>
+                <span class="method-start">306413 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">306414 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">326492 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc005_collective_accessories_Filter_Brand</span>
+                <span class="method-start">445284 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">452643 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc005_collective_accessories_Filter_Brand status=SUCCESS method=CollectiveSanityTes...)</span>
+                <span class="method-start">472731 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">472732 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">492747 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc006_collective_accessories_pagination</span>
+                <span class="method-start">748046 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">756951 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc006_collective_accessories_pagination status=SUCCESS method=CollectiveSanityTestC...)</span>
+                <span class="method-start">777012 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">777013 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">797050 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc007_collective_sales</span>
+                <span class="method-start">859860 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">868213 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc007_collective_sales status=SUCCESS method=CollectiveSanityTestCustomer.tc007_col...)</span>
+                <span class="method-start">888270 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">888271 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">908351 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc008_collective_orderGreaterThan20000</span>
+                <span class="method-start">928928 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">994110 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc008_collective_orderGreaterThan20000 status=SUCCESS method=CollectiveSanityTestCu...)</span>
+                <span class="method-start">1014152 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">1014153 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1034197 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">5047 ms</span>
-              </div> <!-- configuration-test before -->
+                <span class="method-name">tc009_collective_orderLessOrEqualThan20000</span>
+                <span class="method-start">1054954 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">1115004 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc009_collective_orderLessOrEqualThan20000 status=FAILURE method=CollectiveSanityTe...)</span>
+                <span class="method-start">1135034 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">1135344 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1155386 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">HM_1254</span>
-                <span class="method-start">5109 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tc010_collective_orderPlacement</span>
+                <span class="method-start">1155597 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">1175661 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc010_collective_orderPlacement status=FAILURE method=CollectiveSanityTestCustomer....)</span>
+                <span class="method-start">1195679 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">1195860 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1215880 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc011_collective_womenTab</span>
+                <span class="method-start">1237320 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">1242561 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenshot([TestResult name=tc011_collective_womenTab status=SUCCESS method=CollectiveSanityTestCustomer.tc011_...)</span>
+                <span class="method-start">1262618 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.collective.testmethods.CollectiveSanityTestAdmin</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">checkForLogin</span>
+                <span class="method-start">1262620 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">1265895 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">tc012_collective_adminLogin</span>
+                <span class="method-start">1268110 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkForAdminLogout</span>
+                <span class="method-start">1311675 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">tc013_collective_admin_reports_OrderTotalsSheet</span>
+                <span class="method-start">1332735 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc014_evaluateAdminTabs_Returns</span>
+                <span class="method-start">1332737 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc015_evaluateAdminTabs_Carousel</span>
+                <span class="method-start">1332738 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc016_evaluateAdminTabs_Orders</span>
+                <span class="method-start">1332740 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc017_evaluateAdminTabs_Products</span>
+                <span class="method-start">1332741 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc018_evaluateAdminTabs_Settings</span>
+                <span class="method-start">1332742 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc019_evaluateAdminTabs_Promotions</span>
+                <span class="method-start">1332745 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc020_evaluateAdminTabs_Users</span>
+                <span class="method-start">1332746 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc021_evaluateAdminTabs_Blog</span>
+                <span class="method-start">1332748 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc022_evaluateAdminTabs_Store</span>
+                <span class="method-start">1332749 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">tc023_evaluateAdminTabs_FeatureCollection</span>
+                <span class="method-start">1332754 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

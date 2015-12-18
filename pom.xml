@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>WebFramework</groupId>
-  <artifactId>WebFramework</artifactId>
+  <groupId>Collective</groupId>
+  <artifactId>CollectiveAutomationSuite</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>WebFramework</name>
+  <name>CollectiveAutomationSuite</name>
   <url>http://maven.apache.org</url>
 
  <properties>
@@ -30,12 +30,7 @@
             <version>${version.cucumber}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${version.cucumber}</version>
-            <scope>test</scope>
-        </dependency>
+        
 
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -108,33 +103,18 @@
     
 
         <!-- Utils -->
+
         <dependency>
             <groupId>ru.yandex.qatools.properties</groupId>
             <artifactId>properties-loader</artifactId>
             <version>1.5</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+            </dependency>
+        <dependency>
+	<groupId>org.hamcrest</groupId>
+	<artifactId>hamcrest-all</artifactId>
+	<version>1.3</version>
+</dependency>
 
-        <!-- JUnit and Hamcrest -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
-            <scope>test</scope>
-        </dependency>
-        
         <dependency>
     		<groupId>com.relevantcodes</groupId>
     		<artifactId>extentreports</artifactId>
@@ -168,12 +148,7 @@
         </dependency>
 
         <!-- Allure Reporter -->
-        <dependency>
-            <groupId>ru.yandex.qatools.allure</groupId>
-            <artifactId>allure-junit-adaptor</artifactId>
-            <version>${version.allure}</version>
-            <scope>test</scope>
-        </dependency>
+        
 		
 		<dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
