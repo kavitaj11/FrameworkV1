@@ -125,6 +125,7 @@ public static String outputFolder = "";
  {
 	 //type casting to takescreenshot INTERFACE!!!
 Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
+
  }
 }
 	

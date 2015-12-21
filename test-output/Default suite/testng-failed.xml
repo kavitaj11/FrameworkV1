@@ -3,25 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
+      <class name="org.collective.testmethods.CollectiveSanityTestURL">
         <methods>
-          <include name="checkForLogin"/>
-          <include name="tc009_collective_orderLessOrEqualThan20000"/>
-          <include name="tc010_collective_orderPlacement"/>
-          <include name="tc011_collective_womenTab"/>
-          <include name="tc005_collective_accessories_Filter_Brand"/>
-          <include name="tc003_collective_blog"/>
-          <include name="tc008_collective_orderGreaterThan20000"/>
-          <include name="screenshotCleanUp"/>
-          <include name="beforeTest"/>
-          <include name="setUp"/>
-          <include name="tc004_collective_accessories"/>
-          <include name="checkForAdminLogout"/>
-          <include name="tc006_collective_accessories_pagination"/>
-          <include name="takeScreenshot"/>
-          <include name="tc007_collective_sales"/>
+          <include name="testGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

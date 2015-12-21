@@ -50,14 +50,14 @@ public class ReportGenerator implements IReporter {
 
         extent.flush();
         extent.close();
-        File zipFile = new File(MainController.outputFolder+".zip");
+       /* File zipFile = new File(MainController.outputFolder+".zip");
         ZipUtil.pack(new File(MainController.outputFolder), zipFile);
         
         try {
         	SendEmail.sendemail(passedtest, failedtest, skippedtest,zipFile);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
     }
 
     private void buildTestNodes(IResultMap tests, LogStatus status) {
