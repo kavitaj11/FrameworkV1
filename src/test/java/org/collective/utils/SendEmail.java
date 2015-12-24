@@ -84,11 +84,11 @@ public class SendEmail extends MainController {
                 InternetAddress(bcc[i]));
                 }
             // Set Subject: header field
-            message.setSubject("Google Automation Report"+" "+getDate());
+            message.setSubject(applicationsetup.getproductName()+" "+"Automation Report"+" "+getDate());
             String messagtosend = "Hi,"
                     +"<br><br>PFB the Automation Execution Report Summary"
                     +"<br><br><b><u>Execution Summary</u></b>"
-                    +"<br>&nbsp;&nbsp;Product : Google"
+                    +"<br>&nbsp;&nbsp;Product :"+" "+applicationsetup.getproductName()
                     +"<br>&nbsp;&nbsp;Operating System:"+ System.getProperty("os.name")
                     +"<br><br><b><u>Report Summary</u></b>"
                     +"<br>&nbsp;&nbsp;Total number of TC executed:"+ (pass + fail + skip)

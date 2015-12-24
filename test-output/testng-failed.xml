@@ -1,46 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [CollectiveSuite]">
-  <listeners>
-    <listener class-name="org.collective.utils.ReportGenerator"/>
-  </listeners>
-  <test name="SmokeTesting(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="org.collective.testmethods.CollectiveSanityTestURL">
         <methods>
-          <include name="init"/>
+          <include name="tc002_PageURLProd"/>
         </methods>
       </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
-      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
-        <methods>
-          <include name="screenshotCleanUp"/>
-          <include name="beforeTest"/>
-          <include name="checkForLogin"/>
-          <include name="setUp"/>
-          <include name="checkForAdminLogout"/>
-          <include name="takeScreenshot"/>
-        </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
-      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
-        <methods>
-          <include name="tc014_evaluateAdminTabs_Returns"/>
-          <include name="tc018_evaluateAdminTabs_Settings"/>
-          <include name="checkForLogin"/>
-          <include name="tc020_evaluateAdminTabs_Users"/>
-          <include name="tc022_evaluateAdminTabs_Store"/>
-          <include name="tc017_evaluateAdminTabs_Products"/>
-          <include name="tc013_collective_admin_reports_OrderTotalsSheet"/>
-          <include name="tc019_evaluateAdminTabs_Promotions"/>
-          <include name="tc023_evaluateAdminTabs_FeatureCollection"/>
-          <include name="setUp"/>
-          <include name="tc015_evaluateAdminTabs_Carousel"/>
-          <include name="checkForAdminLogout"/>
-          <include name="tc012_collective_adminLogin"/>
-          <include name="takeScreenshot"/>
-          <include name="tc016_evaluateAdminTabs_Orders"/>
-          <include name="tc021_evaluateAdminTabs_Blog"/>
-        </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
     </classes>
-  </test> <!-- SmokeTesting(failed) -->
-</suite> <!-- Failed suite [CollectiveSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

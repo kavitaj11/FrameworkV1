@@ -11,14 +11,20 @@ import org.collective.customer.pageobjects.CollectiveLoginPageObjects;
 import org.collective.customer.pageobjects.CollectiveShoppingCartPageObjects;
 import org.collective.customer.pageobjects.CollectiveSignupPageObjects;
 import org.collective.maincontroller.MainController;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CollectiveSanityTestCustomer extends MainController{
+	
+	@BeforeClass
+	public void setUp() throws IOException{
+		driver.get(applicationsetup.getURL());
+	}
 	  
 	/*
 	 * @author Hemanth.Sridhar
 	 */
-  @Test
+  @Test(alwaysRun = true)
   public void tc001_collective_signup() throws IOException, InterruptedException, AWTException {
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveSignupPageObjects signupPage = new CollectiveSignupPageObjects(driver);
@@ -32,7 +38,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  homePage.logout();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc002_collective_login() throws InterruptedException, IOException
   {
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
@@ -46,7 +52,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  homePage.verifyLogout();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc003_collective_blog(){
 	 CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	 CollectiveBlogPageObjects blogPage = new CollectiveBlogPageObjects(driver);
@@ -54,7 +60,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	 blogPage.verifyBlogPage();	 
   }	
 
-  @Test
+  @Test(alwaysRun = true)
   public void tc004_collective_accessories(){
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
@@ -65,7 +71,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc005_collective_accessories_Filter_Brand(){
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
@@ -76,7 +82,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  bagsPage.filterTest();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc006_collective_accessories_pagination()
   {
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
@@ -88,7 +94,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  bagsPage.verifyPagination();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc007_collective_sales(){
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
@@ -96,7 +102,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  bagsPage.verifyProductsDisplay();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc008_collective_orderGreaterThan20000() throws IOException, InterruptedException{
 	  /*
 	   * covers Mens tab as well
@@ -132,7 +138,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  homePage.verifyLogout();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc009_collective_orderLessOrEqualThan20000() throws IOException, InterruptedException{
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
@@ -164,7 +170,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  homePage.verifyLogout();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc010_collective_orderPlacement() throws IOException{
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
@@ -199,13 +205,18 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  homePage.verifyLogout();
   }
   
-  @Test
+  @Test(alwaysRun = true)
   public void tc011_collective_womenTab() throws InterruptedException{
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver);
 	  CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
 	  homePage.hoverOverWomenTab();
 	  homePage.navigateToAdrianoGoldschmiedFromWomen();
 	  bagsPage.verifyProductsDisplay();
-
   }
+  
+  /*@Test(alwaysRun=true)
+  public void tc012_collective_blogStories(){
+	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver);
+	  homePage.verifyBlogStories();
+  }*/
 }

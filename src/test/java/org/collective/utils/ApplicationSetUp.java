@@ -43,7 +43,11 @@ public class ApplicationSetUp extends MainController {
 	@Property("to")
 	private static String to;
 	
+	@Property("productName")
+	private static String productName;
 	
+	@Property("prodURL")
+	private static String prodURL;
 	
 	public String getBrowser() {
 		return browser;
@@ -78,6 +82,14 @@ public class ApplicationSetUp extends MainController {
 	
 	public String getTo() {
 		return to;
+	}
+	
+	public String getproductName(){
+		return productName;
+	}
+	
+	public String getProdURL(){
+		return prodURL;
 	}
 	
 }

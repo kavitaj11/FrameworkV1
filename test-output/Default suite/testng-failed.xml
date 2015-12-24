@@ -5,8 +5,7 @@
     <classes>
       <class name="org.collective.testmethods.CollectiveSanityTestURL">
         <methods>
-          <include name="testGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean"/>
-          <include name="init"/>
+          <include name="tc002_PageURLProd"/>
         </methods>
       </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
     </classes>

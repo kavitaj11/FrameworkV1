@@ -1,225 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="15" failed="1" total="49" passed="33">
+<testng-results skipped="0" failed="1" total="11" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="CollectiveSuite" duration-ms="527444" started-at="2015-12-21T09:19:51Z" finished-at="2015-12-21T09:28:38Z">
+  <suite name="CollectiveSuite" duration-ms="855191" started-at="2015-12-24T04:57:33Z" finished-at="2015-12-24T05:11:48Z">
     <groups>
     </groups>
-    <test name="SmokeTesting" duration-ms="527444" started-at="2015-12-21T09:19:51Z" finished-at="2015-12-21T09:28:38Z">
+    <test name="SmokeTesting" duration-ms="855191" started-at="2015-12-24T04:57:33Z" finished-at="2015-12-24T05:11:48Z">
       <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
-        <test-method status="PASS" signature="screenshotCleanUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="screenshotCleanUp" is-config="true" duration-ms="82" started-at="2015-12-21T14:49:51Z" finished-at="2015-12-21T14:49:51Z">
+        <test-method status="PASS" signature="screenshotCleanUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="screenshotCleanUp" is-config="true" duration-ms="56" started-at="2015-12-24T10:27:33Z" finished-at="2015-12-24T10:27:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshotCleanUp -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="beforeTest" is-config="true" duration-ms="8149" started-at="2015-12-21T14:49:51Z" finished-at="2015-12-21T14:49:59Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="beforeTest" is-config="true" duration-ms="4322" started-at="2015-12-24T10:27:33Z" finished-at="2015-12-24T10:27:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="95" started-at="2015-12-21T14:50:19Z" finished-at="2015-12-21T14:50:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="15629" started-at="2015-12-21T14:50:19Z" finished-at="2015-12-21T14:50:35Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="23571" started-at="2015-12-24T10:27:38Z" finished-at="2015-12-24T10:28:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc001_collective_signup" duration-ms="4640" started-at="2015-12-21T14:50:35Z" finished-at="2015-12-21T14:50:40Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="72" started-at="2015-12-24T10:28:01Z" finished-at="2015-12-24T10:28:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc001_collective_signup" duration-ms="6287" started-at="2015-12-24T10:28:01Z" finished-at="2015-12-24T10:28:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc001_collective_signup -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="57" started-at="2015-12-21T14:50:40Z" finished-at="2015-12-21T14:50:40Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="36" started-at="2015-12-24T10:28:07Z" finished-at="2015-12-24T10:28:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="2" started-at="2015-12-21T14:50:40Z" finished-at="2015-12-21T14:50:40Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:28:08Z" finished-at="2015-12-24T10:28:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc001_collective_signup status=SUCCESS method=CollectiveSanityTestCustomer.tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=tc001_collective_signup status=SUCCESS method=CollectiveSanityTestCustomer.tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="38" started-at="2015-12-21T14:50:40Z" finished-at="2015-12-21T14:50:40Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="17" started-at="2015-12-24T10:28:08Z" finished-at="2015-12-24T10:28:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="784" started-at="2015-12-21T14:50:40Z" finished-at="2015-12-21T14:50:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc002_collective_login" duration-ms="2812" started-at="2015-12-21T14:50:41Z" finished-at="2015-12-21T14:50:43Z">
+        <test-method status="PASS" signature="tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc002_collective_login" duration-ms="4664" started-at="2015-12-24T10:28:08Z" finished-at="2015-12-24T10:28:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc002_collective_login -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20136" started-at="2015-12-21T14:50:43Z" finished-at="2015-12-21T14:51:03Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20096" started-at="2015-12-24T10:28:12Z" finished-at="2015-12-24T10:28:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:51:03Z" finished-at="2015-12-21T14:51:03Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:28:32Z" finished-at="2015-12-24T10:28:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc002_collective_login status=SUCCESS method=CollectiveSanityTestCustomer.tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=tc002_collective_login status=SUCCESS method=CollectiveSanityTestCustomer.tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20026" started-at="2015-12-21T14:51:03Z" finished-at="2015-12-21T14:51:24Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20017" started-at="2015-12-24T10:28:32Z" finished-at="2015-12-24T10:28:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="25894" started-at="2015-12-21T14:51:24Z" finished-at="2015-12-21T14:51:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc003_collective_blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc003_collective_blog" duration-ms="10787" started-at="2015-12-21T14:51:49Z" finished-at="2015-12-21T14:52:00Z">
+        <test-method status="PASS" signature="tc003_collective_blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc003_collective_blog" duration-ms="78515" started-at="2015-12-24T10:28:52Z" finished-at="2015-12-24T10:30:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc003_collective_blog -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20079" started-at="2015-12-21T14:52:00Z" finished-at="2015-12-21T14:52:20Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20043" started-at="2015-12-24T10:30:11Z" finished-at="2015-12-24T10:30:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:52:20Z" finished-at="2015-12-21T14:52:20Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:30:31Z" finished-at="2015-12-24T10:30:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc003_collective_blog status=SUCCESS method=CollectiveSanityTestCustomer.tc003_collective_blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=tc003_collective_blog status=SUCCESS method=CollectiveSanityTestCustomer.tc003_collective_blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20053" started-at="2015-12-21T14:52:20Z" finished-at="2015-12-21T14:52:40Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20034" started-at="2015-12-24T10:30:31Z" finished-at="2015-12-24T10:30:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="19674" started-at="2015-12-21T14:52:40Z" finished-at="2015-12-21T14:53:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc004_collective_accessories()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc004_collective_accessories" duration-ms="2210" started-at="2015-12-21T14:53:00Z" finished-at="2015-12-21T14:53:02Z">
+        <test-method status="PASS" signature="tc004_collective_accessories()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc004_collective_accessories" duration-ms="20248" started-at="2015-12-24T10:30:51Z" finished-at="2015-12-24T10:31:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc004_collective_accessories -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20063" started-at="2015-12-21T14:53:02Z" finished-at="2015-12-21T14:53:22Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20036" started-at="2015-12-24T10:31:11Z" finished-at="2015-12-24T10:31:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:53:22Z" finished-at="2015-12-21T14:53:22Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:31:31Z" finished-at="2015-12-24T10:31:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc004_collective_accessories status=SUCCESS method=CollectiveSanityTestCustomer.tc004_collective_accessories()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=tc004_collective_accessories status=SUCCESS method=CollectiveSanityTestCustomer.tc004_collective_accessories()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20038" started-at="2015-12-21T14:53:22Z" finished-at="2015-12-21T14:53:42Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20016" started-at="2015-12-24T10:31:31Z" finished-at="2015-12-24T10:31:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="25583" started-at="2015-12-21T14:53:42Z" finished-at="2015-12-21T14:54:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc005_collective_accessories_Filter_Brand" duration-ms="1945" started-at="2015-12-21T14:54:08Z" finished-at="2015-12-21T14:54:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc005_collective_accessories_Filter_Brand -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20061" started-at="2015-12-21T14:54:10Z" finished-at="2015-12-21T14:54:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:54:30Z" finished-at="2015-12-21T14:54:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc005_collective_accessories_Filter_Brand status=SUCCESS method=CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20053" started-at="2015-12-21T14:54:30Z" finished-at="2015-12-21T14:54:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="19306" started-at="2015-12-21T14:54:50Z" finished-at="2015-12-21T14:55:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc006_collective_accessories_pagination()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc006_collective_accessories_pagination" duration-ms="1952" started-at="2015-12-21T14:55:09Z" finished-at="2015-12-21T14:55:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc006_collective_accessories_pagination -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20024" started-at="2015-12-21T14:55:11Z" finished-at="2015-12-21T14:55:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:55:31Z" finished-at="2015-12-21T14:55:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc006_collective_accessories_pagination status=SUCCESS method=CollectiveSanityTestCustomer.tc006_collective_accessories_pagination()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20065" started-at="2015-12-21T14:55:31Z" finished-at="2015-12-21T14:55:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="20215" started-at="2015-12-21T14:55:51Z" finished-at="2015-12-21T14:56:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc007_collective_sales()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc007_collective_sales" duration-ms="2436" started-at="2015-12-21T14:56:12Z" finished-at="2015-12-21T14:56:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc007_collective_sales -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20022" started-at="2015-12-21T14:56:14Z" finished-at="2015-12-21T14:56:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:56:34Z" finished-at="2015-12-21T14:56:34Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc007_collective_sales status=SUCCESS method=CollectiveSanityTestCustomer.tc007_collective_sales()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="20075" started-at="2015-12-21T14:56:34Z" finished-at="2015-12-21T14:56:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="83833" started-at="2015-12-21T14:56:54Z" finished-at="2015-12-21T14:58:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="tc008_collective_orderGreaterThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc008_collective_orderGreaterThan20000" duration-ms="3" started-at="2015-12-21T14:58:18Z" finished-at="2015-12-21T14:58:18Z">
-          <exception class="java.lang.NoClassDefFoundError">
+        <test-method status="FAIL" signature="tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc005_collective_accessories_Filter_Brand" duration-ms="141943" started-at="2015-12-24T10:31:51Z" finished-at="2015-12-24T10:34:13Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[org/collective/customer/pageobjects/CollectiveAdrianoGoldschmiedPageObjects]]>
+              <![CDATA[Timed out after 5 seconds waiting for visibility of Proxy element for: org.openqa.selenium.support.pagefactory.DefaultElementLocator@5fb759d6
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'codebrahma', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_60'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir9408_12943}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 83be9727a4635fbea8a479cc346dfec3]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NoClassDefFoundError: org/collective/customer/pageobjects/CollectiveAdrianoGoldschmiedPageObjects
-	at org.collective.testmethods.CollectiveSanityTestCustomer.tc008_collective_orderGreaterThan20000(CollectiveSanityTestCustomer.java:106)
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for visibility of Proxy element for: org.openqa.selenium.support.pagefactory.DefaultElementLocator@5fb759d6
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'codebrahma', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_60'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir9408_12943}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 83be9727a4635fbea8a479cc346dfec3
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at org.collective.utils.Waiting.explicitWaitVisibilityOfElement(Waiting.java:34)
+	at org.collective.customer.pageobjects.CollectiveBagsPageObjects.verifyProductsDisplay(CollectiveBagsPageObjects.java:42)
+	at org.collective.testmethods.CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand(CollectiveSanityTestCustomer.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -247,495 +164,200 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: java.lang.ClassNotFoundException: org.collective.customer.pageobjects.CollectiveAdrianoGoldschmiedPageObjects
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 28 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NoClassDefFoundError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc008_collective_orderGreaterThan20000 -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="20050" started-at="2015-12-21T14:58:18Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="FAIL" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc008_collective_orderGreaterThan20000 status=FAILURE method=CollectiveSanityTestCustomer.tc008_collective_orderGreaterThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NoClassDefFoundError">
-            <message>
-              <![CDATA[org/collective/utils/Screenshot]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NoClassDefFoundError: org/collective/utils/Screenshot
-	at org.collective.maincontroller.MainController.takeScreenshot(MainController.java:127)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:708)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:821)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:773)
-	at org.testng.TestRunner.run(TestRunner.java:623)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
-	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: java.lang.ClassNotFoundException: org.collective.utils.Screenshot
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='products_page']"}
+  (Session info: chrome=47.0.2526.106)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'codebrahma', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_60'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir9408_12943}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 83be9727a4635fbea8a479cc346dfec3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:227)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:213)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
 	... 30 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NoClassDefFoundError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc005_collective_accessories_Filter_Brand -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20038" started-at="2015-12-24T10:34:13Z" finished-at="2015-12-24T10:34:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="1172" started-at="2015-12-24T10:34:33Z" finished-at="2015-12-24T10:34:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc005_collective_accessories_Filter_Brand status=FAILURE method=CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="tc009_collective_orderLessOrEqualThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc009_collective_orderLessOrEqualThan20000" duration-ms="1" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20068" started-at="2015-12-24T10:34:35Z" finished-at="2015-12-24T10:34:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc006_collective_accessories_pagination()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc006_collective_accessories_pagination" duration-ms="68707" started-at="2015-12-24T10:34:55Z" finished-at="2015-12-24T10:36:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc006_collective_accessories_pagination -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20070" started-at="2015-12-24T10:36:03Z" finished-at="2015-12-24T10:36:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:36:23Z" finished-at="2015-12-24T10:36:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc006_collective_accessories_pagination status=SUCCESS method=CollectiveSanityTestCustomer.tc006_collective_accessories_pagination()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20041" started-at="2015-12-24T10:36:23Z" finished-at="2015-12-24T10:36:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc007_collective_sales()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc007_collective_sales" duration-ms="1962" started-at="2015-12-24T10:36:44Z" finished-at="2015-12-24T10:36:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc007_collective_sales -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20070" started-at="2015-12-24T10:36:46Z" finished-at="2015-12-24T10:37:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:37:06Z" finished-at="2015-12-24T10:37:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc007_collective_sales status=SUCCESS method=CollectiveSanityTestCustomer.tc007_collective_sales()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20100" started-at="2015-12-24T10:37:06Z" finished-at="2015-12-24T10:37:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc008_collective_orderGreaterThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc008_collective_orderGreaterThan20000" duration-ms="55487" started-at="2015-12-24T10:37:26Z" finished-at="2015-12-24T10:38:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc008_collective_orderGreaterThan20000 -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20032" started-at="2015-12-24T10:38:21Z" finished-at="2015-12-24T10:38:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:38:41Z" finished-at="2015-12-24T10:38:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc008_collective_orderGreaterThan20000 status=SUCCESS method=CollectiveSanityTestCustomer.tc008_collective_orderGreaterThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20037" started-at="2015-12-24T10:38:41Z" finished-at="2015-12-24T10:39:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc009_collective_orderLessOrEqualThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc009_collective_orderLessOrEqualThan20000" duration-ms="33831" started-at="2015-12-24T10:39:01Z" finished-at="2015-12-24T10:39:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc009_collective_orderLessOrEqualThan20000 -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20021" started-at="2015-12-24T10:39:35Z" finished-at="2015-12-24T10:39:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="20018" started-at="2015-12-24T10:39:55Z" finished-at="2015-12-24T10:40:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="tc010_collective_orderPlacement()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc010_collective_orderPlacement" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:39:55Z" finished-at="2015-12-24T10:39:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc009_collective_orderLessOrEqualThan20000 status=SUCCESS method=CollectiveSanityTestCustomer.tc009_collective_orderLessOrEqualThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="tc010_collective_orderPlacement()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc010_collective_orderPlacement" duration-ms="59609" started-at="2015-12-24T10:40:15Z" finished-at="2015-12-24T10:41:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc010_collective_orderPlacement -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="10044" started-at="2015-12-24T10:41:15Z" finished-at="2015-12-24T10:41:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="tc011_collective_womenTab()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tc011_collective_womenTab" duration-ms="1" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc011_collective_womenTab -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="10061" started-at="2015-12-24T10:41:25Z" finished-at="2015-12-24T10:41:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-24T10:41:25Z" finished-at="2015-12-24T10:41:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc010_collective_orderPlacement status=SUCCESS method=CollectiveSanityTestCustomer.tc010_collective_orderPlacement()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
+        <test-method status="PASS" signature="tc011_collective_womenTab()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc011_collective_womenTab" duration-ms="3533" started-at="2015-12-24T10:41:35Z" finished-at="2015-12-24T10:41:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc011_collective_womenTab -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="10011" started-at="2015-12-24T10:41:38Z" finished-at="2015-12-24T10:41:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@528931cf]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:42Z" finished-at="2015-12-21T14:58:42Z">
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:41:48Z" finished-at="2015-12-24T10:41:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc011_collective_womenTab status=SUCCESS method=CollectiveSanityTestCustomer.tc011_collective_womenTab()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tearDownClass" is-config="true" duration-ms="2893" started-at="2015-12-24T10:41:51Z" finished-at="2015-12-24T10:41:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
-      <class name="org.collective.testmethods.CollectiveSanityTestURL">
-        <test-method status="PASS" signature="init()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="init" is-config="true" duration-ms="624" started-at="2015-12-21T14:49:59Z" finished-at="2015-12-21T14:50:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_5_Pkt_Denim_Jeans()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_5_Pkt_Denim_Jeans" duration-ms="2935" started-at="2015-12-21T14:50:00Z" finished-at="2015-12-21T14:50:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_5_Pkt_Denim_Jeans -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean" duration-ms="1263" started-at="2015-12-21T14:50:03Z" finished-at="2015-12-21T14:50:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_CasualBlazer()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_CasualBlazer" duration-ms="648" started-at="2015-12-21T14:50:04Z" finished-at="2015-12-21T14:50:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_CasualBlazer -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_CasualOutwear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_CasualOutwear" duration-ms="668" started-at="2015-12-21T14:50:04Z" finished-at="2015-12-21T14:50:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_CasualOutwear -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_CasualTrouser()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_CasualTrouser" duration-ms="947" started-at="2015-12-21T14:50:05Z" finished-at="2015-12-21T14:50:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_CasualTrouser -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Casual_Jacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Casual_Jacket" duration-ms="513" started-at="2015-12-21T14:50:06Z" finished-at="2015-12-21T14:50:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Casual_Jacket -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Casual_Shirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Casual_Shirt" duration-ms="736" started-at="2015-12-21T14:50:07Z" finished-at="2015-12-21T14:50:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Casual_Shirt -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Dress_Shirts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Dress_Shirts" duration-ms="973" started-at="2015-12-21T14:50:07Z" finished-at="2015-12-21T14:50:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Dress_Shirts -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_FormalJacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_FormalJacket" duration-ms="619" started-at="2015-12-21T14:50:08Z" finished-at="2015-12-21T14:50:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_FormalJacket -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Formal_Trousers()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Formal_Trousers" duration-ms="752" started-at="2015-12-21T14:50:09Z" finished-at="2015-12-21T14:50:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Formal_Trousers -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Knitwear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Knitwear" duration-ms="687" started-at="2015-12-21T14:50:10Z" finished-at="2015-12-21T14:50:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Knitwear -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Pocket_Squares()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Pocket_Squares" duration-ms="705" started-at="2015-12-21T14:50:10Z" finished-at="2015-12-21T14:50:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Pocket_Squares -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Polo()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Polo" duration-ms="784" started-at="2015-12-21T14:50:11Z" finished-at="2015-12-21T14:50:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Polo -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Rugby()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Rugby" duration-ms="806" started-at="2015-12-21T14:50:12Z" finished-at="2015-12-21T14:50:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Rugby -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Scarves()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Scarves" duration-ms="485" started-at="2015-12-21T14:50:13Z" finished-at="2015-12-21T14:50:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Scarves -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Semi_Formal_Jacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Semi_Formal_Jacket" duration-ms="331" started-at="2015-12-21T14:50:13Z" finished-at="2015-12-21T14:50:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Semi_Formal_Jacket -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Shorts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Shorts" duration-ms="680" started-at="2015-12-21T14:50:13Z" finished-at="2015-12-21T14:50:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Shorts -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Suits()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Suits" duration-ms="992" started-at="2015-12-21T14:50:14Z" finished-at="2015-12-21T14:50:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Suits -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Sweater()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Sweater" duration-ms="271" started-at="2015-12-21T14:50:15Z" finished-at="2015-12-21T14:50:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Sweater -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Sweatshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Sweatshirt" duration-ms="662" started-at="2015-12-21T14:50:15Z" finished-at="2015-12-21T14:50:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Sweatshirt -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Swimshorts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Swimshorts" duration-ms="372" started-at="2015-12-21T14:50:16Z" finished-at="2015-12-21T14:50:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Swimshorts -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Ties()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Ties" duration-ms="902" started-at="2015-12-21T14:50:16Z" finished-at="2015-12-21T14:50:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Ties -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Trackpant()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Trackpant" duration-ms="710" started-at="2015-12-21T14:50:17Z" finished-at="2015-12-21T14:50:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Trackpant -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Tracktop()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Tracktop" duration-ms="212" started-at="2015-12-21T14:50:18Z" finished-at="2015-12-21T14:50:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Tracktop -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Tshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Tshirt" duration-ms="727" started-at="2015-12-21T14:50:18Z" finished-at="2015-12-21T14:50:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Tshirt -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Waistcoat()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@e320068]" name="testGetRequest_Men_Clothing_Waistcoat" duration-ms="241" started-at="2015-12-21T14:50:19Z" finished-at="2015-12-21T14:50:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Waistcoat -->
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
-      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="tc012_collective_adminLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc012_collective_adminLogin" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc012_collective_adminLogin -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="tc013_collective_admin_reports_OrderTotalsSheet()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc013_collective_admin_reports_OrderTotalsSheet" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc013_collective_admin_reports_OrderTotalsSheet -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="tc014_evaluateAdminTabs_Returns()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc014_evaluateAdminTabs_Returns" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc014_evaluateAdminTabs_Returns -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="tc015_evaluateAdminTabs_Carousel()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc015_evaluateAdminTabs_Carousel" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc015_evaluateAdminTabs_Carousel -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="tc016_evaluateAdminTabs_Orders()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc016_evaluateAdminTabs_Orders" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc016_evaluateAdminTabs_Orders -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="tc017_evaluateAdminTabs_Products()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc017_evaluateAdminTabs_Products" duration-ms="1" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc017_evaluateAdminTabs_Products -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="tc018_evaluateAdminTabs_Settings()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc018_evaluateAdminTabs_Settings" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc018_evaluateAdminTabs_Settings -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="tc019_evaluateAdminTabs_Promotions()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc019_evaluateAdminTabs_Promotions" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc019_evaluateAdminTabs_Promotions -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="tc020_evaluateAdminTabs_Users()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc020_evaluateAdminTabs_Users" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc020_evaluateAdminTabs_Users -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="tc021_evaluateAdminTabs_Blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc021_evaluateAdminTabs_Blog" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc021_evaluateAdminTabs_Blog -->
-        <test-method status="SKIP" signature="tc022_evaluateAdminTabs_Store()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc022_evaluateAdminTabs_Store" duration-ms="1" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc022_evaluateAdminTabs_Store -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="tc023_evaluateAdminTabs_FeatureCollection()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="tc023_evaluateAdminTabs_FeatureCollection" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc023_evaluateAdminTabs_FeatureCollection -->
-        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="setUp" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@ea1a8d5]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2015-12-21T14:58:38Z" finished-at="2015-12-21T14:58:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
     </test> <!-- SmokeTesting -->
   </suite> <!-- CollectiveSuite -->
 </testng-results>

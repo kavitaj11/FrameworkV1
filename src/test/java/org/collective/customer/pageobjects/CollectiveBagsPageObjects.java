@@ -47,7 +47,7 @@ public class CollectiveBagsPageObjects extends MainController{
 	
 	public void filterTest(){
 		armaniCheckbox.click();
-		Waiting.explicitWaitVisibilityOfElement(armaniDisplayCheck, 6);
+		Waiting.explicitWaitVisibilityOfElement(armaniDisplayCheck, 10);
 	   Assert.assertTrue(armaniDisplayCheck.isDisplayed());
 	  
 	}
@@ -56,7 +56,7 @@ public class CollectiveBagsPageObjects extends MainController{
 	{
 		Assert.assertTrue(firstProduct.isDisplayed());
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , paginatorNextClick);		
-		Waiting.explicitWaitVisibilityOfElement(firstProduct, 20);
+		Waiting.explicitWaitVisibilityOfElement(firstProduct, 15);
 		Assert.assertTrue(firstProduct.isDisplayed());
 	    
 	}

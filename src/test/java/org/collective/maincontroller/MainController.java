@@ -59,14 +59,9 @@ public static String outputFolder = "";
  		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
  		System.out.println("before suite");
  	}
- 	
-	@BeforeMethod
-	public void setUp() throws IOException{
-		driver.get(applicationsetup.getURL());
-	}
 	
 	@BeforeMethod
-	public static boolean checkForLogin() {
+	public boolean checkForLogin() {
 		CollectiveHomePageObjects checkForLogin = new CollectiveHomePageObjects(driver);
 		try
 		{

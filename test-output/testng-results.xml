@@ -1,193 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="44" passed="44">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="CollectiveSuite" duration-ms="24029" started-at="2015-12-21T10:12:35Z" finished-at="2015-12-21T10:12:59Z">
+  <suite name="Default suite" duration-ms="27912" started-at="2015-12-24T05:15:57Z" finished-at="2015-12-24T05:16:24Z">
     <groups>
     </groups>
-    <test name="SmokeTesting" duration-ms="24029" started-at="2015-12-21T10:12:35Z" finished-at="2015-12-21T10:12:59Z">
-      <class name="org.collective.testmethods.CollectiveSanityTestURL">
-        <test-method status="PASS" signature="init()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="init" is-config="true" duration-ms="546" started-at="2015-12-21T15:42:35Z" finished-at="2015-12-21T15:42:36Z">
+    <test name="Default test" duration-ms="27912" started-at="2015-12-24T05:15:57Z" finished-at="2015-12-24T05:16:24Z">
+      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
+        <test-method status="PASS" signature="screenshotCleanUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="screenshotCleanUp" is-config="true" duration-ms="85" started-at="2015-12-24T10:45:56Z" finished-at="2015-12-24T10:45:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="tc001_TestGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc001_TestGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean" duration-ms="3078" started-at="2015-12-21T15:42:36Z" finished-at="2015-12-21T15:42:39Z">
+        </test-method> <!-- screenshotCleanUp -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="beforeTest" is-config="true" duration-ms="12770" started-at="2015-12-24T10:45:57Z" finished-at="2015-12-24T10:46:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc001_TestGetRequest_Men_Clothing_5_Pkt_Non_Denim_Jean -->
-        <test-method status="PASS" signature="tc002_TestGetRequest_Men_Clothing_5_Pkt_Denim_Jeans()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc002_TestGetRequest_Men_Clothing_5_Pkt_Denim_Jeans" duration-ms="571" started-at="2015-12-21T15:42:39Z" finished-at="2015-12-21T15:42:39Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="setUp" is-config="true" duration-ms="12520" started-at="2015-12-24T10:46:09Z" finished-at="2015-12-24T10:46:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc002_TestGetRequest_Men_Clothing_5_Pkt_Denim_Jeans -->
-        <test-method status="PASS" signature="tc003_TestGetRequest_Men_Clothing_Casual_Jacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc003_TestGetRequest_Men_Clothing_Casual_Jacket" duration-ms="405" started-at="2015-12-21T15:42:39Z" finished-at="2015-12-21T15:42:40Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="checkForLogin" is-config="true" duration-ms="90" started-at="2015-12-24T10:46:22Z" finished-at="2015-12-24T10:46:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc003_TestGetRequest_Men_Clothing_Casual_Jacket -->
-        <test-method status="PASS" signature="tc004_TestGetRequest_Men_Clothing_Casual_Shirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc004_TestGetRequest_Men_Clothing_Casual_Shirt" duration-ms="591" started-at="2015-12-21T15:42:40Z" finished-at="2015-12-21T15:42:40Z">
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="tc005_collective_accessories_Filter_Brand" duration-ms="2448" started-at="2015-12-24T10:46:22Z" finished-at="2015-12-24T10:46:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc004_TestGetRequest_Men_Clothing_Casual_Shirt -->
-        <test-method status="PASS" signature="tc005_TestGetRequest_Men_Clothing_Dress_Shirts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc005_TestGetRequest_Men_Clothing_Dress_Shirts" duration-ms="409" started-at="2015-12-21T15:42:40Z" finished-at="2015-12-21T15:42:41Z">
+        </test-method> <!-- tc005_collective_accessories_Filter_Brand -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="checkForAdminLogout" is-config="true" duration-ms="42" started-at="2015-12-24T10:46:24Z" finished-at="2015-12-24T10:46:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc005_TestGetRequest_Men_Clothing_Dress_Shirts -->
-        <test-method status="PASS" signature="tc006_TestGetRequest_Men_Clothing_Formal_Trousers()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc006_TestGetRequest_Men_Clothing_Formal_Trousers" duration-ms="366" started-at="2015-12-21T15:42:41Z" finished-at="2015-12-21T15:42:41Z">
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:46:24Z" finished-at="2015-12-24T10:46:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc005_collective_accessories_Filter_Brand status=SUCCESS method=CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc006_TestGetRequest_Men_Clothing_Formal_Trousers -->
-        <test-method status="PASS" signature="tc007_TestGetRequest_Men_Clothing_Pocket_Squares()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc007_TestGetRequest_Men_Clothing_Pocket_Squares" duration-ms="1618" started-at="2015-12-21T15:42:41Z" finished-at="2015-12-21T15:42:43Z">
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="tearDownClass" is-config="true" duration-ms="1296" started-at="2015-12-24T10:46:25Z" finished-at="2015-12-24T10:46:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc007_TestGetRequest_Men_Clothing_Pocket_Squares -->
-        <test-method status="PASS" signature="tc008_TestGetRequest_Men_Clothing_Rugby()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc008_TestGetRequest_Men_Clothing_Rugby" duration-ms="608" started-at="2015-12-21T15:42:43Z" finished-at="2015-12-21T15:42:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc008_TestGetRequest_Men_Clothing_Rugby -->
-        <test-method status="PASS" signature="tc009_TestGetRequest_Men_Clothing_Semi_Formal_Jacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc009_TestGetRequest_Men_Clothing_Semi_Formal_Jacket" duration-ms="276" started-at="2015-12-21T15:42:43Z" finished-at="2015-12-21T15:42:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc009_TestGetRequest_Men_Clothing_Semi_Formal_Jacket -->
-        <test-method status="PASS" signature="tc010_TestGetRequest_Men_Clothing_Suits()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc010_TestGetRequest_Men_Clothing_Suits" duration-ms="305" started-at="2015-12-21T15:42:44Z" finished-at="2015-12-21T15:42:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc010_TestGetRequest_Men_Clothing_Suits -->
-        <test-method status="PASS" signature="tc011_TestGetRequest_Men_Clothing_Swimshorts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc011_TestGetRequest_Men_Clothing_Swimshorts" duration-ms="504" started-at="2015-12-21T15:42:44Z" finished-at="2015-12-21T15:42:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc011_TestGetRequest_Men_Clothing_Swimshorts -->
-        <test-method status="PASS" signature="tc012_TestGetRequest_Men_Clothing_Tshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc012_TestGetRequest_Men_Clothing_Tshirt" duration-ms="756" started-at="2015-12-21T15:42:44Z" finished-at="2015-12-21T15:42:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc012_TestGetRequest_Men_Clothing_Tshirt -->
-        <test-method status="PASS" signature="tc013_TestGetRequest_Men_Clothing_Trackpant()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc013_TestGetRequest_Men_Clothing_Trackpant" duration-ms="356" started-at="2015-12-21T15:42:45Z" finished-at="2015-12-21T15:42:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc013_TestGetRequest_Men_Clothing_Trackpant -->
-        <test-method status="PASS" signature="tc014_TestGetRequest_Men_Clothing_CasualBlazer()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc014_TestGetRequest_Men_Clothing_CasualBlazer" duration-ms="414" started-at="2015-12-21T15:42:46Z" finished-at="2015-12-21T15:42:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc014_TestGetRequest_Men_Clothing_CasualBlazer -->
-        <test-method status="PASS" signature="tc015_TestGetRequest_Men_Clothing_CasualOutwear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc015_TestGetRequest_Men_Clothing_CasualOutwear" duration-ms="831" started-at="2015-12-21T15:42:46Z" finished-at="2015-12-21T15:42:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc015_TestGetRequest_Men_Clothing_CasualOutwear -->
-        <test-method status="PASS" signature="tc016_TestGetRequest_Men_Clothing_CasualTrouser()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc016_TestGetRequest_Men_Clothing_CasualTrouser" duration-ms="452" started-at="2015-12-21T15:42:47Z" finished-at="2015-12-21T15:42:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc016_TestGetRequest_Men_Clothing_CasualTrouser -->
-        <test-method status="PASS" signature="tc017_TestGetRequest_Men_Clothing_FormalJacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc017_TestGetRequest_Men_Clothing_FormalJacket" duration-ms="452" started-at="2015-12-21T15:42:47Z" finished-at="2015-12-21T15:42:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc017_TestGetRequest_Men_Clothing_FormalJacket -->
-        <test-method status="PASS" signature="tc018_TestGetRequest_Men_Clothing_Knitwear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc018_TestGetRequest_Men_Clothing_Knitwear" duration-ms="425" started-at="2015-12-21T15:42:48Z" finished-at="2015-12-21T15:42:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc018_TestGetRequest_Men_Clothing_Knitwear -->
-        <test-method status="PASS" signature="tc019_TestGetRequest_Men_Clothing_Polo()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc019_TestGetRequest_Men_Clothing_Polo" duration-ms="675" started-at="2015-12-21T15:42:48Z" finished-at="2015-12-21T15:42:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc019_TestGetRequest_Men_Clothing_Polo -->
-        <test-method status="PASS" signature="tc020_TestGetRequest_Men_Clothing_Scarves()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc020_TestGetRequest_Men_Clothing_Scarves" duration-ms="1083" started-at="2015-12-21T15:42:49Z" finished-at="2015-12-21T15:42:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc020_TestGetRequest_Men_Clothing_Scarves -->
-        <test-method status="PASS" signature="tc021_TestGetRequest_Men_Clothing_Shorts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc021_TestGetRequest_Men_Clothing_Shorts" duration-ms="2125" started-at="2015-12-21T15:42:50Z" finished-at="2015-12-21T15:42:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc021_TestGetRequest_Men_Clothing_Shorts -->
-        <test-method status="PASS" signature="tc022_TestGetRequest_Men_Clothing_Sweatshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc022_TestGetRequest_Men_Clothing_Sweatshirt" duration-ms="371" started-at="2015-12-21T15:42:52Z" finished-at="2015-12-21T15:42:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc022_TestGetRequest_Men_Clothing_Sweatshirt -->
-        <test-method status="PASS" signature="tc023_TestGetRequest_Men_Clothing_Sweater()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc023_TestGetRequest_Men_Clothing_Sweater" duration-ms="313" started-at="2015-12-21T15:42:52Z" finished-at="2015-12-21T15:42:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc023_TestGetRequest_Men_Clothing_Sweater -->
-        <test-method status="PASS" signature="tc024_TestGetRequest_Men_Clothing_Ties()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc024_TestGetRequest_Men_Clothing_Ties" duration-ms="247" started-at="2015-12-21T15:42:53Z" finished-at="2015-12-21T15:42:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc024_TestGetRequest_Men_Clothing_Ties -->
-        <test-method status="PASS" signature="tc025_TestGetRequest_Men_Clothing_Tracktop()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc025_TestGetRequest_Men_Clothing_Tracktop" duration-ms="199" started-at="2015-12-21T15:42:53Z" finished-at="2015-12-21T15:42:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc025_TestGetRequest_Men_Clothing_Tracktop -->
-        <test-method status="PASS" signature="tc025_TestGetRequest_Women_Clothing_5_Pkt_Non_Denim_Jean()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc025_TestGetRequest_Women_Clothing_5_Pkt_Non_Denim_Jean" duration-ms="230" started-at="2015-12-21T15:42:53Z" finished-at="2015-12-21T15:42:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc025_TestGetRequest_Women_Clothing_5_Pkt_Non_Denim_Jean -->
-        <test-method status="PASS" signature="tc026_TestGetRequest_Women_Clothing_5_Pkt_Denim_Jeans()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc026_TestGetRequest_Women_Clothing_5_Pkt_Denim_Jeans" duration-ms="484" started-at="2015-12-21T15:42:53Z" finished-at="2015-12-21T15:42:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc026_TestGetRequest_Women_Clothing_5_Pkt_Denim_Jeans -->
-        <test-method status="PASS" signature="tc027_TestGetRequest_Women_Clothing_Casual_Jacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc027_TestGetRequest_Women_Clothing_Casual_Jacket" duration-ms="218" started-at="2015-12-21T15:42:54Z" finished-at="2015-12-21T15:42:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc027_TestGetRequest_Women_Clothing_Casual_Jacket -->
-        <test-method status="PASS" signature="tc028_TestGetRequest_Women_Clothing_Dresses()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc028_TestGetRequest_Women_Clothing_Dresses" duration-ms="417" started-at="2015-12-21T15:42:54Z" finished-at="2015-12-21T15:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc028_TestGetRequest_Women_Clothing_Dresses -->
-        <test-method status="PASS" signature="tc029_TestGetRequest_Women_Clothing_Formal_Trousers()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc029_TestGetRequest_Women_Clothing_Formal_Trousers" duration-ms="229" started-at="2015-12-21T15:42:55Z" finished-at="2015-12-21T15:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc029_TestGetRequest_Women_Clothing_Formal_Trousers -->
-        <test-method status="PASS" signature="tc030_TestGetRequest_Women_Clothing_CasualOuterWear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc030_TestGetRequest_Women_Clothing_CasualOuterWear" duration-ms="301" started-at="2015-12-21T15:42:55Z" finished-at="2015-12-21T15:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc030_TestGetRequest_Women_Clothing_CasualOuterWear -->
-        <test-method status="PASS" signature="tc031_TestGetRequest_Women_Clothing_Skirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc031_TestGetRequest_Women_Clothing_Skirt" duration-ms="222" started-at="2015-12-21T15:42:55Z" finished-at="2015-12-21T15:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc031_TestGetRequest_Women_Clothing_Skirt -->
-        <test-method status="PASS" signature="tc032_TestGetRequest_Women_Clothing_Jump_Suit()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc032_TestGetRequest_Women_Clothing_Jump_Suit" duration-ms="303" started-at="2015-12-21T15:42:55Z" finished-at="2015-12-21T15:42:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc032_TestGetRequest_Women_Clothing_Jump_Suit -->
-        <test-method status="PASS" signature="tc033_TestGetRequest_Women_Clothing_Tops()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc033_TestGetRequest_Women_Clothing_Tops" duration-ms="339" started-at="2015-12-21T15:42:56Z" finished-at="2015-12-21T15:42:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc033_TestGetRequest_Women_Clothing_Tops -->
-        <test-method status="PASS" signature="tc034_TestGetRequest_Women_Clothing_Tshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc034_TestGetRequest_Women_Clothing_Tshirt" duration-ms="280" started-at="2015-12-21T15:42:56Z" finished-at="2015-12-21T15:42:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc034_TestGetRequest_Women_Clothing_Tshirt -->
-        <test-method status="PASS" signature="tc035_TestGetRequest_Women_Clothing_CasualTrouser()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc035_TestGetRequest_Women_Clothing_CasualTrouser" duration-ms="375" started-at="2015-12-21T15:42:56Z" finished-at="2015-12-21T15:42:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc035_TestGetRequest_Women_Clothing_CasualTrouser -->
-        <test-method status="PASS" signature="tc036_TestGetRequest_Women_Clothing_FormalJacket()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc036_TestGetRequest_Women_Clothing_FormalJacket" duration-ms="183" started-at="2015-12-21T15:42:57Z" finished-at="2015-12-21T15:42:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc036_TestGetRequest_Women_Clothing_FormalJacket -->
-        <test-method status="PASS" signature="tc037_TestGetRequest_Women_Clothing_Knitwear()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc037_TestGetRequest_Women_Clothing_Knitwear" duration-ms="339" started-at="2015-12-21T15:42:57Z" finished-at="2015-12-21T15:42:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc037_TestGetRequest_Women_Clothing_Knitwear -->
-        <test-method status="PASS" signature="tc038_TestGetRequest_Women_Clothing_Polo()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc038_TestGetRequest_Women_Clothing_Polo" duration-ms="264" started-at="2015-12-21T15:42:57Z" finished-at="2015-12-21T15:42:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc038_TestGetRequest_Women_Clothing_Polo -->
-        <test-method status="PASS" signature="tc039_TestGetRequest_Women_Clothing_Scarves()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc039_TestGetRequest_Women_Clothing_Scarves" duration-ms="399" started-at="2015-12-21T15:42:57Z" finished-at="2015-12-21T15:42:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc039_TestGetRequest_Women_Clothing_Scarves -->
-        <test-method status="PASS" signature="tc040_TestGetRequest_Women_Clothing_Shorts()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc040_TestGetRequest_Women_Clothing_Shorts" duration-ms="218" started-at="2015-12-21T15:42:58Z" finished-at="2015-12-21T15:42:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc040_TestGetRequest_Women_Clothing_Shorts -->
-        <test-method status="PASS" signature="tc041_TestGetRequest_Women_Clothing_Sweatshirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="tc041_TestGetRequest_Women_Clothing_Sweatshirt" duration-ms="220" started-at="2015-12-21T15:42:58Z" finished-at="2015-12-21T15:42:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc041_TestGetRequest_Women_Clothing_Sweatshirt -->
-        <test-method status="PASS" signature="testGetRequest_Men_Clothing_Waistcoat()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="testGetRequest_Men_Clothing_Waistcoat" duration-ms="345" started-at="2015-12-21T15:42:58Z" finished-at="2015-12-21T15:42:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Men_Clothing_Waistcoat -->
-        <test-method status="PASS" signature="testGetRequest_Women_Clothing_Casual_Shirt()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@7d9d1a19]" name="testGetRequest_Women_Clothing_Casual_Shirt" duration-ms="478" started-at="2015-12-21T15:42:59Z" finished-at="2015-12-21T15:42:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetRequest_Women_Clothing_Casual_Shirt -->
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
-    </test> <!-- SmokeTesting -->
-  </suite> <!-- CollectiveSuite -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
