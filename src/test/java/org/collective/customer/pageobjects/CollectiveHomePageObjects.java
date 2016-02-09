@@ -39,8 +39,17 @@ public class CollectiveHomePageObjects extends MainController{
 	@FindBy(xpath="//a[@href='/account']")
     public WebElement myAccountXpath;
 	
+	@FindBy(xpath="//li[@class='myAccount']/a")
+	public WebElement mansha;
+	
+	@FindBy(css="a[href='/account']")
+	public WebElement account;
+	
 	@FindBy(xpath="//div[@class='alert alert-notice']")
 	private WebElement logoutAlert;
+	
+	@FindBy(xpath="//li[@id='link-to-login']")
+	public WebElement myAccountPath;
 	
 	@FindBy(xpath="//a[contains(text(),'Men')]")
 	private WebElement menTab;
@@ -57,9 +66,13 @@ public class CollectiveHomePageObjects extends MainController{
 	@FindBy(xpath="//h2/b")
 	private WebElement blogStoriesHeader;
 	
+	@FindBy(css="a[href='/users/register']")
+	private WebElement emailSignUpBtn;
+	
+	@FindBy(xpath="//li[@class='myAccount']/a")
+	public WebElement myAccountAfterLogin;
+	
 	public void emailSignUpBtnClick() throws AWTException, InterruptedException{
-		By css = By.cssSelector("a[href='/users/register']");
-		WebElement emailSignUpBtn = driver.findElement(css);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , emailSignUpBtn);
 		}
 
@@ -170,22 +183,17 @@ public class CollectiveHomePageObjects extends MainController{
 					}
 				
 			}
-			
-		}
 
-		/*public void verifyPageStatusCodes() throws MalformedURLException, IOException {
-			 List<WebElement> links = driver.findElements(By.tagName("a"));
-			    for(int i = 0; i < links.size(); i++){
-			        if(!(links.get(i).getAttribute("href") == null) && !(links.get(i).getAttribute("href").equals(""))){
-			            if(links.get(i).getAttribute("href").contains("http")){
-			                int statusCode = ResponseCheck.getResponseCode(links.get(i).getAttribute("href").trim());
-			                if(statusCode == 403){
-			                    System.out.println("HTTP 403 Forbidden # " + i + " " + links.get(i).getAttribute("href"));
-			                }
-			            }
-			        }   
-			    }
-			
-		}*/
+			public void hoverOverMyAccount() {
+				Waiting.explicitWaitVisibilityOfElement(myAccountPath, 10);
+				action.moveToElement(myAccountPath).build().perform();
+				
+			}
+
+			public void hoverOverMyAccountAfterLogin() {
+				Waiting.explicitWaitVisibilityOfElement(account, 10);
+				action.moveToElement(account).perform();
+			}
+}
 	
 	

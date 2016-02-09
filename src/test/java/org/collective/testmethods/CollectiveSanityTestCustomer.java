@@ -21,10 +21,11 @@ public class CollectiveSanityTestCustomer extends MainController{
 	 * @author Hemanth.Sridhar
 	 */
 	
-  /*@Test
+  @Test
   	  public void tc001_collective_signup() throws IOException, InterruptedException, AWTException {
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveSignupPageObjects signupPage = new CollectiveSignupPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.emailSignUpBtnClick();	  
 	  signupPage.signupUsername();
 	  signupPage.signupEmail();
@@ -32,27 +33,14 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  signupPage.signUpPasswordAndConfirmation();
 	  signupPage.signupBtnClick();
 	  homePage.verifySignFunctionality();
-  }*/
-  
-  @Test
-	  public void tc001_collective_signup() throws IOException, InterruptedException, AWTException {
-  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
-  CollectiveSignupPageObjects signupPage = new CollectiveSignupPageObjects(driver);
-  homePage.clickLoginLink();
-  homePage.emailSignUpBtnClick();	  
-  signupPage.signupUsername();
-  signupPage.signupEmail();
-  signupPage.signupPhoneNumber();
-  signupPage.signUpPasswordAndConfirmation();
-  signupPage.signupBtnClick();
-  homePage.verifySignFunctionality();
-}
+  }
   
   @Test
   public void tc002_collective_login() throws InterruptedException, IOException
   {
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.clickLoginLink();
 	  loginPage.enterPhoneNumberForLogin();
 	  loginPage.enterPasswordForLogin();
@@ -112,14 +100,14 @@ public class CollectiveSanityTestCustomer extends MainController{
   @Test
   public void tc008_collective_orderGreaterThan20000() throws IOException, InterruptedException{
 	  
-	   /** covers Mens tab as well
-	   * cover price filtering as well
-	   * */
+	 /* covers Mens tab as well
+	   cover price filtering as well*/
 	   
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
 	  CollectiveAdrianoGoldschmiedPageObjects andrianoPage = new CollectiveAdrianoGoldschmiedPageObjects(driver);
 	  CollectiveShoppingCartPageObjects shoppingcartPage = new CollectiveShoppingCartPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.clickLoginLink();
 	  loginPage.enterPhoneNumberForLogin();
 	  loginPage.enterPasswordForLogin();
@@ -153,6 +141,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  CollectiveShoppingCartPageObjects shoppingcartPage = new CollectiveShoppingCartPageObjects(driver);
 	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver); 
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.clickLoginLink();
 	  loginPage.enterPhoneNumberForLogin();
 	  loginPage.enterPasswordForLogin();
@@ -185,6 +174,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
 	  CollectiveAdrianoGoldschmiedPageObjects andrianoPage = new CollectiveAdrianoGoldschmiedPageObjects(driver);
 	  CollectiveShoppingCartPageObjects shoppingcartPage = new CollectiveShoppingCartPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.clickLoginLink();
 	  loginPage.enterPhoneNumberForLogin();
 	  loginPage.enterPasswordForLogin();
@@ -219,6 +209,7 @@ public class CollectiveSanityTestCustomer extends MainController{
 	  CollectiveAdrianoGoldschmiedPageObjects andrianoPage = new CollectiveAdrianoGoldschmiedPageObjects(driver);
 	  CollectiveShoppingCartPageObjects shoppingcartPage = new CollectiveShoppingCartPageObjects(driver);
 	  CollectiveAdminStoreLocatorPageObjects storesPage = new CollectiveAdminStoreLocatorPageObjects(driver);
+	  homePage.hoverOverMyAccount();
 	  homePage.clickLoginLink();
 	  loginPage.enterPhoneNumberForLogin();
 	  loginPage.enterPasswordForLogin();

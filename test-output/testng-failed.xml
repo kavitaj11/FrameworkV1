@@ -11,31 +11,21 @@
           <include name="checkForLogin"/>
           <include name="tc009_collective_orderLessOrEqualThan20000"/>
           <include name="tc010_collective_orderPlacement"/>
+          <include name="beforeSuite"/>
           <include name="tc005_collective_accessories_Filter_Brand"/>
           <include name="tc011_collective_placeorder_OrderCancellation"/>
           <include name="tc006_collective_pagination"/>
-          <include name="tc003_collective_blog"/>
           <include name="startRecording"/>
           <include name="tc008_collective_orderGreaterThan20000"/>
+          <include name="beforeTest"/>
           <include name="setUp"/>
           <include name="tc004_collective_accessories"/>
           <include name="checkForAdminLogout"/>
           <include name="takeScreenshot"/>
+          <include name="callStopRecording"/>
           <include name="tc007_collective_sales"/>
         </methods>
       </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
-      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
-        <methods>
-          <include name="startRecording"/>
-          <include name="beforeTest"/>
-          <include name="checkForLogin"/>
-          <include name="setUp"/>
-          <include name="checkForAdminLogout"/>
-          <include name="beforeSuite"/>
-          <include name="takeScreenshot"/>
-          <include name="tc024_Reports_UserList"/>
-        </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
     </classes>
   </test> <!-- SmokeTesting(failed) -->
 </suite> <!-- Failed suite [CollectiveSuite] -->

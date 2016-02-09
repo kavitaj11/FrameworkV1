@@ -87,8 +87,11 @@ private ScreenRecorder screenRecorder;
  	@BeforeMethod
  	public void setUp() throws IOException{
 		driver.get(applicationsetup.getURL());
+		driver.manage().window().maximize();
 	}
  	
+   
+    
  	@BeforeMethod
 	public void startRecording(Method methodName) throws IOException, AWTException{
 		/*ITestContext context = null;
@@ -119,17 +122,23 @@ private ScreenRecorder screenRecorder;
      this.screenRecorder.start();
        
 	}
+ 	
+ 	 public void stopRecording() throws Exception
+     {
+       this.screenRecorder.stop();
+     }
 	
 	@BeforeMethod
 	public static boolean checkForLogin() {
 		CollectiveHomePageObjects checkForLogin = new CollectiveHomePageObjects(driver);
 		try
 		{
-		if(checkForLogin.myAccountXpath.isDisplayed())
+		if(checkForLogin.account.isDisplayed())
 		{
+			checkForLogin.hoverOverMyAccountAfterLogin();
 			checkForLogin.logout();
-			checkForLogin.verifyLogout();
 		}
+		
 		}
 		catch(Exception e)
 		{
@@ -183,9 +192,13 @@ Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
 
  }
 }
+	@AfterMethod
+	public void callStopRecording() throws Exception{
+		stopRecording();
+	}
 	
 	@AfterMethod
-	public static boolean checkForAdminLogout(){
+	public boolean checkForAdminLogout(){
 		CollectiveAdminHomePageObjects logoutCheck = new CollectiveAdminHomePageObjects(driver);
 		CollectiveHomePageObjects checkForLogin = new CollectiveHomePageObjects(driver);
 		try
@@ -194,14 +207,6 @@ Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
 			{
 				logoutCheck.adminLogout();
 				checkForLogin.verifyLogout();
-			}
-			else if(checkForLogin.myAccountXpath.isDisplayed())
-			{
-				checkForLogin.logout();
-			}
-			else
-			{
-				return true;
 			}
 		}
 		catch(Exception e)

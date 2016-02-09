@@ -5,12 +5,14 @@
     <classes>
       <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
         <methods>
-          <include name="tc008_collective_orderGreaterThan20000"/>
-          <include name="screenshotCleanUp"/>
+          <include name="startRecording"/>
+          <include name="tearDownClass"/>
           <include name="beforeTest"/>
           <include name="checkForLogin"/>
           <include name="setUp"/>
           <include name="checkForAdminLogout"/>
+          <include name="beforeSuite"/>
+          <include name="tc001_collective_signup"/>
           <include name="takeScreenshot"/>
         </methods>
       </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
