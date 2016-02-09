@@ -72,6 +72,12 @@ public class SearchData {
 	@Property("pageURLsStaging")
 	private String pageURLsStaging;
 	
+	@Property("paginationURL")
+	private String paginationURL;
+	
+	@Property("orderCancellationText")
+	private String orderCancellationText;
+	
 	public String getLogoutMsg() {
 		return logoutMsg;
 	}	
@@ -152,5 +158,15 @@ public class SearchData {
 	
 	public String getPageURLsStaging(){
 		return pageURLsStaging;
+	}
+
+	public String getPaginationURL() {
+		// TODO Auto-generated method stub
+		return paginationURL;
+	}
+
+public String getOrderCancellationText() {
+		
+		return orderCancellationText;
 	}
 }

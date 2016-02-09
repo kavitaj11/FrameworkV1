@@ -23,9 +23,9 @@ public class CollectiveAdrianoGoldschmiedPageObjects extends MainController {
 	@FindBy(xpath="//div[@class='noUi-handle noUi-handle-lower']")
 	private WebElement leftSlider;
 	
-	public void dragLeftSlider(){
+	public void dragLeftSlider(int x){
 		Actions moveSlider = new Actions(driver);
-		Action action = (Action) moveSlider.dragAndDropBy(leftSlider, 50, 0).build();
+		Action action = (Action) moveSlider.dragAndDropBy(leftSlider, x, 0).build();
 		action.perform();
 		
 	}

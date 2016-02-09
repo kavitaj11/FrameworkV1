@@ -1,6 +1,7 @@
 package org.collective.customer.pageobjects;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.collective.maincontroller.MainController;
@@ -56,7 +57,7 @@ public class CollectiveShoppingCartPageObjects extends MainController {
 	private WebElement cashOnDelivery;
 	
 	@FindBy(xpath="//a[@class='delete hide-in-small-screen']")
-	private WebElement xButton;
+	private List<WebElement> xButton;
 	
 	@FindBy(xpath="//div[@class='col-xs-12 text-center']")
 	private WebElement cartStatus;
@@ -73,9 +74,22 @@ public class CollectiveShoppingCartPageObjects extends MainController {
 	@FindBy(css="a[href='/cart']")
 	public WebElement cartLink;
 	
+	@FindBy(xpath="//input[@class='line_item_quantity']")
+	private List<WebElement> lineItemQuantity;
+	
+	@FindBy(xpath="//button[contains(text(),'Update')]")
+	private WebElement updateButton;
+	
+	
+	@FindBy(xpath="//a[text()='Cancel']")
+	private WebElement cancelLink;
+	
+	@FindBy(xpath="//span[contains(text(),'Order Cancelled')]")
+	private WebElement cancelOrder;
+	
 	public void clickCheckout(){
 		Waiting.explicitWaitVisibilityOfElement(checkout, 5);
-		checkout.click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",checkout);
 	}
 	
 	public void enterFirstName() throws IOException{
@@ -126,11 +140,11 @@ public class CollectiveShoppingCartPageObjects extends MainController {
 		if(saveUserAddressCheckbox.isSelected())
 		{
 			saveUserAddressCheckbox.click();
-			saveAndContinue.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();",saveAndContinue);
 		}
 		else
 		{
-			saveAndContinue.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();",saveAndContinue);
 		}
 		
 	}
@@ -138,7 +152,7 @@ public class CollectiveShoppingCartPageObjects extends MainController {
 	public void saveAndContinueClick()
 	{
 		Waiting.explicitWaitVisibilityOfElement(saveAndContinue, 10);
-		saveAndContinue.click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",saveAndContinue);
 	}
 
 	public boolean checkForCashOnDeliveryGreaterthan20k() throws InterruptedException {
@@ -168,13 +182,22 @@ return true;
 
 	public void clearCart() {
 		Waiting.explicitWaitVisibilityOfElement(cartLink, 10);
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , cartLink);
-		Waiting.explicitWaitVisibilityOfElement(xButton, 5);
-		xButton.click();
+		cartLinkClick();
+		for(int i=0;i<lineItemQuantity.size();i++)
+		{
+			lineItemQuantity.get(i).clear();
+			lineItemQuantity.get(i).sendKeys("0");
+			//((JavascriptExecutor) driver).executeScript("arguments[0].click();",xButton.get(i));
+		}
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",updateButton);
 		Waiting.explicitWaitVisibilityOfElement(cartStatus, 6);
-	
 	}
+	
+	
 
+public void cartLinkClick(){
+	((JavascriptExecutor)driver).executeScript("arguments[0].click();" , cartLink);
+}
 	public void clickPlaceOrder() {
 		Waiting.explicitWaitVisibilityOfElement(placeOrder, 6);
 		placeOrder.click();
@@ -184,5 +207,22 @@ return true;
 	public void verifyOrderStatus() throws IOException{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 Assert.assertEquals((orderStatus.getText().trim()),data.getorderStatus().trim());
+	}
+	
+	public void clickCancel() {
+		Waiting.explicitWaitVisibilityOfElement(cancelLink, 5);
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , cancelLink);
+		
+	}
+
+	public void verifyOrderCancellation() {
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Assert.assertEquals(cancelOrder.getText().trim(),data.getOrderCancellationText());
+		
 	}
 }

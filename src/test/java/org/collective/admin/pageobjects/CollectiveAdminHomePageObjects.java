@@ -123,6 +123,15 @@ public class CollectiveAdminHomePageObjects extends MainController{
 	@FindBy(css="a[href='/admin/logout']")
 	private WebElement logOutLink;
 	
+	@FindBy(css="a[href='/admin/analytic_scripts']")
+	private WebElement analyticScriptLink;
+	
+	@FindBy(xpath="//span[text()='Return List']")
+	private WebElement returnList;
+	
+	@FindBy(xpath="//span[contains(text(),'User List')]")
+	private WebElement userList;
+	
 	public void openAdminPage() throws IOException {
 		driver.get(data.getadminPageURL());
 	}
@@ -155,6 +164,16 @@ public class CollectiveAdminHomePageObjects extends MainController{
 		reportsTab.click();
 	}
 
+	public void clickReturnList() {
+		Waiting.explicitWaitVisibilityOfElement(returnList, 10);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",returnList);
+	}
+
+public void clickUsersList() {
+	Waiting.explicitWaitVisibilityOfElement(userList, 10);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();",userList);
+}
+
 	public void clickOnSettings() {
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , settingsLink);
 		
@@ -180,6 +199,11 @@ public class CollectiveAdminHomePageObjects extends MainController{
 	public void clickOnFeatureCollection() {
 		
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , featureCollectionLink);
+	}
+
+	public void clickAnalyticScript() {
+		
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , analyticScriptLink);
 	}
 	
 	

@@ -1,8 +1,10 @@
 org\collective\admin\pageobjects\CollectiveAdminProductsPageObjects.class
 org\collective\admin\pageobjects\CollectiveAdminStoreLocatorPageObjects.class
+org\collective\testmethods\CollectiveSanityTestURL.class
 org\collective\utils\SendEmail$1.class
 org\collective\admin\pageobjects\CollectiveAdminFeatureCollectionPageObjects.class
 org\collective\admin\pageobjects\CollectiveAdminPromotionsPageObjects.class
+org\collective\utils\RestCustomMethods.class
 org\collective\customer\pageobjects\CollectiveLoginPageObjects.class
 org\collective\utils\SearchData.class
 org\collective\admin\pageobjects\CollectiveAdminBlogPageObjects.class

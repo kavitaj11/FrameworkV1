@@ -3,6 +3,7 @@ package org.collective.testmethods;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import org.collective.admin.pageobjects.CollectiveAdminAnalyticScriptsPageObjects;
 import org.collective.admin.pageobjects.CollectiveAdminBlogPageObjects;
 import org.collective.admin.pageobjects.CollectiveAdminCarouselPageObjects;
 import org.collective.admin.pageobjects.CollectiveAdminHomePageObjects;
@@ -16,7 +17,6 @@ import org.collective.admin.pageobjects.CollectiveAdminStoreLocatorPageObjects;
 import org.collective.admin.pageobjects.CollectiveAdminUsersPageObjects;
 import org.collective.customer.pageobjects.CollectiveLoginPageObjects;
 import org.collective.maincontroller.MainController;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CollectiveSanityTestAdmin extends MainController{
@@ -24,10 +24,6 @@ public class CollectiveSanityTestAdmin extends MainController{
 	/*
 	 * @author Hemanth.Sridhar
 	 */
-	@BeforeClass
-	public void setUp() throws IOException{
-		driver.get(applicationsetup.getURL());
-	}
 	
   @Test(alwaysRun = true)
   public void tc012_collective_adminLogin() throws IOException, InterruptedException, AWTException {
@@ -38,8 +34,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.enterPasswordForAdmin();
 	  loginPage.clickLogin();
 	  loginPage.verifyAdminLoginMsg();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	  
   }
   
   @Test(alwaysRun = true)
@@ -57,8 +52,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  reportsPage.clickOrderTotals();
 	  reportsPage.verifyOrderTotalsHeader();
 	  reportsPage.clickDownloadButton();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	  
   }
   
   @Test(alwaysRun = true)
@@ -73,8 +67,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnReturns();
 	  returnsPage.verifyReturnsPage();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	  
   }	
   
   @Test(alwaysRun = true)
@@ -89,8 +82,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnCarousel();
 	  carouselPage.verifyCarouselPage();
-	 /* adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	 
   }	
   
   @Test(alwaysRun = true)
@@ -105,8 +97,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnOrders();
 	  ordersPage.verifyOrdersPage();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	  
   }	
   
   @Test(alwaysRun = true)
@@ -121,8 +112,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnProducts();
 	  productsPage.verifyProductsPage();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	
   }	
   
   @Test(alwaysRun = true)
@@ -154,8 +144,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnPromotions();
 	  promotionsPage.verifyPromotionsPage();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	 
   }
   
   @Test(alwaysRun = true)
@@ -170,8 +159,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnUsers();
 	  usersPage.verifyPromotionsPage();
-	 /* adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	 
   }
   
   @Test(alwaysRun = true)
@@ -186,8 +174,7 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnBlog();
 	  blogsPage.verifyBlogPage();
-	 /* adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	 
   }
   
   @Test(alwaysRun = true)
@@ -202,25 +189,57 @@ public class CollectiveSanityTestAdmin extends MainController{
 	  loginPage.verifyAdminLoginMsg();
 	  adminHomePage.clickOnStores();
 	  storesPage.verifyStoresPage();
-	  /*adminHomePage.adminLogout();
-	  homePage.verifyLogout();*/
+	  
   }
   
-  /*@Test(alwaysRun = true)
-  public void tc023_evaluateAdminTabs_FeatureCollection() throws IOException{
+  
+  
+  @Test(alwaysRun = true)
+  public void tc023_evaluateAdminTabs_AnalyticScript() throws IOException{
 	  CollectiveAdminHomePageObjects adminHomePage = new CollectiveAdminHomePageObjects(driver); 
 	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
-	  CollectiveAdminFeatureCollectionPageObjects featureCollectionPage = new CollectiveAdminFeatureCollectionPageObjects(driver);
-	  CollectiveHomePageObjects homePage = new CollectiveHomePageObjects(driver);
+	  CollectiveAdminAnalyticScriptsPageObjects featureCollectionPage = new CollectiveAdminAnalyticScriptsPageObjects(driver);
 	  adminHomePage.openAdminPage();
 	  loginPage.enterPhoneNumberForAdmin();
 	  loginPage.enterPasswordForAdmin();
 	  loginPage.clickLogin();
 	  loginPage.verifyAdminLoginMsg();
-	  adminHomePage.clickOnFeatureCollection();
-	  featureCollectionPage.verifyFeatureCollectionPage();
-	  adminHomePage.adminLogout();
-	  homePage.verifyLogout();
-  }*/
+	  adminHomePage.clickAnalyticScript();
+	  featureCollectionPage.verifyAnalyticScriptPage();
+	  
+  }
+  
+  
+  @Test
+  public void tc024_Reports_UserList() throws Exception{
+	  CollectiveAdminHomePageObjects adminHomePage = new CollectiveAdminHomePageObjects(driver); 
+	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
+	  CollectiveAdminReportPageObjects reportsPage = new CollectiveAdminReportPageObjects(driver);
+	  adminHomePage.openAdminPage();
+	  loginPage.enterPhoneNumberForAdmin();
+	  loginPage.enterPasswordForAdmin();
+	  loginPage.clickLogin();
+	  loginPage.verifyAdminLoginMsg();
+	  adminHomePage.clickOnReports();
+	  adminHomePage.clickUsersList();
+	  reportsPage.verifyUsersListHeader();
+	  reportsPage.clickDownloadButton();
+  }
+  
+  @Test
+  public void tc025_Reports_returnList() throws Exception{
+	  CollectiveAdminHomePageObjects adminHomePage = new CollectiveAdminHomePageObjects(driver); 
+	  CollectiveLoginPageObjects loginPage = new CollectiveLoginPageObjects(driver);
+	  CollectiveAdminReportPageObjects reportsPage = new CollectiveAdminReportPageObjects(driver);
+	  adminHomePage.openAdminPage();
+	  loginPage.enterPhoneNumberForAdmin();
+	  loginPage.enterPasswordForAdmin();
+	  loginPage.clickLogin();
+	  loginPage.verifyAdminLoginMsg();
+	  adminHomePage.clickOnReports();
+	  adminHomePage.clickReturnList();
+	  reportsPage.verifyReturnsListHeader();
+	  reportsPage.clickDownloadButton();
+  }
   
 }

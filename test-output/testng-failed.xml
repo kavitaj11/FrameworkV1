@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CollectiveSuite]">
+  <listeners>
+    <listener class-name="org.collective.utils.ReportGenerator"/>
+  </listeners>
+  <test name="SmokeTesting(failed)">
     <classes>
-      <class name="org.collective.testmethods.CollectiveSanityTestURL">
+      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
         <methods>
-          <include name="tc002_PageURLProd"/>
+          <include name="checkForLogin"/>
+          <include name="tc009_collective_orderLessOrEqualThan20000"/>
+          <include name="tc010_collective_orderPlacement"/>
+          <include name="tc005_collective_accessories_Filter_Brand"/>
+          <include name="tc011_collective_placeorder_OrderCancellation"/>
+          <include name="tc006_collective_pagination"/>
+          <include name="tc003_collective_blog"/>
+          <include name="startRecording"/>
+          <include name="tc008_collective_orderGreaterThan20000"/>
+          <include name="setUp"/>
+          <include name="tc004_collective_accessories"/>
+          <include name="checkForAdminLogout"/>
+          <include name="takeScreenshot"/>
+          <include name="tc007_collective_sales"/>
         </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
+        <methods>
+          <include name="startRecording"/>
+          <include name="beforeTest"/>
+          <include name="checkForLogin"/>
+          <include name="setUp"/>
+          <include name="checkForAdminLogout"/>
+          <include name="beforeSuite"/>
+          <include name="takeScreenshot"/>
+          <include name="tc024_Reports_UserList"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- SmokeTesting(failed) -->
+</suite> <!-- Failed suite [CollectiveSuite] -->

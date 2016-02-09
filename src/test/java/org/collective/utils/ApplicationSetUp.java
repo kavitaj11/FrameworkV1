@@ -49,6 +49,9 @@ public class ApplicationSetUp extends MainController {
 	@Property("prodURL")
 	private static String prodURL;
 	
+	@Property("outputVideo")
+	private static String outputVideo;
+	
 	public String getBrowser() {
 		return browser;
 	}
@@ -90,6 +93,11 @@ public class ApplicationSetUp extends MainController {
 	
 	public String getProdURL(){
 		return prodURL;
+	}
+
+	public String getOutputVideo() {
+		
+		return outputVideo;
 	}
 	
 }

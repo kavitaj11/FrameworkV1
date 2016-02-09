@@ -2,6 +2,7 @@ package org.collective.admin.pageobjects;
 import org.collective.maincontroller.MainController;
 import org.collective.utils.SearchData;
 import org.collective.utils.Waiting;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,17 @@ public class CollectiveAdminStoreLocatorPageObjects extends MainController{
 		Assert.assertTrue(storesHeader.isDisplayed());
 		Assert.assertTrue(newStoreButton.isDisplayed());
 		Assert.assertTrue(storeTable.isDisplayed());
+	}
+
+
+
+public void switchToAlertAndAccept() {
+		
+		
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+		
+		
 	}
 	}
 

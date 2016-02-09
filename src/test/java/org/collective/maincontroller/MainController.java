@@ -1,9 +1,26 @@
 package org.collective.maincontroller;
 
 
+import static org.monte.media.FormatKeys.EncodingKey;
+import static org.monte.media.FormatKeys.FrameRateKey;
+import static org.monte.media.FormatKeys.KeyFrameIntervalKey;
+import static org.monte.media.FormatKeys.MIME_AVI;
+import static org.monte.media.FormatKeys.MediaTypeKey;
+import static org.monte.media.FormatKeys.MimeTypeKey;
+import static org.monte.media.VideoFormatKeys.CompressorNameKey;
+import static org.monte.media.VideoFormatKeys.DepthKey;
+import static org.monte.media.VideoFormatKeys.ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE;
+import static org.monte.media.VideoFormatKeys.QualityKey;
+
+import java.awt.AWTException;
+import java.awt.Dimension;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
-
+import java.lang.reflect.Method;
 
 import org.apache.commons.io.FileUtils;
 import org.collective.utils.Screenshot;
@@ -12,6 +29,11 @@ import org.collective.admin.pageobjects.CollectiveAdminHomePageObjects;
 import org.collective.customer.pageobjects.CollectiveHomePageObjects;
 import org.collective.utils.ApplicationSetUp;
 import org.collective.utils.SendEmail;
+import org.collective.utils.Video;
+import org.monte.media.Format;
+import org.monte.media.FormatKeys.MediaType;
+import org.monte.media.math.Rational;
+import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -40,28 +62,66 @@ public class MainController{
 public static SearchData data = new SearchData();
 public static ApplicationSetUp applicationsetup = new ApplicationSetUp();
 public static String outputFolder = "";
+public static String outputVideo="";
+private ScreenRecorder screenRecorder;
 
- 	@BeforeSuite
- 	public void screenshotCleanUp() throws IOException, InterruptedException{
- 		
- 		
+@BeforeSuite
+	public void beforeSuite() throws IOException, InterruptedException{
+		if((applicationsetup.getOutputfolder()==(null)))
+				{
+			outputFolder = "./Report";
+			outputVideo="./Videos";
+	 		FileUtils.forceMkdir(new File(outputFolder));
+	 		FileUtils.forceMkdir(new File(outputVideo));
+				}
+		else
+		{
+			outputFolder = applicationsetup.getOutputfolder();
+			outputVideo = applicationsetup.getOutputVideo();
+		}
+		
+		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+		outputVideo += "/Videos_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+	}
+ 	
+ 	@BeforeMethod
+ 	public void setUp() throws IOException{
+		driver.get(applicationsetup.getURL());
+	}
+ 	
+ 	@BeforeMethod
+	public void startRecording(Method methodName) throws IOException, AWTException{
+		/*ITestContext context = null;
+ 		context.getName();*/
+ 		 File file = new File(MainController.outputVideo+"/");
+         
+         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+         int width = screenSize.width;
+         int height = screenSize.height;    
+         String testcaseName = methodName.getName();
+         Rectangle captureSize = new Rectangle(0,0, width, height);
+                        
+       GraphicsConfiguration gc = GraphicsEnvironment
+          .getLocalGraphicsEnvironment()
+          .getDefaultScreenDevice()
+          .getDefaultConfiguration();
 
- 		if((applicationsetup.getOutputfolder()==(null)))
- 				{
- 			outputFolder = "./Report";
- 	 		FileUtils.forceMkdir(new File(outputFolder));
- 				}
- 		else
- 		{
- 			outputFolder = applicationsetup.getOutputfolder();
- 		}
- 		
- 		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
- 		System.out.println("before suite");
- 	}
+	this.screenRecorder = new Video(gc, captureSize,
+          new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
+          new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+               CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+               DepthKey, 24, FrameRateKey, Rational.valueOf(15),
+               QualityKey, 1.0f,
+               KeyFrameIntervalKey, 15 * 60),
+          new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black",
+               FrameRateKey, Rational.valueOf(30)),
+          null, file, testcaseName);
+     this.screenRecorder.start();
+       
+	}
 	
 	@BeforeMethod
-	public boolean checkForLogin() {
+	public static boolean checkForLogin() {
 		CollectiveHomePageObjects checkForLogin = new CollectiveHomePageObjects(driver);
 		try
 		{
@@ -134,6 +194,14 @@ Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
 			{
 				logoutCheck.adminLogout();
 				checkForLogin.verifyLogout();
+			}
+			else if(checkForLogin.myAccountXpath.isDisplayed())
+			{
+				checkForLogin.logout();
+			}
+			else
+			{
+				return true;
 			}
 		}
 		catch(Exception e)

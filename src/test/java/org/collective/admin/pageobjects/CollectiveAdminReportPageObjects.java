@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 /*
  * @author Hemanth.Sridhar
@@ -28,6 +29,15 @@ public class CollectiveAdminReportPageObjects extends MainController{
 	
 	
 	
+	@FindBy(xpath="//h1/span[text()='User List']")
+	private WebElement userListHeader;
+	
+
+	@FindBy(xpath="//h1/span[text()='Return List']")
+	private WebElement returnListHeader;
+	
+	
+	
 	
 	public void clickOrderTotals(){
 		Waiting.explicitWaitVisibilityOfElement(orderTotals, 20);
@@ -45,6 +55,19 @@ public class CollectiveAdminReportPageObjects extends MainController{
 		Waiting.explicitWaitVisibilityOfElement(downloadButton, 4);
 		downloadButton.click();
 		Thread.sleep(2000);
+	}
+	
+	public void verifyUsersListHeader() {
+		Waiting.explicitWaitVisibilityOfElement(userListHeader, 20);
+		Assert.assertTrue(userListHeader.isDisplayed(), "user list header is not displayed");
+		
+	}
+
+
+	public void verifyReturnsListHeader() {
+		Assert.assertTrue(returnListHeader.isDisplayed(), "return list header is not displayed");
+		
+		
 	}
 
 	}

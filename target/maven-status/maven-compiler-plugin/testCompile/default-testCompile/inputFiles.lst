@@ -1,31 +1,34 @@
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminPromotionsPageObjects.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminSettingsPageObjects.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveBlogPageObjects.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminProductsPageObjects.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveSignupPageObjects.java
-F:\Collective\src\test\java\org\collective\utils\RestCustomMethods.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminUsersPageObjects.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveBagsPageObjects.java
-F:\Collective\src\test\java\org\collective\testmethods\CollectiveSanityTestCustomer.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminReturnsPageObjects.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveShoppingCartPageObjects.java
-F:\Collective\src\test\java\org\collective\utils\Waiting.java
-F:\Collective\src\test\java\org\collective\testmethods\CollectiveSanityTestURL.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveHomePageObjects.java
-F:\Collective\src\test\java\org\collective\maincontroller\MainController.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveAdrianoGoldschmiedPageObjects.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminFeatureCollectionPageObjects.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminReportPageObjects.java
-F:\Collective\src\test\java\org\collective\customer\pageobjects\CollectiveLoginPageObjects.java
-F:\Collective\src\test\java\org\collective\utils\ReportGenerator.java
-F:\Collective\src\test\java\org\collective\utils\ApplicationSetUp.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminHomePageObjects.java
-F:\Collective\src\test\java\org\collective\testmethods\CollectiveSanityTestAdmin.java
-F:\Collective\src\test\java\org\collective\utils\SearchData.java
-F:\Collective\src\test\java\org\collective\utils\RandomNumberGenerator.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminOrdersPageObjects.java
-F:\Collective\src\test\java\org\collective\utils\SendEmail.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminStoreLocatorPageObjects.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminBlogPageObjects.java
-F:\Collective\src\test\java\org\collective\utils\Screenshot.java
-F:\Collective\src\test\java\org\collective\admin\pageobjects\CollectiveAdminCarouselPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminProductsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminSettingsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminCarouselPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveAdrianoGoldschmiedPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\testmethods\CollectiveSanityTestURL.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminUsersPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveShoppingCartPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\Video.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveBlogPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\Screenshot.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\SearchData.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminReturnsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\ResponseCheck.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminPromotionsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\maincontroller\MainController.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminOrdersPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminStoreLocatorPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminReportPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\RestCustomMethods.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveSignupPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminBlogPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\Waiting.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\testmethods\CollectiveSanityTestAdmin.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\ApplicationSetUp.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\SendEmail.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveLoginPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\RandomNumberGenerator.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveBagsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminAnalyticScriptsPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\testmethods\CollectiveSanityTestCustomer.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\utils\ReportGenerator.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminHomePageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\admin\pageobjects\CollectiveAdminFeatureCollectionPageObjects.java
+F:\The Collective Automation Suite\the-collective-smoke-suite\src\test\java\org\collective\customer\pageobjects\CollectiveHomePageObjects.java

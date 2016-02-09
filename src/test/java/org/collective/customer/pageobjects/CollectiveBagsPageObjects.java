@@ -1,7 +1,10 @@
 package org.collective.customer.pageobjects;
+import java.util.List;
+
 import org.collective.maincontroller.MainController;
 import org.collective.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -23,7 +26,7 @@ public class CollectiveBagsPageObjects extends MainController{
 	private WebElement productsdiv;
 	
 	@FindAll(value={@FindBy(xpath="//div[@id='products_page']/ul/li")})
-	private WebElement productsList;
+	private List<WebElement> productsList;
 	
 	@FindBy(xpath="//input[@id='ARMANI_JEANS']")
 	private WebElement armaniCheckbox;
@@ -34,15 +37,43 @@ public class CollectiveBagsPageObjects extends MainController{
 	@FindBy(xpath="//ul[@class='image-list no-pad clearfix']/li[1]")
 	private WebElement firstProduct;
 	
-	@FindBy(css="a[href='/t/categories/men/bags?page=2']")
+	@FindBy(css="a[href='/t/brands/men/apparel/adriano-goldschmied?page=2']")
 	private WebElement paginatorNextClick;
 	
+	@FindBy(xpath="//div[@id='size_color']/div[1]")
+	public WebElement size;
+	
+	@FindBy(xpath="//div[@id='size_color']/div[2]")
+	public WebElement colour;
+	
+	@FindBy(xpath="//div[@id='prices']")
+	public WebElement prices;
+	
+	@FindBy(xpath="//div[contains(text(),'Coming Soon')]")
+	private WebElement comingSoonText;
 	
 	public void verifyProductsDisplay() {
-		Waiting.explicitWaitVisibilityOfElement(productsdiv, 5);
-		Assert.assertTrue(productsdiv.isDisplayed());
-		Assert.assertTrue(productsList.isDisplayed());
-		
+		try
+		{
+		{
+			Assert.assertTrue(productsdiv.isDisplayed(), "products complete section is not displayed");
+			for(int i=0;i<productsList.size();i++)
+			{
+			Assert.assertTrue(productsList.get(i).isDisplayed(),"every product is not displayed");
+		}
+		}
+		}
+		catch(Exception e)
+		{
+			try
+			{
+			Assert.assertTrue(comingSoonText.isDisplayed(), "coming soon text is also not displayed!!!!");
+			}
+			catch(NoSuchElementException e1)
+			{
+				System.out.println(driver.getCurrentUrl());
+			}
+			}
 		}
 	
 	public void filterTest(){
@@ -58,6 +89,7 @@ public class CollectiveBagsPageObjects extends MainController{
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , paginatorNextClick);		
 		Waiting.explicitWaitVisibilityOfElement(firstProduct, 15);
 		Assert.assertTrue(firstProduct.isDisplayed());
+		Assert.assertEquals(driver.getCurrentUrl().trim(), data.getPaginationURL());
 	    
 	}
 	}

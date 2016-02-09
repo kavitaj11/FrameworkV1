@@ -3,11 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="org.collective.testmethods.CollectiveSanityTestURL">
+      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
         <methods>
-          <include name="tc002_PageURLProd"/>
+          <include name="tc008_collective_orderGreaterThan20000"/>
+          <include name="screenshotCleanUp"/>
+          <include name="beforeTest"/>
+          <include name="checkForLogin"/>
+          <include name="setUp"/>
+          <include name="checkForAdminLogout"/>
+          <include name="takeScreenshot"/>
         </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

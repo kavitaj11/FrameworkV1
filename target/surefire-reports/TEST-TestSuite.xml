@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="475.056" tests="11" errors="0" skipped="0" failures="1">
+<testsuite name="TestSuite" time="490.315" tests="26" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\bin"/>
     <property name="java.vm.version" value="25.60-b23"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="F:\Collective"/>
+    <property name="maven.multiModuleProjectDirectory" value="F:\The Collective Automation Suite\the-collective-smoke-suite"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="F:\Collective"/>
+    <property name="user.dir" value="F:\The Collective Automation Suite\the-collective-smoke-suite"/>
     <property name="java.runtime.version" value="1.8.0_60-b27"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\endorsed"/>
@@ -62,45 +62,30 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="tc001_collective_signup" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="6.291"/>
-  <testcase name="tc002_collective_login" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.665"/>
-  <testcase name="tc003_collective_blog" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="78.514"/>
-  <testcase name="tc004_collective_accessories" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="20.248"/>
-  <testcase name="tc005_collective_accessories_Filter_Brand" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="142.208">
-    <failure message="Timed out after 5 seconds waiting for visibility of Proxy element for: org.openqa.selenium.support.pagefactory.DefaultElementLocator@5fb759d6&#10;Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf323ce037c5f92db6c1bba601c2ac43ad8&apos;, time: &apos;2014-10-23 13:11:40&apos;&#10;System info: host: &apos;codebrahma&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_60&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir9408_12943}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 83be9727a4635fbea8a479cc346dfec3" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for visibility of Proxy element for: org.openqa.selenium.support.pagefactory.DefaultElementLocator@5fb759d6
-Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
-System info: host: 'codebrahma', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_60'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir9408_12943}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.106, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 83be9727a4635fbea8a479cc346dfec3
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
-	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:227)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:39)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:213)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:210)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	at org.collective.utils.Waiting.explicitWaitVisibilityOfElement(Waiting.java:34)
-	at org.collective.customer.pageobjects.CollectiveBagsPageObjects.verifyProductsDisplay(CollectiveBagsPageObjects.java:42)
-	at org.collective.testmethods.CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand(CollectiveSanityTestCustomer.java:81)
-</failure>
-  </testcase>
-  <testcase name="tc006_collective_accessories_pagination" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="68.708"/>
-  <testcase name="tc007_collective_sales" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="1.961"/>
-  <testcase name="tc008_collective_orderGreaterThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="55.487"/>
-  <testcase name="tc009_collective_orderLessOrEqualThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="33.832"/>
-  <testcase name="tc010_collective_orderPlacement" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="59.61"/>
-  <testcase name="tc011_collective_womenTab" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.532"/>
+  <testcase name="tc012_collective_adminLogin" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.291"/>
+  <testcase name="tc013_collective_admin_reports_OrderTotalsSheet" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="9.085"/>
+  <testcase name="tc014_evaluateAdminTabs_Returns" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.179"/>
+  <testcase name="tc015_evaluateAdminTabs_Carousel" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.669"/>
+  <testcase name="tc016_evaluateAdminTabs_Orders" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.202"/>
+  <testcase name="tc017_evaluateAdminTabs_Products" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.838"/>
+  <testcase name="tc018_evaluateAdminTabs_Settings" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.708"/>
+  <testcase name="tc019_evaluateAdminTabs_Promotions" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.417"/>
+  <testcase name="tc020_evaluateAdminTabs_Users" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.472"/>
+  <testcase name="tc021_evaluateAdminTabs_Blog" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.051"/>
+  <testcase name="tc022_evaluateAdminTabs_Store" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.38"/>
+  <testcase name="tc023_evaluateAdminTabs_AnalyticScript" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.071"/>
+  <testcase name="tc024_Reports_UserList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="9.031"/>
+  <testcase name="tc025_Reports_returnList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="13.351"/>
+  <testcase name="tc001_collective_signup" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.661"/>
+  <testcase name="tc002_collective_login" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.232"/>
+  <testcase name="tc003_collective_blog" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.328"/>
+  <testcase name="tc004_collective_accessories" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.271"/>
+  <testcase name="tc005_collective_accessories_Filter_Brand" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.676"/>
+  <testcase name="tc006_collective_pagination" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.385"/>
+  <testcase name="tc007_collective_sales" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.553"/>
+  <testcase name="tc008_collective_orderGreaterThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="44.972"/>
+  <testcase name="tc009_collective_orderLessOrEqualThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="18.281"/>
+  <testcase name="tc010_collective_orderPlacement" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="17.674"/>
+  <testcase name="tc011_collective_placeorder_OrderCancellation" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="21.217"/>
+  <testcase name="tc023_PageURLsStaging" classname="org.collective.testmethods.CollectiveSanityTestURL" time="272.32"/>
 </testsuite>

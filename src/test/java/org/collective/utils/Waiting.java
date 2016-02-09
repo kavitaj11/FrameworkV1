@@ -1,5 +1,7 @@
 package org.collective.utils;
 
+import java.util.List;
+
 import org.collective.maincontroller.MainController;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,5 +41,11 @@ public class Waiting extends MainController{
 	}
 	public static void explicitWaitForAlert(int time){
 		new WebDriverWait(driver, time).until(ExpectedConditions.alertIsPresent());
+	}
+
+	public static void explicitWaitVisibilityOfElements(List<WebElement> element, int time) {
+		// TODO Auto-generated method stub
+		new WebDriverWait(driver,time).until(ExpectedConditions.visibilityOfAllElements(element));
+		
 	}
 }

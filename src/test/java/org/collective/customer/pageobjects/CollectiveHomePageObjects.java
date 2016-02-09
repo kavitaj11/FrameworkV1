@@ -1,5 +1,6 @@
 package org.collective.customer.pageobjects;
 import org.collective.maincontroller.MainController;
+import org.collective.utils.ApplicationSetUp;
 import org.collective.utils.SearchData;
 import org.collective.utils.Waiting;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -39,7 +39,7 @@ public class CollectiveHomePageObjects extends MainController{
 	@FindBy(xpath="//a[@href='/account']")
     public WebElement myAccountXpath;
 	
-	@FindBy(xpath="//div[contains(text(),'Signed out successfully.')]")
+	@FindBy(xpath="//div[@class='alert alert-notice']")
 	private WebElement logoutAlert;
 	
 	@FindBy(xpath="//a[contains(text(),'Men')]")
@@ -47,6 +47,15 @@ public class CollectiveHomePageObjects extends MainController{
 	
 	@FindBy(xpath="//a[contains(text(),'Women')]")
 	private WebElement womenTab;
+	
+	@FindBy(css="a[href='/t/brands/men/apparel/armani-collezioni']")
+	private WebElement armaniLink;
+	
+	@FindBy(xpath="//div[@class='row block']")
+	private WebElement blogDiv;
+	
+	@FindBy(xpath="//h2/b")
+	private WebElement blogStoriesHeader;
 	
 	public void emailSignUpBtnClick() throws AWTException, InterruptedException{
 		By css = By.cssSelector("a[href='/users/register']");
@@ -105,6 +114,7 @@ public class CollectiveHomePageObjects extends MainController{
 		}
 		
 		public void verifyLogout() {
+		 Assert.assertTrue(logoutAlert.isDisplayed(),"Logout alert is not displayed");
          Assert.assertEquals((logoutAlert.getText().trim()),data.getLogoutMsg().trim());
 		}
 		
@@ -129,6 +139,53 @@ public class CollectiveHomePageObjects extends MainController{
 			WebElement adrianoGoldschmied = driver.findElement(css);
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();" , adrianoGoldschmied);
 		}
-	}
+		
+
+			public void navigateToArmaniFromMen() {
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();",armaniLink);
+				
+			}
+
+			public void verifyBlogStories() {
+				Waiting.explicitWaitVisibilityOfElement(blogStoriesHeader, 5);
+				Assert.assertTrue(blogStoriesHeader.isDisplayed(), "Blog Stories header is not displayed");
+				Assert.assertTrue(blogDiv.isDisplayed(), "Blogs are displayed");
+				
+			}
+
+			public void verifyProductURLsPages() {
+				{
+					CollectiveBagsPageObjects bagsPage = new CollectiveBagsPageObjects(driver);
+					ApplicationSetUp application = new ApplicationSetUp();
+					String everyURL[] = data.getPageURLs().split(",");
+					for(int i=0;i<everyURL.length;i++)
+					{
+						driver.get(application.getURL()+everyURL[i]);	
+						bagsPage.verifyProductsDisplay();
+						Waiting.explicitWaitVisibilityOfElement(bagsPage.colour, 5);
+						Assert.assertTrue(bagsPage.colour.isDisplayed(),"colour section is not displayed");
+						Assert.assertTrue(bagsPage.size.isDisplayed(),"size section is not displayed");
+						Assert.assertTrue(bagsPage.prices.isDisplayed(),"price section is not displayed");
+						}
+					}
+				
+			}
+			
+		}
+
+		/*public void verifyPageStatusCodes() throws MalformedURLException, IOException {
+			 List<WebElement> links = driver.findElements(By.tagName("a"));
+			    for(int i = 0; i < links.size(); i++){
+			        if(!(links.get(i).getAttribute("href") == null) && !(links.get(i).getAttribute("href").equals(""))){
+			            if(links.get(i).getAttribute("href").contains("http")){
+			                int statusCode = ResponseCheck.getResponseCode(links.get(i).getAttribute("href").trim());
+			                if(statusCode == 403){
+			                    System.out.println("HTTP 403 Forbidden # " + i + " " + links.get(i).getAttribute("href"));
+			                }
+			            }
+			        }   
+			    }
+			
+		}*/
 	
 	

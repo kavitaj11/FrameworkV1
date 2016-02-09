@@ -1,6 +1,7 @@
 package org.collective.customer.pageobjects;
 import org.collective.maincontroller.MainController;
 import org.collective.utils.SearchData;
+import org.collective.utils.Waiting;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -28,9 +29,26 @@ public class CollectiveBlogPageObjects extends MainController{
 	@FindAll(value={@FindBy(xpath="//p")})
 	private WebElement blogParagraphs;
 	
+	@FindBy(xpath="//div[@class='row block']")
+	private WebElement blogDiv;
+	
+	@FindBy(xpath="//h2/b")
+	private WebElement blogStoriesHeader;
+	
+	@FindBy(xpath="//div[@class='grid clearfix']")
+	private WebElement blogsPage;
+	
 	public void verifyBlogPage() {
 		Assert.assertTrue(blogEntryContainer.isDisplayed());
 		Assert.assertTrue(blogEntryContainerChildren.isDisplayed());
 		Assert.assertTrue(blogParagraphs.isDisplayed());
+		//Assert.assertTrue(blogsPage.isDisplayed(), "blogs page is not displayed");
+		
+		}
+
+	public void verifyBlogStories(){
+		Waiting.explicitWaitVisibilityOfElement(blogStoriesHeader, 3);
+			Assert.assertTrue(blogStoriesHeader.isDisplayed(), "Blog Stories header is not displayed");
+			Assert.assertTrue(blogDiv.isDisplayed(), "Blogs are displayed");
 		}		
 	}

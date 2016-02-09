@@ -53,7 +53,7 @@ public class ReportGenerator implements IReporter {
       File zipFile = new File(MainController.outputFolder+".zip");
         ZipUtil.pack(new File(MainController.outputFolder), zipFile);
         
-        /*try {
+       /* try {
         	SendEmail.sendemail(passedtest, failedtest, skippedtest,zipFile);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,52 +1,937 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="9" failed="1" total="26" passed="16">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27912" started-at="2015-12-24T05:15:57Z" finished-at="2015-12-24T05:16:24Z">
+  <suite name="CollectiveSuite" duration-ms="775331" started-at="2016-02-09T09:17:45Z" finished-at="2016-02-09T09:30:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27912" started-at="2015-12-24T05:15:57Z" finished-at="2015-12-24T05:16:24Z">
+    <test name="SmokeTesting" duration-ms="775331" started-at="2016-02-09T09:17:45Z" finished-at="2016-02-09T09:30:40Z">
       <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
-        <test-method status="PASS" signature="screenshotCleanUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="screenshotCleanUp" is-config="true" duration-ms="85" started-at="2015-12-24T10:45:56Z" finished-at="2015-12-24T10:45:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshotCleanUp -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="beforeTest" is-config="true" duration-ms="12770" started-at="2015-12-24T10:45:57Z" finished-at="2015-12-24T10:46:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="setUp" is-config="true" duration-ms="12520" started-at="2015-12-24T10:46:09Z" finished-at="2015-12-24T10:46:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="checkForLogin" is-config="true" duration-ms="90" started-at="2015-12-24T10:46:22Z" finished-at="2015-12-24T10:46:22Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="1401" started-at="2016-02-09T14:54:17Z" finished-at="2016-02-09T14:54:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="tc005_collective_accessories_Filter_Brand" duration-ms="2448" started-at="2015-12-24T10:46:22Z" finished-at="2015-12-24T10:46:24Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="8435" started-at="2016-02-09T14:54:18Z" finished-at="2016-02-09T14:54:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc005_collective_accessories_Filter_Brand -->
-        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="checkForAdminLogout" is-config="true" duration-ms="42" started-at="2015-12-24T10:46:24Z" finished-at="2015-12-24T10:46:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForAdminLogout -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2015-12-24T10:46:24Z" finished-at="2015-12-24T10:46:24Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="927" started-at="2016-02-09T14:54:27Z" finished-at="2016-02-09T14:54:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tc005_collective_accessories_Filter_Brand status=SUCCESS method=CollectiveSanityTestCustomer.tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542] output={null}]]]>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestCustomer.tc001_collective_signup() throws java.io.IOException,java.lang.InterruptedException,java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc001_collective_signup" duration-ms="62916" started-at="2016-02-09T14:54:28Z" finished-at="2016-02-09T14:55:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc001_collective_signup -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="20817" started-at="2016-02-09T14:55:30Z" finished-at="2016-02-09T14:55:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:55:51Z" finished-at="2016-02-09T14:55:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc001_collective_signup status=SUCCESS method=CollectiveSanityTestCustomer.tc001_collective_signup()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@5a1c0542]" name="tearDownClass" is-config="true" duration-ms="1296" started-at="2015-12-24T10:46:25Z" finished-at="2015-12-24T10:46:26Z">
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="14170" started-at="2016-02-09T14:55:51Z" finished-at="2016-02-09T14:56:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="5554" started-at="2016-02-09T14:56:05Z" finished-at="2016-02-09T14:56:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="1409" started-at="2016-02-09T14:56:11Z" finished-at="2016-02-09T14:56:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestCustomer.tc002_collective_login() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc002_collective_login" duration-ms="38378" started-at="2016-02-09T14:56:12Z" finished-at="2016-02-09T14:56:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc002_collective_login -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="21680" started-at="2016-02-09T14:56:51Z" finished-at="2016-02-09T14:57:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="2" started-at="2016-02-09T14:57:12Z" finished-at="2016-02-09T14:57:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc002_collective_login status=SUCCESS method=CollectiveSanityTestCustomer.tc002_collective_login()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="FAIL" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:12Z" finished-at="2016-02-09T14:57:12Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Signed out successfully.] but found []]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Signed out successfully.] but found []
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at org.collective.customer.pageobjects.CollectiveHomePageObjects.verifyLogout(CollectiveHomePageObjects.java:118)
+	at org.collective.maincontroller.MainController.checkForLogin(MainController.java:131)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:590)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc003_collective_blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc003_collective_blog" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc003_collective_blog -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc004_collective_accessories()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc004_collective_accessories" duration-ms="1" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc004_collective_accessories -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="tc005_collective_accessories_Filter_Brand()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc005_collective_accessories_Filter_Brand" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc005_collective_accessories_Filter_Brand -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc006_collective_pagination()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc006_collective_pagination" duration-ms="1" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc006_collective_pagination -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc007_collective_sales()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc007_collective_sales" duration-ms="1" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc007_collective_sales -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc008_collective_orderGreaterThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc008_collective_orderGreaterThan20000" duration-ms="2" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc008_collective_orderGreaterThan20000 -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="tc009_collective_orderLessOrEqualThan20000()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc009_collective_orderLessOrEqualThan20000" duration-ms="2" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc009_collective_orderLessOrEqualThan20000 -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="tc010_collective_orderPlacement()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc010_collective_orderPlacement" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc010_collective_orderPlacement -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="tc011_collective_placeorder_OrderCancellation()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="tc011_collective_placeorder_OrderCancellation" duration-ms="1" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc011_collective_placeorder_OrderCancellation -->
+        <test-method status="SKIP" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="checkForAdminLogout" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestCustomer@1f57539]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T14:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+      <class name="org.collective.testmethods.CollectiveSanityTestURL">
+        <test-method status="PASS" signature="tc023_PageURLsStaging()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestURL@76f2b07d]" name="tc023_PageURLsStaging" duration-ms="187410" started-at="2016-02-09T14:57:33Z" finished-at="2016-02-09T15:00:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc023_PageURLsStaging -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
+      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="beforeSuite" is-config="true" duration-ms="68" started-at="2016-02-09T14:47:45Z" finished-at="2016-02-09T14:47:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="beforeTest" is-config="true" duration-ms="2787" started-at="2016-02-09T14:47:45Z" finished-at="2016-02-09T14:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="92" started-at="2016-02-09T14:47:48Z" finished-at="2016-02-09T14:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="4631" started-at="2016-02-09T14:47:48Z" finished-at="2016-02-09T14:47:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="154" started-at="2016-02-09T14:47:53Z" finished-at="2016-02-09T14:47:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc012_collective_adminLogin() throws java.io.IOException,java.lang.InterruptedException,java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc012_collective_adminLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc012_collective_adminLogin" duration-ms="5484" started-at="2016-02-09T14:47:53Z" finished-at="2016-02-09T14:47:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc012_collective_adminLogin -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="2301" started-at="2016-02-09T14:47:58Z" finished-at="2016-02-09T14:48:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:48:01Z" finished-at="2016-02-09T14:48:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc012_collective_adminLogin status=SUCCESS method=CollectiveSanityTestAdmin.tc012_collective_adminLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="39" started-at="2016-02-09T14:48:01Z" finished-at="2016-02-09T14:48:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="1613" started-at="2016-02-09T14:48:01Z" finished-at="2016-02-09T14:48:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="17" started-at="2016-02-09T14:48:02Z" finished-at="2016-02-09T14:48:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc013_collective_admin_reports_OrderTotalsSheet() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc013_collective_admin_reports_OrderTotalsSheet()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc013_collective_admin_reports_OrderTotalsSheet" duration-ms="12223" started-at="2016-02-09T14:48:02Z" finished-at="2016-02-09T14:48:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc013_collective_admin_reports_OrderTotalsSheet -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="2445" started-at="2016-02-09T14:48:14Z" finished-at="2016-02-09T14:48:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:48:17Z" finished-at="2016-02-09T14:48:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc013_collective_admin_reports_OrderTotalsSheet status=SUCCESS method=CollectiveSanityTestAdmin.tc013_collective_admin_reports_OrderTotalsSheet()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="61" started-at="2016-02-09T14:48:17Z" finished-at="2016-02-09T14:48:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="1385" started-at="2016-02-09T14:48:17Z" finished-at="2016-02-09T14:48:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="62" started-at="2016-02-09T14:48:18Z" finished-at="2016-02-09T14:48:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc014_evaluateAdminTabs_Returns() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc014_evaluateAdminTabs_Returns()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc014_evaluateAdminTabs_Returns" duration-ms="9840" started-at="2016-02-09T14:48:18Z" finished-at="2016-02-09T14:48:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc014_evaluateAdminTabs_Returns -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="2111" started-at="2016-02-09T14:48:28Z" finished-at="2016-02-09T14:48:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:48:30Z" finished-at="2016-02-09T14:48:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc014_evaluateAdminTabs_Returns status=SUCCESS method=CollectiveSanityTestAdmin.tc014_evaluateAdminTabs_Returns()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="48" started-at="2016-02-09T14:48:30Z" finished-at="2016-02-09T14:48:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="1704" started-at="2016-02-09T14:48:30Z" finished-at="2016-02-09T14:48:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="54" started-at="2016-02-09T14:48:32Z" finished-at="2016-02-09T14:48:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc015_evaluateAdminTabs_Carousel() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc015_evaluateAdminTabs_Carousel()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc015_evaluateAdminTabs_Carousel" duration-ms="7624" started-at="2016-02-09T14:48:32Z" finished-at="2016-02-09T14:48:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc015_evaluateAdminTabs_Carousel -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="2766" started-at="2016-02-09T14:48:40Z" finished-at="2016-02-09T14:48:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:48:43Z" finished-at="2016-02-09T14:48:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc015_evaluateAdminTabs_Carousel status=SUCCESS method=CollectiveSanityTestAdmin.tc015_evaluateAdminTabs_Carousel()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="60" started-at="2016-02-09T14:48:43Z" finished-at="2016-02-09T14:48:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="1950" started-at="2016-02-09T14:48:43Z" finished-at="2016-02-09T14:48:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="41" started-at="2016-02-09T14:48:45Z" finished-at="2016-02-09T14:48:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc016_evaluateAdminTabs_Orders() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc016_evaluateAdminTabs_Orders()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc016_evaluateAdminTabs_Orders" duration-ms="10220" started-at="2016-02-09T14:48:45Z" finished-at="2016-02-09T14:48:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc016_evaluateAdminTabs_Orders -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="2870" started-at="2016-02-09T14:48:55Z" finished-at="2016-02-09T14:48:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:48:58Z" finished-at="2016-02-09T14:48:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc016_evaluateAdminTabs_Orders status=SUCCESS method=CollectiveSanityTestAdmin.tc016_evaluateAdminTabs_Orders()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="145" started-at="2016-02-09T14:48:58Z" finished-at="2016-02-09T14:48:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="1659" started-at="2016-02-09T14:48:58Z" finished-at="2016-02-09T14:48:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="58" started-at="2016-02-09T14:48:59Z" finished-at="2016-02-09T14:49:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc017_evaluateAdminTabs_Products() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc017_evaluateAdminTabs_Products()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc017_evaluateAdminTabs_Products" duration-ms="10763" started-at="2016-02-09T14:49:00Z" finished-at="2016-02-09T14:49:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc017_evaluateAdminTabs_Products -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="3654" started-at="2016-02-09T14:49:10Z" finished-at="2016-02-09T14:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:49:14Z" finished-at="2016-02-09T14:49:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc017_evaluateAdminTabs_Products status=SUCCESS method=CollectiveSanityTestAdmin.tc017_evaluateAdminTabs_Products()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="198" started-at="2016-02-09T14:49:14Z" finished-at="2016-02-09T14:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="2088" started-at="2016-02-09T14:49:14Z" finished-at="2016-02-09T14:49:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="52" started-at="2016-02-09T14:49:16Z" finished-at="2016-02-09T14:49:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc018_evaluateAdminTabs_Settings() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc018_evaluateAdminTabs_Settings()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc018_evaluateAdminTabs_Settings" duration-ms="10149" started-at="2016-02-09T14:49:16Z" finished-at="2016-02-09T14:49:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc018_evaluateAdminTabs_Settings -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="3683" started-at="2016-02-09T14:49:26Z" finished-at="2016-02-09T14:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:49:30Z" finished-at="2016-02-09T14:49:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc018_evaluateAdminTabs_Settings status=SUCCESS method=CollectiveSanityTestAdmin.tc018_evaluateAdminTabs_Settings()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="430" started-at="2016-02-09T14:49:30Z" finished-at="2016-02-09T14:49:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="2118" started-at="2016-02-09T14:49:31Z" finished-at="2016-02-09T14:49:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="561" started-at="2016-02-09T14:49:33Z" finished-at="2016-02-09T14:49:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc019_evaluateAdminTabs_Promotions() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc019_evaluateAdminTabs_Promotions()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc019_evaluateAdminTabs_Promotions" duration-ms="10748" started-at="2016-02-09T14:49:33Z" finished-at="2016-02-09T14:49:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc019_evaluateAdminTabs_Promotions -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="4390" started-at="2016-02-09T14:49:44Z" finished-at="2016-02-09T14:49:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:49:48Z" finished-at="2016-02-09T14:49:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc019_evaluateAdminTabs_Promotions status=SUCCESS method=CollectiveSanityTestAdmin.tc019_evaluateAdminTabs_Promotions()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="88" started-at="2016-02-09T14:49:48Z" finished-at="2016-02-09T14:49:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="2060" started-at="2016-02-09T14:49:48Z" finished-at="2016-02-09T14:49:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="67" started-at="2016-02-09T14:49:51Z" finished-at="2016-02-09T14:49:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc020_evaluateAdminTabs_Users() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc020_evaluateAdminTabs_Users()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc020_evaluateAdminTabs_Users" duration-ms="10974" started-at="2016-02-09T14:49:51Z" finished-at="2016-02-09T14:50:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc020_evaluateAdminTabs_Users -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="3768" started-at="2016-02-09T14:50:02Z" finished-at="2016-02-09T14:50:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:50:05Z" finished-at="2016-02-09T14:50:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc020_evaluateAdminTabs_Users status=SUCCESS method=CollectiveSanityTestAdmin.tc020_evaluateAdminTabs_Users()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="1101" started-at="2016-02-09T14:50:05Z" finished-at="2016-02-09T14:50:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="3428" started-at="2016-02-09T14:50:06Z" finished-at="2016-02-09T14:50:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="61" started-at="2016-02-09T14:50:10Z" finished-at="2016-02-09T14:50:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc021_evaluateAdminTabs_Blog() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc021_evaluateAdminTabs_Blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc021_evaluateAdminTabs_Blog" duration-ms="12722" started-at="2016-02-09T14:50:10Z" finished-at="2016-02-09T14:50:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc021_evaluateAdminTabs_Blog -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="3861" started-at="2016-02-09T14:50:23Z" finished-at="2016-02-09T14:50:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:50:27Z" finished-at="2016-02-09T14:50:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc021_evaluateAdminTabs_Blog status=SUCCESS method=CollectiveSanityTestAdmin.tc021_evaluateAdminTabs_Blog()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="182" started-at="2016-02-09T14:50:27Z" finished-at="2016-02-09T14:50:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="4557" started-at="2016-02-09T14:50:27Z" finished-at="2016-02-09T14:50:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="78" started-at="2016-02-09T14:50:31Z" finished-at="2016-02-09T14:50:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc022_evaluateAdminTabs_Store() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc022_evaluateAdminTabs_Store()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc022_evaluateAdminTabs_Store" duration-ms="19699" started-at="2016-02-09T14:50:31Z" finished-at="2016-02-09T14:50:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc022_evaluateAdminTabs_Store -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="8841" started-at="2016-02-09T14:50:51Z" finished-at="2016-02-09T14:51:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-09T14:51:00Z" finished-at="2016-02-09T14:51:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc022_evaluateAdminTabs_Store status=SUCCESS method=CollectiveSanityTestAdmin.tc022_evaluateAdminTabs_Store()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="1189" started-at="2016-02-09T14:51:00Z" finished-at="2016-02-09T14:51:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="5961" started-at="2016-02-09T14:51:01Z" finished-at="2016-02-09T14:51:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="1449" started-at="2016-02-09T14:51:07Z" finished-at="2016-02-09T14:51:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc023_evaluateAdminTabs_AnalyticScript() throws java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc023_evaluateAdminTabs_AnalyticScript()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc023_evaluateAdminTabs_AnalyticScript" duration-ms="30319" started-at="2016-02-09T14:51:08Z" finished-at="2016-02-09T14:51:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc023_evaluateAdminTabs_AnalyticScript -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="13105" started-at="2016-02-09T14:51:39Z" finished-at="2016-02-09T14:51:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="2" started-at="2016-02-09T14:51:52Z" finished-at="2016-02-09T14:51:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc023_evaluateAdminTabs_AnalyticScript status=SUCCESS method=CollectiveSanityTestAdmin.tc023_evaluateAdminTabs_AnalyticScript()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="1548" started-at="2016-02-09T14:51:52Z" finished-at="2016-02-09T14:51:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="6218" started-at="2016-02-09T14:51:53Z" finished-at="2016-02-09T14:52:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="819" started-at="2016-02-09T14:52:00Z" finished-at="2016-02-09T14:52:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc024_Reports_UserList() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="FAIL" signature="tc024_Reports_UserList()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc024_Reports_UserList" duration-ms="34077" started-at="2016-02-09T14:52:01Z" finished-at="2016-02-09T14:52:35Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at org.collective.customer.pageobjects.CollectiveLoginPageObjects.verifyAdminLoginMsg(CollectiveLoginPageObjects.java:56)
+	at org.collective.testmethods.CollectiveSanityTestAdmin.tc024_Reports_UserList(CollectiveSanityTestAdmin.java:222)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc024_Reports_UserList -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="12888" started-at="2016-02-09T14:52:35Z" finished-at="2016-02-09T14:52:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="6350" started-at="2016-02-09T14:52:48Z" finished-at="2016-02-09T14:52:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc024_Reports_UserList status=FAILURE method=CollectiveSanityTestAdmin.tc024_Reports_UserList()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForLogin" is-config="true" duration-ms="920" started-at="2016-02-09T14:52:54Z" finished-at="2016-02-09T14:52:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="setUp" is-config="true" duration-ms="6709" started-at="2016-02-09T14:52:55Z" finished-at="2016-02-09T14:53:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="startRecording" is-config="true" duration-ms="849" started-at="2016-02-09T14:53:02Z" finished-at="2016-02-09T14:53:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void org.collective.testmethods.CollectiveSanityTestAdmin.tc025_Reports_returnList() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="PASS" signature="tc025_Reports_returnList()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tc025_Reports_returnList" duration-ms="60921" started-at="2016-02-09T14:53:02Z" finished-at="2016-02-09T14:54:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc025_Reports_returnList -->
+        <test-method status="PASS" signature="checkForAdminLogout()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="checkForAdminLogout" is-config="true" duration-ms="13503" started-at="2016-02-09T14:54:03Z" finished-at="2016-02-09T14:54:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForAdminLogout -->
+        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-09T14:54:17Z" finished-at="2016-02-09T14:54:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tc025_Reports_returnList status=SUCCESS method=CollectiveSanityTestAdmin.tc025_Reports_returnList()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSanityTestAdmin@15d0c81b]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2016-02-09T15:00:49Z" finished-at="2016-02-09T15:00:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
+    </test> <!-- SmokeTesting -->
+  </suite> <!-- CollectiveSuite -->
 </testng-results>
