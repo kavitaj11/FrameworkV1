@@ -6,26 +6,43 @@
   </listeners>
   <test name="SmokeTesting(failed)">
     <classes>
+      <class name="org.collective.testmethods.CollectiveSanityTestURL">
+        <methods>
+          <include name="tc023_PageURLsStaging"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestURL -->
       <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
         <methods>
-          <include name="checkForLogin"/>
+          <include name="tc003_collective_blog"/>
+          <include name="tc008_collective_orderGreaterThan20000"/>
+          <include name="tc002_collective_login"/>
+          <include name="tc004_collective_accessories"/>
           <include name="tc009_collective_orderLessOrEqualThan20000"/>
           <include name="tc010_collective_orderPlacement"/>
-          <include name="beforeSuite"/>
+          <include name="tc001_collective_signup"/>
           <include name="tc005_collective_accessories_Filter_Brand"/>
           <include name="tc011_collective_placeorder_OrderCancellation"/>
           <include name="tc006_collective_pagination"/>
-          <include name="startRecording"/>
-          <include name="tc008_collective_orderGreaterThan20000"/>
-          <include name="beforeTest"/>
-          <include name="setUp"/>
-          <include name="tc004_collective_accessories"/>
-          <include name="checkForAdminLogout"/>
-          <include name="takeScreenshot"/>
-          <include name="callStopRecording"/>
           <include name="tc007_collective_sales"/>
         </methods>
       </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+      <class name="org.collective.testmethods.CollectiveSanityTestAdmin">
+        <methods>
+          <include name="checkForLogin"/>
+          <include name="tc025_Reports_returnList"/>
+          <include name="beforeSuite"/>
+          <include name="tc022_evaluateAdminTabs_Store"/>
+          <include name="tc024_Reports_UserList"/>
+          <include name="tc023_evaluateAdminTabs_AnalyticScript"/>
+          <include name="startRecording"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="checkForAdminLogout"/>
+          <include name="takeScreenshot"/>
+          <include name="tc021_evaluateAdminTabs_Blog"/>
+          <include name="callStopRecording"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSanityTestAdmin -->
     </classes>
   </test> <!-- SmokeTesting(failed) -->
 </suite> <!-- Failed suite [CollectiveSuite] -->

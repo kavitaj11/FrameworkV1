@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="490.315" tests="26" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="753.719" tests="26" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\bin"/>
@@ -62,30 +62,87 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="tc012_collective_adminLogin" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.291"/>
-  <testcase name="tc013_collective_admin_reports_OrderTotalsSheet" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="9.085"/>
-  <testcase name="tc014_evaluateAdminTabs_Returns" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.179"/>
-  <testcase name="tc015_evaluateAdminTabs_Carousel" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.669"/>
-  <testcase name="tc016_evaluateAdminTabs_Orders" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.202"/>
-  <testcase name="tc017_evaluateAdminTabs_Products" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.838"/>
-  <testcase name="tc018_evaluateAdminTabs_Settings" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.708"/>
-  <testcase name="tc019_evaluateAdminTabs_Promotions" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.417"/>
-  <testcase name="tc020_evaluateAdminTabs_Users" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.472"/>
-  <testcase name="tc021_evaluateAdminTabs_Blog" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.051"/>
-  <testcase name="tc022_evaluateAdminTabs_Store" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.38"/>
-  <testcase name="tc023_evaluateAdminTabs_AnalyticScript" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.071"/>
-  <testcase name="tc024_Reports_UserList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="9.031"/>
-  <testcase name="tc025_Reports_returnList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="13.351"/>
-  <testcase name="tc001_collective_signup" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.661"/>
-  <testcase name="tc002_collective_login" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.232"/>
-  <testcase name="tc003_collective_blog" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.328"/>
-  <testcase name="tc004_collective_accessories" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.271"/>
-  <testcase name="tc005_collective_accessories_Filter_Brand" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.676"/>
-  <testcase name="tc006_collective_pagination" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.385"/>
-  <testcase name="tc007_collective_sales" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.553"/>
-  <testcase name="tc008_collective_orderGreaterThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="44.972"/>
-  <testcase name="tc009_collective_orderLessOrEqualThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="18.281"/>
-  <testcase name="tc010_collective_orderPlacement" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="17.674"/>
-  <testcase name="tc011_collective_placeorder_OrderCancellation" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="21.217"/>
-  <testcase name="tc023_PageURLsStaging" classname="org.collective.testmethods.CollectiveSanityTestURL" time="272.32"/>
+  <testcase name="tc012_collective_adminLogin" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="4.693"/>
+  <testcase name="tc013_collective_admin_reports_OrderTotalsSheet" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="11.758"/>
+  <testcase name="tc014_evaluateAdminTabs_Returns" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="7.099"/>
+  <testcase name="tc015_evaluateAdminTabs_Carousel" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.666"/>
+  <testcase name="tc016_evaluateAdminTabs_Orders" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="7.086"/>
+  <testcase name="tc017_evaluateAdminTabs_Products" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="15.124"/>
+  <testcase name="tc018_evaluateAdminTabs_Settings" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.583"/>
+  <testcase name="tc019_evaluateAdminTabs_Promotions" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="6.211"/>
+  <testcase name="tc020_evaluateAdminTabs_Users" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.923"/>
+  <testcase name="tc021_evaluateAdminTabs_Blog" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.593"/>
+  <testcase name="tc022_evaluateAdminTabs_Store" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="5.736"/>
+  <testcase name="tc023_evaluateAdminTabs_AnalyticScript" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="7.596"/>
+  <testcase name="tc024_Reports_UserList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="17.292"/>
+  <testcase name="tc025_Reports_returnList" classname="org.collective.testmethods.CollectiveSanityTestAdmin" time="79.475"/>
+  <testcase name="tc001_collective_signup" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="4.861"/>
+  <testcase name="tc002_collective_login" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.216"/>
+  <testcase name="tc003_collective_blog" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.813"/>
+  <testcase name="tc004_collective_accessories" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="2.031"/>
+  <testcase name="tc005_collective_accessories_Filter_Brand" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.002"/>
+  <testcase name="tc006_collective_pagination" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="11.731"/>
+  <testcase name="tc007_collective_sales" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="3.124"/>
+  <testcase name="tc008_collective_orderGreaterThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="326.626">
+    <failure message="timeout: Timed out receiving message from renderer: 296.529&#10;  (Session info: chrome=48.0.2564.103)&#10;  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 300.08 seconds&#10;Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf323ce037c5f92db6c1bba601c2ac43ad8&apos;, time: &apos;2014-10-23 13:11:40&apos;&#10;System info: host: &apos;codebrahma&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_60&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir6568_11912}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=48.0.2564.103, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: ee054f9685b0527eeb3db6176c734b19" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 296.529
+  (Session info: chrome=48.0.2564.103)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 300.08 seconds
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'codebrahma', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_60'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\codeb\AppData\Local\Temp\scoped_dir6568_11912}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=48.0.2564.103, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: ee054f9685b0527eeb3db6176c734b19
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:50)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at org.collective.customer.pageobjects.CollectiveAdrianoGoldschmiedPageObjects.clickOnFirstProduct(CollectiveAdrianoGoldschmiedPageObjects.java:34)
+	at org.collective.testmethods.CollectiveSanityTestCustomer.tc008_collective_orderGreaterThan20000(CollectiveSanityTestCustomer.java:120)
+</failure>
+    <system-err><![CDATA[[839.393][SEVERE]: Timed out receiving message from renderer: 296.529
+]]></system-err>
+  </testcase>
+  <testcase name="tc009_collective_orderLessOrEqualThan20000" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="23.168"/>
+  <testcase name="tc010_collective_orderPlacement" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="24.499"/>
+  <testcase name="tc011_collective_placeorder_OrderCancellation" classname="org.collective.testmethods.CollectiveSanityTestCustomer" time="19.897"/>
+  <testcase name="tc023_PageURLsStaging" classname="org.collective.testmethods.CollectiveSanityTestURL" time="142.916">
+    <failure message="/static_pages/press failed  with status 500&#10;/store_locator failed  with status 500&#10;/static_pages/shippingpolicy failed  with status 500&#10;/static_pages/about failed  with status 500&#10;/events failed  with status 500&#10;/static_pages/privacypolicy failed  with status 500&#10;/prive failed  with status 500&#10;/static_pages/faqs failed  with status 500&#10;/static_pages/returnpolicy failed  with status 500&#10;/static_pages/careers failed  with status 500&#10; expected [/static_pages/press failed  with status 500&#10;/store_locator failed  with status 500&#10;/static_pages/shippingpolicy failed  with status 500&#10;/static_pages/about failed  with status 500&#10;/events failed  with status 500&#10;/static_pages/privacypolicy failed  with status 500&#10;/prive failed  with status 500&#10;/static_pages/faqs failed  with status 500&#10;/static_pages/returnpolicy failed  with status 500&#10;/static_pages/careers failed  with status 500&#10;] but found []" type="java.lang.AssertionError">java.lang.AssertionError: /static_pages/press failed  with status 500
+/store_locator failed  with status 500
+/static_pages/shippingpolicy failed  with status 500
+/static_pages/about failed  with status 500
+/events failed  with status 500
+/static_pages/privacypolicy failed  with status 500
+/prive failed  with status 500
+/static_pages/faqs failed  with status 500
+/static_pages/returnpolicy failed  with status 500
+/static_pages/careers failed  with status 500
+ expected [/static_pages/press failed  with status 500
+/store_locator failed  with status 500
+/static_pages/shippingpolicy failed  with status 500
+/static_pages/about failed  with status 500
+/events failed  with status 500
+/static_pages/privacypolicy failed  with status 500
+/prive failed  with status 500
+/static_pages/faqs failed  with status 500
+/static_pages/returnpolicy failed  with status 500
+/static_pages/careers failed  with status 500
+] but found []
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.collective.testmethods.CollectiveSanityTestURL.tc023_PageURLsStaging(CollectiveSanityTestURL.java:21)
+</failure>
+  </testcase>
 </testsuite>

@@ -65,23 +65,22 @@ public static String outputFolder = "";
 public static String outputVideo="";
 private ScreenRecorder screenRecorder;
 
-@BeforeSuite
+	@BeforeSuite
 	public void beforeSuite() throws IOException, InterruptedException{
 		if((applicationsetup.getOutputfolder()==(null)))
 				{
 			outputFolder = "./Report";
-			outputVideo="./Videos";
+			
 	 		FileUtils.forceMkdir(new File(outputFolder));
-	 		FileUtils.forceMkdir(new File(outputVideo));
+	 		
 				}
 		else
 		{
 			outputFolder = applicationsetup.getOutputfolder();
-			outputVideo = applicationsetup.getOutputVideo();
+			
 		}
 		
 		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
-		outputVideo += "/Videos_" + SendEmail.getDate()+"_" + SendEmail.getTime();
 	}
  	
  	@BeforeMethod
@@ -94,9 +93,7 @@ private ScreenRecorder screenRecorder;
     
  	@BeforeMethod
 	public void startRecording(Method methodName) throws IOException, AWTException{
-		/*ITestContext context = null;
- 		context.getName();*/
- 		 File file = new File(MainController.outputVideo+"/");
+ 		 File file = new File(outputFolder+"/"+"Videos/");
          
          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
          int width = screenSize.width;
