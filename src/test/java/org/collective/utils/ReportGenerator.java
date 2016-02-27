@@ -65,6 +65,7 @@ public class ReportGenerator implements IReporter {
         if (tests.size() > 0) {
         	for (ITestResult result : tests.getAllResults()) {
         		String s = "";
+        		//for printing the name with data being used in extent report
         		if(result.getParameters() != null) {
         		for(int i =0;i<result.getParameters().length;i++){
         			if(!s.isEmpty())
