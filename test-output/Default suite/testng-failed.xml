@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="org.collective.testmethods.CollectiveSanityTestCustomer">
+      <class name="org.collective.testmethods.CollectiveSmokeTestCustomer">
         <methods>
-          <include name="startRecording"/>
-          <include name="tearDownClass"/>
-          <include name="beforeTest"/>
-          <include name="checkForLogin"/>
-          <include name="setUp"/>
-          <include name="checkForAdminLogout"/>
-          <include name="beforeSuite"/>
-          <include name="tc001_collective_signup"/>
-          <include name="takeScreenshot"/>
+          <include name="tc001_collective_login"/>
         </methods>
-      </class> <!-- org.collective.testmethods.CollectiveSanityTestCustomer -->
+      </class> <!-- org.collective.testmethods.CollectiveSmokeTestCustomer -->
     </classes>
-  </test> <!-- Default test(failed) -->
+  </test> <!-- Default test -->
 </suite> <!-- Failed suite [Default suite] -->

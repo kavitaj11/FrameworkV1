@@ -9,9 +9,9 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import org.collective.maincontroller.MainController;
+import org.collective.utils.PropertyFileReader;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,17 +25,17 @@ import java.util.Properties;
 public class SendEmail extends MainController {
 	
 	
-    public static void sendemail(int pass, int fail, int skip, File zipFile) throws InterruptedException, IOException {
+    public static void sendemail(int pass, int fail, int skip, File zipFile) throws Exception {
     
         // Recipient's email ID needs to be mentioned.
-        String to[] = applicationsetup.getTo().split(",");//change accordingly
-        String cc[] = applicationsetup.getCC().split(",");
-        String bcc[] = applicationsetup.getBCC().split(",");
+    	String to[] = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "to").split(",");//change accordingly
+        String cc[] = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "cc").split(",");
+        String bcc[] = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "bcc").split(",");
         
         // Sender's email ID needs to be mentioned
-        String from = applicationsetup.getFrom();//change accordingly
-        final String username = applicationsetup.getUsername();//change accordingly
-        final String password = applicationsetup.getPassword();//change accordingly
+        String from = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "from");//change accordingly
+        final String username = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "username");//change accordingly
+        final String password = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "password");//change accordingly
 
         // Assuming you are sending email through relay.jangosmtp.net
         String host = "smtp.gmail.com";
@@ -84,11 +84,11 @@ public class SendEmail extends MainController {
                 InternetAddress(bcc[i]));
                 }
             // Set Subject: header field
-            message.setSubject(applicationsetup.getproductName()+" "+"Automation Report"+" "+getDate());
+            message.setSubject(PropertyFileReader.propertiesReader(MainController.applicationSetUp, "productName")+" "+"Automation Report"+" "+getDate());
             String messagtosend = "Hi,"
                     +"<br><br>PFB the Automation Execution Report Summary"
                     +"<br><br><b><u>Execution Summary</u></b>"
-                    +"<br>&nbsp;&nbsp;Product :"+" "+applicationsetup.getproductName()
+                    +"<br>&nbsp;&nbsp;Product :"+" "+PropertyFileReader.propertiesReader(MainController.applicationSetUp, "productName")
                     +"<br>&nbsp;&nbsp;Operating System:"+ System.getProperty("os.name")
                     +"<br><br><b><u>Report Summary</u></b>"
                     +"<br>&nbsp;&nbsp;Total number of TC executed:"+ (pass + fail + skip)

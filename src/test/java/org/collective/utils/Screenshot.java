@@ -19,7 +19,7 @@ public static void captureScreenShot(WebDriver driver, String screenshotName,Str
 	TakesScreenshot ts = (TakesScreenshot)driver;
 	File src = ts.getScreenshotAs(OutputType.FILE);
 	
-	File dest = new File(outputFolder + "/Screenshots/"+screenshotName+"_"+date+".png");
+	File dest = new File(outputFolder + "/Screenshots/"+screenshotName+".png");
 	
 	FileUtils.copyFile(src,dest);
 }

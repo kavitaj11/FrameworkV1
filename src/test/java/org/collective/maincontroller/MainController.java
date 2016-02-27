@@ -21,15 +21,12 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
-
 import org.apache.commons.io.FileUtils;
 import org.collective.utils.Screenshot;
-import org.collective.utils.SearchData;
-import org.collective.admin.pageobjects.CollectiveAdminHomePageObjects;
 import org.collective.customer.pageobjects.CollectiveHomePageObjects;
-import org.collective.utils.ApplicationSetUp;
 import org.collective.utils.SendEmail;
 import org.collective.utils.Video;
+import org.collective.utils.PropertyFileReader;
 import org.monte.media.Format;
 import org.monte.media.FormatKeys.MediaType;
 import org.monte.media.math.Rational;
@@ -41,14 +38,19 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+import java.net.URL;
 
 public class MainController{
 	
@@ -58,20 +60,23 @@ public class MainController{
 /*
  * @author Hemanth.Sridhar
  */
- 
-public static SearchData data = new SearchData();
-public static ApplicationSetUp applicationsetup = new ApplicationSetUp();
 public static String outputFolder = "";
 public static String outputVideo="";
-private ScreenRecorder screenRecorder;
+private Video screenRecorder;
+public static String applicationSetUp = "G:/CBProjects/WebAppFrameworkTestNGUpdate/src/test/java/org/collective/utils/ApplicationSetUp.properties";
+public static final String USERNAME = "hemanthsridhar2";
+public static final String AUTOMATE_KEY = "pwixoaay7x2VsHwKBqxF";
+public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 
-	@BeforeSuite
+  
+
+	/*@BeforeSuite
 	public void beforeSuite() throws IOException, InterruptedException{
 		if((applicationsetup.getOutputfolder()==(null)))
 				{
 			outputFolder = "./Report";
 			
-	 		FileUtils.forceMkdir(new File(outputFolder));
+	 		FileUtils.forceMkdir(new File(outputFolder)); 
 	 		
 				}
 		else
@@ -81,11 +86,30 @@ private ScreenRecorder screenRecorder;
 		}
 		
 		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+	}*/
+
+	@BeforeSuite
+	public void beforeSuite() throws Exception{
+		if((PropertyFileReader.propertiesReader(applicationSetUp,"outputFolder")==(null)))
+				{
+			outputFolder = "./Report";
+			outputVideo="./Videos";
+	 		FileUtils.forceMkdir(new File(outputFolder));
+				}
+		else
+		{
+			PropertyFileReader.propertiesReader(applicationSetUp,"outputFolder");
+			PropertyFileReader.propertiesReader(applicationSetUp,"outputVideo");
+		}
+		
+		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+		//outputVideo += "/Videos_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+		FileUtils.forceMkdir(new File(outputFolder+outputVideo));
 	}
  	
  	@BeforeMethod
- 	public void setUp() throws IOException{
-		driver.get(applicationsetup.getURL());
+ 	public void setUp() throws Exception{
+ 		driver.get(PropertyFileReader.propertiesReader(applicationSetUp,"url"));
 		driver.manage().window().maximize();
 	}
  	
@@ -93,8 +117,10 @@ private ScreenRecorder screenRecorder;
     
  	@BeforeMethod
 	public void startRecording(Method methodName) throws IOException, AWTException{
- 		 File file = new File(outputFolder+"/"+"Videos/");
-         
+ 		
+ 		 //File file = new File(outputFolder+"/"+"Videos/");
+ 		
+ 		 File file = new File(outputFolder+outputVideo+"/");
          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
          int width = screenSize.width;
          int height = screenSize.height;    
@@ -105,9 +131,9 @@ private ScreenRecorder screenRecorder;
           .getLocalGraphicsEnvironment()
           .getDefaultScreenDevice()
           .getDefaultConfiguration();
-
+ 
 	this.screenRecorder = new Video(gc, captureSize,
-          new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
+          new Format(MediaTypeKey, MediaType.VIDEO, MimeTypeKey, MIME_AVI),
           new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
                CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
                DepthKey, 24, FrameRateKey, Rational.valueOf(15),
@@ -116,13 +142,15 @@ private ScreenRecorder screenRecorder;
           new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black",
                FrameRateKey, Rational.valueOf(30)),
           null, file, testcaseName);
+	
+	//ITestResult result = Reporter.getCurrentTestResult();
+	//result.setAttribute("video", this.screenRecorder.fileName);
      this.screenRecorder.start();
-       
-	}
+ }
  	
  	 public void stopRecording() throws Exception
      {
-       this.screenRecorder.stop();
+       this.screenRecorder.stop(); 
      }
 	
 	@BeforeMethod
@@ -132,7 +160,8 @@ private ScreenRecorder screenRecorder;
 		{
 		if(checkForLogin.account.isDisplayed())
 		{
-			checkForLogin.hoverOverMyAccountAfterLogin();
+//			/checkForLogin.hoverOverMyAccountAfterLogin();
+			driver.navigate().refresh();
 			checkForLogin.logout();
 		}
 		
@@ -146,30 +175,49 @@ private ScreenRecorder screenRecorder;
 	
 	
 	@BeforeTest
-	public void beforeTest() throws IOException
+	public void beforeTest() throws Exception
 	{
-		
-		if(applicationsetup.getBrowser().trim().equalsIgnoreCase("chrome"))
+		 
+		  
+		if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("chrome"))
 		{
+			/*DesiredCapabilities caps = new DesiredCapabilities();
+			  caps.setCapability("browser", "chrome");
+			  caps.setCapability("browser_version", "48");
+			  caps.setCapability("os", "Windows");
+			  caps.setCapability("os_version", "7");
+			  caps.setCapability("browserstack.debug", "true");
+			  driver = new RemoteWebDriver(new URL(URL), caps);*/
+			  
 			System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
+			  
 		}
-		else if(applicationsetup.getBrowser().trim().equalsIgnoreCase("IE"))
+		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("IE"))
 		{
+			DesiredCapabilities caps = new DesiredCapabilities();
+			 /* caps.setCapability("browser", "IE");
+			  caps.setCapability("browser_version", "7.0");
+			  caps.setCapability("os", "Windows");
+			  caps.setCapability("os_version", "7");
+			  caps.setCapability("browserstack.debug", "true");
+			  driver = new RemoteWebDriver(new URL(URL), caps);*/
+			  
 			System.setProperty("webdriver.ie.driver", "resources/drivers/IEDriverServer.exe");
-			driver=new InternetExplorerDriver();
+			driver=new InternetExplorerDriver();			  
+			  
 		}
-		else if(applicationsetup.getBrowser().trim().equalsIgnoreCase("HTMLUnit"))
+		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("HTMLUnit"))
 		{
 			driver = new HtmlUnitDriver(true);
 		}
-		else if(applicationsetup.getBrowser().trim().equalsIgnoreCase("Ghost"))
+		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("Ghost"))
 		{
-			 DesiredCapabilities caps = new DesiredCapabilities();
-	    	 caps.setCapability("phantomjs.binary.path", "resources/drivers/phantomjs.exe");
-	        driver = new PhantomJSDriver(caps);
+			 DesiredCapabilities caps1 = new DesiredCapabilities();
+			 caps1.setCapability("phantomjs.binary.path", "resources/drivers/phantomjs.exe");
+	        driver = new PhantomJSDriver(caps1);
 		}
-		else if(applicationsetup.getBrowser().trim().equalsIgnoreCase("firefox"))
+		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("firefox"))
 		{
 			driver=new FirefoxDriver();
 		}
@@ -182,36 +230,20 @@ private ScreenRecorder screenRecorder;
 	
 	@AfterMethod
 	public void takeScreenshot(ITestResult testResult) throws IOException{
+
 		if (testResult.getStatus() == ITestResult.FAILURE)
  {
 	 //type casting to takescreenshot INTERFACE!!!
 Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
 
  }
+		
 }
 	@AfterMethod
 	public void callStopRecording() throws Exception{
 		stopRecording();
 	}
 	
-	@AfterMethod
-	public boolean checkForAdminLogout(){
-		CollectiveAdminHomePageObjects logoutCheck = new CollectiveAdminHomePageObjects(driver);
-		CollectiveHomePageObjects checkForLogin = new CollectiveHomePageObjects(driver);
-		try
-		{
-			if(logoutCheck.adminLogout.isDisplayed())
-			{
-				logoutCheck.adminLogout();
-				checkForLogin.verifyLogout();
-			}
-		}
-		catch(Exception e)
-		{
-			return true;
-		}
-		return true;
-	}
 	
 	
 	@AfterSuite

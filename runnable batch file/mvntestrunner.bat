@@ -1,4 +1,4 @@
-cd F:\The Collective Automation Suite\the-collective-smoke-suite
-call mvn test
+cd G:/CBProjects/WebAppFrameworkTestNGUpdate
+call mvn clean test
 call mvn site
 call mvn jetty:run

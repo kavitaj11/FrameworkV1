@@ -1,6 +1,5 @@
 package org.collective.customer.pageobjects;
 import org.collective.maincontroller.MainController;
-import org.collective.utils.SearchData;
 import org.collective.utils.Waiting;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +13,7 @@ import java.io.IOException;
  * @author Hemanth.Sridhar
  */
 public class CollectiveLoginPageObjects extends MainController{
-	
-   SearchData data = new SearchData();
+
    
 	public CollectiveLoginPageObjects(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -36,15 +34,15 @@ public class CollectiveLoginPageObjects extends MainController{
 	@FindBy(xpath="//div[contains(text(),'Logged in successfully')]")
 	private WebElement adminLoginMsg;
 	
-	public void enterPhoneNumberForLogin() throws IOException {
+	public void enterPhoneNumberForLogin(String phoneNo) throws IOException {
 		Waiting.explicitWaitVisibilityOfElement(phoneNumber, 6);
 		phoneNumber.clear();
-		phoneNumber.sendKeys(data.getsignInPhoneNumber());
+		phoneNumber.sendKeys(phoneNo);
 	}
 	
-	public void enterPasswordForLogin() throws IOException{
+	public void enterPasswordForLogin(String passWord) throws IOException{
 		password.clear();
-		password.sendKeys(data.getsignInPassword());
+		password.sendKeys(passWord);
 	}
 	
 	public void clickLogin(){
@@ -54,19 +52,6 @@ public class CollectiveLoginPageObjects extends MainController{
 	public void verifyAdminLoginMsg() {
 		Waiting.explicitWaitVisibilityOfElement(adminLoginMsg, 6);
 		Assert.assertTrue(adminLoginMsg.isDisplayed());
-		
-	}
-
-	public void enterPhoneNumberForAdmin() throws IOException {
-		Waiting.explicitWaitVisibilityOfElement(phoneNumber, 6);
-		phoneNumber.clear();
-		phoneNumber.sendKeys(data.getadminSignInPhoneNumber());
-		
-	}
-
-	public void enterPasswordForAdmin() throws IOException {
-	password.clear();
-	password.sendKeys(data.getadminadminSignInPassword());
 		
 	}
 }

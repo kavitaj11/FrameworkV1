@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Collective</groupId>
-  <artifactId>CollectiveAutomationSuite</artifactId>
+  <groupId>WebApp</groupId>
+  <artifactId>WebAppFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>CollectiveAutomationSuite</name>
+  <name>WebAppFramework</name>
   <url>http://maven.apache.org</url>
 
  <properties>
@@ -25,16 +25,67 @@
     <dependencies>
     
     <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.7.0</version>
+  </dependency>
+  
+  
+    <dependency>
+	<groupId>com.amazonaws</groupId>
+	<artifactId>aws-java-sdk</artifactId>
+	<version>1.10.52</version>
+</dependency>
+    
+    
+    <dependency>
 	<groupId>com.pojosontheweb</groupId>
 	<artifactId>monte-repack</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	</dependency>
+    
+    <dependency>
+	<groupId>com.google.api-client</groupId>
+	<artifactId>google-api-client</artifactId>
+	<version>1.20.0</version>
+</dependency>
+
+
+<dependency>
+	<groupId>com.google.apis</groupId>
+	<artifactId>google-api-services-drive</artifactId>
+	<version>v3-rev9-1.20.0</version>
+</dependency>
+
+
+    
+   <dependency>
+  <groupId>com.google.api-client</groupId>
+  <artifactId>google-api-client-appengine</artifactId>
+  <version>1.20.0</version>
+</dependency>
+
+    
+    <dependency>
+	<groupId>com.google.api-client</groupId>
+	<artifactId>google-api-client-extensions</artifactId>
+	<version>1.5.0-beta</version>
+</dependency>
+
     
     <dependency>
 	<groupId>com.jayway.restassured</groupId>
 	<artifactId>rest-assured</artifactId>
 	<version>2.4.0</version>
 </dependency>
+
+	<dependency>
+	<groupId>com.google.appengine</groupId>
+	<artifactId>appengine-api-1.0-sdk</artifactId>
+	<version>1.9.31</version>
+</dependency>
+	
+
     
         <!-- Cucumber -->
         <dependency>

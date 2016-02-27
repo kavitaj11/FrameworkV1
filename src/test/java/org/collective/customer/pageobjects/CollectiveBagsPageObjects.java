@@ -40,6 +40,7 @@ public class CollectiveBagsPageObjects extends MainController{
 	@FindBy(css="a[href='/t/brands/men/apparel/adriano-goldschmied?page=2']")
 	private WebElement paginatorNextClick;
 	
+	
 	@FindBy(xpath="//div[@id='size_color']/div[1]")
 	public WebElement size;
 	
@@ -83,41 +84,8 @@ public class CollectiveBagsPageObjects extends MainController{
 	  
 	}
 	
-	public void verifyPagination()
-	{
-		Assert.assertTrue(firstProduct.isDisplayed());
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();" , paginatorNextClick);		
-		Waiting.explicitWaitVisibilityOfElement(firstProduct, 15);
-		Assert.assertTrue(firstProduct.isDisplayed());
-		Assert.assertEquals(driver.getCurrentUrl().trim(), data.getPaginationURL());
-	    
+	public void scrollDown() {
+		((JavascriptExecutor) driver).executeScript("scroll(0, 8000);");
+		
 	}
 	}
-	 
-		
-	/*List<WebElement> s=	driver.findElements(By.xpath("productsList"));
-		for(int i=0;i<s.size();i++)
-		{
-			if(s.contains("ARMANI SIZE"))
-			{
-				return true;
-			}
-		}
-		
-		return false;
-		for(WebElement everyproductslist:s)
-		{
-			if(everyproductslist.getText().contains("ARMANI JEANS"))
-			{
-				System.out.println("Filter Test Passed");
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		return false;*/
-		
-
-	
