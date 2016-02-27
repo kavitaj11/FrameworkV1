@@ -1,3 +1,4 @@
+org\collective\utils\DataProviderName.class
 org\collective\utils\PropertyFileReader.class
 org\collective\testmethods\CollectiveSmokeTestCustomer.class
 org\collective\utils\SendEmail$1.class

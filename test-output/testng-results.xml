@@ -1,40 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="2" failed="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="CollectiveSuite" duration-ms="17064" started-at="2016-02-26T15:09:38Z" finished-at="2016-02-26T15:09:56Z">
+  <suite name="CollectiveSuite" duration-ms="30" started-at="2016-02-27T16:16:22Z" finished-at="2016-02-27T16:16:22Z">
     <groups>
     </groups>
-    <test name="SmokeTesting" duration-ms="17064" started-at="2016-02-26T15:09:38Z" finished-at="2016-02-26T15:09:56Z">
+    <test name="SmokeTesting" duration-ms="30" started-at="2016-02-27T16:16:22Z" finished-at="2016-02-27T16:16:22Z">
       <class name="org.collective.testmethods.CollectiveSmokeTestCustomer">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="beforeSuite" is-config="true" duration-ms="35" started-at="2016-02-26T20:39:38Z" finished-at="2016-02-26T20:39:38Z">
+        <test-method status="FAIL" signature="beforeSuite()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="beforeSuite" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <exception class="java.io.FileNotFoundException">
+            <message>
+              <![CDATA[src\.\ApplicationSetUp.properties (The system cannot find the file specified)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.FileNotFoundException: src\.\ApplicationSetUp.properties (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at org.collective.utils.PropertyFileReader.propertiesReader(PropertyFileReader.java:10)
+	at org.collective.maincontroller.MainController.beforeSuite(MainController.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="beforeTest" is-config="true" duration-ms="2375" started-at="2016-02-26T20:39:39Z" finished-at="2016-02-26T20:39:41Z">
+        <test-method status="SKIP" signature="beforeTest()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="beforeTest" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="checkForLogin" is-config="true" duration-ms="47" started-at="2016-02-26T20:39:41Z" finished-at="2016-02-26T20:39:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="setUp" is-config="true" duration-ms="3365" started-at="2016-02-26T20:39:41Z" finished-at="2016-02-26T20:39:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="startRecording" is-config="true" duration-ms="169" started-at="2016-02-26T20:39:44Z" finished-at="2016-02-26T20:39:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void org.collective.testmethods.CollectiveSmokeTestCustomer.tc001_collective_login(java.lang.String,java.lang.String) throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startRecording -->
-        <test-method status="PASS" signature="tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tc001_collective_login" duration-ms="4142" started-at="2016-02-26T20:39:44Z" data-provider="loginScenarios" finished-at="2016-02-26T20:39:49Z">
+        <test-method status="SKIP" signature="tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tc001_collective_login" duration-ms="0" started-at="2016-02-27T21:46:22Z" data-provider="loginScenarios" finished-at="2016-02-27T21:46:22Z">
           <params>
             <param index="0">
               <value>
@@ -50,41 +68,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc001_collective_login -->
-        <test-method status="PASS" signature="callStopRecording()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="callStopRecording" is-config="true" duration-ms="73" started-at="2016-02-26T20:39:49Z" finished-at="2016-02-26T20:39:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- callStopRecording -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="takeScreenshot" is-config="true" duration-ms="1" started-at="2016-02-26T20:39:49Z" finished-at="2016-02-26T20:39:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc001_collective_login status=SUCCESS method=CollectiveSmokeTestCustomer.tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="checkForLogin" is-config="true" duration-ms="3136" started-at="2016-02-26T20:39:49Z" finished-at="2016-02-26T20:39:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkForLogin -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="setUp" is-config="true" duration-ms="1175" started-at="2016-02-26T20:39:52Z" finished-at="2016-02-26T20:39:53Z">
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="startRecording" is-config="true" duration-ms="8" started-at="2016-02-26T20:39:53Z" finished-at="2016-02-26T20:39:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void org.collective.testmethods.CollectiveSmokeTestCustomer.tc001_collective_login(java.lang.String,java.lang.String) throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startRecording -->
-        <test-method status="PASS" signature="tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tc001_collective_login" duration-ms="2389" started-at="2016-02-26T20:39:53Z" data-provider="loginScenarios" finished-at="2016-02-26T20:39:55Z">
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="setUp()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="setUp" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="callStopRecording()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="callStopRecording" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- callStopRecording -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="SKIP" signature="tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tc001_collective_login" duration-ms="0" started-at="2016-02-27T21:46:22Z" data-provider="loginScenarios" finished-at="2016-02-27T21:46:22Z">
           <params>
             <param index="0">
               <value>
@@ -100,22 +104,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc001_collective_login -->
-        <test-method status="PASS" signature="callStopRecording()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="callStopRecording" is-config="true" duration-ms="94" started-at="2016-02-26T20:39:55Z" finished-at="2016-02-26T20:39:56Z">
+        <test-method status="SKIP" signature="callStopRecording()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="callStopRecording" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- callStopRecording -->
-        <test-method status="PASS" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-26T20:39:56Z" finished-at="2016-02-26T20:39:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=tc001_collective_login status=SUCCESS method=CollectiveSmokeTestCustomer.tc001_collective_login(java.lang.String, java.lang.String)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="startRecording(java.lang.reflect.Method)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="startRecording" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startRecording -->
+        <test-method status="SKIP" signature="checkForLogin()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="checkForLogin" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkForLogin -->
+        <test-method status="SKIP" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tearDownClass" is-config="true" duration-ms="2442" started-at="2016-02-26T20:39:56Z" finished-at="2016-02-26T20:39:58Z">
+        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:org.collective.testmethods.CollectiveSmokeTestCustomer@51cdd8a]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2016-02-27T21:46:22Z" finished-at="2016-02-27T21:46:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

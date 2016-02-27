@@ -63,7 +63,7 @@ public class MainController{
 public static String outputFolder = "";
 public static String outputVideo="";
 private Video screenRecorder;
-public static String applicationSetUp = "G:/CBProjects/WebAppFrameworkTestNGUpdate/src/test/java/org/collective/utils/ApplicationSetUp.properties";
+public static String applicationSetUp = "src/test/java/org/collective/utils/ApplicationSetUp.properties";
 public static final String USERNAME = "hemanthsridhar2";
 public static final String AUTOMATE_KEY = "pwixoaay7x2VsHwKBqxF";
 public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";

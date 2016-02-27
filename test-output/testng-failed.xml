@@ -9,4 +9,14 @@
       <class name="org.collective.testmethods.CollectiveSmokeTestCustomer"/>
     </classes>
   </test> <!-- SmokeTesting -->
+  <test name="SmokeTesting(failed)">
+    <classes>
+      <class name="org.collective.testmethods.CollectiveSmokeTestCustomer">
+        <methods>
+          <include name="tc001_collective_login"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- org.collective.testmethods.CollectiveSmokeTestCustomer -->
+    </classes>
+  </test> <!-- SmokeTesting(failed) -->
 </suite> <!-- Failed suite [CollectiveSuite] -->

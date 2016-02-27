@@ -1,4 +1,4 @@
-cd G:/CBProjects/WebAppFrameworkTestNGUpdate
+cd G:/Frameworks/WebAppFrameworkTestNGUpdate
 call mvn clean test
 call mvn site
 call mvn jetty:run
