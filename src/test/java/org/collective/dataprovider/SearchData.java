@@ -4,11 +4,12 @@ import org.testng.annotations.DataProvider;
 
 public class SearchData {
 
-	@DataProvider(name="loginScenarios")
-	public static Object[][] loginScenarios(){
+	@DataProvider(name="tc001_collective_login")
+	public static Object[][] tc001_collective_login(){
 		return new Object[][]{
-			{"9900623434","hemanth123"},
-			{"9900623434","hemanth1234"}
+			{"selenium"},
+			{"appium"},
+			{"        "}
 		};
 		
 	}		

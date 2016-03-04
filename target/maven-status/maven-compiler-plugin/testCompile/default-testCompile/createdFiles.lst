@@ -1,4 +1,3 @@
-org\collective\utils\DataProviderName.class
 org\collective\utils\PropertyFileReader.class
 org\collective\testmethods\CollectiveSmokeTestCustomer.class
 org\collective\utils\SendEmail$1.class
@@ -13,7 +12,7 @@ org\collective\customer\pageobjects\CollectiveBagsPageObjects.class
 org\collective\customer\pageobjects\CollectiveHomePageObjects.class
 org\collective\dataprovider\SearchData.class
 org\collective\utils\SendEmail.class
+org\collective\utils\ExcelLibrary.class
 org\collective\utils\RandomNumberGenerator.class
 org\collective\utils\Waiting.class
-org\collective\testImplementation\CollectiveTestCaseImplementation.class
 org\collective\utils\TestUtility.class

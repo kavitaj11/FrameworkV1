@@ -53,11 +53,11 @@ public class ReportGenerator implements IReporter {
       
     		   
         
-        /*try {
+        try {
         	SendEmail.sendemail(passedtest, failedtest, skippedtest,zipFile);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
     }
 
     private void buildTestNodes(IResultMap tests, LogStatus status) {
@@ -81,7 +81,7 @@ public class ReportGenerator implements IReporter {
                   
                 if(result.getStatus()==ITestResult.FAILURE)
                 {
-                test.log(status, test.addScreenCapture("./Screenshots/"+result.getMethod().getMethodName()+".png"));
+                test.log(status, test.addScreenCapture("./Screenshots/"+result.getMethod().getMethodName()+"_"+s+".png"));
                 }
                 for (String group : result.getMethod().getGroups())
                     test.assignCategory(group);
@@ -93,7 +93,6 @@ public class ReportGenerator implements IReporter {
                     message = result.getThrowable().getMessage();
                 
                 test.log(status, message);
-                //test.log(LogStatus.INFO, "Snapshot below: " + test.addScreenCapture(""));
 
                 extent.endTest(test);
             }

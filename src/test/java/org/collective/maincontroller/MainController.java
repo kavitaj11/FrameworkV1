@@ -38,19 +38,13 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
-
-import java.net.URL;
 
 public class MainController{
 	
@@ -62,31 +56,13 @@ public class MainController{
  */
 public static String outputFolder = "";
 public static String outputVideo="";
-private Video screenRecorder;
+private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "src/test/java/org/collective/utils/ApplicationSetUp.properties";
 public static final String USERNAME = "hemanthsridhar2";
 public static final String AUTOMATE_KEY = "pwixoaay7x2VsHwKBqxF";
 public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 
-  
-
-	/*@BeforeSuite
-	public void beforeSuite() throws IOException, InterruptedException{
-		if((applicationsetup.getOutputfolder()==(null)))
-				{
-			outputFolder = "./Report";
-			
-	 		FileUtils.forceMkdir(new File(outputFolder)); 
-	 		
-				}
-		else
-		{
-			outputFolder = applicationsetup.getOutputfolder();
-			
-		}
-		
-		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
-	}*/
+DesiredCapabilities caps = new DesiredCapabilities();
 
 	@BeforeSuite
 	public void beforeSuite() throws Exception{
@@ -95,6 +71,7 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 			outputFolder = "./Report";
 			outputVideo="./Videos";
 	 		FileUtils.forceMkdir(new File(outputFolder));
+	 		FileUtils.forceMkdir(new File(outputVideo));
 				}
 		else
 		{
@@ -103,8 +80,8 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 		}
 		
 		outputFolder += "/Report_" + SendEmail.getDate()+"_" + SendEmail.getTime();
-		//outputVideo += "/Videos_" + SendEmail.getDate()+"_" + SendEmail.getTime();
-		FileUtils.forceMkdir(new File(outputFolder+outputVideo));
+		outputVideo += "/Videos_" + SendEmail.getDate()+"_" + SendEmail.getTime();
+		
 	}
  	
  	@BeforeMethod
@@ -120,7 +97,7 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
  		
  		 //File file = new File(outputFolder+"/"+"Videos/");
  		
- 		 File file = new File(outputFolder+outputVideo+"/");
+ 		 File file = new File(outputVideo+"/");
          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
          int width = screenSize.width;
          int height = screenSize.height;    
@@ -142,9 +119,6 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
           new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black",
                FrameRateKey, Rational.valueOf(30)),
           null, file, testcaseName);
-	
-	//ITestResult result = Reporter.getCurrentTestResult();
-	//result.setAttribute("video", this.screenRecorder.fileName);
      this.screenRecorder.start();
  }
  	
@@ -181,13 +155,6 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 		  
 		if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("chrome"))
 		{
-			/*DesiredCapabilities caps = new DesiredCapabilities();
-			  caps.setCapability("browser", "chrome");
-			  caps.setCapability("browser_version", "48");
-			  caps.setCapability("os", "Windows");
-			  caps.setCapability("os_version", "7");
-			  caps.setCapability("browserstack.debug", "true");
-			  driver = new RemoteWebDriver(new URL(URL), caps);*/
 			  
 			System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
@@ -195,13 +162,6 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 		}
 		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("IE"))
 		{
-			DesiredCapabilities caps = new DesiredCapabilities();
-			 /* caps.setCapability("browser", "IE");
-			  caps.setCapability("browser_version", "7.0");
-			  caps.setCapability("os", "Windows");
-			  caps.setCapability("os_version", "7");
-			  caps.setCapability("browserstack.debug", "true");
-			  driver = new RemoteWebDriver(new URL(URL), caps);*/
 			  
 			System.setProperty("webdriver.ie.driver", "resources/drivers/IEDriverServer.exe");
 			driver=new InternetExplorerDriver();			  
@@ -213,9 +173,9 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 		}
 		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("Ghost"))
 		{
-			 DesiredCapabilities caps1 = new DesiredCapabilities();
-			 caps1.setCapability("phantomjs.binary.path", "resources/drivers/phantomjs.exe");
-	        driver = new PhantomJSDriver(caps1);
+			 
+			 caps.setCapability("phantomjs.binary.path", "resources/drivers/phantomjs.exe");
+	        driver = new PhantomJSDriver(caps);
 		}
 		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("firefox"))
 		{
@@ -234,7 +194,7 @@ public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@h
 		if (testResult.getStatus() == ITestResult.FAILURE)
  {
 	 //type casting to takescreenshot INTERFACE!!!
-Screenshot.captureScreenShot(driver, testResult.getName(),SendEmail.getDate());
+Screenshot.captureScreenShot(driver, testResult.getName(),testResult);
 
  }
 		

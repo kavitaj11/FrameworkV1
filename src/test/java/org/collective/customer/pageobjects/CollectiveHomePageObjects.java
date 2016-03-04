@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -87,6 +89,12 @@ public class CollectiveHomePageObjects extends MainController{
 	
 	@FindBy(css="a[href='/logout']")
 	private WebElement signOutLink;
+	
+	@FindBy(name="q")
+	private WebElement searchBox;
+	
+	@FindBy(xpath="//button[@class='lsb']")
+	private WebElement button;
 
 
 	public void clickLoginLink() {
@@ -111,6 +119,17 @@ public class CollectiveHomePageObjects extends MainController{
 				Waiting.explicitWaitVisibilityOfElement(myAccountPath, 10);
 				action.moveToElement(myAccountPath).build().perform();
 				
+			}
+
+			public void searchTest(String search) {
+				searchBox.sendKeys(search);
+				
+			}
+
+			public boolean verifyButton() {
+				Waiting.explicitWaitVisibilityOfElement(button, 5);
+				boolean t  = button.isEnabled();
+				return t;
 			}	
 }
 	
