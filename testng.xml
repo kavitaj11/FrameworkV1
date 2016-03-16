@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="CollectiveSuite">
+<suite name="HGHSuite">
     <listeners>
-        <listener class-name="org.collective.utils.ReportGenerator"/>
+        <listener class-name="org.hgh.utils.ReportGenerator"/>
     </listeners>
+  
   <test name="SmokeTesting">
+  <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes> 
-    	<class name="org.collective.testmethods.CollectiveSmokeTestCustomer"/>                          
+    	<class name="org.hgh.testmethods.HGHTestCustomer"/>                    
     </classes>
   </test>
 </suite>

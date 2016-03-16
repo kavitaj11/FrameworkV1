@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Collective</groupId>
-  <artifactId>CollectiveAutomationSuite</artifactId>
+  <groupId>WebAppAutomationFramework</groupId>
+  <artifactId>WebAppAutomationFrameworkUsingTestNG</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>CollectiveAutomationSuite</name>
+  <name>WebAppAutomationFrameworkUsingTestNG</name>
   <url>http://maven.apache.org</url>
 
  <properties>
@@ -17,9 +17,10 @@
         <version.allure>1.4.3</version.allure>
         <version.aspectj>1.7.4</version.aspectj>
         <version.cucumber>1.2.0</version.cucumber>
-        <version.selenium>2.44.0</version.selenium>
+        <version.selenium>2.52.0</version.selenium>
         <version.slf4j>1.7.7</version.slf4j>
         <version.phantomjs>1.9.7</version.phantomjs>
+ 
     </properties>
 
     <dependencies>
@@ -29,14 +30,7 @@
     <artifactId>jackson-databind</artifactId>
     <version>2.7.0</version>
   </dependency>
-  
-  
-    <dependency>
-	<groupId>com.amazonaws</groupId>
-	<artifactId>aws-java-sdk</artifactId>
-	<version>1.10.52</version>
-</dependency>
-    
+
     
     <dependency>
 	<groupId>com.pojosontheweb</groupId>
@@ -66,7 +60,7 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-firefox-driver</artifactId>
-        <version>2.44.0</version>
+        <version>${version.selenium}</version>
     </dependency>
     
  <!-- custom excelread library using apachePOI -->   
@@ -123,7 +117,7 @@
     <dependency>
 	<groupId>org.seleniumhq.selenium</groupId>
 	<artifactId>selenium-server</artifactId>
-	<version>2.44.0</version>
+	<version>${version.selenium}</version>
 </dependency>
 
     <dependency>
@@ -264,12 +258,6 @@
                     <argLine>
                         -noverify -Dphantomjs.binary=${phantomjs.binary} -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${version.aspectj}/aspectjweaver-${version.aspectj}.jar
                     </argLine>
-                    <!-- properties>
-                        <property>
-                            <name>listener</name> com.tesco.plm.bdd.support.ScreenshotTakingTestListener
-                            <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
-                        </property>
-                    </properties -->
                 </configuration>
                 <executions>
                     <execution>
