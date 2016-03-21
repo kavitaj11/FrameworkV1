@@ -8,6 +8,9 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import org.hgh.maincontroller.MainController;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestUtility extends MainController{
 
@@ -21,28 +24,28 @@ public class TestUtility extends MainController{
 		r.keyRelease(KeyEvent.VK_T);
 	}
 
-	public static void fileUpload(String fileLocation) {
+	public static void fileUpload(String fileLocation) throws AWTException {
 		
 		 StringSelection stringSelection = new StringSelection(fileLocation);
-		   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 		   Robot robot;
-		try {
-			robot = new Robot();
-		 
-			robot.keyPress(KeyEvent.VK_ENTER);
-	        robot.keyRelease(KeyEvent.VK_ENTER);
+		   
+		   robot = new Robot();
+		   robot.keyPress(KeyEvent.VK_ENTER);
+	       robot.keyRelease(KeyEvent.VK_ENTER);
+           robot.keyPress(KeyEvent.VK_CONTROL);
+           robot.keyPress(KeyEvent.VK_C);
+           robot.keyRelease(KeyEvent.VK_C);
+           robot.keyRelease(KeyEvent.VK_CONTROL);
            robot.keyPress(KeyEvent.VK_CONTROL);
            robot.keyPress(KeyEvent.VK_V);
-           robot.keyRelease(KeyEvent.VK_V);
            robot.keyRelease(KeyEvent.VK_CONTROL);
+           robot.keyRelease(KeyEvent.VK_V);
            robot.keyPress(KeyEvent.VK_ENTER);
            robot.keyRelease(KeyEvent.VK_ENTER);
+           
 		}
-           catch (AWTException e) {
-   			e.printStackTrace();
-   		}
-		
-	}
+	
 
 	public static void closeCurrentTab() {
 		driver.close();
@@ -65,16 +68,7 @@ public class TestUtility extends MainController{
 	    driver.switchTo().window(driver.getWindowHandle());
 	    
 	}
-	
-	public static void switchToPreviousTab() throws AWTException {
-		Robot r = new Robot();                          
-		r.keyPress(KeyEvent.VK_CONTROL); 
-		r.keyPress(KeyEvent.VK_SHIFT); 
-		r.keyPress(KeyEvent.VK_T); 
-		r.keyRelease(KeyEvent.VK_CONTROL); 
-		r.keyRelease(KeyEvent.VK_SHIFT); 
-		r.keyRelease(KeyEvent.VK_T);
-	}
+
 
 	public static void printAllTheWindows() {
 		ArrayList<String> al = new ArrayList<String>(driver.getWindowHandles());
@@ -91,4 +85,21 @@ public class TestUtility extends MainController{
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		
 	}
+
+	public static void alertAccept() {
+		Alert alert = driver.switchTo().alert();
+		Waiting.explicitWaitForAlert(5);
+		alert.accept();
+	}
+	
+	public static void selectByVisibleText(WebElement element, String text){
+		Select select = new Select(element);
+		select.selectByVisibleText(text);
+	}
+	
+	public static void selectByIndex(WebElement element, int index){
+		Select select = new Select(element);
+		select.selectByIndex(index);
+	}
+	
 }

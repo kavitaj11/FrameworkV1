@@ -29,7 +29,7 @@ public class ReportGenerator implements IReporter {
 			extent.config()
 			        .documentTitle("Automation Report")
 			        .reportName(PropertyFileReader.propertiesReader(MainController.applicationSetUp, "productName"))
-			        .reportHeadline("Smoke test report");
+			        .reportHeadline(PropertyFileReader.propertiesReader(MainController.applicationSetUp, "typeOfTestForReport")+ " test report");
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -90,7 +90,7 @@ public class ReportGenerator implements IReporter {
         			s += result.getParameters()[i].toString();
         		}
         		}
-                test = extent.startTest(result.getMethod().getMethodName() + " || Test data - " +  s);
+                test = extent.startTest(result.getMethod().getMethodName() + " || " +  s);
                 test.getTest().startedTime = getTime(result.getStartMillis());
                 test.getTest().endedTime = getTime(result.getEndMillis());
                   

@@ -56,6 +56,7 @@ public static String outputFolder = "";
 public static String outputVideo="";
 private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/Property Files/ApplicationSetUp.properties";
+public static String searchData = "resources/Property Files/SearchData.properties";
 
 
 DesiredCapabilities caps = new DesiredCapabilities();
@@ -80,29 +81,11 @@ DesiredCapabilities caps = new DesiredCapabilities();
 		
 	}
 	
-	@AfterMethod(alwaysRun=true)
-	public boolean checkForLogout()
-	{
-		HGHHomePageObjects homePage = new HGHHomePageObjects(driver);
-		try
-		{
-		if(homePage.logoutButton.isDisplayed())
-		{
-			homePage.logout();
-		}
-	}
-		catch(Exception e)
-		{
-			return true;
-		}
-		return true;
-
-	}	
- 	
+	
  	@BeforeMethod(alwaysRun=true)
  	public static void setUp() throws Exception{
  		driver.get(PropertyFileReader.propertiesReader(applicationSetUp,"url"));
-		driver.manage().window().maximize();
+	
 	}
  	
    
@@ -111,7 +94,8 @@ DesiredCapabilities caps = new DesiredCapabilities();
 	public void startRecording(Method methodName) throws Exception{
  		
  		 //File file = new File(outputFolder+"/"+"Videos/");
- 		PropertyFileReader.propertiesReader(applicationSetUp, "videoPermisson").equalsIgnoreCase("yes");
+ 		if(PropertyFileReader.propertiesReader(applicationSetUp, "videoPermisson").equalsIgnoreCase("yes"))
+ 		{
  		 File file = new File(outputVideo+"/");
          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
          int width = screenSize.width;
@@ -135,6 +119,7 @@ DesiredCapabilities caps = new DesiredCapabilities();
                FrameRateKey, Rational.valueOf(30)),
           null, file, testcaseName);
      this.screenRecorder.start();
+ 		}
  }
  	
  	 public void stopRecording() throws Exception
@@ -194,12 +179,35 @@ DesiredCapabilities caps = new DesiredCapabilities();
  {
 Screenshot.captureScreenShot(driver, testResult.getName(),testResult);
 
- }
-		
+ }	
 }
 	@AfterMethod(alwaysRun=true)
+	public boolean checkForLogout()
+	{
+		HGHHomePageObjects homePage = new HGHHomePageObjects(driver);
+		try
+		{
+		if(homePage.logoutButton.isDisplayed())
+		{
+			homePage.logout();
+			homePage.verifyDisplayOfLoginLink();
+		}
+	}
+		catch(Exception e)
+		{
+			return true;
+		}
+		return true;
+
+	}	
+ 	
+	
+	@AfterMethod(alwaysRun=true)
 	public void callStopRecording() throws Exception{
+		if(PropertyFileReader.propertiesReader(applicationSetUp, "videoPermisson").equalsIgnoreCase("yes"))
+ 		{
 		stopRecording();
+ 		}
 	}
 	
 	

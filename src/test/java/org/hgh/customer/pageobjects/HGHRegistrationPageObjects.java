@@ -1,6 +1,7 @@
 package org.hgh.customer.pageobjects;
 import org.testng.Assert;
 import org.hgh.maincontroller.MainController;
+import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,13 +13,15 @@ import org.openqa.selenium.support.ui.Select;
 
 public class HGHRegistrationPageObjects extends MainController{
 
+	
+ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	public HGHRegistrationPageObjects(WebDriver driver){
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,15);
 		PageFactory.initElements(driver, this);
 		PageFactory.initElements(factory, this);
 	}
 	
-	@FindBy(xpath="//span[@id='question' and text()='I am a current HGH Hardware Customer']")
+	@FindBy(xpath="//span[@id='question' and contains(text(),'I am a current HGH Hardware Supply Customer')]")
 	private WebElement iAmAcurrentHGHHardwareCustomer;
 	
 	@FindBy(xpath="//div[@id='first']/descendant::span[contains(text(),'Continue')]")
@@ -26,7 +29,7 @@ public class HGHRegistrationPageObjects extends MainController{
 	
 	@FindBy(xpath="//input[@class='buttonGrad']")private WebElement loginButton;
 	
-	@FindBy(xpath="//span[@id='question' and text()='This is my first time ordering online with HGH Hardware']")
+	@FindBy(xpath="//span[@id='question' and contains(text(),'This is my first time ordering online with HGH Hardware')]")
 	private WebElement thisIsMyFirstTimeOrderingOnlineWithHGHHardware;
 
 	@FindBy(xpath="//input[@id='companyName1B']")

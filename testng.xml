@@ -5,10 +5,10 @@
         <listener class-name="org.hgh.utils.ReportGenerator"/>
     </listeners>
   
-  <test name="SmokeTesting">
+  <test name="HGHWebApplicationTesting">
   <groups>
       <run>
-        <include name="smoke"/>
+        <include name="regression"/>
       </run>
     </groups>
     <classes> 

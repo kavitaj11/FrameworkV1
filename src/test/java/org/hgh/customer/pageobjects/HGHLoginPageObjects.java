@@ -1,5 +1,6 @@
 package org.hgh.customer.pageobjects;
 import org.hgh.maincontroller.MainController;
+import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +11,16 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class HGHLoginPageObjects extends MainController {
 
+	SearchDataPropertyFile data = new SearchDataPropertyFile();
+	
 	public HGHLoginPageObjects(WebDriver driver){
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,15);
 		PageFactory.initElements(driver, this);
 		PageFactory.initElements(factory, this);
 	}
 	
-	@FindBy(xpath="//a[contains(.,'New customer?? Register Now!')]")private WebElement newCustomerRegisterNowLink;
+	@FindBy(xpath="//a[contains(.,'New customer?? Register Now!')]")
+	private WebElement newCustomerRegisterNowLink;
 	
 	@FindBy(xpath="//input[@id='mainUserName']")
 	private WebElement userNameLocator;
@@ -32,13 +36,25 @@ public class HGHLoginPageObjects extends MainController {
 		}
 
 
-	public void enterUsername(String userName) {
+	public void enterUsername() throws Exception{
+		userNameLocator.sendKeys(data.getUserName());
+		
+	}
+
+
+	public void enterPassword() throws Exception {
+		passwordLocator.sendKeys(data.getPassword());
+		
+	}
+
+
+	public void enterUsernameRegression(String userName) {
 		userNameLocator.sendKeys(userName);
 		
 	}
 
 
-	public void enterPassword(String password) {
+	public void enterPasswordRegression(String password) {
 		passwordLocator.sendKeys(password);
 		
 	}
