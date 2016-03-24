@@ -12,12 +12,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class HGHLoginPageObjects extends MainController {
 
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-	
-	public HGHLoginPageObjects(WebDriver driver){
-		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,15);
-		PageFactory.initElements(driver, this);
-		PageFactory.initElements(factory, this);
-	}
+
 	
 	@FindBy(xpath="//a[contains(.,'New customer?? Register Now!')]")
 	private WebElement newCustomerRegisterNowLink;
@@ -28,34 +23,47 @@ public class HGHLoginPageObjects extends MainController {
 	@FindBy(id="mainPassword")
 	private WebElement passwordLocator;
 	
+	@FindBy(xpath="(//input[@value='Login'])[2]")
+	private WebElement loginButton;
 	
 
-	public void clickNewCustomerRegisterNow() {
+	public HGHRegistrationPageObjects clickNewCustomerRegisterNow() {
 		Waiting.explicitWaitVisibilityOfElement(newCustomerRegisterNowLink, 5);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",newCustomerRegisterNowLink);
+		return new HGHRegistrationPageObjects();
 		}
 
 
-	public void enterUsername() throws Exception{
+	public HGHLoginPageObjects enterUsername() throws Exception{
 		userNameLocator.sendKeys(data.getUserName());
+		return this;
 		
 	}
 
 
-	public void enterPassword() throws Exception {
+	public HGHLoginPageObjects enterPassword() throws Exception {
 		passwordLocator.sendKeys(data.getPassword());
-		
+		return this;
 	}
 
 
-	public void enterUsernameRegression(String userName) {
+	public HGHLoginPageObjects enterUsernameRegression(String userName) {
 		userNameLocator.sendKeys(userName);
+		return this;
 		
 	}
 
 
-	public void enterPasswordRegression(String password) {
+	public HGHLoginPageObjects enterPasswordRegression(String password) {
 		passwordLocator.sendKeys(password);
+		return this;
 		
+	}
+
+
+	public HGHLoginPageObjects clickOnLoginButton() {
+		
+		loginButton.click();
+		return new HGHLoginPageObjects();
 	}
 }

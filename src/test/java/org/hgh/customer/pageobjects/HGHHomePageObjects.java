@@ -23,10 +23,7 @@ public class HGHHomePageObjects extends MainController{
 	
    SearchDataPropertyFile data = new SearchDataPropertyFile();	
    Actions action = new Actions(driver);
-   
-	public HGHHomePageObjects(WebDriver driver){
-		PageFactory.initElements(driver, this);
-	}
+
 	
 	@FindBy(xpath="//div[@class='errMsg']")
 	private WebElement errorMsgLocator;
@@ -48,9 +45,6 @@ public class HGHHomePageObjects extends MainController{
 	
 	@FindBy(xpath="//button[@id='performSearchBtn']")
 	private WebElement searchButton;
-	
-	@FindBy(xpath="//div[@class='gridListSwitchWrap']/a[@id='listView']/b")
-	private WebElement listViewButton;
 	
 	@FindBy(xpath="//a[@href='Dashboard' and contains(text(),'My Accounts')]")
 	private WebElement myAccountsLink;
@@ -162,9 +156,10 @@ public class HGHHomePageObjects extends MainController{
 		return t;
 	}
 
-	public void clickLoginLink() {
+	public HGHLoginPageObjects clickLoginLink() {
 		
 		loginLinkLocator.click();
+		return new HGHLoginPageObjects();
 	}
 
 	public boolean verifyWelcomeMsg() {
@@ -184,15 +179,16 @@ public class HGHHomePageObjects extends MainController{
 		logoutButton.click();
 	}
 	
-	public void verifyDisplayOfLoginLink(){
+	public HGHHomePageObjects verifyDisplayOfLoginLink(){
 		Waiting.explicitWaitVisibilityOfElement(loginLinkLocator, 4);
 		Assert.assertTrue(loginLinkLocator.isDisplayed(), "Login Link is not displayed");
+		return this;
 	}
 
-	public void searchText(String searchText) throws Exception {
+	public HGHHomePageObjects searchText(String searchText) throws Exception {
 		
 		searchTextbox.sendKeys(searchText);
-		
+		return this;
 	}
 
 	public void chooseOption(String textToChoose) {
@@ -213,141 +209,165 @@ public class HGHHomePageObjects extends MainController{
 		
 	}
 
-	public void clickOnSearch() {
+	public HGHProductsListPageObjects clickOnSearch() {
 		searchButton.click();
+		return new HGHProductsListPageObjects();
 	}
 
-	public void clickOnChangeView() {
-		listViewButton.click();
-		
-	}
+	
 
-	public void clickOnMyAccounts() {
+	public HGHMyAccountsPageObjects clickOnMyAccounts() {
 		Waiting.explicitWaitVisibilityOfElement(myAccountsLink, 5);
 		myAccountsLink.click();
+		return new HGHMyAccountsPageObjects();
 		
 	}
 
-	public void verifyDisplayOfMyAccountsInHeader() {
+	public HGHHomePageObjects verifyDisplayOfMyAccountsInHeader() {
 		Assert.assertTrue(myAccountsLocator.isDisplayed(), "My Accounts link is not displayed");
-		
+		return this;
 	}
 
-	public void verifyDisplayOfOrderStatusInHeader() {
+	public HGHHomePageObjects verifyDisplayOfOrderStatusInHeader() {
 		Assert.assertTrue(orderStatusLinkHeader.isDisplayed(), "Order Status link is not displayed");
-		
+		return this;
 	}
 
-	public void verifyDisplayOfOrderPadInHeader() {
+	public HGHHomePageObjects verifyDisplayOfOrderPadInHeader() {
 		Assert.assertTrue(orderPadLinkHeader.isDisplayed(),"order pad link is not displayed");
-		
+		return this;
 	}
 
-	public void verifyResourcesLinkInHeader() {
+	public HGHHomePageObjects verifyResourcesLinkInHeader() {
 		
 		Assert.assertTrue(resourcesLinkHeader.isDisplayed(), "resources link is not displayed");
+	return this;
 	}
 
-	public void verifyHelpLinkHeader() {
-		Assert.assertTrue(helpLinkHeader.isDisplayed(), "resources link is not displayed");
+	public HGHHomePageObjects verifyHelpLinkHeader() {
+		Assert.assertTrue(helpLinkHeader.isDisplayed(), "help link is not displayed");
+		return this;
 	}
 
-	public void verifyHeadingOfEverySectionInFooter() throws Exception {
+	public HGHHomePageObjects verifyHeadingOfEverySectionInFooter() throws Exception {
 		String footerHeadings[] =data.getFooterHeadings().split(",");
 		for(int i=0;i<everyFooterHeader.size();i++)
 		{ 
-			everyFooterHeader.get(i).getText().trim().toLowerCase().equals(footerHeadings[i].toLowerCase().trim());
+			Assert.assertEquals(everyFooterHeader.get(i).getText().trim().toLowerCase(),footerHeadings[i].toLowerCase().trim());
+			
 		}
+		return this;
 		}
 
-	public void verifyCustomerServiceLinkInFooter() {
+	public HGHHomePageObjects verifyCustomerServiceLinkInFooter() {
 		Assert.assertTrue(customerServiceLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 		
 	}
 
-	public void verifyHelpCenterInFooter() {
+	public HGHHomePageObjects verifyHelpCenterInFooter() {
 		Assert.assertTrue(helpCenterLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyHelpContactUsInFooter() {
+	public HGHHomePageObjects verifyHelpContactUsInFooter() {
 		Assert.assertTrue(contactUsLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyReturnsInFooter() {
+	public HGHHomePageObjects verifyReturnsInFooter() {
 		Assert.assertTrue(returnsLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyShippingPolicyInFooter() {
+	public HGHHomePageObjects verifyShippingPolicyInFooter() {
 		Assert.assertTrue(shippingPolicyLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
 
-	public void verifyMyAccountInFooter() {
+	public HGHHomePageObjects verifyMyAccountInFooter() {
 		Assert.assertTrue(myAccountLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyOrderStatusInFooter() {
+	public HGHHomePageObjects verifyOrderStatusInFooter() {
 		Assert.assertTrue(orderStatusLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 
-	public void verifyQuickOrderpadInFooter() {
+	public HGHHomePageObjects verifyQuickOrderpadInFooter() {
 		Assert.assertTrue(quickOrderpadLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyMyCartInFooter() {
+	public HGHHomePageObjects verifyMyCartInFooter() {
 		Assert.assertTrue(myCartLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyTradePartnersInFooter() {
+	public HGHHomePageObjects verifyTradePartnersInFooter() {
 		Assert.assertTrue(tradePartnersLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyLearningCenterInFooter() {
+	public HGHHomePageObjects verifyLearningCenterInFooter() {
 		Assert.assertTrue(learningCenterLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyManufacturersInFooter() {
+	public HGHHomePageObjects verifyManufacturersInFooter() {
 		Assert.assertTrue(manufacturersLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyBlogInFooter() {
+	public HGHHomePageObjects verifyBlogInFooter() {
 		Assert.assertTrue(blogLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifySecurityAndPrivacyInFooter() {
+	public HGHHomePageObjects verifySecurityAndPrivacyInFooter() {
 		Assert.assertTrue(securityAndPrivacyLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyTermsOfUseInFooter() {
+	public HGHHomePageObjects verifyTermsOfUseInFooter() {
 		Assert.assertTrue(termsOfUseLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyAboutUsInFooter() {
+	public HGHHomePageObjects verifyAboutUsInFooter() {
 		Assert.assertTrue(aboutUsLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyEventsInFooter() {
+	public HGHHomePageObjects verifyEventsInFooter() {
 		Assert.assertTrue(eventsLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyBranchLocationInFooter() {
+	public HGHHomePageObjects verifyBranchLocationInFooter() {
 		Assert.assertTrue(branchLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifyCareersInFooter() {
+	public HGHHomePageObjects verifyCareersInFooter() {
 		Assert.assertTrue(careersLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 	
-	public void verifySiteMapInFooter() {
+	public HGHHomePageObjects verifySiteMapInFooter() {
 		Assert.assertTrue(siteMapLink.isDisplayed(), "customer service link is not displayed");
+		return this;
 	}
 
-	public void verifyTaxonomies() throws Exception {
+	public HGHHomePageObjects verifyTaxonomies() throws Exception {
 		String taxonomies[] = data.getTaxonomies().split(",");
 		for(int i=0;i<taxonomiesInHeader.size();i++)
 		{
 			Assert.assertEquals(taxonomiesInHeader.get(i).getText().replace("\n", "").trim(), taxonomies[i].trim().toUpperCase(),taxonomies[i]+" is not displayed");
 		}
+		return this;
 		
 	}
 
@@ -366,9 +386,10 @@ public class HGHHomePageObjects extends MainController{
 		}
 	}
 
-	public void clickOnQuickOrderPadLink() {
+	public HGHMyAccountsPageObjects clickOnQuickOrderPadLink() {
 		Waiting.explicitWaitVisibilityOfElement(quickOrderPadLink, 10);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();",quickOrderPadLink);
+		return new HGHMyAccountsPageObjects();
 		
 	}
 }

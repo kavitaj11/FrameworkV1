@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 /*
  * @author Hemanth.Sridhar
@@ -14,10 +15,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HGHProductsDetailsPageObjects extends MainController{
    Actions action = new Actions(driver);
 SearchDataPropertyFile data = new SearchDataPropertyFile();
-	
-public HGHProductsDetailsPageObjects(WebDriver driver){
-		PageFactory.initElements(driver, this);
-	}
 
 
 	@FindBy(xpath="//p[@class='cimm_productDetailBrand']")
@@ -35,29 +32,32 @@ public HGHProductsDetailsPageObjects(WebDriver driver){
 	
 	
 
-	public boolean verifyHeadingOfProduct(String searchText) {
+	public HGHProductsDetailsPageObjects verifyHeadingOfProduct(String searchText) {
 		String searchTextUpperCase =searchText.toUpperCase(); 
 		Waiting.explicitWaitVisibilityOfElement(productDetailsBrandHeading, 5);
-		boolean t = productDetailsBrandHeading.getText().trim().toUpperCase().contains(searchTextUpperCase);
-		return t;
+		Assert.assertTrue(productDetailsBrandHeading.getText().trim().toUpperCase().contains(searchTextUpperCase),"product brand name is not contain the search text");
+		return this;
 	}
 
 
 
-	public void addDifferentQuantity(String quantity) {
+	public HGHProductsDetailsPageObjects addDifferentQuantity(String quantity) {
 		quantityTextbox.clear();
 		quantityTextbox.sendKeys(quantity);
+		return this;
 	}
 	
-	public void clickOnAddToCart() {
+	public HGHProductsDetailsPageObjects clickOnAddToCart() {
 		Waiting.explicitWaitVisibilityOfElement(addToCartButton, 10);
 		addToCartButton.click();
+		return this;
 	}
 
 
-	public void clickOnCheckout() {
+	public HGHShoppingCartPageObjects clickOnCheckout() {
 		Waiting.explicitWaitVisibilityOfElement(checkoutButton, 5);
 		checkoutButton.click();
+		return new HGHShoppingCartPageObjects();
 		
 	}
 

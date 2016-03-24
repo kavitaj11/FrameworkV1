@@ -24,12 +24,6 @@ public class HGHProductsListPageObjects extends MainController{
  SearchDataPropertyFile data = new SearchDataPropertyFile();
  
    Actions action = new Actions(driver);
-   
-	public HGHProductsListPageObjects(WebDriver driver){
-		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,10);
-		PageFactory.initElements(driver, this);
-		PageFactory.initElements(factory, this);
-	}
 
 
 	@FindBy(xpath="(//h5/a)[1]")
@@ -91,21 +85,24 @@ public class HGHProductsListPageObjects extends MainController{
 	@FindBy(xpath="//a[@id='cartQuickView']/img")
 	private WebElement cartIcon;
 
+	@FindBy(xpath="//div[@class='gridListSwitchWrap']/a[@id='listView']/b")
+	private WebElement listViewButton;
 	
-	public boolean verifyHeader(String searchText) {
+	public HGHProductsListPageObjects verifyHeader(String searchText) {
 		
 		String productsHeader = "//b[contains(text(),'"+searchText+"')]";
 		WebElement productHeaderLocator = driver.findElement(By.xpath(productsHeader));
 		Waiting.explicitWaitVisibilityOfElement(productHeaderLocator, 15);
-		boolean t = productHeaderLocator.getText().trim().equalsIgnoreCase(searchText);
-		return t;
+		Assert.assertEquals(productHeaderLocator.getText().trim().toLowerCase(), searchText.toLowerCase(),"products page search header is not displayed");
+		return this;
 		
 	}
 
 
-	public void clickOnFirstProduct() {
+	public HGHProductsDetailsPageObjects clickOnFirstProduct() {
 		Waiting.explicitWaitVisibilityOfElement(firstProduct, 15);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",firstProduct);
+		return new HGHProductsDetailsPageObjects();
 	}
 
 
@@ -117,75 +114,74 @@ public class HGHProductsListPageObjects extends MainController{
 	}
 
 
-	public boolean verifyGridView() {
+	public HGHProductsListPageObjects verifyGridView() {
 		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 10);
-		boolean t = listOfProducts.getAttribute("class").equals("gridView");
-		return t;
+		Assert.assertTrue(listOfProducts.getAttribute("class").equals("gridView"),"class name is not grid view");
+		return this;
 	}
 
-	public boolean verifyListView() {
+	public HGHProductsListPageObjects verifyListView() {
 	
 		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 10);
 		
-		boolean t = listOfProducts.getAttribute("class").equals("listView");
-
-		return t;
+		Assert.assertTrue(listOfProducts.getAttribute("class").equals("listView"),"class name is not list view");
+		return this;
 	}
 
 
-	public boolean verifyListOfProducts() {
+	public HGHProductsListPageObjects verifyListOfProducts() {
 		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 15);
-		boolean t = listOfProducts.isDisplayed();
-		return t;
+		Assert.assertTrue(listOfProducts.isDisplayed(), "products are not displayed"); 
+		return this;
 	}
 
 
-	public boolean verifyAdvancedSearchSection() {
+	public HGHProductsListPageObjects verifyAdvancedSearchSection() {
 		Waiting.explicitWaitVisibilityOfElement(advancedSearchSection, 15);
-		boolean t = advancedSearchSection.isDisplayed();
-		return t;
+		Assert.assertTrue(advancedSearchSection.isDisplayed(), "Advanced search section is not displayed");
+		return this;
 	}
 
 
-	public boolean verifyRefineSearchHeader() {
+	public HGHProductsListPageObjects verifyRefineSearchHeader() {
 		Waiting.explicitWaitVisibilityOfElement(refineResults, 15);
-		boolean t = refineResults.isDisplayed();
-		return t;
+		Assert.assertTrue(refineResults.isDisplayed(),"refine results header is not displayed") ;
+		return this;
 	}
 
 
-	public boolean verifyCategoryFilterSection() {
+	public HGHProductsListPageObjects verifyCategoryFilterSection() {
 		Waiting.explicitWaitVisibilityOfElement(categoryFilterSection, 15);
-		boolean t = categoryFilterSection.isDisplayed();
-		return t;
+	Assert.assertTrue(categoryFilterSection.isDisplayed(),"category Filter section is not displayed");
+		return this;
 	}
 
 
-	public boolean verifyBrandsFilterSection() {
+	public HGHProductsListPageObjects verifyBrandsFilterSection() {
 		Waiting.explicitWaitVisibilityOfElement(brandsFilterSection, 15);
-		boolean t = brandsFilterSection.isDisplayed();
-		return t;
+		Assert.assertTrue(brandsFilterSection.isDisplayed(),"brand Filter section is not displayed");
+		return this;
 	}
 
 
-	public boolean verifySortBySection() {
+	public HGHProductsListPageObjects verifySortBySection() {
 		Waiting.explicitWaitVisibilityOfElement(sortByFunctionality, 15);
-		boolean t = sortByFunctionality.isDisplayed();
-		return t;
+		Assert.assertTrue(sortByFunctionality.isDisplayed(),"Sort By section is not displayed");
+		return this;
 	}
 
 
-	public boolean verifyNarrowSearchBox() {
+	public HGHProductsListPageObjects verifyNarrowSearchBox() {
 		Waiting.explicitWaitVisibilityOfElement(narrowSearchTextBox, 15);
-	boolean t = narrowSearchTextBox.isDisplayed();
-		return t;
+	Assert.assertTrue(narrowSearchTextBox.isDisplayed(),"narrow Search box is not displayed");
+	return this;
 	}
 
 
-	public boolean verifyCompareListLink() {
+	public HGHProductsListPageObjects verifyCompareListLink() {
 		Waiting.explicitWaitVisibilityOfElement(compareListLink, 15);
-		boolean t = compareListLink.isDisplayed();	
-		return t;
+		Assert.assertTrue(compareListLink.isDisplayed(),"Compare List is not displayed");	
+		return this;
 	}
 
 
@@ -196,9 +192,10 @@ public class HGHProductsListPageObjects extends MainController{
 	}
 
 
-	public void clickOnFirstMyProductGroup() {
+	public HGHProductsListPageObjects clickOnFirstMyProductGroup() {
 		
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();",firstMyProductGroup);
+		return this;
 	}
 
 
@@ -208,29 +205,31 @@ public class HGHProductsListPageObjects extends MainController{
 	}
 
 
-public void clickFirstTwoCompareCheckboxes() {
+public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
 		
 		for(int i=0;i<2;i++)
 		{
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();",compareCheckbox.get(i));
 			
 		}
+		return this;
 	}
 
-	public void clickOnCompare() {
+	public HGHProductsListPageObjects clickOnCompare() {
 		compareListLink.click();
+		return this;
 		
 	}
 
-	public boolean verifyDisplayOfCompareTable() {
-		boolean t = compareTable.isDisplayed();
-		return t;
+	public HGHProductsListPageObjects verifyDisplayOfCompareTable() {
+		Assert.assertTrue(compareTable.isDisplayed(),"compare table is not displayed");
+		return this;
 	}
 
-	public boolean verifyCompareHeader() {
-		Assert.assertTrue(compareBreadCrump.isDisplayed());
-		boolean t = compareHeader.isDisplayed();
-		return t;
+	public HGHProductsListPageObjects verifyCompareHeaderAndBreampCrump() {
+		Assert.assertTrue(compareBreadCrump.isDisplayed(),"compare bread crump is not displayed");
+		Assert.assertTrue(compareHeader.isDisplayed(),"compare header is not displayed");
+		return this;
 		
 	}
 
@@ -246,11 +245,9 @@ public void clickFirstTwoCompareCheckboxes() {
 
 
 
-	
-
-
-	public void checkWhetherItIsTheSameQuantity() {
-		
+	public HGHProductsListPageObjects clickOnChangeView() {
+		listViewButton.click();
+		return this;
 		
 	}
 

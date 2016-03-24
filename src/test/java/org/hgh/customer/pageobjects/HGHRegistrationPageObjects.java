@@ -15,11 +15,6 @@ public class HGHRegistrationPageObjects extends MainController{
 
 	
  SearchDataPropertyFile data = new SearchDataPropertyFile();
-	public HGHRegistrationPageObjects(WebDriver driver){
-		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver,15);
-		PageFactory.initElements(driver, this);
-		PageFactory.initElements(factory, this);
-	}
 	
 	@FindBy(xpath="//span[@id='question' and contains(text(),'I am a current HGH Hardware Supply Customer')]")
 	private WebElement iAmAcurrentHGHHardwareCustomer;
@@ -83,127 +78,134 @@ public class HGHRegistrationPageObjects extends MainController{
 	@FindBy(xpath="//div[@id='second']/descendant::span[contains(text(),'Continue')]")
 	private WebElement continueButtonAgain;
 	
-	public void clickIAmACurrentHGHHardwareCustomer(){
+	public HGHRegistrationPageObjects clickIAmACurrentHGHHardwareCustomer(){
 		Waiting.explicitWaitVisibilityOfElement(iAmAcurrentHGHHardwareCustomer, 10);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",iAmAcurrentHGHHardwareCustomer);
+	return this;
 	}
 	
 
-	public void clickContinue() {
+	public HGHRegistrationPageObjects clickContinue() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",continueButton);
+		return this;
 	}
 	
 	
-	public void clickLoginButton(){
+	public HGHRegistrationPageObjects clickLoginButton(){
 		Waiting.explicitWaitVisibilityOfElement(loginButton, 10);
 		loginButton.click();
+		return this;
 	}
 
 
-	public void clickOnThisIsMyFirstTimeOrderingOnlineWithHGHHardware() {
+	public HGHRegistrationPageObjects clickOnThisIsMyFirstTimeOrderingOnlineWithHGHHardware() {
 		Waiting.explicitWaitVisibilityOfElement(thisIsMyFirstTimeOrderingOnlineWithHGHHardware, 10);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",thisIsMyFirstTimeOrderingOnlineWithHGHHardware);
-		
+		return this;
 	}
 
 
-	public void enterCompanyName(String companyNameText) {
+	public HGHRegistrationPageObjects enterCompanyName(String companyNameText) {
 		Waiting.explicitWaitVisibilityOfElement(companyName, 5);
 		companyName.sendKeys(companyNameText);
-		
+		return this;
 	}
 
 
-	public void enterAccountNumber(String accountNumber) {
+	public HGHRegistrationPageObjects enterAccountNumber(String accountNumber) {
 		accountNumberXpath.sendKeys(accountNumber);
+		return this;
 	}
 
 
-	public void enterAccountFirstName(String firstName) {
+	public HGHRegistrationPageObjects enterAccountFirstName(String firstName) {
 		firstNameXpath.sendKeys(firstName);
+		return this;
 		
 	}
 
 
-	public void enterAccountLastName(String lastName) {
+	public HGHRegistrationPageObjects enterAccountLastName(String lastName) {
 		lastNameXpath.sendKeys(lastName);
+		return this;
 		
 	}
 
 
-	public void enterAccountEmail(String email) {
+	public HGHRegistrationPageObjects enterAccountEmail(String email) {
 		emailXpath.sendKeys(email);
+		return this;
 		
 	}
 
 
-	public void enterAccountPassword(String password) {
+	public HGHRegistrationPageObjects enterAccountPassword(String password) {
 		passwordXpath.sendKeys(password);
-		
+		return this;
 	}
 
 
-	public void enterAccountPasswordConfirmation(String passwordConfirmation) {
+	public HGHRegistrationPageObjects enterAccountPasswordConfirmation(String passwordConfirmation) {
 		confirmPasswordXpath.sendKeys(passwordConfirmation);
-		
+		return this;
 	}
 
 
-	public void enterAccountAddress1(String address1) {
+	public HGHRegistrationPageObjects enterAccountAddress1(String address1) {
 		address1Xpath.sendKeys(address1);
-		
+		return this;
 	}
 
 
-	public void enterAccountAddress2(String address2) {
+	public HGHRegistrationPageObjects enterAccountAddress2(String address2) {
 		address2Xpath.sendKeys(address2);
-		
+		return this;
 	}
 
 
-	public void enterAccountCountry(String country) {
+	public HGHRegistrationPageObjects enterAccountCountry(String country) {
 		Select select = new Select(countryXpath);
 		select.selectByVisibleText(country);
-		
+		return this;
 	}
 
 
-	public void enterAccountState(String state) {
+	public HGHRegistrationPageObjects enterAccountState(String state) {
 		
 		Select select = new Select(stateXpath);
 		select.selectByVisibleText(state.trim());
-		
+		return this;
 	}
 
 
-	public void enterAccountZipCode(String zipPostalCode) {
+	public HGHRegistrationPageObjects enterAccountZipCode(String zipPostalCode) {
 		zipCodeXpath.sendKeys(zipPostalCode);
-		
+		return this;
 	}
 
 
-	public void clickIAccept() {
+	public HGHRegistrationPageObjects clickIAccept() {
 		iAcceptButton.click();
-		
+		return this;
 	}
 
 
-	public void verifyErrorMsg(String expectedErrorMsg) {
+	public HGHRegistrationPageObjects verifyErrorMsg(String expectedErrorMsg) {
 		Waiting.explicitWaitVisibilityOfElement(errorMsgSection, 7);
 		Assert.assertEquals(errorMsgSection.getText().trim(), expectedErrorMsg);
-		
+		return this;
 	}
 
 
-	public void clickContinueAgain() {
+	public HGHRegistrationPageObjects clickContinueAgain() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",continueButtonAgain);
-		
+		return this;
 	}
 
 
-	public void enterCity(String city) {
+	public HGHRegistrationPageObjects enterCity(String city) {
 		cityXpath.sendKeys(city);
-		
+		return this;
 	}
 	
 }

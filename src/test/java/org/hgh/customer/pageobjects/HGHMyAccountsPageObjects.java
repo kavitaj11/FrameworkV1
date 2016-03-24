@@ -22,10 +22,6 @@ public class HGHMyAccountsPageObjects extends MainController{
 	Actions action = new Actions(driver);
 	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-	
-	public HGHMyAccountsPageObjects(WebDriver driver){
-		PageFactory.initElements(driver, this);
-	}
 
 	@FindBy(css="a[href='/SavedGroups/Products']")
 	private WebElement myProductsGroupsLink;
@@ -156,7 +152,7 @@ public class HGHMyAccountsPageObjects extends MainController{
 	@FindBy(xpath="//input[@id='popup_ok']")
 	private WebElement popUpOkRequestQuote;
 	
-	public void clickOnMyProductGroupsInMyAccountsPage() {
+	public HGHMyAccountsPageObjects clickOnMyProductGroupsInMyAccountsPage() {
 		try
 		{
 		Thread.sleep(4000);
@@ -166,25 +162,28 @@ public class HGHMyAccountsPageObjects extends MainController{
 			e.printStackTrace();
 		}
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",myProductsGroupsLink);
+		return this;
 		
 	}
 
-	public boolean myProductsPageHeader() {
+	public HGHMyAccountsPageObjects myProductsPageHeader() {
 		Waiting.explicitWaitVisibilityOfElement(myProductGroupsHeader, 10);
-		boolean t = myProductGroupsHeader.isDisplayed();
-		return t;
+		Assert.assertTrue(myProductGroupsHeader.isDisplayed());
+		return this;
 	}
 
-	public void clickOnTheGroupCreated(String groupName) {
+	public HGHMyAccountsPageObjects clickOnTheGroupCreated(String groupName) {
 	String groupNameLocator = "//a[text()='"+groupName+"']";
 	driver.findElement(By.xpath(groupNameLocator)).click();
-		
+		return this;
 	}
 
-	public boolean verifyGroupName(String groupName) {
+	public HGHMyAccountsPageObjects verifyGroupName(String groupName) {
 		Waiting.explicitWaitVisibilityOfElement(groupNameAfterClickTheGroupLocator, 10);
-		boolean t = groupNameAfterClickTheGroupLocator.getText().trim().equals(groupName.trim());
-		return t;
+		Assert.assertEquals(groupNameAfterClickTheGroupLocator.getText().trim(),groupName.trim(),"group Name is not displayed after clicking on the group");
+		
+		return this;
+		
 	}
 
 	public void deleteGroup() {
@@ -193,12 +192,12 @@ public class HGHMyAccountsPageObjects extends MainController{
 		
 	}
 
-	public boolean verifyNoProductGroupsNotAvailable() {
-		boolean t = noProductGroupsAvialableLocator.isDisplayed();
-		return t;
+	public HGHMyAccountsPageObjects verifyNoProductGroupsNotAvailable() {
+		Assert.assertTrue(noProductGroupsAvialableLocator.isDisplayed(),"no product group available is not displayed");
+		return this;
 	}
 
-	public void clickOnMySavedCartLinkInMyAccountsPage() {
+	public HGHMyAccountsPageObjects clickOnMySavedCartLinkInMyAccountsPage() {
 		try
 		{
 		Thread.sleep(4000);
@@ -208,18 +207,20 @@ public class HGHMyAccountsPageObjects extends MainController{
 			e.printStackTrace();
 		}
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",mySavedCartLink);
-		
+		return this;
 	}
 
-	public void clickOnTheCreatedSaveCart(String saveCartName) {
+	public HGHMyAccountsPageObjects clickOnTheCreatedSaveCart(String saveCartName) {
 		String saveCartXpath = "//a[contains(text(),'"+saveCartName+"')]";
 		driver.findElement(By.xpath(saveCartXpath)).click();
+		return this;
 	}
 
-	public boolean verifySaveCartHeading(String saveCartName) {
+	public HGHMyAccountsPageObjects verifySaveCartHeading(String saveCartName) {
 		Waiting.explicitWaitVisibilityOfElement(headingOfTheSavedCart, 5);
-		boolean t = headingOfTheSavedCart.getText().trim().equals(saveCartName);
-		return t;
+		Assert.assertEquals(headingOfTheSavedCart.getText().trim(),saveCartName,"cart heading is not displayed with the relevant save cart name");
+		
+		return this;
 	}
 
 	public void deleteSaveCart() {
@@ -227,12 +228,12 @@ public class HGHMyAccountsPageObjects extends MainController{
 		
 	}
 
-	public boolean verifyMySavedCartNotAvialable() {
-		boolean t = noSavedCartAvailable.isDisplayed();
-		return t;
+	public HGHMyAccountsPageObjects verifyMySavedCartNotAvialable() {
+		Assert.assertTrue(noSavedCartAvailable.isDisplayed(),"no saved cart available is not displayed");
+		return this;
 	}
 
-	public void verifyProductCategoriesSection() {
+	public HGHMyAccountsPageObjects verifyProductCategoriesSection() {
 		 
 		 Waiting.explicitWaitVisibilityOfElement(accountDashboardBreadcrumb, 5);
 		Assert.assertTrue(accountDashboardBreadcrumb.isDisplayed(),"Account Dashboard is not displayed");
@@ -245,23 +246,22 @@ public class HGHMyAccountsPageObjects extends MainController{
 		Assert.assertTrue(shippingAddressSection.isDisplayed(),"shipping address section is not displayed");
 		Assert.assertTrue(refreshShippingInfoButton.isDisplayed(),"refresh shipping address info button is not displayed");
 		Assert.assertTrue(shoppingCartAddressDetails.isDisplayed(), "shopping cart address details is not displayed");
-	
+	return this;
 		
 }
 	
-	public boolean verifyMyAccountSection() throws Exception{
+	public HGHMyAccountsPageObjects verifyMyAccountSection() throws Exception{
 		
 		String  accountsHyperLinks[]= data.getMyAccountTabs().split(",");
-		boolean t=false;
 		for(int i=0;i<accountTabs.size();i++)
 		{
-			 t = accountTabs.get(i).getText().replace("\n", "").trim().equals(accountsHyperLinks[i].trim());
+		Assert.assertEquals(accountTabs.get(i).getText().replace("\n", "").trim(),accountsHyperLinks[i].trim(),accountTabs.get(i).getText().replace("\n", "").trim()+" is not displayed");	 
 		}
-		return t;
+		return this;
 	}
 
 	
-	public void clickOnCartFileUpload() {
+	public HGHMyAccountsPageObjects clickOnCartFileUpload() {
 		try
 		{
 		Thread.sleep(4000);
@@ -271,13 +271,14 @@ public class HGHMyAccountsPageObjects extends MainController{
 			e.printStackTrace();
 		}
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",cartFileUpload);
-		
+		return this;
 	}
 
-	public void verifyBreadCrumpAndHeadingOfCartFileUpload() {
+	public HGHMyAccountsPageObjects verifyBreadCrumpAndHeadingOfCartFileUpload() {
 		Waiting.explicitWaitVisibilityOfElement(fileUploadBreadCrump, 30);
 		Assert.assertTrue(fileUploadBreadCrump.isDisplayed(), "file upload breadcrump is not displayed");
 		Assert.assertTrue(fileUploadHeading.isDisplayed(), "file upload heading is not displayed");
+		return this;
 	}
 
 	public void clickOnBrowse() {
@@ -285,53 +286,58 @@ public class HGHMyAccountsPageObjects extends MainController{
 		
 	}
 
-	public void fileUpload(String filePath) {
+	public HGHMyAccountsPageObjects fileUpload(String filePath) {
 		
 		browseButton.sendKeys(filePath);
+		return this;
 	}
 
-	public void clickOnUpload() {
+	public HGHMyAccountsPageObjects clickOnUpload() {
 		Waiting.explicitWaitVisibilityOfElement(uploadFileButton, 5);
 		uploadFileButton.click();
+		return this;
 		
 	}
 
-	public void verifyQuickCartPage() {
+	public HGHMyAccountsPageObjects verifyQuickCartPage() {
 		Waiting.explicitWaitVisibilityOfElement(quickCartTable, 120);
 		
 		Assert.assertTrue(quickCartTable.isDisplayed(),"quick cart table is not displayed");
 		Assert.assertTrue(quickCartHeading.isDisplayed(), "quick cart heading is not displayed");
-	
-		
-		
+		return this;
 	}
-	public void verifyQuickCartBreadCrump(){
+	
+	public HGHMyAccountsPageObjects verifyQuickCartBreadCrump(){
 		Assert.assertTrue(quickCartBreadCrump.isDisplayed(), "quick cart breadcrump is not displayed");
+		return this;
 	}
 
-	public void selectPartNumberFromDropdown() {
+	public HGHMyAccountsPageObjects selectPartNumberFromDropdown() {
 		
 		TestUtility.selectByVisibleText(selectItemTypeInQuickCart, "HGH Part Number");
+		return this;
 	}
 
-	public void clickOnRequestForQuote() {
+	public HGHMyAccountsPageObjects clickOnRequestForQuote() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",requestForQuoteLink);
-		
+		return this;
 	}
 
-	public void verifyRequestForQuoteHeadingAndBreadcrump() {
+	public HGHMyAccountsPageObjects verifyRequestForQuoteHeadingAndBreadcrump() {
 		Assert.assertTrue(requestForQuoteBreadCrump.isDisplayed(),"request for quote bread crump is not displayed");
 		Assert.assertTrue(requestForQuoteHeading.isDisplayed(),"request for quote heading is not displayed");
+		return this;
 		
 	}
 
-	public void enterPhoneNumberForRequestQuote() throws Exception {
+	public HGHMyAccountsPageObjects enterPhoneNumberForRequestQuote() throws Exception {
 		enterPhoneNumberForRequestQuote.clear();
 		enterPhoneNumberForRequestQuote.sendKeys(data.getPhoneNumber());
+		return this;
 		
 	}
 
-	public void enterRequestDetails() throws Exception {
+	public HGHMyAccountsPageObjects enterRequestDetails() throws Exception {
 		String mpn [] = data.getMPN().split(",");
 		String brandName []  = data.getBrandNameForRequestQuote().split(",");
 		String quantity []  = data.getQunatityForRequestQuote().split(",");
@@ -348,16 +354,19 @@ public class HGHMyAccountsPageObjects extends MainController{
 			commentsSectionRequestQuote.click();
 			commentsSectionRequestQuote.sendKeys(data.getCommentForRequestQuote());
 		}
+		return this;
 	}
 
-	public void clickSubmit() {
+	public HGHMyAccountsPageObjects clickSubmit() {
 		
 		submitButtonRequestQuote.click();
+		return this;
 	}
 
-	public void clickOnOkForAfterCompletionOfRequestForQuote() {
+	public HGHMyAccountsPageObjects clickOnOkForAfterCompletionOfRequestForQuote() {
 		Waiting.explicitWaitVisibilityOfElement(popUpOkRequestQuote, 10);
 	    popUpOkRequestQuote.click();
+	    return this;
 	}
 }
 	

@@ -20,10 +20,6 @@ public class HGHShoppingCartPageObjects extends MainController{
  
 	Actions action = new Actions(driver);
    SearchDataPropertyFile data = new SearchDataPropertyFile();
-   
-	public HGHShoppingCartPageObjects(WebDriver driver){
-		PageFactory.initElements(driver, this);
-	}
 
 
 	@FindBy(xpath="(//a[text()='Empty Cart'])[1]")
@@ -59,8 +55,7 @@ public class HGHShoppingCartPageObjects extends MainController{
 	@FindAll(value={@FindBy(xpath="(//div[@class='cimm_btnGroupEnclosure'])[2]/descendant::li/a")})
 	private List<WebElement> shoppingCartFormButtonsOnBottomForButton;
 	
-	HGHProductsDetailsPageObjects productsDetailsPage = new HGHProductsDetailsPageObjects(driver);
-	HGHProductsListPageObjects productsListPage = new HGHProductsListPageObjects(driver);
+	
 	
 	public void clickOnEmptyCartButton(){
 		Waiting.explicitWaitVisibilityOfElement(emptyCartButton, 15);
@@ -92,33 +87,36 @@ public class HGHShoppingCartPageObjects extends MainController{
 	}
 
 	public void navigateToShoppingCart() {
-		productsListPage.clickOnCartIcon();
-		productsDetailsPage.clickOnCheckout();
+		productListPage().clickOnCartIcon();
+		productDetailsPage().clickOnCheckout();
 		
 	}
 	
-	public void enterNameOfSaveCartAndAddTheProductToSaveCart(String saveCartName) {
+	public HGHShoppingCartPageObjects enterNameOfSaveCartAndAddTheProductToSaveCart(String saveCartName) {
 		Waiting.explicitWaitVisibilityOfElement(saveCartTextbox, 15);
 		saveCartTextbox.sendKeys(saveCartName);
+		return this;
 
 	}
-	public void clickOnSaveCart() {
+	public HGHShoppingCartPageObjects clickOnSaveCart() {
 		Waiting.explicitWaitVisibilityOfElement(saveCartButton, 15);
 		saveCartButton.click();
+		return this;
 	}
 
-	public void checkWhetherItIsTheSameQuantity(String quantity) {
-		Assert.assertEquals(productsDetailsPage.quantityTextbox.getAttribute("value"),quantity,productsDetailsPage.quantityTextbox.getAttribute("value"));
+	public HGHShoppingCartPageObjects checkWhetherItIsTheSameQuantity(String quantity) {
+		Assert.assertEquals(productDetailsPage().quantityTextbox.getAttribute("value"),quantity,productDetailsPage().quantityTextbox.getAttribute("value"));
+		return this;
 	}
 
-	public boolean verifyShoppingCartBreadCrump() {
-		boolean t = shoppingCartBreadCrump.isDisplayed();
-		return t;
+	public HGHShoppingCartPageObjects verifyShoppingCartBreadCrump() {
+		Assert.assertTrue(shoppingCartBreadCrump.isDisplayed(), "quantity is not the same as it was in the product list page");
+		return this;
 	}
 
-	public boolean verifyShoppingCartPageHeading() {
-		boolean t = shoppingCartHeading.isDisplayed();
-		return t;
+	public HGHShoppingCartPageObjects verifyShoppingCartPageHeading() {
+		Assert.assertTrue(shoppingCartHeading.isDisplayed(),"shopping cart page heading is not displayed");
+		return this;
 	}
 
 	public boolean verifyContinueShoppingButton()
@@ -127,23 +125,24 @@ public class HGHShoppingCartPageObjects extends MainController{
 		return t;
 	}
 
-	public void verifyButtonsOnTopOfTheCart() throws Exception {
+	public HGHShoppingCartPageObjects verifyButtonsOnTopOfTheCart() throws Exception {
 		String nameOfShoppingCartButtonsArray[] = data.getNameOfShoppingCartButtons().split(",");
 		for(int i=0;i<shoppingCartFormButtonsOnTopForButton.size();i++)
 		{
 		Assert.assertEquals(shoppingCartFormButtonsOnTopForButton.get(i).getAttribute("class"),"button",shoppingCartFormButtonsOnTop.get(i).getText()+" is not a button");
 		Assert.assertEquals(shoppingCartFormButtonsOnTop.get(i).getText().trim().replace("\n", ""),nameOfShoppingCartButtonsArray[i].trim());	
 		}
+		return this;
 	}
 
-	public void verifyButtonsOnBottomOfTheCart() throws Exception {
+	public HGHShoppingCartPageObjects verifyButtonsOnBottomOfTheCart() throws Exception {
 		String nameOfShoppingCartButtonsArray[] = data.getNameOfShoppingCartButtons().split(",");
 		for(int i=0;i<shoppingCartFormButtonsOnBottomForButton.size();i++)
 		{
 		Assert.assertEquals(shoppingCartFormButtonsOnBottomForButton.get(i).getAttribute("class"),"button",shoppingCartFormButtonsOnBottom.get(i).getText()+" is not a button");
 		Assert.assertEquals(shoppingCartFormButtonsOnBottom.get(i).getText().trim().replace("\n", ""),nameOfShoppingCartButtonsArray[i].trim());	
 		}
-		
+		return this;
 	}
 
 }

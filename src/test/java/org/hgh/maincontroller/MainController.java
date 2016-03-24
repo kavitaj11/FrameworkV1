@@ -21,6 +21,12 @@ import java.lang.reflect.Method;
 
 import org.apache.commons.io.FileUtils;
 import org.hgh.customer.pageobjects.HGHHomePageObjects;
+import org.hgh.customer.pageobjects.HGHLoginPageObjects;
+import org.hgh.customer.pageobjects.HGHMyAccountsPageObjects;
+import org.hgh.customer.pageobjects.HGHProductsDetailsPageObjects;
+import org.hgh.customer.pageobjects.HGHProductsListPageObjects;
+import org.hgh.customer.pageobjects.HGHRegistrationPageObjects;
+import org.hgh.customer.pageobjects.HGHShoppingCartPageObjects;
 import org.hgh.utils.PropertyFileReader;
 import org.hgh.utils.Screenshot;
 import org.hgh.utils.SendEmailGmail;
@@ -36,6 +42,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -57,6 +64,53 @@ public static String outputVideo="";
 private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/Property Files/ApplicationSetUp.properties";
 public static String searchData = "resources/Property Files/SearchData.properties";
+
+public HGHHomePageObjects homePage()
+{
+	HGHHomePageObjects homePage = PageFactory.initElements(driver,HGHHomePageObjects.class);
+	return homePage;
+}
+
+public HGHLoginPageObjects loginPage()
+{
+	HGHLoginPageObjects loginPage = PageFactory.initElements(driver,HGHLoginPageObjects.class);
+	return loginPage;
+}
+
+public HGHRegistrationPageObjects registrationPage()
+{
+	HGHRegistrationPageObjects registrationPage = PageFactory.initElements(driver,HGHRegistrationPageObjects.class);
+	return registrationPage;
+}
+
+public HGHMyAccountsPageObjects myAccountsPage()
+{
+	HGHMyAccountsPageObjects myAccountsPage = PageFactory.initElements(driver,HGHMyAccountsPageObjects.class);
+	return myAccountsPage;
+}
+
+public HGHProductsDetailsPageObjects productDetailsPage()
+{
+	HGHProductsDetailsPageObjects productDetailsPage = PageFactory.initElements(driver,HGHProductsDetailsPageObjects.class);
+	return productDetailsPage;
+}
+
+public HGHProductsListPageObjects productListPage()
+{
+	HGHProductsListPageObjects productListPage = PageFactory.initElements(driver,HGHProductsListPageObjects.class);
+	return productListPage;
+}
+
+
+
+public HGHShoppingCartPageObjects shoppingCartPage()
+{
+	HGHShoppingCartPageObjects shoppingCartPage = PageFactory.initElements(driver,HGHShoppingCartPageObjects.class);
+	return shoppingCartPage;
+}
+
+
+
 
 
 DesiredCapabilities caps = new DesiredCapabilities();
@@ -184,13 +238,13 @@ Screenshot.captureScreenShot(driver, testResult.getName(),testResult);
 	@AfterMethod(alwaysRun=true)
 	public boolean checkForLogout()
 	{
-		HGHHomePageObjects homePage = new HGHHomePageObjects(driver);
+		
 		try
 		{
-		if(homePage.logoutButton.isDisplayed())
+		if(homePage().logoutButton.isDisplayed())
 		{
-			homePage.logout();
-			homePage.verifyDisplayOfLoginLink();
+			homePage().logout();
+			homePage().verifyDisplayOfLoginLink();
 		}
 	}
 		catch(Exception e)

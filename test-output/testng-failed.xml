@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [HGHSuite]">
-  <listeners>
-    <listener class-name="org.hgh.utils.ReportGenerator"/>
-  </listeners>
-  <test name="HGHWebApplicationTesting">
-    <groups>
-      <run>
-        <include name="regression"/>
-      </run>
-    </groups>
-    <classes>
-      <class name="org.hgh.testmethods.HGHTestCustomer"/>
-    </classes>
-  </test> <!-- HGHWebApplicationTesting -->
-  <test name="HGHWebApplicationTesting(failed)">
-    <groups>
-      <run>
-        <include name="regression"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
     <classes>
       <class name="org.hgh.testmethods.HGHTestCustomer">
         <methods>
-          <include name="tc005_HGH_ListViewGridView"/>
-          <include name="tc014_HGH_quickOrderPad"/>
-          <include name="checkForLogout"/>
-          <include name="tc006_HGH_ProductListPage"/>
-          <include name="beforeTest"/>
-          <include name="setUp"/>
-          <include name="tc013_HGH_cartFileUpload"/>
-          <include name="startRecording"/>
-          <include name="callStopRecording"/>
-          <include name="tc009_compareFunctionality"/>
-          <include name="tc008_verifyHeaderAndFooter"/>
-          <include name="takeScreenshot"/>
-          <include name="tearDownClass"/>
-          <include name="tc007_HGH_MyProductGroupCreateAndDelete"/>
-          <include name="beforeSuite"/>
-          <include name="tc015_HGH_requestForQuote"/>
-          <include name="tc012_HGH_shoppingCartPage"/>
-          <include name="tc011_HGH_AccountsDashboard"/>
-          <include name="tc010_HGH_saveCart"/>
-          <include name="tc001_HGH_Registration_ErrorScenarios" invocation-numbers="5"/>
+          <include name="tc002_HGH_login"/>
         </methods>
       </class> <!-- org.hgh.testmethods.HGHTestCustomer -->
     </classes>
-  </test> <!-- HGHWebApplicationTesting(failed) -->
-</suite> <!-- Failed suite [HGHSuite] -->
+  </test> <!-- Default test -->
+</suite> <!-- Failed suite [Default suite] -->
