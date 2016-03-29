@@ -1,27 +1,21 @@
 package org.hgh.customer.pageobjects;
 import java.util.List;
-
 import org.hgh.maincontroller.MainController;
-import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
 /*
  * @author Hemanth.Sridhar
  */
-public class HGHProductsListPageObjects extends MainController{
-	
-	
- SearchDataPropertyFile data = new SearchDataPropertyFile();
+public class HGHProductsListPageObjects extends MainController
+{
  
    Actions action = new Actions(driver);
 
@@ -106,13 +100,6 @@ public class HGHProductsListPageObjects extends MainController{
 	}
 
 
-	public boolean verifyHeadingOfProduct(String searchText) {
-		String searchTextUpperCase =searchText.toUpperCase(); 
-		Waiting.explicitWaitVisibilityOfElement(productDetailsBrandHeading, 15);
-		boolean t = productDetailsBrandHeading.getText().trim().toUpperCase().contains(searchTextUpperCase);
-		return t;
-	}
-
 
 	public HGHProductsListPageObjects verifyGridView() {
 		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 10);
@@ -193,17 +180,22 @@ public class HGHProductsListPageObjects extends MainController{
 
 
 	public HGHProductsListPageObjects clickOnFirstMyProductGroup() {
-		
+		Waiting.explicitWaitVisibilityOfElement(firstMyProductGroup, 10);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();",firstMyProductGroup);
 		return this;
 	}
 
 
-	public void enterGroupName(String groupName) {
-		Waiting.explicitWaitVisibilityOfElement(myProductTextbox, 10);
+	public HGHProductsListPageObjects enterGroupName(String groupName) {
+		Waiting.explicitWaitVisibilityOfElement(myProductTextbox, 20);
 		myProductTextbox.sendKeys(groupName);
+		return this;
 	}
 
+	public HGHProductsListPageObjects hitEnterForGroupCreation() {
+		myProductTextbox.sendKeys(Keys.ENTER);
+		return this;
+	}
 
 public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
 		
@@ -232,18 +224,12 @@ public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
 		return this;
 		
 	}
-
-
-
 	
-
-	public void clickOnCartIcon() {
+	public HGHProductsListPageObjects clickOnCartIcon() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",cartIcon);
+		return this;
 		
 	}
-
-
-
 
 	public HGHProductsListPageObjects clickOnChangeView() {
 		listViewButton.click();

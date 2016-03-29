@@ -89,5 +89,30 @@ public class SearchDataPropertyFile extends MainController{
 		String commentForRequestQuote = PropertyFileReader.propertiesReader(searchData, "commentsForRequestQuote");
 		return commentForRequestQuote;
 	}
+
+	public String getLoginPageTitle() throws Exception {
+		String loginPageTitle = PropertyFileReader.propertiesReader(searchData, "loginPageTitle");
+		return loginPageTitle;
+	}
+
+	public String faviconURL() throws Exception {
+		String faviconURL = PropertyFileReader.propertiesReader(searchData, "faviconURL");
+		return faviconURL;
+	}
+
+	public String getShoppingCartInstructions() throws Exception {
+		String shoppingCartInstructions = PropertyFileReader.propertiesReader(searchData, "shoppingCartInstructions");
+		return shoppingCartInstructions;
+	}
+
+	public String getEmptyCartText() throws Exception {
+		String emptyCartText = PropertyFileReader.propertiesReader(searchData, "emptyCartText");
+		return emptyCartText;
+	}
+
+	public String getSortByShoppingCartDropdownValues() throws Exception {
+		String sortByShoppingCartDropdownValues = PropertyFileReader.propertiesReader(searchData, "sortByShoppingCartDropdownValues");
+		return sortByShoppingCartDropdownValues;
+	}
 	
 }

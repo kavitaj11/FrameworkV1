@@ -22,13 +22,17 @@ import java.lang.reflect.Method;
 import org.apache.commons.io.FileUtils;
 import org.hgh.customer.pageobjects.HGHHomePageObjects;
 import org.hgh.customer.pageobjects.HGHLoginPageObjects;
+import org.hgh.customer.pageobjects.HGHLoginPopUpPageObjects;
 import org.hgh.customer.pageobjects.HGHMyAccountsPageObjects;
+import org.hgh.customer.pageobjects.HGHProductCategoryPageObjects;
 import org.hgh.customer.pageobjects.HGHProductsDetailsPageObjects;
 import org.hgh.customer.pageobjects.HGHProductsListPageObjects;
 import org.hgh.customer.pageobjects.HGHRegistrationPageObjects;
+import org.hgh.customer.pageobjects.HGHRetrievePasswordPageObjects;
 import org.hgh.customer.pageobjects.HGHShoppingCartPageObjects;
 import org.hgh.utils.PropertyFileReader;
 import org.hgh.utils.Screenshot;
+import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.SendEmailGmail;
 import org.hgh.utils.Video;
 import org.monte.media.Format;
@@ -110,7 +114,26 @@ public HGHShoppingCartPageObjects shoppingCartPage()
 }
 
 
+public HGHRetrievePasswordPageObjects retrievePasswordPage()
+{
+	HGHRetrievePasswordPageObjects retrievePasswordPage = PageFactory.initElements(driver,HGHRetrievePasswordPageObjects.class);
+	return retrievePasswordPage;
+}
 
+
+
+public HGHLoginPopUpPageObjects loginPopUp()
+{
+	HGHLoginPopUpPageObjects loginPopUp = PageFactory.initElements(driver,HGHLoginPopUpPageObjects.class);
+	return loginPopUp;
+}
+
+
+public HGHProductCategoryPageObjects productCategoryPage()
+{
+	HGHProductCategoryPageObjects productCategoryPage = PageFactory.initElements(driver,HGHProductCategoryPageObjects.class);
+	return productCategoryPage;
+}
 
 
 DesiredCapabilities caps = new DesiredCapabilities();
@@ -137,12 +160,28 @@ DesiredCapabilities caps = new DesiredCapabilities();
 	
 	
  	@BeforeMethod(alwaysRun=true)
- 	public static void setUp() throws Exception{
+ 	public boolean setUp() throws Exception{
  		driver.get(PropertyFileReader.propertiesReader(applicationSetUp,"url"));
+ 		driver.manage().deleteAllCookies();
+ 		
+ 		
+		try
+		{
+		if(homePage().logoutButton.isDisplayed())
+		{
+			homePage().logout();
+		}
+	}
+		catch(Exception e)
+		{
+			return true;
+		}
+		return true;
+
 	
 	}
+
  	
-   
     
  	@BeforeMethod(alwaysRun=true)
 	public void startRecording(Method methodName) throws Exception{
@@ -175,8 +214,7 @@ DesiredCapabilities caps = new DesiredCapabilities();
      this.screenRecorder.start();
  		}
  }
- 	
- 	 public void stopRecording() throws Exception
+ 	public void stopRecording() throws Exception
      {
        this.screenRecorder.stop(); 
      }
@@ -224,6 +262,8 @@ DesiredCapabilities caps = new DesiredCapabilities();
 			System.out.println("cannot load driver");
 		}
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+	
 	}
 	
 	@AfterMethod(alwaysRun=true)
@@ -235,26 +275,7 @@ Screenshot.captureScreenShot(driver, testResult.getName(),testResult);
 
  }	
 }
-	@AfterMethod(alwaysRun=true)
-	public boolean checkForLogout()
-	{
-		
-		try
-		{
-		if(homePage().logoutButton.isDisplayed())
-		{
-			homePage().logout();
-			homePage().verifyDisplayOfLoginLink();
-		}
-	}
-		catch(Exception e)
-		{
-			return true;
-		}
-		return true;
-
-	}	
- 	
+	
 	
 	@AfterMethod(alwaysRun=true)
 	public void callStopRecording() throws Exception{

@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [HGHSuite]">
+  <listeners>
+    <listener class-name="org.hgh.utils.ReportGenerator"/>
+  </listeners>
+  <test name="HGHWebApplicationTesting">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="org.hgh.testmethods.HGHTestCustomer"/>
+    </classes>
+  </test> <!-- HGHWebApplicationTesting -->
+  <test name="HGHWebApplicationTesting(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
     <classes>
       <class name="org.hgh.testmethods.HGHTestCustomer">
         <methods>
-          <include name="tc002_HGH_login"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="tc013_HGH_cartFileUpload"/>
+          <include name="TS_Login_005_TC_HGH_Login_021_loginVerifyOrderTopToBottom"/>
+          <include name="startRecording"/>
+          <include name="callStopRecording"/>
+          <include name="TS_Login_001_TC_HGH_Login_008_Verify_Tab_focus"/>
+          <include name="takeScreenshot"/>
+          <include name="tearDownClass"/>
+          <include name="beforeSuite"/>
+          <include name="TS_ShoppingCart_001_TC_ShoppingCart_013_HGH_shipViaMethodModication"/>
+          <include name="TS_Login_002_TC_HGH_Login_015_rememberMeAsALink"/>
+          <include name="TS_Login_005_TC_HGH_Login_022_loginVerifyOrderBottomToTop"/>
+          <include name="TS_ShoppingCart_001_TC_ShoppingCart_017_HGH_collapseViewAndExpandView"/>
         </methods>
       </class> <!-- org.hgh.testmethods.HGHTestCustomer -->
     </classes>
-  </test> <!-- Default test -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- HGHWebApplicationTesting(failed) -->
+</suite> <!-- Failed suite [HGHSuite] -->

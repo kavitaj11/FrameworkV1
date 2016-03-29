@@ -7,12 +7,10 @@ import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -20,11 +18,9 @@ import org.testng.Assert;
  * @author Hemanth.Sridhar
  */
 public class HGHHomePageObjects extends MainController{
-	
-   SearchDataPropertyFile data = new SearchDataPropertyFile();	
+	 SearchDataPropertyFile data = new SearchDataPropertyFile();
    Actions action = new Actions(driver);
-
-	
+   
 	@FindBy(xpath="//div[@class='errMsg']")
 	private WebElement errorMsgLocator;
 	
@@ -46,11 +42,12 @@ public class HGHHomePageObjects extends MainController{
 	@FindBy(xpath="//button[@id='performSearchBtn']")
 	private WebElement searchButton;
 	
-	@FindBy(xpath="//a[@href='Dashboard' and contains(text(),'My Accounts')]")
+	@FindBy(xpath="//ul[@class='pullRight']/descendant::a[@href='Dashboard']")
 	private WebElement myAccountsLink;
 	
-	@FindBy(xpath="//a[contains(text(),'My Accounts')]")
-	private WebElement myAccountsLocator;
+	@FindBy(xpath="//a[contains(text(),'My Account')]")
+	private WebElement myAccountInHeader;
+	
 	
 	@FindBy(xpath="//div[@class='cimm_headerTop']/descendant::a[contains(text(),'Order Status')]")
 	private WebElement orderStatusLinkHeader;
@@ -148,35 +145,36 @@ public class HGHHomePageObjects extends MainController{
 	@FindBy(xpath="//ul[@class='pullRight']/descendant::a[contains(text(),'Quick Order Pad')]")
 	private WebElement quickOrderPadLink;
 	
-
+	@FindBy(css="")
+	private WebElement focusTab;
 	
-	public boolean errorScenarios(String expectedMsg) {
+	public HGHHomePageObjects errorScenarios(String expectedMsg) {
 		System.out.println(expectedMsg);
-		boolean t = errorMsgLocator.getText().trim().equals(expectedMsg);
-		return t;
+		Assert.assertEquals(errorMsgLocator.getText().trim(), expectedMsg);
+		return this;
 	}
 
 	public HGHLoginPageObjects clickLoginLink() {
-		
+		Waiting.explicitWaitVisibilityOfElement(loginLinkLocator, 5);
 		loginLinkLocator.click();
 		return new HGHLoginPageObjects();
 	}
 
-	public boolean verifyWelcomeMsg() {
+	public HGHHomePageObjects verifyWelcomeMsg() {
 		Waiting.explicitWaitVisibilityOfElement(welcomeLocator, 10);
-		boolean t = welcomeLocator.isDisplayed();
-		return t;
+		Assert.assertTrue(welcomeLocator.isDisplayed(),"welcome is not displayed");
+		return this;
 		
 	}
 
-	public void assertForErrorMessages(String expectedMsg) {
+	public HGHHomePageObjects assertForErrorMessages(String expectedMsg) {
 		Assert.assertEquals(errorMsgLocator.getText().trim(),expectedMsg,errorMsgLocator.getText().trim()+" is displayed");
-		
+		return this;
 	}
 
-	public void logout() {
-		Waiting.explicitWaitVisibilityOfElement(logoutButton, 4);
+	public HGHHomePageObjects logout() {
 		logoutButton.click();
+		return this;
 	}
 	
 	public HGHHomePageObjects verifyDisplayOfLoginLink(){
@@ -224,7 +222,7 @@ public class HGHHomePageObjects extends MainController{
 	}
 
 	public HGHHomePageObjects verifyDisplayOfMyAccountsInHeader() {
-		Assert.assertTrue(myAccountsLocator.isDisplayed(), "My Accounts link is not displayed");
+		Assert.assertTrue(myAccountInHeader.isDisplayed(), "My Account link is not displayed");
 		return this;
 	}
 
@@ -392,6 +390,18 @@ public class HGHHomePageObjects extends MainController{
 		return new HGHMyAccountsPageObjects();
 		
 	}
-}
+
+	public HGHHomePageObjects verifyTabFocus() {
+		focusTab.isDisplayed();
+		return this;
+		
+	}
+
+	public HGHHomePageObjects waitForLogoutLink() {
+		Waiting.explicitWaitVisibilityOfElement(logoutButton, 10);
+		return this;
+	}
+	}
+
 	
 	

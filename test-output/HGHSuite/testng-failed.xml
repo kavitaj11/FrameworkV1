@@ -23,26 +23,20 @@
     <classes>
       <class name="org.hgh.testmethods.HGHTestCustomer">
         <methods>
-          <include name="tc005_HGH_ListViewGridView"/>
-          <include name="tc014_HGH_quickOrderPad"/>
-          <include name="checkForLogout"/>
-          <include name="tc006_HGH_ProductListPage"/>
           <include name="beforeTest"/>
           <include name="setUp"/>
           <include name="tc013_HGH_cartFileUpload"/>
+          <include name="TS_Login_005_TC_HGH_Login_021_loginVerifyOrderTopToBottom"/>
           <include name="startRecording"/>
           <include name="callStopRecording"/>
-          <include name="tc009_compareFunctionality"/>
-          <include name="tc008_verifyHeaderAndFooter"/>
+          <include name="TS_Login_001_TC_HGH_Login_008_Verify_Tab_focus"/>
           <include name="takeScreenshot"/>
           <include name="tearDownClass"/>
-          <include name="tc007_HGH_MyProductGroupCreateAndDelete"/>
           <include name="beforeSuite"/>
-          <include name="tc015_HGH_requestForQuote"/>
-          <include name="tc012_HGH_shoppingCartPage"/>
-          <include name="tc011_HGH_AccountsDashboard"/>
-          <include name="tc010_HGH_saveCart"/>
-          <include name="tc001_HGH_Registration_ErrorScenarios" invocation-numbers="5"/>
+          <include name="TS_ShoppingCart_001_TC_ShoppingCart_013_HGH_shipViaMethodModication"/>
+          <include name="TS_Login_002_TC_HGH_Login_015_rememberMeAsALink"/>
+          <include name="TS_Login_005_TC_HGH_Login_022_loginVerifyOrderBottomToTop"/>
+          <include name="TS_ShoppingCart_001_TC_ShoppingCart_017_HGH_collapseViewAndExpandView"/>
         </methods>
       </class> <!-- org.hgh.testmethods.HGHTestCustomer -->
     </classes>

@@ -102,8 +102,6 @@ public class ReportGenerator implements IReporter {
                     test.assignCategory(group);
               
                 String message = "Test " + status.toString().toLowerCase() + "ed";
-               
-                
                 if (result.getThrowable() != null)
                     message = result.getThrowable().getMessage();
                 

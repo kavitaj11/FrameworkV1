@@ -5,7 +5,7 @@
     <classes>
       <class name="org.hgh.testmethods.HGHTestCustomer">
         <methods>
-          <include name="tc002_HGH_login"/>
+          <include name="TS_ShoppingCart_002_TC_ShoppingCart_016_HGH_emptyCartFunctionality"/>
         </methods>
       </class> <!-- org.hgh.testmethods.HGHTestCustomer -->
     </classes>

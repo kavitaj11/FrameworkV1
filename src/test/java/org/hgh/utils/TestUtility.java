@@ -10,10 +10,13 @@ import java.util.ArrayList;
 import org.hgh.maincontroller.MainController;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class TestUtility extends MainController{
 
+	static Actions action = new Actions(driver);
+	static Alert alert = driver.switchTo().alert();
 	
 	
 	public static void openPageInNewTab() throws AWTException {
@@ -87,7 +90,7 @@ public class TestUtility extends MainController{
 	}
 
 	public static void alertAccept() {
-		Alert alert = driver.switchTo().alert();
+		
 		Waiting.explicitWaitForAlert(5);
 		alert.accept();
 	}
@@ -102,4 +105,27 @@ public class TestUtility extends MainController{
 		select.selectByIndex(index);
 	}
 	
+	public static void mouseHoverActions(WebElement element)
+	{
+		
+		action.moveToElement(element).build().perform();
+	}
+	
+	public static void clickAndHoldActions(WebElement element)
+	{
+		
+		action.clickAndHold(element).build().perform();
+	}
+	
+	public static String getAlertText()
+	{
+		String alertText = alert.getText().trim();
+		return alertText;
+	}
+
+	public static void alertDismiss() {
+		Waiting.explicitWaitForAlert(5);
+		alert.dismiss();
+		
+	}
 }

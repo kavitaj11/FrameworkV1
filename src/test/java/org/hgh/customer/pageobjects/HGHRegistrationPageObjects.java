@@ -1,20 +1,13 @@
 package org.hgh.customer.pageobjects;
 import org.testng.Assert;
 import org.hgh.maincontroller.MainController;
-import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class HGHRegistrationPageObjects extends MainController{
-
-	
- SearchDataPropertyFile data = new SearchDataPropertyFile();
 	
 	@FindBy(xpath="//span[@id='question' and contains(text(),'I am a current HGH Hardware Supply Customer')]")
 	private WebElement iAmAcurrentHGHHardwareCustomer;
@@ -78,7 +71,13 @@ public class HGHRegistrationPageObjects extends MainController{
 	@FindBy(xpath="//div[@id='second']/descendant::span[contains(text(),'Continue')]")
 	private WebElement continueButtonAgain;
 	
-	public HGHRegistrationPageObjects clickIAmACurrentHGHHardwareCustomer(){
+	@FindBy(xpath="//input[@id='phoneNo1B']")
+	private WebElement phoneNumber;
+	
+	@FindBy(xpath="//li[contains(text(),'Registration')]")
+	private WebElement registrationBreadCrump;
+	
+	public HGHRegistrationPageObjects clickIAmACurrentHGHHardwareCustomer() throws InterruptedException{
 		Waiting.explicitWaitVisibilityOfElement(iAmAcurrentHGHHardwareCustomer, 10);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",iAmAcurrentHGHHardwareCustomer);
 	return this;
@@ -98,7 +97,7 @@ public class HGHRegistrationPageObjects extends MainController{
 	}
 
 
-	public HGHRegistrationPageObjects clickOnThisIsMyFirstTimeOrderingOnlineWithHGHHardware() {
+	public HGHRegistrationPageObjects clickOnThisIsMyFirstTimeOrderingOnlineWithHGHHardware() throws InterruptedException {
 		Waiting.explicitWaitVisibilityOfElement(thisIsMyFirstTimeOrderingOnlineWithHGHHardware, 10);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",thisIsMyFirstTimeOrderingOnlineWithHGHHardware);
 		return this;
@@ -206,6 +205,21 @@ public class HGHRegistrationPageObjects extends MainController{
 	public HGHRegistrationPageObjects enterCity(String city) {
 		cityXpath.sendKeys(city);
 		return this;
+	}
+
+
+	public HGHRegistrationPageObjects enterPhoneNumber(String phonenumber) {
+		phoneNumber.sendKeys(phonenumber);
+		return this;
+	}
+
+
+	public HGHRegistrationPageObjects verifyRegistrationPage() {
+		Waiting.explicitWaitVisibilityOfElement(registrationBreadCrump, 10);
+		Assert.assertTrue(registrationBreadCrump.isDisplayed(),"registration breadcrump is not displayed");
+		Assert.assertEquals(loginPage().pageName.getText().trim(), "Registration");
+		return this;
+		
 	}
 	
 }

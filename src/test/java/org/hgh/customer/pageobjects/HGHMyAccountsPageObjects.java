@@ -1,27 +1,25 @@
 package org.hgh.customer.pageobjects;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.hgh.maincontroller.MainController;
 import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.TestUtility;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 /*
  * @author Hemanth.Sridhar
  */
 public class HGHMyAccountsPageObjects extends MainController{
-   
+	public SearchDataPropertyFile data = new SearchDataPropertyFile();
 	Actions action = new Actions(driver);
-	
-	SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 	@FindBy(css="a[href='/SavedGroups/Products']")
 	private WebElement myProductsGroupsLink;
@@ -152,6 +150,9 @@ public class HGHMyAccountsPageObjects extends MainController{
 	@FindBy(xpath="//input[@id='popup_ok']")
 	private WebElement popUpOkRequestQuote;
 	
+	@FindBy(xpath="//li[contains(text(),'Quick Order Pad')]")
+	private WebElement quickOrderPadBreadCrump;
+	
 	public HGHMyAccountsPageObjects clickOnMyProductGroupsInMyAccountsPage() {
 		try
 		{
@@ -173,22 +174,24 @@ public class HGHMyAccountsPageObjects extends MainController{
 	}
 
 	public HGHMyAccountsPageObjects clickOnTheGroupCreated(String groupName) {
-	String groupNameLocator = "//a[text()='"+groupName+"']";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		String groupNameLocator= "//a[contains(text(),'"+groupName+"')]" ;
 	driver.findElement(By.xpath(groupNameLocator)).click();
 		return this;
 	}
 
 	public HGHMyAccountsPageObjects verifyGroupName(String groupName) {
-		Waiting.explicitWaitVisibilityOfElement(groupNameAfterClickTheGroupLocator, 10);
+		Waiting.explicitWaitVisibilityOfElement(groupNameAfterClickTheGroupLocator, 20);
 		Assert.assertEquals(groupNameAfterClickTheGroupLocator.getText().trim(),groupName.trim(),"group Name is not displayed after clicking on the group");
 		
 		return this;
 		
 	}
 
-	public void deleteGroup() {
-		Waiting.explicitWaitVisibilityOfElement(deleteGroupButton, 5);
+	public HGHMyAccountsPageObjects deleteGroup() {
+		Waiting.explicitWaitVisibilityOfElement(deleteGroupButton, 20);
 		deleteGroupButton.click();
+		return this;
 		
 	}
 
@@ -211,7 +214,8 @@ public class HGHMyAccountsPageObjects extends MainController{
 	}
 
 	public HGHMyAccountsPageObjects clickOnTheCreatedSaveCart(String saveCartName) {
-		String saveCartXpath = "//a[contains(text(),'"+saveCartName+"')]";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		String saveCartXpath = "//a[contains(text(),'"+saveCartName+"')]";	
 		driver.findElement(By.xpath(saveCartXpath)).click();
 		return this;
 	}
@@ -223,9 +227,14 @@ public class HGHMyAccountsPageObjects extends MainController{
 		return this;
 	}
 
-	public void deleteSaveCart() {
+	public HGHMyAccountsPageObjects deleteSaveCart() {
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		deleteCartButton.click();
-		
+		return this;
 	}
 
 	public HGHMyAccountsPageObjects verifyMySavedCartNotAvialable() {
@@ -281,11 +290,6 @@ public class HGHMyAccountsPageObjects extends MainController{
 		return this;
 	}
 
-	public void clickOnBrowse() {
-		browseButton.click();
-		
-	}
-
 	public HGHMyAccountsPageObjects fileUpload(String filePath) {
 		
 		browseButton.sendKeys(filePath);
@@ -306,6 +310,7 @@ public class HGHMyAccountsPageObjects extends MainController{
 		Assert.assertTrue(quickCartHeading.isDisplayed(), "quick cart heading is not displayed");
 		return this;
 	}
+	
 	
 	public HGHMyAccountsPageObjects verifyQuickCartBreadCrump(){
 		Assert.assertTrue(quickCartBreadCrump.isDisplayed(), "quick cart breadcrump is not displayed");
@@ -367,6 +372,11 @@ public class HGHMyAccountsPageObjects extends MainController{
 		Waiting.explicitWaitVisibilityOfElement(popUpOkRequestQuote, 10);
 	    popUpOkRequestQuote.click();
 	    return this;
+	}
+
+	public HGHMyAccountsPageObjects verifyQuickOrderPadBreadCrump() {
+		Assert.assertTrue(quickOrderPadBreadCrump.isDisplayed(), "quick order pad breadcrump is not displayed");
+		return this;
 	}
 }
 	

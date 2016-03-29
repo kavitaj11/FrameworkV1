@@ -1,12 +1,9 @@
 package org.hgh.customer.pageobjects;
 import org.hgh.maincontroller.MainController;
-import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 /*
@@ -14,7 +11,6 @@ import org.testng.Assert;
  */
 public class HGHProductsDetailsPageObjects extends MainController{
    Actions action = new Actions(driver);
-SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 
 	@FindBy(xpath="//p[@class='cimm_productDetailBrand']")
@@ -29,9 +25,12 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	@FindBy(xpath="(//a[contains(text(),'Checkout')])[2]")
 	private WebElement checkoutButton;
 	
+	@FindBy(xpath="//ul[@id='productDetailList']/descendant::h2")
+	private WebElement productTitleLocator;
 	
+	@FindBy(xpath="//span[contains(text(),'MPN')]/following-sibling::span")
+	private WebElement mpnValue;
 	
-
 	public HGHProductsDetailsPageObjects verifyHeadingOfProduct(String searchText) {
 		String searchTextUpperCase =searchText.toUpperCase(); 
 		Waiting.explicitWaitVisibilityOfElement(productDetailsBrandHeading, 5);
@@ -59,6 +58,29 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 		checkoutButton.click();
 		return new HGHShoppingCartPageObjects();
 		
+	}
+
+
+
+	public String productTitle() {
+		Waiting.explicitWaitVisibilityOfElement(productTitleLocator, 10);
+		String productTitle = productTitleLocator.getText().trim();
+		return productTitle;
+	}
+
+
+
+	public String getMPN() {
+		String mpnVal = mpnValue.getText().trim();
+		return mpnVal;
+	}
+
+
+
+	public void verifyProductTitle(String productTitle)
+	{
+		Waiting.explicitWaitVisibilityOfElement(productTitleLocator, 10);
+		Assert.assertEquals(productTitleLocator.getText().trim(), productTitle,"product Title is not the same as the it was in shopping cart page");
 	}
 
 
