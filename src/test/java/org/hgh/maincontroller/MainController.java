@@ -9,7 +9,6 @@ import static org.monte.media.VideoFormatKeys.CompressorNameKey;
 import static org.monte.media.VideoFormatKeys.DepthKey;
 import static org.monte.media.VideoFormatKeys.ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE;
 import static org.monte.media.VideoFormatKeys.QualityKey;
-
 import java.awt.Dimension;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
@@ -18,7 +17,6 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
-
 import org.apache.commons.io.FileUtils;
 import org.hgh.customer.pageobjects.HGHHomePageObjects;
 import org.hgh.customer.pageobjects.HGHLoginPageObjects;
@@ -32,7 +30,6 @@ import org.hgh.customer.pageobjects.HGHRetrievePasswordPageObjects;
 import org.hgh.customer.pageobjects.HGHShoppingCartPageObjects;
 import org.hgh.utils.PropertyFileReader;
 import org.hgh.utils.Screenshot;
-import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.SendEmailGmail;
 import org.hgh.utils.Video;
 import org.monte.media.Format;
@@ -249,7 +246,8 @@ DesiredCapabilities caps = new DesiredCapabilities();
 		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("Ghost"))
 		{
 			 
-			 System.setProperty("phantomjs.binary.path", "resources/drivers/phantomjs.exe");
+			File src = new File("E:/Hemanth/UnilogProjects/HGH-Harware Supply/resources/drivers/phantomjs.exe");
+			System.setProperty("phantomjs.binary.path",src.getAbsolutePath());
 	        driver = new PhantomJSDriver();
 		}
 		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("firefox"))
