@@ -3,7 +3,7 @@ package org.hgh.modules;
 import org.hgh.maincontroller.MainController;
 import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.TestUtility;
-import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 public class HGHShoppingCartModule extends MainController
@@ -23,9 +23,9 @@ public class HGHShoppingCartModule extends MainController
 		  		String searchText = data.getSearchText();
 		  		String saveCartName = data.getSaveCartName();
 		  		loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
-				shoppingCartPage().clearCart();
+		  		shoppingCartPage().clearCart();
 				homePage()
-				.searchText(searchText)
+		  		.searchText(searchText)
 				.clickOnSearch()
 				.productListPage()
 				.clickOnFirstProduct()
@@ -87,7 +87,7 @@ public class HGHShoppingCartModule extends MainController
 	  public void TS_ShoppingCart_001_TC_ShoppingCart_013_HGH_shipViaMethodModication() throws Exception
 	  {
 		  	
-		  Assert.assertEquals(true, false,"feature not present in the application");
+		 throw new SkipException("this feature is not present in the application");
 	  }
 	  
 	  
@@ -163,7 +163,7 @@ public class HGHShoppingCartModule extends MainController
 	  @Test(groups={"regression"})
 	  public void TS_ShoppingCart_001_TC_ShoppingCart_017_HGH_collapseViewAndExpandView() throws Exception
 	  {
-		  		Assert.assertEquals(true, false,"this feature is not present in the application");
+		  throw new SkipException("this feature is not present in the application");
 	  }
 	  
 	  

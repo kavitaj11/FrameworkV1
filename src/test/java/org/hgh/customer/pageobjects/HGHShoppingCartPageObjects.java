@@ -12,6 +12,7 @@ import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -110,21 +111,17 @@ public class HGHShoppingCartPageObjects extends MainController{
 		navigateToShoppingCart();
 		try
 		{
-			Waiting.explicitWaitVisibilityOfElement(checkForEmptyCart, 5);
 			if(checkForEmptyCart.isDisplayed())
 			{
 				clickContinueShopping();
 			}
 		}
-		catch(Exception e)
+		catch(NoSuchElementException e)
 		{
-			if(emptyCartButton.isDisplayed())
-			{
 			clickOnEmptyCartButton();
 			Waiting.explicitWaitForAlert(5);
 			TestUtility.alertAccept();
 			return true;
-		}
 		}
 		return true;
 	}
