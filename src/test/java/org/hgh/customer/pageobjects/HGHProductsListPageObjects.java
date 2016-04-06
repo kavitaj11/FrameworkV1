@@ -1,6 +1,8 @@
 package org.hgh.customer.pageobjects;
 import java.util.List;
+
 import org.hgh.maincontroller.MainController;
+import org.hgh.utils.TestUtility;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,6 +24,9 @@ public class HGHProductsListPageObjects extends MainController
 
 	@FindBy(xpath="(//h5/a)[1]")
 	private WebElement firstProduct;
+	
+	@FindAll(value={@FindBy(xpath="(//h5/a)")})
+	private List<WebElement> allProductsNames;
 	
 	@FindBy(xpath="//p[@class='cimm_productDetailBrand']")
 	private WebElement productDetailsBrandHeading;
@@ -65,22 +70,24 @@ public class HGHProductsListPageObjects extends MainController
 	
 	@FindAll(value={@FindBy(xpath="//div[@class='checkToCompare']/descendant::span[@class='customCheckBox']")})
 	private List<WebElement> compareCheckbox;
-
-	
-	@FindBy(xpath="//table")
-	private WebElement compareTable;
-	
-	@FindBy(xpath="//h2[text()='Compare']")
-	private WebElement compareHeader;
-	
-	@FindBy(xpath="//li[contains(text(),'Compare')]")
-	private WebElement compareBreadCrump;
 	
 	@FindBy(xpath="//a[@id='cartQuickView']/img")
 	private WebElement cartIcon;
 
 	@FindBy(xpath="//div[@class='gridListSwitchWrap']/a[@id='listView']/b")
 	private WebElement listViewButton;
+	
+	@FindAll({@FindBy(xpath="//span[contains(.,'Call for Price')]/ancestor::ul/descendant::span[@class='customCheckBox']")})
+	private List<WebElement> callForPriceCompareCheckBox;
+	
+	@FindBy(xpath="//span[@id='compareSpan']")
+	private WebElement compareCount;
+	
+	@FindBy(xpath="//a[contains(.,'Clear List')]")
+	private WebElement clearList;
+	
+	@FindBy(xpath="//dt[contains(.,'Brands')]/following-sibling::dd/descendant::button[@id='nSearchBtn']")
+	private WebElement searchButtonForBrandFilter;
 	
 	public HGHProductsListPageObjects verifyHeader(String searchText) {
 		
@@ -99,6 +106,11 @@ public class HGHProductsListPageObjects extends MainController
 		return new HGHProductsDetailsPageObjects();
 	}
 
+	public HGHProductsDetailsPageObjects clickOnSpecificProduct(int specificProduct) {
+		Waiting.explicitWaitVisibilityOfElements(allProductsNames, 15);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click()",allProductsNames.get(specificProduct-1));
+		return new HGHProductsDetailsPageObjects();
+	}
 
 
 	public HGHProductsListPageObjects verifyGridView() {
@@ -180,7 +192,7 @@ public class HGHProductsListPageObjects extends MainController
 
 
 	public HGHProductsListPageObjects clickOnFirstMyProductGroup() {
-		Waiting.explicitWaitVisibilityOfElement(firstMyProductGroup, 10);
+		Waiting.explicitWaitVisibilityOfElement(firstMyProductGroup, 20);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();",firstMyProductGroup);
 		return this;
 	}
@@ -197,9 +209,9 @@ public class HGHProductsListPageObjects extends MainController
 		return this;
 	}
 
-public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
+public HGHProductsListPageObjects clickCompareCheckboxes(int numberOfCheckBoxesToBeClicked) {
 		
-		for(int i=0;i<2;i++)
+		for(int i=0;i<numberOfCheckBoxesToBeClicked;i++)
 		{
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();",compareCheckbox.get(i));
 			
@@ -212,18 +224,6 @@ public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
 		return this;
 		
 	}
-
-	public HGHProductsListPageObjects verifyDisplayOfCompareTable() {
-		Assert.assertTrue(compareTable.isDisplayed(),"compare table is not displayed");
-		return this;
-	}
-
-	public HGHProductsListPageObjects verifyCompareHeaderAndBreampCrump() {
-		Assert.assertTrue(compareBreadCrump.isDisplayed(),"compare bread crump is not displayed");
-		Assert.assertTrue(compareHeader.isDisplayed(),"compare header is not displayed");
-		return this;
-		
-	}
 	
 	public HGHProductsListPageObjects clickOnCartIcon() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",cartIcon);
@@ -232,12 +232,108 @@ public HGHProductsListPageObjects clickFirstTwoCompareCheckboxes() {
 	}
 
 	public HGHProductsListPageObjects clickOnChangeView() {
+		Waiting.explicitWaitVisibilityOfElement(listViewButton, 20);
 		listViewButton.click();
 		return this;
 		
 	}
 
 
+	public HGHProductsListPageObjects verifyAlertMessageForComparingMoreThan3Items(String expectedAlertMessageForComaringMoreThan3Items) {
+		Waiting.explicitWaitForAlert(15);
+		Assert.assertEquals(TestUtility.getAlertText().trim(),expectedAlertMessageForComaringMoreThan3Items,"getting wrong alert message. "+TestUtility.getAlertText()+" . ");
+		TestUtility.alertAccept();
+		return this;
+		
+	}
+
+
+	public HGHProductsListPageObjects clickOnCompareWhoseProductsPriceIsCallForPrice(int numberOfCheckBoxesToBeClicked) {
+		for(int i=0;i<numberOfCheckBoxesToBeClicked;i++)
+		{
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();",callForPriceCompareCheckBox.get(i));
+			
+		}
+		return this;
+		
+	}
+
+
+	public HGHProductsListPageObjects checkCompareCount(int checkCount) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String compareCountBuffer = compareCount.getText().replace("Item(s)", "").trim();
+		int compareCount = Integer.parseInt(compareCountBuffer);
+		Assert.assertEquals(compareCount,checkCount,"Compare count is wrong."+compareCount);
+		return this;
+	}
+
+
+	public HGHProductsListPageObjects clickOnASpecificCompareChecbox(int checkboxNumber) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();",compareCheckbox.get(checkboxNumber-1));
+		
+		return this;
+	}
+
+
+	public HGHProductsListPageObjects clickOnClearList() {
+		Waiting.explicitWaitVisibilityOfElement(clearList, 6);
+		clearList.click();
+		return this;
+	}
+
+
+	public HGHProductsListPageObjects verifyClearListFunctionality() {
+		Waiting.explicitWaitForAlert(5);
+		Assert.assertEquals(TestUtility.getAlertText(), "Item(s) removed from compare list.");
+		TestUtility.alertAccept();
+		checkCompareCount(0);
+		return this;
+	}
+
+
+	public HGHProductsListPageObjects verifyClearListFunctionalityWhenNoItemsAreThereForComparing() {
+		
+		Waiting.explicitWaitForAlert(5);
+		Assert.assertEquals(TestUtility.getAlertText(), "No Item in Compare List.");
+		TestUtility.alertAccept();
+		return this;
+		
+	}
+
+
+	public HGHProductsListPageObjects selectSpecificFilter(int specificFilterNumber) {
+	try {
+		Thread.sleep(2000);
+	} catch (InterruptedException e) {
+		e.printStackTrace();
+	}
+		WebElement specificFilter = driver.findElement(By.xpath("(//dt[contains(.,'Brands')]/following-sibling::dd/descendant::ol/li)["+specificFilterNumber+"]/descendant::span[@class='customCheckBox']"));
+		specificFilter.click();
+		return this;
+	}
+
+
+	public String getFilterName(int specificFilterNumber) {
+		String specficFilterName = "(//dt[contains(.,'Brands')]/following-sibling::dd/descendant::ol/li)[1]/descendant::span[@class='customCheckBox']";
+		String nameOfTheFilter = driver.findElement(By.xpath(specficFilterName)).getText().trim();
+		return nameOfTheFilter;
+	}
+
+
+	public HGHProductsListPageObjects clickOnSearchFilterButton() {
+		searchButtonForBrandFilter.click();
+		return this;
+	}
 }
 	
 	

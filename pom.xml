@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>WebAppAutomationFramework</groupId>
-  <artifactId>WebAppAutomationFrameworkUsingTestNG</artifactId>
+  <groupId>HGH</groupId>
+  <artifactId>HGHAutomationSuite</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>WebAppAutomationFrameworkUsingTestNG</name>
+  <name>HGHAutomationSuite</name>
   <url>http://maven.apache.org</url>
 
  <properties>
@@ -17,19 +17,18 @@
         <version.allure>1.4.3</version.allure>
         <version.aspectj>1.7.4</version.aspectj>
         <version.cucumber>1.2.0</version.cucumber>
-        <version.selenium>2.52.0</version.selenium>
+        <version.selenium>2.53.0</version.selenium>
         <version.slf4j>1.7.7</version.slf4j>
         <version.phantomjs>1.9.7</version.phantomjs>
  
     </properties>
 
     <dependencies>
-    
-    <dependency>
-	<groupId>org.seleniumhq.selenium</groupId>
-	<artifactId>selenium-htmlunit-driver</artifactId>
-	<version>2.52.0</version>
-	</dependency>
+		<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-htmlunit-driver</artifactId>
+		<version>2.52.0</version>
+		</dependency>
     
     <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
@@ -116,19 +115,26 @@
 		<groupId>com.github.detro.ghostdriver</groupId>
 		<artifactId>phantomjsdriver</artifactId>
 		<version>1.1.0</version>
-		</dependency>          
+		</dependency>       
+		
+		<dependency>
+		<groupId>com.github.detro</groupId>
+		<artifactId>phantomjsdriver</artifactId>
+		<version>1.2.0</version>
+		</dependency>
+		   
     
     <dependency>
 	<groupId>org.seleniumhq.selenium</groupId>
 	<artifactId>selenium-server</artifactId>
 	<version>${version.selenium}</version>
-</dependency>
+	</dependency>
 
     <dependency>
 	<groupId>com.google.code.gson</groupId>
 	<artifactId>gson</artifactId>
 	<version>2.3.1</version>
-</dependency>
+	</dependency>
     
 
         <!-- Utils -->

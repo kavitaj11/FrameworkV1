@@ -22,7 +22,7 @@ public class HGHLoginPopUpPageObjects extends MainController {
 	private WebElement password;
 	
 	public HGHLoginPopUpPageObjects clickOnRememberMe(){
-		Waiting.explicitWaitVisibilityOfElement(rememberMeCheckbox, 10);
+		Waiting.explicitWaitVisibilityOfElement(rememberMeCheckbox, 20);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",rememberMeCheckbox);
 		return this;
 	}

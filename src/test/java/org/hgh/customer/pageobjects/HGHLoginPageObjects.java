@@ -1,8 +1,11 @@
 package org.hgh.customer.pageobjects;
+import java.util.concurrent.TimeUnit;
+
 import org.hgh.maincontroller.MainController;
 import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -12,7 +15,7 @@ public class HGHLoginPageObjects extends MainController {
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 	
-	@FindBy(xpath="//a[contains(.,'New customer?? Register Now!')]")
+	@FindBy(xpath="//a[contains(.,'New customer? Register Now')]")
 	private WebElement newCustomerRegisterNowLink;
 	
 	@FindBy(xpath="//input[@id='mainUserName']")
@@ -70,6 +73,7 @@ public class HGHLoginPageObjects extends MainController {
 
 
 	public HGHLoginPageObjects enterUsernameRegression(String userName) {
+		Waiting.explicitWaitVisibilityOfElement(userNameLocator, 20);
 		userNameLocator.sendKeys(userName);
 		return this;
 		
@@ -83,17 +87,19 @@ public class HGHLoginPageObjects extends MainController {
 	}
 
 
-	public HGHProductCategoryPageObjects clickOnLoginButton() {
-		Waiting.explicitWaitVisibilityOfElement(loginButton, 10);
-		loginButton.click();
-		return new HGHProductCategoryPageObjects();
+	public HGHLoginPageObjects clickOnLoginButton() {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		loginButton.sendKeys(Keys.ENTER);
+		return this;
 	}
 
 
 	public HGHLoginPageObjects verifyLoginPage() throws Exception {
+		Waiting.explicitWaitVisibilityOfElement(userNameLocator, 10);
 		Assert.assertTrue(userNameLocator.isDisplayed(),"user name is not displayed");
 		Assert.assertTrue(passwordLocator.isDisplayed(),"password is not displayed");
 		Assert.assertTrue(loginButton.isDisplayed(),"login button is not displayed");
+		Waiting.explicitWaitVisibilityOfElement(newCustomerRegisterNowLink, 10);
 		Assert.assertTrue(newCustomerRegisterNowLink.isDisplayed(),"new customer register now is not displayed");
 		Assert.assertTrue(rememberMeText.isDisplayed(),"remember me checkbox is not displayed");
 		Assert.assertTrue(forgotMyPasswordLink.isDisplayed(),"forgot my password link is not displayed");
@@ -106,7 +112,7 @@ public class HGHLoginPageObjects extends MainController {
 
 
 	public HGHLoginPageObjects clickOnRemeberMe() {
-		Waiting.explicitWaitVisibilityOfElement(rememberMeCheckbox,10);
+		Waiting.explicitWaitVisibilityOfElement(rememberMeCheckbox,20);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click()",rememberMeCheckbox);
 		return this;
 	}
@@ -124,7 +130,7 @@ public class HGHLoginPageObjects extends MainController {
 
 	public HGHLoginPageObjects verifyEmptyUserNameAndPasswordTextbox() {
 		
-		Waiting.explicitWaitVisibilityOfElement(userNameLocator, 10);
+		Waiting.explicitWaitVisibilityOfElement(userNameLocator, 20);
 		Assert.assertEquals(userNameLocator.getAttribute("value"), "");
 		Assert.assertEquals(passwordLocator.getAttribute("value"), "");
 		return this;

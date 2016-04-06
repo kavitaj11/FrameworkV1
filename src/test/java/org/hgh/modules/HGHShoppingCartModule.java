@@ -1,6 +1,7 @@
 package org.hgh.modules;
 
 import org.hgh.maincontroller.MainController;
+import org.hgh.utils.PropertyFileReader;
 import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.TestUtility;
 import org.testng.SkipException;
@@ -24,6 +25,7 @@ public class HGHShoppingCartModule extends MainController
 		  		String saveCartName = data.getSaveCartName();
 		  		loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  		shoppingCartPage().clearCart();
+		  		Thread.sleep(1500);
 				homePage()
 		  		.searchText(searchText)
 				.clickOnSearch()
@@ -62,6 +64,7 @@ public class HGHShoppingCartModule extends MainController
 		  		String saveCartName = data.getSaveCartName();
 		  		loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 				shoppingCartPage().clearCart();
+				Thread.sleep(1500);
 				homePage()
 				.searchText(searchText)
 				.clickOnSearch()
@@ -98,6 +101,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -145,6 +149,7 @@ public class HGHShoppingCartModule extends MainController
 		  		String searchText = data.getSearchText();
 		  		loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 				shoppingCartPage().clearCart();
+				Thread.sleep(1500);
 				homePage()
 				.searchText(searchText)
 				.clickOnSearch()
@@ -173,6 +178,7 @@ public class HGHShoppingCartModule extends MainController
 		  String searchText = data.getSearchText();
 		  loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  shoppingCartPage().clearCart();
+		  Thread.sleep(1500);
 		  homePage()
 		  .searchText(searchText)
 		  .clickOnSearch()
@@ -193,6 +199,7 @@ public class HGHShoppingCartModule extends MainController
 		  loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  shoppingCartPage()
 		 .clearCart();
+		  Thread.sleep(1500);
 		  homePage()
 		 .searchText(searchText)
 		 .clickOnSearch()
@@ -219,6 +226,7 @@ public class HGHShoppingCartModule extends MainController
 		  String quantity = data.getQuantityForShoppingCartPageVerification();
 		  shoppingCartPage()
 			 .clearCart();
+		  Thread.sleep(1500);
 			 homePage()
 			 .searchText(searchText)
 			.clickOnSearch()
@@ -247,6 +255,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -281,6 +290,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -304,6 +314,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -320,10 +331,18 @@ public class HGHShoppingCartModule extends MainController
 	  @Test(groups={"regression"})
 	  public void TS_ShoppingCart_001_TC_ShoppingCart_006_HGH_signedUser_DeleteLinkForDeletingTheItem() throws Exception
 	  {
+		  if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").equalsIgnoreCase("ie"))
+		  {
+			  throw new SkipException("Code does not work in IE.Problem with IE driver server in handling alerts. Does not work in IE. Need to do this manually");
+			  
+		  }
+		  else
+		  {
 		  	String searchText = data.getSearchText();
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	 Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -341,22 +360,32 @@ public class HGHShoppingCartModule extends MainController
 			 .clickOnDeleteButton()
 			 .verifyDeleteAlertText(MPN);
 			 TestUtility.alertAccept();
-			 shoppingCartPage().verifyDeleteItemThroughDeleteLink();
+			 shoppingCartPage()
+			 .verifyDeleteItemThroughDeleteLink();
+	  }
 	  }
 	  
 	  @Test(groups={"regression"})
 	  public void TS_ShoppingCart_001_TC_ShoppingCart_007_HGH_signedUser_CancellingOfDeletingTheItemThroughDeleteLink() throws Exception
 	  {
-		  	String searchText = data.getSearchText();
+		  if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").equalsIgnoreCase("ie"))
+		  {
+			  throw new SkipException("Code does not work in IE.Problem with IE driver server in handling alerts.Need to do this manually");
+			  
+		  }
+		  else
+		  {
+			String searchText = data.getSearchText();
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
-		  	 shoppingCartPage()
-			 .clearCart();
-		  	 homePage()
-			 .searchText(searchText)
-			 .clickOnSearch()
-			 .productListPage()
-			 .clickOnFirstProduct()
-			 .productDetailsPage();
+		  	shoppingCartPage()
+		  	.clearCart();
+		  	Thread.sleep(1500);
+		  	homePage()
+		  	.searchText(searchText)
+			.clickOnSearch()
+			.productListPage()
+			.clickOnFirstProduct()
+			.productDetailsPage();
 			 String productTitle = productDetailsPage().productTitle();
 			 String MPN = productDetailsPage().getMPN();
 			 productDetailsPage()
@@ -368,6 +397,7 @@ public class HGHShoppingCartModule extends MainController
 			 .verifyDeleteAlertText(MPN);
 			 TestUtility.alertDismiss();
 			 shoppingCartPage().verifyProductTitle(productTitle,productTitleInShoppingCart);
+		  }
 	  }
 	  
 	  @Test(groups={"regression"})
@@ -377,6 +407,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -385,7 +416,7 @@ public class HGHShoppingCartModule extends MainController
 			 .productDetailsPage()
 			 .clickOnAddToCart()
 			 .clickOnCheckout();
-			String productTitle= shoppingCartPage().getProductTitle();
+		  	 String productTitle= shoppingCartPage().getProductTitle();
 			shoppingCartPage()
 			.clickOnImageOfTheProduct()
 			.productDetailsPage()
@@ -400,6 +431,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()
@@ -422,6 +454,7 @@ public class HGHShoppingCartModule extends MainController
 		  	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH();
 		  	 shoppingCartPage()
 			 .clearCart();
+		  	Thread.sleep(1500);
 		  	 homePage()
 			 .searchText(searchText)
 			 .clickOnSearch()

@@ -7,6 +7,7 @@ import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -155,8 +156,8 @@ public class HGHHomePageObjects extends MainController{
 	}
 
 	public HGHLoginPageObjects clickLoginLink() {
-		Waiting.explicitWaitVisibilityOfElement(loginLinkLocator, 5);
-		loginLinkLocator.click();
+		Waiting.explicitWaitVisibilityOfElement(loginLinkLocator, 20);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",loginLinkLocator);
 		return new HGHLoginPageObjects();
 	}
 
@@ -173,7 +174,7 @@ public class HGHHomePageObjects extends MainController{
 	}
 
 	public HGHHomePageObjects logout() {
-		logoutButton.click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",logoutButton);
 		return this;
 	}
 	
@@ -184,7 +185,7 @@ public class HGHHomePageObjects extends MainController{
 	}
 
 	public HGHHomePageObjects searchText(String searchText) throws Exception {
-		
+		searchTextbox.clear();
 		searchTextbox.sendKeys(searchText);
 		return this;
 	}
@@ -398,7 +399,15 @@ public class HGHHomePageObjects extends MainController{
 	}
 
 	public HGHHomePageObjects waitForLogoutLink() {
-		Waiting.explicitWaitVisibilityOfElement(logoutButton, 10);
+		try
+		{
+		Waiting.explicitWaitVisibilityOfElement(logoutButton, 20);
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			waitForLogoutLink();
+		}
 		return this;
 	}
 	}

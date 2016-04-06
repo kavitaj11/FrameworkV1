@@ -4,6 +4,17 @@ import org.hgh.maincontroller.MainController;
 
 public class SearchDataPropertyFile extends MainController{
 
+	private int numberOfCheckboxesToBeClicked;
+
+	public int getNumberOfCheckboxesToBeClicked() {
+		return numberOfCheckboxesToBeClicked;
+	}
+
+	public void setNumberOfCheckboxesToBeClicked(int numberOfCheckboxesToBeClicked) {
+		this.numberOfCheckboxesToBeClicked = numberOfCheckboxesToBeClicked;
+	}
+
+	
 	public String getUserName() throws Exception{
 		String userName = PropertyFileReader.propertiesReader(searchData, "userName");
 		return userName;
@@ -114,5 +125,68 @@ public class SearchDataPropertyFile extends MainController{
 		String sortByShoppingCartDropdownValues = PropertyFileReader.propertiesReader(searchData, "sortByShoppingCartDropdownValues");
 		return sortByShoppingCartDropdownValues;
 	}
+
+	public String getNickName() throws Exception {
+		String nickName = PropertyFileReader.propertiesReader(searchData, "nickName");
+		return nickName;
+		
+	}
+
+	public String getCardHolder() throws Exception {
+		String cardHolder = PropertyFileReader.propertiesReader(searchData, "cardHolder");
+		return cardHolder;
+	}
+
+	public String getStreetAddress() throws Exception {
+		String streetAddress = PropertyFileReader.propertiesReader(searchData, "streetAddress");
+		return streetAddress;
+	}
+
+	public String getPostalCode() throws Exception {
+		String postalCode = PropertyFileReader.propertiesReader(searchData, "postalCode");
+		return postalCode;
+	}
+
+	public String welcomeMessageInAddNewCreditCardPage() throws Exception {
+		String welcomeMessageInAddNewCreditCardPage = PropertyFileReader.propertiesReader(searchData, "welcomeMessageInAddNewCreditCardPage");
+		return welcomeMessageInAddNewCreditCardPage;
+	}
+
+	public String getCardNumber() throws Exception {
+		String cardNumber = PropertyFileReader.propertiesReader(searchData, "cardNumber");
+		return cardNumber;
+	}
+
+	public String getMonth() throws Exception {
+		String month = PropertyFileReader.propertiesReader(searchData, "month");
+		return month;
+	}
+
+	public String getYear() throws Exception {
+		String year = PropertyFileReader.propertiesReader(searchData, "year");
+		return year;
+	}
+
+	public String getProductDetailsTabs() throws Exception {
+		String productDetailsTabs = PropertyFileReader.propertiesReader(searchData, "productDetailsTabs");
+		return productDetailsTabs;
+	}
+
+	public String getOrderConfirmationText() throws Exception {
+		String orderConfirmationText = PropertyFileReader.propertiesReader(searchData, "orderConfirmationText");
+		return orderConfirmationText;
+	}
+	
+	public String expectedAlertMessageForComaringMoreThan3Items() throws Exception {
+		String expectedAlertMessageForComaringMoreThan3Items =PropertyFileReader.propertiesReader(searchData, "expectedAlertMessageForComaringMoreThan3Items");
+		return expectedAlertMessageForComaringMoreThan3Items;
+	}
+	
+	
+	public String getAnotherSearchText() throws Exception {
+		String anotherSearchText =PropertyFileReader.propertiesReader(searchData, "searchText.anotherSearch");
+		return anotherSearchText;
+	}
+	
 	
 }

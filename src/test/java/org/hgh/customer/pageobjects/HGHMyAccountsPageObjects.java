@@ -24,6 +24,9 @@ public class HGHMyAccountsPageObjects extends MainController{
 	@FindBy(css="a[href='/SavedGroups/Products']")
 	private WebElement myProductsGroupsLink;
 	
+	@FindBy(css="a[href='OpenOrderSale.action?reqType=webOrder&orderStatus=New']")
+	private WebElement openOrdersLink;
+	
 	@FindBy(css="a[href='/SavedGroups/Cart")
 	private WebElement mySavedCartLink;
 	
@@ -329,6 +332,7 @@ public class HGHMyAccountsPageObjects extends MainController{
 	}
 
 	public HGHMyAccountsPageObjects verifyRequestForQuoteHeadingAndBreadcrump() {
+		Waiting.explicitWaitVisibilityOfElement(requestForQuoteBreadCrump, 10);
 		Assert.assertTrue(requestForQuoteBreadCrump.isDisplayed(),"request for quote bread crump is not displayed");
 		Assert.assertTrue(requestForQuoteHeading.isDisplayed(),"request for quote heading is not displayed");
 		return this;
@@ -376,6 +380,11 @@ public class HGHMyAccountsPageObjects extends MainController{
 
 	public HGHMyAccountsPageObjects verifyQuickOrderPadBreadCrump() {
 		Assert.assertTrue(quickOrderPadBreadCrump.isDisplayed(), "quick order pad breadcrump is not displayed");
+		return this;
+	}
+
+	public HGHMyAccountsPageObjects clickOnOpenOrders() {
+		
 		return this;
 	}
 }

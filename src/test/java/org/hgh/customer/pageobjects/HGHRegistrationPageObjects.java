@@ -1,9 +1,11 @@
 package org.hgh.customer.pageobjects;
 import org.testng.Assert;
 import org.hgh.maincontroller.MainController;
+
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -12,10 +14,11 @@ public class HGHRegistrationPageObjects extends MainController{
 	@FindBy(xpath="//span[@id='question' and contains(text(),'I am a current HGH Hardware Supply Customer')]")
 	private WebElement iAmAcurrentHGHHardwareCustomer;
 	
-	@FindBy(xpath="//div[@id='first']/descendant::span[contains(text(),'Continue')]")
+	@FindBy(xpath="//div[@id='firstQuestion']/descendant::span[contains(text(),'Continue')]")
 	private WebElement continueButton;
 	
-	@FindBy(xpath="//input[@class='buttonGrad']")private WebElement loginButton;
+	@FindBy(xpath="//input[@class='buttonGrad']")
+	private WebElement loginButton;
 	
 	@FindBy(xpath="//span[@id='question' and contains(text(),'This is my first time ordering online with HGH Hardware')]")
 	private WebElement thisIsMyFirstTimeOrderingOnlineWithHGHHardware;
@@ -68,7 +71,7 @@ public class HGHRegistrationPageObjects extends MainController{
 	@FindBy(xpath="//span[@id='errorMsg']")
 	private WebElement errorMsgSection;
 	
-	@FindBy(xpath="//div[@id='second']/descendant::span[contains(text(),'Continue')]")
+	@FindBy(xpath="//div[@id='first']/descendant::span[contains(text(),'Continue')]")
 	private WebElement continueButtonAgain;
 	
 	@FindBy(xpath="//input[@id='phoneNo1B']")
@@ -84,11 +87,11 @@ public class HGHRegistrationPageObjects extends MainController{
 	}
 	
 
-	public HGHRegistrationPageObjects clickContinue() {
+	public HGHRegistrationPageObjects clickContinue() throws Exception {
+	
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()",continueButton);
 		return this;
 	}
-	
 	
 	public HGHRegistrationPageObjects clickLoginButton(){
 		Waiting.explicitWaitVisibilityOfElement(loginButton, 10);

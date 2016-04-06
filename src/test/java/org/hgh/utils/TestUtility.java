@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 public class TestUtility extends MainController{
 
 	static Actions action = new Actions(driver);
-	static Alert alert = driver.switchTo().alert();
+	static Alert alert = driver.switchTo().alert(); ;
 	
 	
 	public static void openPageInNewTab() throws AWTException {
@@ -119,6 +119,7 @@ public class TestUtility extends MainController{
 	
 	public static String getAlertText()
 	{
+		
 		String alertText = alert.getText().trim();
 		return alertText;
 	}

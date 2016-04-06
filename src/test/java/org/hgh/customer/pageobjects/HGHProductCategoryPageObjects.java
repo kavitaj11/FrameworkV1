@@ -7,6 +7,7 @@ import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -161,8 +162,16 @@ public class HGHProductCategoryPageObjects extends MainController{
 	}
 
 	public HGHProductCategoryPageObjects verifyWelcomeMsg() {
+		try
+		{
 		Waiting.explicitWaitVisibilityOfElement(welcomeLocator, 10);
 		Assert.assertTrue(welcomeLocator.isDisplayed(),"welcome is not displayed");
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			verifyWelcomeMsg();
+		}
 		return this;
 		
 	}

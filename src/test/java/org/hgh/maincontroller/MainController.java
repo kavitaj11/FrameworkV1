@@ -9,6 +9,7 @@ import static org.monte.media.VideoFormatKeys.CompressorNameKey;
 import static org.monte.media.VideoFormatKeys.DepthKey;
 import static org.monte.media.VideoFormatKeys.ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE;
 import static org.monte.media.VideoFormatKeys.QualityKey;
+
 import java.awt.Dimension;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
@@ -17,17 +18,26 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.apache.commons.io.FileUtils;
+import org.hgh.customer.pageobjects.HGHAddNewCreditCardPageObjects;
+import org.hgh.customer.pageobjects.HGHCheckoutPageObjects;
+import org.hgh.customer.pageobjects.HGHCheckoutWithCreditCardPageObjects;
+import org.hgh.customer.pageobjects.HGHComparePageObjects;
+import org.hgh.customer.pageobjects.HGHConfirmOrderPageObjects;
+import org.hgh.customer.pageobjects.HGHDropdownShoppingCartPageObjects;
 import org.hgh.customer.pageobjects.HGHHomePageObjects;
 import org.hgh.customer.pageobjects.HGHLoginPageObjects;
 import org.hgh.customer.pageobjects.HGHLoginPopUpPageObjects;
 import org.hgh.customer.pageobjects.HGHMyAccountsPageObjects;
+import org.hgh.customer.pageobjects.HGHOrderConfirmationPageObjects;
 import org.hgh.customer.pageobjects.HGHProductCategoryPageObjects;
 import org.hgh.customer.pageobjects.HGHProductsDetailsPageObjects;
 import org.hgh.customer.pageobjects.HGHProductsListPageObjects;
 import org.hgh.customer.pageobjects.HGHRegistrationPageObjects;
 import org.hgh.customer.pageobjects.HGHRetrievePasswordPageObjects;
 import org.hgh.customer.pageobjects.HGHShoppingCartPageObjects;
+import org.hgh.utils.ApplicationSetUpPropertyFile;
 import org.hgh.utils.PropertyFileReader;
 import org.hgh.utils.Screenshot;
 import org.hgh.utils.SendEmailGmail;
@@ -65,6 +75,8 @@ public static String outputVideo="";
 private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/Property Files/ApplicationSetUp.properties";
 public static String searchData = "resources/Property Files/SearchData.properties";
+
+
 
 public HGHHomePageObjects homePage()
 {
@@ -132,11 +144,56 @@ public HGHProductCategoryPageObjects productCategoryPage()
 	return productCategoryPage;
 }
 
+public HGHCheckoutPageObjects checkoutPage()
+{
+	HGHCheckoutPageObjects checkoutPage = PageFactory.initElements(driver,HGHCheckoutPageObjects.class);
+	return checkoutPage;
+}
+
+public HGHCheckoutWithCreditCardPageObjects checkoutWithCreditCardPage()
+{
+	HGHCheckoutWithCreditCardPageObjects creditCardPage = PageFactory.initElements(driver,HGHCheckoutWithCreditCardPageObjects.class);
+	return creditCardPage;
+}
+
+public HGHAddNewCreditCardPageObjects addNewCreditCardPage()
+{
+	HGHAddNewCreditCardPageObjects addNewCreditCardPage = PageFactory.initElements(driver,HGHAddNewCreditCardPageObjects.class);
+	return addNewCreditCardPage;
+}
+
+public HGHConfirmOrderPageObjects confirmOrderPage()
+{
+	HGHConfirmOrderPageObjects confirmOrderPage = PageFactory.initElements(driver,HGHConfirmOrderPageObjects.class);
+	return confirmOrderPage;
+}
+
+public HGHOrderConfirmationPageObjects orderConfirmationPage()
+{
+	HGHOrderConfirmationPageObjects orderConfirmationPage = PageFactory.initElements(driver,HGHOrderConfirmationPageObjects.class);
+	return orderConfirmationPage;
+}
+
+
+public HGHComparePageObjects comparePage()
+{
+	HGHComparePageObjects comparePage = PageFactory.initElements(driver,HGHComparePageObjects.class);
+	return comparePage;
+}
+
+
+public HGHDropdownShoppingCartPageObjects dropdownShoppingCart()
+{
+	HGHDropdownShoppingCartPageObjects dropdownShoppingCart = PageFactory.initElements(driver,HGHDropdownShoppingCartPageObjects.class);
+	return dropdownShoppingCart;
+}
+
 
 DesiredCapabilities caps = new DesiredCapabilities();
 
 	@BeforeSuite(alwaysRun=true)
 	public void beforeSuite() throws Exception{
+		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		if((PropertyFileReader.propertiesReader(applicationSetUp,"outputFolder")==(null)))
 				{
 			outputFolder = "./Report";
@@ -150,17 +207,18 @@ DesiredCapabilities caps = new DesiredCapabilities();
 			PropertyFileReader.propertiesReader(applicationSetUp,"outputVideo");
 		}
 		
-		outputFolder += "/Report_" + SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
-		outputVideo += "/Videos_" + SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+		outputFolder += "/Report_"+ setUp.getBrowser().toUpperCase()+"_" + SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+		outputVideo += "/Videos_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
 		
 	}
 	
 	
  	@BeforeMethod(alwaysRun=true)
  	public boolean setUp() throws Exception{
- 		driver.get(PropertyFileReader.propertiesReader(applicationSetUp,"url"));
+ 		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+ 		driver.get(setUp.getURL());
  		driver.manage().deleteAllCookies();
- 		
+ 	
  		
 		try
 		{
@@ -174,17 +232,20 @@ DesiredCapabilities caps = new DesiredCapabilities();
 			return true;
 		}
 		return true;
-
-	
 	}
-
+ 	
+ 	@BeforeMethod(alwaysRun=true)
+ 	public void methodNamePrintInConsole(Method method)
+ 	{
+ 		System.out.println(method.getName());
+ 	}
  	
     
  	@BeforeMethod(alwaysRun=true)
 	public void startRecording(Method methodName) throws Exception{
- 		
+ 		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
  		 //File file = new File(outputFolder+"/"+"Videos/");
- 		if(PropertyFileReader.propertiesReader(applicationSetUp, "videoPermisson").equalsIgnoreCase("yes"))
+ 		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
  		{
  		 File file = new File(outputVideo+"/");
          Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -221,36 +282,35 @@ DesiredCapabilities caps = new DesiredCapabilities();
 	public void beforeTest() throws Exception
 	{
 		 
-		  
-		if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("chrome"))
+		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+		if(setUp.getBrowser().trim().equalsIgnoreCase("chrome"))
 		{
 			  
 			System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 			  
 		}
-		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("IE"))
+		else if(setUp.getBrowser().trim().equalsIgnoreCase("IE"))
 		{
-			  
-			System.setProperty("webdriver.ie.driver", "resources/drivers/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver","resources/drivers/IEDriverServer.exe");
 			driver=new InternetExplorerDriver();			  
 			  
 		}
 		
 		//how to give resolution
 		
-		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("HTMLUnit"))
+		else if(setUp.getBrowser().trim().equalsIgnoreCase("HTMLUnit"))
 		{
 			driver = new HtmlUnitDriver(true);
 		}
-		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("Ghost"))
+		else if(setUp.getBrowser().trim().equalsIgnoreCase("Ghost"))
 		{
 			 
-			File src = new File("E:/Hemanth/UnilogProjects/HGH-Harware Supply/resources/drivers/phantomjs.exe");
+			File src = new File("resources/drivers/phantomjs.exe");
 			System.setProperty("phantomjs.binary.path",src.getAbsolutePath());
 	        driver = new PhantomJSDriver();
 		}
-		else if(PropertyFileReader.propertiesReader(applicationSetUp, "browser").trim().equalsIgnoreCase("firefox"))
+		else if(setUp.getBrowser().trim().equalsIgnoreCase("firefox"))
 		{
 			driver = new FirefoxDriver();
 			
@@ -277,14 +337,13 @@ Screenshot.captureScreenShot(driver, testResult.getName(),testResult);
 	
 	@AfterMethod(alwaysRun=true)
 	public void callStopRecording() throws Exception{
-		if(PropertyFileReader.propertiesReader(applicationSetUp, "videoPermisson").equalsIgnoreCase("yes"))
+		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
  		{
 		stopRecording();
  		}
 	}
-	
-	
-	
+
 	@AfterSuite(alwaysRun=true)
 	public void tearDownClass(){
 		System.out.println("Ending Test Suite");

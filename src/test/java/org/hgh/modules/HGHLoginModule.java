@@ -1,6 +1,7 @@
 package org.hgh.modules;
 import org.hgh.dataprovider.SearchData;
 import org.hgh.maincontroller.MainController;
+import org.hgh.utils.ApplicationSetUpPropertyFile;
 import org.hgh.utils.SearchDataPropertyFile;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class HGHLoginModule extends MainController{
 	 */
 	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	
 	  @Test(groups={"smoke","regression"})
 		public void TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027_HGH() throws Exception
@@ -37,7 +39,7 @@ public class HGHLoginModule extends MainController{
 		  .enterUsernameRegression(userName)
 		  .enterPasswordRegression(password)
 		  .clickOnLoginButton()
-		  .productCategoryPage()
+		  .homePage()
 		  .assertForErrorMessages(expectedMsg);	
 	  }
 	  
@@ -111,8 +113,6 @@ public class HGHLoginModule extends MainController{
 		  .enterPassword()
 		  .clickOnRemeberMe()
 		  .clickOnLoginButton()
-		  .productCategoryPage()
-		  .verifyWelcomeMsg()
 		  .homePage()
 		  .waitForLogoutLink()
 		  .logout()
@@ -132,8 +132,14 @@ public class HGHLoginModule extends MainController{
 	  @Test(groups={"regression"})
 	  public void TS_Login_002_TC_HGH_Login_013_myProductGroupLoginPopupRememberMeClickUncheck() throws Exception
 	  {
+		  if(setUp.getBrowser().equalsIgnoreCase("ie"))
+		  {
+			  throw new SkipException("Does not work in IE. Problem with IE Driver server. It is unable to detect stale reference exception");
+		  }
+		  else
+		  {
 		  String searchText = data.getSearchText();
-		  homePage()
+		   homePage()
 		  .clickLoginLink()
 		  .loginPage()
 		  .verifyLoginPage()
@@ -141,8 +147,6 @@ public class HGHLoginModule extends MainController{
 		  .enterPassword()
 		  .clickOnRemeberMe()
 		  .clickOnLoginButton()
-		  .productCategoryPage()
-		  .verifyWelcomeMsg()
 		  .homePage()
 		  .waitForLogoutLink()
 		  .logout()
@@ -154,14 +158,13 @@ public class HGHLoginModule extends MainController{
 		  .clickOnRememberMe()
 		  .clickOnLoginButton()
 		  .homePage()
-		  .verifyWelcomeMsg()
 		  .waitForLogoutLink()
 		  .logout()
 		  .clickLoginLink()
 		  .loginPage()
 		  .verifyEmptyUserNameAndPasswordTextbox();
 		}
-	  
+	  }
 	  @Test(groups={"regression"})
 	  public void TS_Login_002_TC_HGH_Login_015_rememberMeAsALink() throws Exception
 	  {
@@ -183,6 +186,12 @@ public class HGHLoginModule extends MainController{
 	  @Test(groups={"regression"})
 	  public void TS_Login_002_TC_HGH_Login_014_myProductGroupLoginPopupRememberMeClickCheck() throws Exception
 	  {  
+		  if(setUp.getBrowser().equalsIgnoreCase("ie"))
+		  {
+			throw new SkipException("Does not work in IE consistently. Problem with IE Driver server API. It is unable to click Logout link sometimes.");
+		  }
+		  else
+		  {
 		  String searchText = data.getSearchText();
 		  homePage()
 		  .searchText(searchText)
@@ -203,7 +212,7 @@ public class HGHLoginModule extends MainController{
 		  .loginPage()
 		  .verifyAutofillOfUserNameAndPassword();
 		}
-	  
+	  }
 	  @Test(groups={"regression"})
 	  public void TS_Login_005_TC_HGH_Login_021_loginVerifyOrderTopToBottom() throws Exception
 	  {

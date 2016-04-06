@@ -16,6 +16,7 @@ public class HGHRegistrationModule extends MainController {
 	  @Test(groups={"regression"},dataProvider="excelSheetDataRead", dataProviderClass=SearchData.class)
 	  public void tc001_HGH_Registration_ErrorScenarios(String companyName,String accountNumber,String firstName,String lastName,String email,String password,String passwordConfirmation,String address1,String address2,String city,String country,String state,String zipPostalCode,String phoneNumber,String expectedErrorMsg) throws Exception
 	  {
+		 
 				homePage()
 				.clickLoginLink()
 				.loginPage()

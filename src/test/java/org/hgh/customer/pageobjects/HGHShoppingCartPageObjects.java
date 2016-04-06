@@ -1,4 +1,5 @@
 package org.hgh.customer.pageobjects;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -6,9 +7,11 @@ import java.util.List;
 import java.util.Locale;
 
 import org.hgh.maincontroller.MainController;
+
 import org.hgh.utils.SearchDataPropertyFile;
 import org.hgh.utils.TestUtility;
 import org.hgh.utils.Waiting;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -101,13 +104,19 @@ public class HGHShoppingCartPageObjects extends MainController{
 	@FindAll(value={@FindBy(xpath="//select[@id='sortBy']/option")})
 	private List<WebElement> selectByDropdownValues;
 	
+	@FindBy(xpath="(//a[contains(text(),'Continue Checkout')])[1]")
+	private WebElement continueCheckout;
+	
+	@FindBy(xpath="//textarea[@id='shippingInstruction']")
+	private WebElement shippingInstructions;
+	
 	public HGHShoppingCartPageObjects clickOnEmptyCartButton(){
 		Waiting.explicitWaitVisibilityOfElement(emptyCartButton, 15);
 		emptyCartButton.click();
 		return this;
 	}
 
-	public boolean clearCart() {
+	public boolean clearCart() throws InterruptedException {
 		navigateToShoppingCart();
 		try
 		{
@@ -131,7 +140,7 @@ public class HGHShoppingCartPageObjects extends MainController{
 		return new HGHProductCategoryPageObjects();
 	}
 
-	public void navigateToShoppingCart() {
+	public void navigateToShoppingCart() throws InterruptedException {
 		productListPage().clickOnCartIcon();
 		productDetailsPage().clickOnCheckout();
 		
@@ -161,7 +170,8 @@ public class HGHShoppingCartPageObjects extends MainController{
 	}
 
 	public HGHShoppingCartPageObjects verifyShoppingCartBreadCrump() {
-		Assert.assertTrue(shoppingCartBreadCrump.isDisplayed(), "quantity is not the same as it was in the product list page");
+		Waiting.explicitWaitVisibilityOfElement(shoppingCartBreadCrump, 20);
+		Assert.assertTrue(shoppingCartBreadCrump.isDisplayed(), "shopping breadcrump page heading is not displayed");
 		return this;
 	}
 
@@ -341,7 +351,7 @@ public class HGHShoppingCartPageObjects extends MainController{
 	}
 
 	public HGHShoppingCartPageObjects verifyProductTitle(String productTitle, String productTitleInShoppingCart) {
-		Assert.assertEquals(productTitle, productTitleInShoppingCart,"product is not the same as it was in the product details page");
+		Assert.assertEquals(productTitle, productTitleInShoppingCart);
 		return this;
 	}
 
@@ -351,12 +361,12 @@ public class HGHShoppingCartPageObjects extends MainController{
 		return this;
 	}
 
-	public HGHShoppingCartPageObjects verifyDeleteAlertText(String MPN) {
-		Waiting.explicitWaitForAlert(15);
+	public HGHShoppingCartPageObjects verifyDeleteAlertText(String MPN) throws Exception {
 		Assert.assertEquals(TestUtility.getAlertText(), "You want to delete item "+MPN+" from cart?");
+		
 		return this;
 	}
-
+	
 	public HGHProductsDetailsPageObjects clickOnImageOfTheProduct() {
 		Waiting.explicitWaitVisibilityOfElement(imageLink, 10);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",imageLink);
@@ -399,6 +409,14 @@ public class HGHShoppingCartPageObjects extends MainController{
 		}
 		return this;	
 	}
+
+public HGHCheckoutPageObjects clickOnContinueCheckout() {
+		
+		Waiting.explicitWaitVisibilityOfElement(continueCheckout, 20);
+		continueCheckout.sendKeys(Keys.ENTER);;
+		return new HGHCheckoutPageObjects();
+		
+}
 }
 
 	
