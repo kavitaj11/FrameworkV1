@@ -15,6 +15,7 @@
     <classes> 
     		<class name="org.etna.modules.LoginModule"/>
     		<class name="org.etna.modules.HomePageModule"/>
+    		<class name="org.etna.modules.ProductListModule"/>
 	</classes>
   </test>
 </suite>

@@ -6,7 +6,7 @@ public class SearchDataPropertyFile extends MainController{
 
 	private int numberOfCheckboxesToBeClicked;
 
-	
+	private int numberOfItemsPerPage;
 	
 	private String userName = PropertyFileReader.propertiesReader(searchData, "userName");
 	
@@ -88,8 +88,11 @@ public class SearchDataPropertyFile extends MainController{
 	
 	private String allSectionsText = PropertyFileReader.propertiesReader(searchData, "allSectionsText");
 	
-	
 	private String footerLinksText = PropertyFileReader.propertiesReader(searchData, "allFooterLinksText");
+	
+	private String expectedSortByOptions = PropertyFileReader.propertiesReader(searchData, "expectedSortByOptions");
+	
+	private String expectedResultsPerPageOptions = PropertyFileReader.propertiesReader(searchData, "expectedResultsPerPageOptions");
 	
 	public String getCopyRightsOfUnilogText() {
 		return copyRightsOfUnilog;
@@ -305,6 +308,26 @@ public class SearchDataPropertyFile extends MainController{
 	public String getFooterLinksText() {
 		
 		return footerLinksText;
+	}
+
+	public String getExpectedSortByOptions() {
+		
+		return expectedSortByOptions;
+	}
+
+	public String getExpectedResultsPerPageOptions() {
+		
+		return expectedResultsPerPageOptions;
+	}
+
+	public void setShowItemsPerPage(int numberOfItemsPerPage) {
+		
+		this.numberOfItemsPerPage = numberOfItemsPerPage;
+	}
+
+	public int getShowItemsPerPage() {
+		
+		return numberOfItemsPerPage;
 	}
 	
 	

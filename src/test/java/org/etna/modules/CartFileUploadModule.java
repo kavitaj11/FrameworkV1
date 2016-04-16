@@ -1,7 +1,6 @@
 package org.etna.modules;
 import org.etna.maincontroller.MainController;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.annotations.Test;
 
 
 public class CartFileUploadModule extends MainController{
@@ -13,7 +12,7 @@ public class CartFileUploadModule extends MainController{
 	
 	LoginModule loginModule = new LoginModule();
 
-@Test(groups={"smoke","regression"})
+/*@Test(groups={"smoke","regression"})
   public void tc013_HGH_cartFileUpload() throws Exception
   {
 
@@ -27,7 +26,7 @@ public class CartFileUploadModule extends MainController{
 	 .fileUpload(data.getFileUploadPath())
 	 .clickOnUpload()
 	 .verifyQuickCartPage();
-  }
+  }*/
   
  
 

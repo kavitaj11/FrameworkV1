@@ -16,7 +16,7 @@ public class ProductsCompareModule extends MainController {
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	LoginModule loginModule = new LoginModule();
 	
-	
+	/*
 	@Test(groups={"regression"})
 	  public void TS_CMP_01_TC_CMP_01_unsignedMoreThan4ItemsToCompare() throws Exception
 	  {
@@ -923,5 +923,5 @@ public class ProductsCompareModule extends MainController {
 				.comparePage()
 				.verifyCompareHeaderAndBreampCrumpAndTitle()
 				.verifyWhetherAllTheProductsAreDisplayed(productTitle1,productTitle2,productTitle3);
-			}		
+			}		*/
 }

@@ -22,27 +22,30 @@ public class ProductListModule extends MainController{
 		  .searchText(searchText)
 		  .clickOnSearch()
 		  .productListPage()
-		  .verifyGridView()
+		  .verifyListView()
 		  .clickOnChangeView()
-		  .verifyListView();
+		  .verifyGridView();
 	  }
 	  
 	  
 	  @Test(groups={"smoke","regression"})
-	  public void tc006_HGH_ProductListPage() throws Exception
+	  public void tc006_verifyProductListPage() throws Exception
 	  {
 		  		String searchText = data.getSearchText();
+		  		data.setShowItemsPerPage(24);
+		  		int showItemsPerPage = data.getShowItemsPerPage();
 				homePage()
 				.searchText(searchText)
 				.clickOnSearch()
 				.productListPage()
 				.verifyListOfProducts()
-				.verifyAdvancedSearchSection()
-				.verifyRefineSearchHeader()
-				.verifyCategoryFilterSection()
-				.verifyBrandsFilterSection()
-				.verifySortBySection()
-				.verifyNarrowSearchBox()
-				.verifyCompareListLink();
+				.verifySearchHeader(searchText)
+				.verifySearchSection()
+				.verifyFilterSection()
+				.verifyCompareLinkLocator()
+				//.verifyAddDropdown()
+				.verifySortByDropdown()
+				.verifyResultsPerPageDropdown()
+				.verifyShowItemsPerPage(showItemsPerPage);
 	  }
 }

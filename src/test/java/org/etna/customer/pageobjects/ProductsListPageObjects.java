@@ -2,6 +2,7 @@ package org.etna.customer.pageobjects;
 import java.util.List;
 
 import org.etna.maincontroller.MainController;
+import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.By;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 /*
@@ -18,79 +20,78 @@ import org.testng.Assert;
  */
 public class ProductsListPageObjects extends MainController
 {
- 
+ SearchDataPropertyFile data = new SearchDataPropertyFile();
    Actions action = new Actions(driver);
-
-
-	@FindBy(xpath="(//h5/a)[1]")
-	private WebElement firstProduct;
-	
-	@FindAll(value={@FindBy(xpath="(//h5/a)")})
-	private List<WebElement> allProductsNames;
 	
 	@FindBy(xpath="//p[@class='cimm_productDetailBrand']")
 	private WebElement productDetailsBrandHeading;
 
 
-	@FindBy(xpath="//ul[@id='getchangemode']")
-	private WebElement listOfProducts;
-	
-	@FindAll(value={@FindBy(xpath="//ul[@id='getchangemode']")})
+	@FindAll(@FindBy(xpath="//li[@id='getchangemode']"))
 	private List<WebElement> listOfProductsLocator;
+
+	@FindBy(xpath="//div[@class='gridListControler']")
+	private WebElement changeViewButtonLocator;
 	
-	@FindBy(xpath="//div[@class='cimm_advancedSearch']")
-	private WebElement advancedSearchSection;
+	@FindBy(xpath="//div[@class='searchResults']/h2")
+	private WebElement searchResultsHeaderLocator;
 	
-	@FindBy(xpath="//div[@class='cimm_multiFilterListBlock']/h4")
-	private WebElement refineResults;
+	@FindBy(xpath="//div[@class='searchResults']/p")
+	private WebElement searchResultsSectionOnTopLocator;
 	
-	@FindBy(xpath="//dt[contains(text(),'Category')]/ancestor::dl[@id='narrow-by-list']")
-	private WebElement categoryFilterSection;
+	@FindBy(xpath="//a[contains(text(),'Advanced Search')]")
+	private WebElement advancedSearchLinkLocator;
 	
-	@FindBy(xpath="//dt[contains(text(),'Brands')]/ancestor::dl[@id='narrow-by-list']")
-	private WebElement brandsFilterSection;
-	
-	@FindBy(xpath="//div[@class='cimm_listGridTopRightCtrls']")
-	private WebElement sortByFunctionality;
+	@FindBy(xpath="//div[@class='cimm_leftMenuEnclosure']")
+	public WebElement filterSectionLocator;
 	
 	@FindBy(xpath="//input[@id='narrowText']")
-	private WebElement narrowSearchTextBox;
+	private WebElement filterSearchTextLocator;
 	
-	@FindBy(xpath="//a[contains(text(),'Compare List')]")
-	private WebElement compareListLink;
+	@FindBy(xpath="//button[@id='nSearchBtn']")
+	private WebElement filterSearchButtonLocator;
 	
-	@FindBy(xpath="(//b[contains(text(),'View')])[2]")
-	private WebElement viewChangeButton;
+	@FindBy(xpath="//h3[contains(text(),'Refine Results')]")
+	private WebElement filterRefineResultsHeadingLocator;
 	
-	@FindBy(xpath="(//span[contains(text(),'My Product Group')])[1]")
-	private WebElement firstMyProductGroup;
+	@FindBy(xpath="//h4[contains(text(),'Category')]/following-sibling::span")
+	public WebElement filterCategoryDropdownToggleButtonLocator;
 	
-	@FindBy(xpath="//dl[@class='dropdown']/descendant::input[@type='text']")
-	public WebElement myProductTextbox;
+	@FindBy(xpath="//h4[contains(text(),'Category')]")
+	public WebElement filterCategoryHeadingLocator;
 	
-	@FindAll(value={@FindBy(xpath="//div[@class='checkToCompare']/descendant::span[@class='customCheckBox']")})
-	private List<WebElement> compareCheckbox;
+	@FindBy(xpath="//h4[contains(text(),'Brands')]/following-sibling::span")
+	public WebElement filterBrandsDropdownToggleButtonLocator;
 	
-	@FindBy(xpath="//a[@id='cartQuickView']/img")
-	private WebElement cartIcon;
-
-	@FindBy(xpath="//div[@class='gridListSwitchWrap']/a[@id='listView']/b")
-	private WebElement listViewButton;
+	@FindBy(xpath="//h4[contains(text(),'Brands')])")
+	public WebElement filterBrandsHeadingLocator;
 	
-	@FindAll({@FindBy(xpath="//span[contains(.,'Call for Price')]/ancestor::ul/descendant::span[@class='customCheckBox']")})
-	private List<WebElement> callForPriceCompareCheckBox;
+	@FindAll(value={@FindBy(xpath="//dl[@id='bulkAction']/dd/descendant::li/descendant::span")})
+	private List<WebElement> addDropdownLocator;
 	
-	@FindBy(xpath="//span[@id='compareSpan']")
-	private WebElement compareCount;
 	
-	@FindBy(xpath="//a[contains(.,'Clear List')]")
-	private WebElement clearList;
+	@FindAll(value={@FindBy(css="select[id='sortBy']>option")})
+	private List<WebElement> sortByDropdownOptionsLocator;
 	
-	@FindBy(xpath="//dt[contains(.,'Brands')]/following-sibling::dd/descendant::button[@id='nSearchBtn']")
-	private WebElement searchButtonForBrandFilter;
+	@FindAll(value={@FindBy(css="select[id='resultPerPage']>option")})
+	private List<WebElement> resultsPerPageDropdownOptionsLocator;
+	
+	@FindBy(xpath="//a[@onclick='compareItems();']")
+	private WebElement compareLinkLocator;
+	
+	@FindAll(value={@FindBy(xpath="//span[contains(text(),'My Product Groups')]")})
+	private List<WebElement> myProductGroupsLocator;
+	
+	@FindBy(id="resultPerPage")
+	private WebElement resultsPerPageDrodownLocator;
+	
+	@FindBy(id="sortBy")
+	private WebElement sortByDrodownLocator;
+	
+	@FindAll(value={@FindBy(xpath="//a[@class='log-addTocart-btn addToCart']/ancestor::li/h4/a")})
+	private List<WebElement> items;
 	
 	public ProductsListPageObjects verifyHeader(String searchText) {
-		
 		String productsHeader = "//b[contains(text(),'"+searchText+"')]";
 		WebElement productHeaderLocator = driver.findElement(By.xpath(productsHeader));
 		Waiting.explicitWaitVisibilityOfElement(productHeaderLocator, 15);
@@ -100,140 +101,39 @@ public class ProductsListPageObjects extends MainController
 	}
 
 
-	public ProductsDetailsPageObjects clickOnFirstProduct() {
-		Waiting.explicitWaitVisibilityOfElement(firstProduct, 15);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click()",firstProduct);
-		return new ProductsDetailsPageObjects();
-	}
-
-	public ProductsDetailsPageObjects clickOnSpecificProduct(int specificProduct) {
-		Waiting.explicitWaitVisibilityOfElements(allProductsNames, 15);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click()",allProductsNames.get(specificProduct-1));
-		return new ProductsDetailsPageObjects();
-	}
-
-
 	public ProductsListPageObjects verifyGridView() {
-		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 10);
-		Assert.assertTrue(listOfProducts.getAttribute("class").equals("gridView"),"class name is not grid view");
+		Waiting.explicitWaitVisibilityOfElements(listOfProductsLocator, 10);
+		for(int i=0;i<listOfProductsLocator.size();i++)
+		{
+		Assert.assertTrue(listOfProductsLocator.get(i).getAttribute("class").equals("gridView"),"class name is not grid view");
+		
+	}
 		return this;
 	}
-
 	public ProductsListPageObjects verifyListView() {
 	
-		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 10);
-		
-		Assert.assertTrue(listOfProducts.getAttribute("class").equals("listView"),"class name is not list view");
+		Waiting.explicitWaitVisibilityOfElements(listOfProductsLocator, 10);
+		for(int i=0;i<listOfProductsLocator.size();i++)
+		{
+		Assert.assertTrue(listOfProductsLocator.get(i).getAttribute("class").equals("listView"),"class name is not list view");
+		}
 		return this;
 	}
 
 
 	public ProductsListPageObjects verifyListOfProducts() {
-		Waiting.explicitWaitVisibilityOfElement(listOfProducts, 15);
-		Assert.assertTrue(listOfProducts.isDisplayed(), "products are not displayed"); 
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyAdvancedSearchSection() {
-		Waiting.explicitWaitVisibilityOfElement(advancedSearchSection, 15);
-		Assert.assertTrue(advancedSearchSection.isDisplayed(), "Advanced search section is not displayed");
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyRefineSearchHeader() {
-		Waiting.explicitWaitVisibilityOfElement(refineResults, 15);
-		Assert.assertTrue(refineResults.isDisplayed(),"refine results header is not displayed") ;
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyCategoryFilterSection() {
-		Waiting.explicitWaitVisibilityOfElement(categoryFilterSection, 15);
-	Assert.assertTrue(categoryFilterSection.isDisplayed(),"category Filter section is not displayed");
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyBrandsFilterSection() {
-		Waiting.explicitWaitVisibilityOfElement(brandsFilterSection, 15);
-		Assert.assertTrue(brandsFilterSection.isDisplayed(),"brand Filter section is not displayed");
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifySortBySection() {
-		Waiting.explicitWaitVisibilityOfElement(sortByFunctionality, 15);
-		Assert.assertTrue(sortByFunctionality.isDisplayed(),"Sort By section is not displayed");
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyNarrowSearchBox() {
-		Waiting.explicitWaitVisibilityOfElement(narrowSearchTextBox, 15);
-	Assert.assertTrue(narrowSearchTextBox.isDisplayed(),"narrow Search box is not displayed");
-	return this;
-	}
-
-
-	public ProductsListPageObjects verifyCompareListLink() {
-		Waiting.explicitWaitVisibilityOfElement(compareListLink, 15);
-		Assert.assertTrue(compareListLink.isDisplayed(),"Compare List is not displayed");	
-		return this;
-	}
-
-
-	public boolean verifyViewToggleButton() {
-		Waiting.explicitWaitVisibilityOfElement(viewChangeButton, 15);
-		boolean t = viewChangeButton.isDisplayed();
-		return t;
-	}
-
-
-	public ProductsListPageObjects clickOnFirstMyProductGroup() {
-		Waiting.explicitWaitVisibilityOfElement(firstMyProductGroup, 20);
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();",firstMyProductGroup);
-		return this;
-	}
-
-
-	public ProductsListPageObjects enterGroupName(String groupName) {
-		Waiting.explicitWaitVisibilityOfElement(myProductTextbox, 20);
-		myProductTextbox.sendKeys(groupName);
-		return this;
-	}
-
-	public ProductsListPageObjects hitEnterForGroupCreation() {
-		myProductTextbox.sendKeys(Keys.ENTER);
-		return this;
-	}
-
-public ProductsListPageObjects clickCompareCheckboxes(int numberOfCheckBoxesToBeClicked) {
-		
-		for(int i=0;i<numberOfCheckBoxesToBeClicked;i++)
+		Waiting.explicitWaitVisibilityOfElements(listOfProductsLocator, 15);
+		for(int i=0;i<listOfProductsLocator.size();i++)
 		{
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();",compareCheckbox.get(i));
-			
+		Assert.assertTrue(listOfProductsLocator.get(i).isDisplayed(), "products are not displayed"); 
 		}
 		return this;
 	}
-
-	public ProductsListPageObjects clickOnCompare() {
-		compareListLink.click();
-		return this;
-		
-	}
 	
-	public ProductsListPageObjects clickOnCartIcon() {
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",cartIcon);
-		return this;
-		
-	}
 
 	public ProductsListPageObjects clickOnChangeView() {
-		Waiting.explicitWaitVisibilityOfElement(listViewButton, 20);
-		listViewButton.click();
+		Waiting.explicitWaitVisibilityOfElement(changeViewButtonLocator, 20);
+		changeViewButtonLocator.click();
 		return this;
 		
 	}
@@ -245,59 +145,6 @@ public ProductsListPageObjects clickCompareCheckboxes(int numberOfCheckBoxesToBe
 		TestUtility.alertAccept();
 		return this;
 		
-	}
-
-
-	public ProductsListPageObjects clickOnCompareWhoseProductsPriceIsCallForPrice(int numberOfCheckBoxesToBeClicked) {
-		for(int i=0;i<numberOfCheckBoxesToBeClicked;i++)
-		{
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();",callForPriceCompareCheckBox.get(i));
-			
-		}
-		return this;
-		
-	}
-
-
-	public ProductsListPageObjects checkCompareCount(int checkCount) {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String compareCountBuffer = compareCount.getText().replace("Item(s)", "").trim();
-		int compareCount = Integer.parseInt(compareCountBuffer);
-		Assert.assertEquals(compareCount,checkCount,"Compare count is wrong."+compareCount);
-		return this;
-	}
-
-
-	public ProductsListPageObjects clickOnASpecificCompareChecbox(int checkboxNumber) {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();",compareCheckbox.get(checkboxNumber-1));
-		
-		return this;
-	}
-
-
-	public ProductsListPageObjects clickOnClearList() {
-		Waiting.explicitWaitVisibilityOfElement(clearList, 6);
-		clearList.click();
-		return this;
-	}
-
-
-	public ProductsListPageObjects verifyClearListFunctionality() {
-		Waiting.explicitWaitForAlert(5);
-		Assert.assertEquals(TestUtility.getAlertText(), "Item(s) removed from compare list.");
-		TestUtility.alertAccept();
-		checkCompareCount(0);
-		return this;
 	}
 
 
@@ -330,10 +177,101 @@ public ProductsListPageObjects clickCompareCheckboxes(int numberOfCheckBoxesToBe
 	}
 
 
-	public ProductsListPageObjects clickOnSearchFilterButton() {
-		searchButtonForBrandFilter.click();
+	public ProductsListPageObjects verifySearchHeader(String searchText) {
+		Assert.assertEquals(searchResultsHeaderLocator.getText().toLowerCase().replace("search results for: ","").trim(),searchText.toLowerCase());
 		return this;
 	}
-}
+
+
+	public ProductsListPageObjects verifySearchSection() {
+		String actual = searchResultsSectionOnTopLocator.getText().replace("\n","").trim();
+		Assert.assertTrue(assertSearchSection(actual));
+		Assert.assertTrue(advancedSearchLinkLocator.isDisplayed(),"advanced search link is not displayed in the serach section.");
+		return this;
+	}
 	
+	public boolean assertSearchSection(String actual){
+		String toGetInteger = actual.replace("We found", "").replace("results for true fitNot finding what you want, try our Advanced Search.", "");
+		boolean t = (actual.contains("We found")&& actual.contains("results for true fitNot finding what you want, try our Advanced Search.") && toGetInteger.trim().matches("\\d+"));
+		return t;
+	}
+
+	public ProductsListPageObjects verifyFilterSection() {
+		Assert.assertTrue(filterSectionLocator.isDisplayed(), "filter section is not displayed");
+		Assert.assertTrue(filterSearchTextLocator.isDisplayed());
+		Assert.assertTrue(filterSearchButtonLocator.isDisplayed());
+		Assert.assertTrue(filterRefineResultsHeadingLocator.isDisplayed());
+		Assert.assertTrue(filterCategoryDropdownToggleButtonLocator.isDisplayed());
+		Assert.assertTrue(filterCategoryHeadingLocator.isDisplayed());
+		Assert.assertTrue(filterBrandsDropdownToggleButtonLocator.isDisplayed());
+		return this;
+	}
+	
+	public ProductsListPageObjects verifyCompareLinkLocator() {
+		Assert.assertTrue(compareLinkLocator.isDisplayed());
+		return this;
+	}
+
+
+	public ProductsListPageObjects clickOnMyProductGroup(int specificProductGroup) {
+		myProductGroupsLocator.get(specificProductGroup).click();
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifyAddDropdown() throws Exception{
+		for(int i=0 ;i<addDropdownLocator.size();i++)
+		{
+			System.out.println(addDropdownLocator.get(i).getText().trim());
+		}
+		return this;
+	}
+	
+	public ProductsListPageObjects verifySortByDropdown() throws Exception{
+		String [] expectedSortByOptions = data.getExpectedSortByOptions().split(",");
+		for(int i=0 ;i<sortByDropdownOptionsLocator.size();i++)
+		{
+		Assert.assertEquals(sortByDropdownOptionsLocator.get(i).getText().trim(),expectedSortByOptions[i]);
+		}
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifyResultsPerPageDropdown() {
+		String [] expectedResultsPerPageOptions = data.getExpectedResultsPerPageOptions().split(",");
+		for(int i=0 ;i<resultsPerPageDropdownOptionsLocator.size();i++)
+		{
+		Assert.assertEquals(Integer.parseInt(resultsPerPageDropdownOptionsLocator.get(i).getText().trim()),Integer.parseInt(expectedResultsPerPageOptions[i]));
+		}
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifyShowItemsPerPage(int showItemsPerPage) throws Exception {
+		Select select = new Select(resultsPerPageDrodownLocator);
+		select.selectByValue(Integer.toString(showItemsPerPage));
+		Thread.sleep(1500);
+		Assert.assertTrue(verifyNoOfItemsDisplayedIsLessThanOrEqualToTheNumberOfItemsSelected(showItemsPerPage),"number of items in the page is NOT less than or equal ");
+		return this;
+		
+	}
+
+
+	private boolean verifyNoOfItemsDisplayedIsLessThanOrEqualToTheNumberOfItemsSelected(int showItemsPerPage) {
+		if(listOfProductsLocator.size()<=showItemsPerPage)
+		{
+			return true;
+		}
+		else
+		{
+		return false;
+	}
+}
+
+
+	public ProductsListPageObjects clickOnSpecificItem(int specificItemNumber) {
+		items.get(specificItemNumber-1).click();
+		return this;
+	}
+}	
 	

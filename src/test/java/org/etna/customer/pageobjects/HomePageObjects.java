@@ -27,7 +27,7 @@ public class HomePageObjects extends MainController{
 	@FindBy(id="pLoginErr")
 	private WebElement errorMsgLocator;
 	
-	@FindBy(xpath="//a[contains(.,'Log in')]")
+	@FindBy(xpath="//ul[@class='cimm_signWrap hideInTab cimm_signWrapSpace']/descendant::a[contains(text(),'Login')]")
 	private WebElement loginLinkLocator;
 	
 	@FindBy(xpath="//li[@class='welcomeUser']")

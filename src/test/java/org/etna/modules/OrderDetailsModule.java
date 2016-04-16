@@ -9,7 +9,7 @@ public class OrderDetailsModule extends MainController{
 SearchDataPropertyFile data = new SearchDataPropertyFile();
 	
 	LoginModule loginModule = new LoginModule();
-	
+/*	
 	@Test(groups={"regression"})
 	  public void TS_OrderDetails_001_TC_OrderDetails_001_HGH_orderDetailsPageDisplayWhenClickOnReOrderInOpenOrders() throws Exception
 	  {
@@ -66,5 +66,5 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 		 .orderConfirmationPage()
 		 .verifyConfirmOrderPage()
 		 .verifyOrderStatus();
-	  }
+	  }*/
 }

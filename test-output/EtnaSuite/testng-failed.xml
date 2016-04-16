@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [EtnaSuite]">
+  <listeners>
+    <listener class-name="org.etna.utils.ReportGenerator"/>
+  </listeners>
+  <test name="EtnaWebApplicationTesting">
+    <groups>
+      <run>
+        <include name="smoke"/>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="org.etna.modules.LoginModule"/>
+      <class name="org.etna.modules.HomePageModule"/>
+      <class name="org.etna.modules.ProductListModule"/>
+    </classes>
+  </test> <!-- EtnaWebApplicationTesting -->
+  <test name="EtnaWebApplicationTesting(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="org.etna.modules.LoginModule">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="TS_Login_005_TC_Login_021_loginVerifyOrderTopToBottom"/>
+          <include name="TS_Login_005_TC_Login_022_loginVerifyOrderBottomToTop"/>
+          <include name="TS_Login_001_TC_Login_008_Verify_Tab_focus"/>
+          <include name="takeScreenshot"/>
+          <include name="startRecording"/>
+          <include name="TS_Login_002_TC_Login_014_myProductGroupLoginPopupRememberMeClickCheck"/>
+          <include name="callStopRecording"/>
+          <include name="tearDownClass"/>
+          <include name="TS_Login_003_TC_Login_019_verifyRegisterPage"/>
+          <include name="beforeSuite"/>
+          <include name="methodNamePrintInConsole"/>
+        </methods>
+      </class> <!-- org.etna.modules.LoginModule -->
+      <class name="org.etna.modules.HomePageModule">
+        <methods>
+          <include name="tc009_verifyAllSectionOptionPages"/>
+          <include name="setUp"/>
+          <include name="takeScreenshot"/>
+          <include name="startRecording"/>
+          <include name="methodNamePrintInConsole"/>
+          <include name="tc010_verifyAllFooterSectionPages"/>
+          <include name="callStopRecording"/>
+        </methods>
+      </class> <!-- org.etna.modules.HomePageModule -->
+      <class name="org.etna.modules.ProductListModule">
+        <methods>
+          <include name="setUp"/>
+          <include name="takeScreenshot"/>
+          <include name="startRecording"/>
+          <include name="methodNamePrintInConsole"/>
+          <include name="callStopRecording"/>
+        </methods>
+      </class> <!-- org.etna.modules.ProductListModule -->
+    </classes>
+  </test> <!-- EtnaWebApplicationTesting(failed) -->
+</suite> <!-- Failed suite [EtnaSuite] -->

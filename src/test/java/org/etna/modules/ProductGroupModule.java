@@ -16,7 +16,7 @@ public class ProductGroupModule  extends MainController {
 
 	LoginModule loginModule = new LoginModule();
 
-	@Test(groups={"smoke","regression"})
+	/*@Test(groups={"smoke","regression"})
 	  public void tc007_HGH_MyProductGroupCreateAndDelete() throws Exception
 	  {
 		  		
@@ -44,6 +44,6 @@ public class ProductGroupModule  extends MainController {
 				.myAccountsPage()
 				.clickOnMyProductGroupsInMyAccountsPage()
 				.verifyNoProductGroupsNotAvailable();
-	  } 
+	  } */
 	
 }

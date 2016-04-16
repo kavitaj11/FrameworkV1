@@ -14,7 +14,7 @@ public class QuickOrderPadModule extends MainController{
 
 	LoginModule loginModule = new LoginModule();
 	
-	 @Test(groups={"smoke","regression"})
+	/* @Test(groups={"smoke","regression"})
 	  public void tc014_HGH_quickOrderPad() throws Exception
 	  {
 		  
@@ -28,5 +28,5 @@ public class QuickOrderPadModule extends MainController{
 		 .selectPartNumberFromDropdown();
 		// myAccountsPage.enterPartNumberValues();
 		 
-	  }
+	  }*/
 }

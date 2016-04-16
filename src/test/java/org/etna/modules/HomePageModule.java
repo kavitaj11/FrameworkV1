@@ -15,7 +15,7 @@ public class HomePageModule extends MainController{
 
 	LoginModule loginModule = new LoginModule();
 	
-	@Test(groups={"smoke","regression"})
+	@Test(groups={"smoke","regression"},enabled=false)
 	  public void tc008_verifyHomePage() throws Exception
 	  {
 		homePage()

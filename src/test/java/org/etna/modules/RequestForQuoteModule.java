@@ -14,7 +14,7 @@ public class RequestForQuoteModule extends MainController {
 
 	LoginModule loginModule = new LoginModule();
 	
-	 @Test(groups={"smoke","regression"})
+	/* @Test(groups={"smoke","regression"})
 	  public void tc015_HGH_requestForQuote() throws Exception
 	  {
 		 
@@ -30,5 +30,5 @@ public class RequestForQuoteModule extends MainController {
 		 .enterRequestDetails()
 		 .clickSubmit()
 		 .clickOnOkForAfterCompletionOfRequestForQuote();
-	  }
+	  }*/
 }

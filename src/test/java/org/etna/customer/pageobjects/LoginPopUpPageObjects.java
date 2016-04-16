@@ -31,13 +31,13 @@ public class LoginPopUpPageObjects extends MainController {
 	@FindBy(xpath="//a[contains(.,'Forgot your Password?')]")
 	private WebElement forgotYourPassword;
 	
-	@FindBy(xpath="//h3[contains(.,'Log In')]/a[contains(.,'Sign Up')]")
+	@FindBy(xpath="//h3[contains(.,'Login')]/a[contains(.,'Sign Up')]")
 	private WebElement signUp;
 	
 	@FindBy(xpath="//a[@class='closeBtn']")
 	private WebElement closeButton;
 	
-	@FindBy(xpath="//h3[contains(.,'Log In')]")
+	@FindBy(xpath="//h3[contains(.,'Login')]")
 	private WebElement loginPageName;
 	
 	@FindBy(xpath="//label[contains(.,'Remember me')]")

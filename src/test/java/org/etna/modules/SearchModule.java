@@ -24,7 +24,7 @@ public class SearchModule extends MainController {
 				.clickOnSearch()
 				.productListPage()
 				.verifyHeader(searchText)
-				.clickOnFirstProduct()
+				.clickOnMyProductGroup(1)
 				.productDetailsPage()
 				.verifyHeadingOfProduct(searchText);
 			}

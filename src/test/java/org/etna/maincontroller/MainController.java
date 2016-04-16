@@ -75,8 +75,6 @@ private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/Property Files/ApplicationSetUp.properties";
 public static String searchData = "resources/Property Files/SearchData.properties";
 
-
-
 public HomePageObjects homePage()
 {
 	HomePageObjects homePage = PageFactory.initElements(driver,HomePageObjects.class);

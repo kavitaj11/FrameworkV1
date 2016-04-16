@@ -18,7 +18,7 @@ public class ShoppingCartModule extends MainController
 	
 	LoginModule loginModule = new LoginModule();
 	
-	@Test(groups={"smoke","regression"})
+	/*@Test(groups={"smoke","regression"})
 	  public void TS_ShoppingCart_002_TC_ShoppingCart_011_HGH_saveCart() throws Exception
 	  {
 		  		String searchText = data.getSearchText();
@@ -468,4 +468,4 @@ public class ShoppingCartModule extends MainController
 			 .productCategoryPage()
 			 .verifyWelcomeMsg();
 	  }
-}
+*/}

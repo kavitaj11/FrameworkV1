@@ -114,7 +114,7 @@ public class ShoppingCartPageObjects extends MainController{
 		return this;
 	}
 
-	public boolean clearCart() throws InterruptedException {
+	/*public boolean clearCart() throws InterruptedException {
 		navigateToShoppingCart();
 		try
 		{
@@ -131,18 +131,18 @@ public class ShoppingCartPageObjects extends MainController{
 			return true;
 		}
 		return true;
-	}
+	}*/
 
 	public ProductCategoryPageObjects clickContinueShopping() {
 		continueShoppingButton.click();
 		return new ProductCategoryPageObjects();
 	}
 
-	public void navigateToShoppingCart() throws InterruptedException {
+/*	public void navigateToShoppingCart() throws InterruptedException {
 		productListPage().clickOnCartIcon();
 		productDetailsPage().clickOnCheckout();
 		
-	}
+	}*/
 	
 	public ShoppingCartPageObjects enterNameOfSaveCartAndAddTheProductToSaveCart(String saveCartName) {
 		Waiting.explicitWaitVisibilityOfElement(saveCartTextbox, 15);

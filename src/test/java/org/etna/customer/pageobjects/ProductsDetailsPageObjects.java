@@ -104,6 +104,13 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	@FindAll(value={@FindBy(xpath="//ul[@class='cimm_breadcrumbs']/li")})
 	private List<WebElement> breadCrumps;
 	
+	
+	@FindBy(xpath="//h4[contains(text(),'Manufacturers')]/following-sibling::span")
+	public WebElement filterManufactureresToggleButtonLocator;
+	
+	@FindBy(xpath="//h4[contains(text(),'Manufacturers')]")
+	public WebElement filterManufacturersHeading;
+	
 	public ProductsDetailsPageObjects verifyHeadingOfProduct(String searchText) {
 		String searchTextUpperCase =searchText.toUpperCase(); 
 		Waiting.explicitWaitVisibilityOfElement(productDetailsBrandHeading, 5);
@@ -208,6 +215,20 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	private boolean checkFilterChosenAndProductTitle(String filterName) {
 		boolean t = productTitleLocator.getText().toUpperCase().trim().contains(filterName);
 		return t;
+	}
+
+
+
+	public ProductsDetailsPageObjects verifyPDPFilterSection() {
+		
+		Assert.assertTrue(productListPage().filterSectionLocator.isDisplayed(), "Filter section is not displayed in the PDP page.");
+		Assert.assertTrue(productListPage().filterCategoryDropdownToggleButtonLocator.isDisplayed(), "Filter category dropdown toggle button is not displayed.");
+		Assert.assertTrue(productListPage().filterCategoryHeadingLocator.isDisplayed(), "Filter category heading is not displayed.");
+		Assert.assertTrue(productListPage().filterBrandsDropdownToggleButtonLocator.isDisplayed(), "Filter brands dropdown toggle button is not displayed.");
+		Assert.assertTrue(productListPage().filterBrandsHeadingLocator.isDisplayed(), "Filter brands heading is not displayed.");
+		Assert.assertTrue(filterManufacturersHeading.isDisplayed(),"Manufacturers heading is not displayed.");
+		Assert.assertTrue(filterManufactureresToggleButtonLocator.isDisplayed(),"Manufacturers heading is not displayed.");
+		return this;
 	}
 }
 	
