@@ -6,8 +6,6 @@ import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -63,7 +61,7 @@ public class ProductsListPageObjects extends MainController
 	@FindBy(xpath="//h4[contains(text(),'Brands')]/following-sibling::span")
 	public WebElement filterBrandsDropdownToggleButtonLocator;
 	
-	@FindBy(xpath="//h4[contains(text(),'Brands')])")
+	@FindBy(xpath="//h4[contains(text(),'Brands')]")
 	public WebElement filterBrandsHeadingLocator;
 	
 	@FindAll(value={@FindBy(xpath="//dl[@id='bulkAction']/dd/descendant::li/descendant::span")})
@@ -88,7 +86,7 @@ public class ProductsListPageObjects extends MainController
 	@FindBy(id="sortBy")
 	private WebElement sortByDrodownLocator;
 	
-	@FindAll(value={@FindBy(xpath="//a[@class='log-addTocart-btn addToCart']/ancestor::li/h4/a")})
+	@FindAll(value={@FindBy(xpath="//a[@class='log-addTocart-btn addToCart']/ancestor::li[@class='sessionDesp']/descendant::h4/a")})
 	private List<WebElement> items;
 	
 	public ProductsListPageObjects verifyHeader(String searchText) {
@@ -214,7 +212,7 @@ public class ProductsListPageObjects extends MainController
 
 
 	public ProductsListPageObjects clickOnMyProductGroup(int specificProductGroup) {
-		myProductGroupsLocator.get(specificProductGroup).click();
+		myProductGroupsLocator.get(specificProductGroup-1).click();
 		return this;
 	}
 

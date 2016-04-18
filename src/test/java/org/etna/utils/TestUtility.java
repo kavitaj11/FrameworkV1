@@ -12,11 +12,12 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class TestUtility extends MainController{
 
 	static Actions action = new Actions(driver);
-	static Alert alert = driver.switchTo().alert(); ;
+	
 	
 	
 	public static void openPageInNewTab() throws AWTException {
@@ -90,7 +91,7 @@ public class TestUtility extends MainController{
 	}
 
 	public static void alertAccept() {
-		
+		Alert alert = driver.switchTo().alert();
 		Waiting.explicitWaitForAlert(5);
 		alert.accept();
 	}
@@ -119,14 +120,20 @@ public class TestUtility extends MainController{
 	
 	public static String getAlertText()
 	{
-		
+		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText().trim();
 		return alertText;
 	}
 
 	public static void alertDismiss() {
+		Alert alert = driver.switchTo().alert();
 		Waiting.explicitWaitForAlert(5);
 		alert.dismiss();
+		
+	}
+
+	public static void verifyToolTip(WebElement element, String expectedToolTip) {
+		Assert.assertEquals(element.getAttribute("title").trim(),"Print this page");
 		
 	}
 }

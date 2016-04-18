@@ -147,7 +147,7 @@ public class LoginModule extends MainController{
 		  .verifyEmptyUserNameAndPasswordTextbox();
 		}
 	  
-	  /*@Test(groups={"regression"})
+	  @Test(groups={"regression"})
 	  public void TS_Login_002_TC_Login_013_myProductGroupLoginPopupRememberMeClickUncheck() throws Exception
 	  {
 		  String searchText = data.getSearchText();
@@ -165,7 +165,7 @@ public class LoginModule extends MainController{
 		  .searchText(searchText)
 		  .clickOnSearch()
 		  .productListPage()
-		  .clickOnFirstMyProductGroup()
+		  .clickOnMyProductGroup(1)
 		  .loginPopUp()
 		  .clickOnRememberMe()
 		  .clickOnLoginButton()
@@ -175,7 +175,7 @@ public class LoginModule extends MainController{
 		  .clickLoginLink()
 		  .loginPopUp()
 		  .verifyEmptyUserNameAndPasswordTextbox();
-		}*/
+		}
 	  
 	  
 	  @Test(groups={"regression"})
