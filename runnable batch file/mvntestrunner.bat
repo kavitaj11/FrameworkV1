@@ -1,4 +1,4 @@
-cd E:\Hemanth\UnilogProjects\HGH-Harware Supply
+cd E:\Hemanth\UnilogProjects\etna
 call mvn clean install
 call mvn site
 call mvn jetty:run

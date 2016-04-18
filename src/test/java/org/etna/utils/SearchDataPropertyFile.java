@@ -94,6 +94,8 @@ public class SearchDataPropertyFile extends MainController{
 	
 	private String expectedResultsPerPageOptions = PropertyFileReader.propertiesReader(searchData, "expectedResultsPerPageOptions");
 	
+	private String searchTextForUPCLabelTest = PropertyFileReader.propertiesReader(searchData, "searchTextForUPCLabelTest");
+	
 	public String getCopyRightsOfUnilogText() {
 		return copyRightsOfUnilog;
 	}
@@ -328,6 +330,11 @@ public class SearchDataPropertyFile extends MainController{
 	public int getShowItemsPerPage() {
 		
 		return numberOfItemsPerPage;
+	}
+
+	public String getSearchTextForUPCLabelTest() {
+		
+		return searchTextForUPCLabelTest;
 	}
 	
 	
