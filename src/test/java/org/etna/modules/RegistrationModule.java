@@ -1,9 +1,7 @@
 package org.etna.modules;
 
-import org.etna.dataprovider.SearchData;
 import org.etna.maincontroller.MainController;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.annotations.Test;
 
 public class RegistrationModule extends MainController {
 	

@@ -1,10 +1,14 @@
 package org.etna.customer.pageobjects;
 import java.util.List;
-
 import org.etna.maincontroller.MainController;
+import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -18,6 +22,7 @@ public class ProductsDetailsPageObjects extends MainController{
    Actions action = new Actions(driver);
 
 SearchDataPropertyFile data = new SearchDataPropertyFile();
+ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 
 	@FindBy(className="cimm_prodDetailTitle")
 	private WebElement itemTitleLocator;
@@ -74,7 +79,7 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	private WebElement yourPriceLabel;
 	
 	@FindAll(value={@FindBy(xpath="//ul[@class='cimm_breadcrumbs']/li")})
-	private List<WebElement> breadCrumps;
+	public List<WebElement> breadCrumps;
 	
 	@FindBy(xpath="//h4[contains(text(),'Manufacturers')]/following-sibling::span")
 	private WebElement filterManufactureresToggleButtonLocator;
@@ -109,6 +114,37 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	@FindBy(xpath="//img[@id='fullResImage']")
 	private WebElement fullProductImage;
 	
+	@FindBy(xpath="//div[@id='drpdwnDiv']/descendant::li/input")
+	private WebElement myProductGroupTextbox;
+	
+	@FindBy(xpath="//div[@id='popSelector']/descendant::a")
+	private WebElement productGroupCreationMsg;
+	
+	@FindBy(xpath="//ul/descendant::a[contains(text(),'My Product Groups')]")
+	private WebElement myProductGroupsUnderGroups;
+	
+	@FindBy(xpath="//h4[contains(text(),'Groups')]/following-sibling::span")
+	private WebElement groupsToggleButton;
+	
+	@FindBy(xpath="//span[contains(text(),'Customer Part Number')]")
+	private WebElement customerPartNumberButton;
+	
+	@FindBy(xpath="//input[@id='newCustomerPartNumber']")
+	private WebElement customerPartNumberTextbox;
+	
+	@FindBy(id="add")
+	private WebElement addButton;
+	
+	
+	@FindBy(id="remove")
+	private WebElement removeButton;
+	
+	@FindAll(value={@FindBy(xpath="//dl/descendant::h4")})
+	private List <WebElement> leftPanelNames; 
+	
+	@FindAll(value={@FindBy(xpath="//dl/descendant::h4/following-sibling::span")})
+	private List <WebElement> toggleButtons;
+	
 	public ProductsDetailsPageObjects verifyDisplayOfItemName(String searchText) {
 		String searchTextUpperCase =searchText.toUpperCase(); 
 		Waiting.explicitWaitVisibilityOfElement(itemTitleLocator, 5);
@@ -117,14 +153,14 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	}
 
 
-	public ProductsDetailsPageObjects verifyPDPFilterSection() {
+	public ProductsDetailsPageObjects verifyPDPFilterSectionNOTLoggedIn() {
 		Assert.assertTrue(productListPage().filterSectionLocator.isDisplayed(), "Filter section is not displayed in the PDP page.");
-		Assert.assertTrue(productListPage().filterCategoryDropdownToggleButtonLocator.isDisplayed(), "Filter category dropdown toggle button is not displayed.");
-		Assert.assertTrue(productListPage().filterCategoryHeadingLocator.isDisplayed(), "Filter category heading is not displayed.");
-		Assert.assertTrue(productListPage().filterBrandsDropdownToggleButtonLocator.isDisplayed(), "Filter brands dropdown toggle button is not displayed.");
-		Assert.assertTrue(productListPage().filterBrandsHeadingLocator.isDisplayed(), "Filter brands heading is not displayed.");
-		Assert.assertTrue(filterManufacturersHeading.isDisplayed(),"Manufacturers heading is not displayed.");
-		Assert.assertTrue(filterManufactureresToggleButtonLocator.isDisplayed(),"Manufacturers heading is not displayed.");
+		String a[] = data.getFilterNamesInPDPNOTLogin().split(",");
+		for(int i = 0 ; i<leftPanelNames.size(); i++)
+		{
+			Assert.assertEquals(leftPanelNames.get(i).getText().trim().toLowerCase(), a[i].trim().toLowerCase(),"Getting left Panel name as "+leftPanelNames.get(i).getText().trim()+" but expected "+a[i].trim()+". ");
+		}
+		
 		return this;
 	}
 
@@ -258,16 +294,17 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 
 	public int getHeightOfTheImage() {
-		int height = Integer.parseInt(productImage.getAttribute("height"));
-		System.out.println(height);
-		return height;
+		Waiting.explicitWaitVisibilityOfElement(productImage, 20);
+		Integer height = Integer.parseInt(productImage.getAttribute("height"));
+		int intheight = height.intValue();
+		return intheight;
 	}
 	
 	public int getWidthOfTheImage() {
 		
-		int width = Integer.parseInt(productImage.getAttribute("width"));
-		System.out.println(width);
-		return width;
+		Integer width = Integer.parseInt(productImage.getAttribute("width"));
+		int intwidth = width.intValue();
+		return intwidth;
 	}
 
 
@@ -278,17 +315,16 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 			
 			e.printStackTrace();
 		}
-		Assert.assertTrue(assertImageHeight(height));
-		Assert.assertTrue(assertImageWidth(width));
+		Assert.assertTrue(assertImageHeight(height),"The enlarged image height is less than the image present in the PDP page.");
+		Assert.assertTrue(assertImageWidth(width),"The enlarged image width is less than the image present in the PDP page.");
 		return this;
 		
 	}
 
 
 	private boolean assertImageWidth(int height) {
-		int actualHeight = Integer.parseInt(fullProductImage.getAttribute("height").replace("px", "").trim());
-		System.out.println(actualHeight);
-		System.out.println(height);
+		Integer heightFromWeb = Integer.parseInt(fullProductImage.getAttribute("height").replace("px", "").trim());
+		int actualHeight = heightFromWeb.intValue();
 		if(actualHeight>=height)
 		{
 			return true;
@@ -301,8 +337,9 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 
 	private boolean assertImageHeight(int width) {
-		int actualwidth = Integer.parseInt(fullProductImage.getAttribute("width").replace("px", "").trim());
-		if(actualwidth>=width)
+		Integer widthFromWeb = Integer.parseInt(fullProductImage.getAttribute("width").replace("px", "").trim());
+		int actualWidth = widthFromWeb.intValue();
+		if(actualWidth>=width)
 		{
 			return true;
 		}
@@ -311,5 +348,134 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 		return false;
 		}
 	}
-}
+
+
+	public ProductsDetailsPageObjects verifyPDPPageTitle() throws Exception {
+		if(setUp.getBrowser().equalsIgnoreCase("safari"))
+		{
+		Thread.sleep(3000);
+		}
+		String PDPTitle = driver.getTitle();
+		Waiting.explicitWaitVisibilityOfElement(itemTitleLocator, 10);
+		String itemName=itemTitleLocator.getText().trim();
+		Assert.assertEquals(PDPTitle, itemName+" | "+setUp.getProductName().toUpperCase());
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects verifyBreadCrump() {
+		String itemName = itemTitleLocator.getText().trim();
+		String lastBreadCrump = breadCrumps.get(breadCrumps.size()-1).getText().trim();
+		Assert.assertEquals(itemName, lastBreadCrump.replace("/", "").trim(),"item name and the last breadcrump is not the same. Item name is : "+itemName +" and the last breadcrump is : "+ lastBreadCrump);
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects clickOnMyProductGroupButton() {
+		Waiting.explicitWaitVisibilityOfElement(myProductGroupButton, 15);
+		myProductGroupButton.click();
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects enterGroupName(String myProductGroupName) {
+		Waiting.explicitWaitVisibilityOfElement(myProductGroupTextbox, 6);
+		myProductGroupTextbox.sendKeys(myProductGroupName);
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects hitEnter() {
+		myProductGroupTextbox.sendKeys(Keys.ENTER);
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects verifyMyProductCreationSuccessMsg(String myProductGroupName) {
+		Waiting.explicitWaitVisibilityOfElement(productGroupCreationMsg, 10);
+		Assert.assertEquals(productGroupCreationMsg.getText().trim(), itemTitleLocator.getText().trim()+" Added To Group - "+myProductGroupName);
+		return this;
+	}
+
+
+	public MyProductGroupsPageObjects clickOnMyProductGroups() throws InterruptedException {
+		groupsToggleButton.click();
+		Thread.sleep(1500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",myProductGroupsUnderGroups);
+		return new MyProductGroupsPageObjects();
+	}
+
+
+	public ProductsDetailsPageObjects clickOnAddOrRemoveCustomerPartNumber() throws Exception{
+		Thread.sleep(2000);
+		customerPartNumberButton.click();
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects enterCPN(String customerPartNumber) throws Exception {
+		Thread.sleep(3000);
+	((JavascriptExecutor) driver).executeScript("document.getElementById('newCustomerPartNumber').value='"+customerPartNumber+"'");
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects clickOnAddButton() throws InterruptedException {
+		Thread.sleep(1500);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click()",addButton);
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects clickOnCheckbox(String customerPartNumber) throws Exception {
+	Thread.sleep(1500);
+		String customerPartNumberCheckbox = "//input[@value='"+customerPartNumber+"']";
+		driver.findElement(By.xpath(customerPartNumberCheckbox)).click();
+		return this;
+				
+	}
+
+
+	public ProductsDetailsPageObjects clickOnRemove() throws Exception{
+		removeButton.click();
+		Thread.sleep(1700);
+		return this;
+	}
+
+
+	public boolean verifyDeletionOfCPN(String customerPartNumber) throws Exception {
+		Thread.sleep(1500);
+		try
+		{
+		Assert.assertTrue(driver.findElement(By.xpath("//td[contains(text(),'"+customerPartNumber+"')]")).isDisplayed());
+		}
+		catch(NoSuchElementException e)
+		{
+			return true;
+		}
+		return false;
+	}
+
+
+	public ProductsDetailsPageObjects verifyPDPFilterSectionWhenLoggedIn() {
+		String a[] = data.getFilterNamesInPDPAfterLogin().split(",");
+		for(int i = 0 ; i<leftPanelNames.size(); i++)
+		{
+			Assert.assertEquals(leftPanelNames.get(i).getText().trim().toLowerCase(), a[i].trim().toLowerCase(),"Getting left Panel name as "+leftPanelNames.get(i).getText().trim()+" but expected "+a[i].trim()+". ");
+		}
+		return this;
+	}
 	
+	public ProductsDetailsPageObjects verifyPDPFilterSectionToggleButtons(){
+		Assert.assertEquals(leftPanelNames.size(), toggleButtons.size());
+		return this;
+	}
+
+
+	public ProductsDetailsPageObjects clickOnAddToCartButton() {
+		Waiting.explicitWaitVisibilityOfElement(addToCartButton, 10);
+		addToCartButton.click();
+		return this;
+	}
+}	
+

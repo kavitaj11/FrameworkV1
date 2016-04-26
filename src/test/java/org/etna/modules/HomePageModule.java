@@ -38,7 +38,7 @@ public class HomePageModule extends MainController{
 	  {
 		throw new SkipException("Feature not completely implemented yet.");
 		//verification of breadcrumps,pagename and etc. for the footer links
-	  } 	
+	  } 
 	
 	
 	@Test(groups={"regression"})

@@ -15,18 +15,18 @@ public class SearchModule extends MainController {
 	LoginModule loginModule = new LoginModule();
 
 	@Test(groups={"smoke","regression"})
-	  public void tc004_HGH_generalSearch() throws Exception
+	  public void tc004_generalSearch() throws Exception
 	  {
 		  //pdp page
-		  		String searchText = data.getSearchText();
-				homePage()
-				.searchText(searchText)
-				.clickOnSearch()
-				.productListPage()
-				.verifyHeader(searchText)
-				.clickOnMyProductGroup(1)
-				.productDetailsPage()
-				.verifyDisplayOfItemName(searchText);
+				String searchText = data.getSearchTextForUPCLabelTest();
+		  		homePage()
+		  		.searchText(searchText)
+		  		.clickOnSearch()
+		  		.productDetailsPage()
+		  		.verifyPDPPageTitle()
+		  		.verifyPDPFilterSectionNOTLoggedIn()
+		  		.verifyPDPFilterSectionToggleButtons()
+		  		.verifyDisplayOfItemName(searchText);
 			}
 	
 }

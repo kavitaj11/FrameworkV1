@@ -22,10 +22,10 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 	@FindBy(xpath="(//a[contains(text(),'Continue Shopping')])[2]")
 	private WebElement continueShoppingButton;
 
-	public ShoppingCartPageObjects clickOnCheckout() throws InterruptedException {
+	public MyCartPageObjects clickOnCheckout() throws InterruptedException {
 		Waiting.explicitWaitVisibilityOfElement(checkoutButton, 20);
 		checkoutButton.click();
-		return new ShoppingCartPageObjects();
+		return new MyCartPageObjects();
 	}
 	
 	public DropdownShoppingCartPageObjects clickOnContinueShoppingButton() throws InterruptedException {

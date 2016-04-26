@@ -42,7 +42,7 @@ public class LoginPopUpPageObjects extends MainController {
 	
 	@FindBy(xpath="//label[contains(.,'Remember me')]")
 	private WebElement rememberMeText;
-	
+
 	
 	public LoginPopUpPageObjects clickOnRememberMe(){
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",rememberMeCheckbox);
@@ -114,6 +114,7 @@ public class LoginPopUpPageObjects extends MainController {
 		Assert.assertTrue(password.isDisplayed(),"password textbox is not displayed");
 		Assert.assertTrue(forgotYourPassword.isDisplayed(),"forgot your password link is not displayed");
 		Assert.assertTrue(signUp.isDisplayed(),"Sign up link is not displayed");
+		Waiting.explicitWaitVisibilityOfElement(closeButton, 10);
 		Assert.assertTrue(closeButton.isDisplayed(),"close button is not displayed");
 		return this;
 	}

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 
 import org.etna.maincontroller.MainController;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -136,4 +139,13 @@ public class TestUtility extends MainController{
 		Assert.assertEquals(element.getAttribute("title").trim(),"Print this page");
 		
 	}
+	
+	public static void maximizeScreen(WebDriver driver) {
+ 	    java.awt.Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+ 	    Point position = new Point(0, 0);
+ 	    driver.manage().window().setPosition(position);
+ 	    Dimension maximizedScreenSize =
+ 	        new Dimension((int) screenSize.getWidth(), (int) screenSize.getHeight());
+ 	    driver.manage().window().setSize(maximizedScreenSize);
+ 	  }
 }

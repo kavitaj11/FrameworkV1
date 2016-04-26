@@ -20,6 +20,8 @@ import org.testng.Assert;
  * @author Hemanth.Sridhar
  */
 public class HomePageObjects extends MainController{
+	
+	
 	 SearchDataPropertyFile data = new SearchDataPropertyFile();
 	 ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
    Actions action = new Actions(driver);
@@ -27,7 +29,7 @@ public class HomePageObjects extends MainController{
 	@FindBy(id="pLoginErr")
 	private WebElement errorMsgLocator;
 	
-	@FindBy(xpath="//ul[@class='cimm_signWrap hideInTab cimm_signWrapSpace']/descendant::a[contains(text(),'Login')]")
+	@FindBy(xpath="//div[@class='cimm_headerRight hideInTab']/descendant::a[contains(text(),'Login')]")
 	private WebElement loginLinkLocator;
 	
 	@FindBy(xpath="//li[@class='welcomeUser']")
@@ -101,10 +103,6 @@ public class HomePageObjects extends MainController{
 	private WebElement learningCenterLink;
 	
 	
-	@FindBy(xpath="//a[contains(text(),'Manufacturers')]")
-	private WebElement manufacturersLink;
-	
-	
 	@FindBy(xpath="//a[contains(text(),'Blog')]")
 	private WebElement blogLink;
 	
@@ -170,7 +168,7 @@ public class HomePageObjects extends MainController{
 	@FindBy(xpath="//span[@class='foot_copy halfBlokWrap']")
 	private WebElement copyRightsOfUnilog;
 	
-	@FindAll(value={@FindBy(xpath="(//div[@class='slick-track'])[1]/descendant::img")})
+	@FindAll(value={@FindBy(xpath="//div[@class='Widget_slideJssor']/descendant::img")})
 	private List<WebElement> carouselImages;
 	
 	@FindAll(value={@FindBy(xpath="//ul[@class='clearAfter']/li/a")})
@@ -190,6 +188,47 @@ public class HomePageObjects extends MainController{
 	
 	@FindAll(value={@FindBy(xpath="//div[@class='footerCol']/descendant::a")})
 	private List<WebElement> footerSection;
+	
+	@FindBy(css="a[href='/SavedGroups/Products']")
+	private WebElement myProductGroupsLinkInUserDropdown;
+	
+	@FindBy(css="ul[class='clearAfter']>li>a[href='/Brands']")
+	private WebElement brandsLink;
+	
+	@FindBy(css="ul[class='clearAfter']>li>a[href='/Manufacturers']")
+	private WebElement manufacturersLink;
+	
+	@FindBy(xpath="//h3[contains(text(),'Shop By Brands')]")
+	private WebElement shopByBrandsHeading;
+	
+	@FindBy(xpath="//p[contains(text(),'Use the Shop By Brands to choose the particular brand related product list.')]")
+	private WebElement brandsDropdownInstructions;
+	
+	@FindAll(value={@FindBy(xpath="//li[@id='brandLink']/descendant::li/a")})
+	private List<WebElement> brandDropdownLinks;
+	
+	@FindAll(value={@FindBy(xpath="//li[@id='manufacturerLink']/descendant::li/a")})
+	private List<WebElement> manufacturersDropdownLinks;
+	
+	@FindBy(xpath="//div[@class='cimm_shopByBrand']/descendant::a[@href='/Brands']")
+	private WebElement viewAllBrandsLink;
+	
+	@FindBy(xpath="//div[@class='cimm_shopByManufacturer']/descendant::a[@href='/Manufacturers']")
+	private WebElement viewAllManufacturersLink;
+	
+	@FindBy(xpath="//ul[@class='cimm_myAccountMenu']/descendant::a[contains(text(),'Add New Purchasing Agent')]")
+	private WebElement addNewPurchasingAgentInUserAccountDropdown;
+	
+	@FindBy(xpath="//ul[@class='cimm_myAccountMenu']/descendant::a[contains(text(),'Manage Purchasing Agent')]")
+	private WebElement managePurchasingAgentInUserAccountDropdown;
+	
+	@FindBy(xpath="//ul[@class='cimm_myAccountMenu']/descendant::a[contains(text(),'Disable Purchasing Agent')]")
+	private WebElement disablePurchasingAgentInuserAccountDropdown;
+	
+	@FindBy(xpath="//a[@href='Products']")
+	private WebElement productsLink;
+
+	
 	
 	public HomePageObjects errorScenarios(String expectedMsg) {
 		System.out.println(expectedMsg);
@@ -260,9 +299,9 @@ public class HomePageObjects extends MainController{
 		
 	}
 
-	public ProductsListPageObjects clickOnSearch() {
+	public HomePageObjects clickOnSearch() {
 		searchButton.click();
-		return new ProductsListPageObjects();
+		return this;
 	}
 
 	
@@ -457,8 +496,16 @@ public class HomePageObjects extends MainController{
 	}
 
 	public HomePageObjects verifyWelcomeMsg(String expectedMsg) {
+		try
+		{
 		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 20);
 		Assert.assertEquals(userAccountDropdown.getText().trim(), expectedMsg);
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			verifyWelcomeMsg(expectedMsg);
+		}
 		return this;
 	}
 
@@ -596,7 +643,220 @@ public class HomePageObjects extends MainController{
 		logo.click();
 		return this;
 	}
-}
 
+	public MyProductGroupsPageObjects navigateToMyProductGroups() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",myProductGroupsLinkInUserDropdown);
+		return new MyProductGroupsPageObjects();
+	}
+
+	public HomePageObjects hoverOverBrandsLink() {
+		try
+		{
+		action.moveToElement(brandsLink).build().perform();
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			hoverOverBrandsLink();
+		}
+		return this;	
+	}
+
+	public HomePageObjects verifyShopByBrandsHeadingInBrandsDropdown(){
+		Waiting.explicitWaitVisibilityOfElement(shopByBrandsHeading, 10);
+		Assert.assertTrue(shopByBrandsHeading.isDisplayed(),"Shop by Brands Heading is not displayed.");
+		return this;
+	}
 	
+	public HomePageObjects brandsDropdownInstructions(){
+		Assert.assertTrue(brandsDropdownInstructions.isDisplayed(),"Brands dropdown instructions is not displayed.");
+		return this;
+	}
+	
+	public HomePageObjects verifyBrandsDropdownLinks() throws Exception{
+		if(setUp.getBrowser().equalsIgnoreCase("ghost"))
+		{
+			for(WebElement brandLinkDropdown : brandDropdownLinks)
+			{
+			Assert.assertTrue(brandLinkDropdown.isDisplayed(), "Brand dropdown Link is not displayed.");
+			}
+			Assert.assertTrue(viewAllBrandsLink.isDisplayed(),"View All Brands link is not displayed.");
+		}
+		for(WebElement brandLinkDropdown : brandDropdownLinks)
+		{
+		Assert.assertTrue(brandLinkDropdown.isDisplayed(), "Brand dropdown Link is not displayed.");
+		}
+		Assert.assertTrue(viewAllBrandsLink.isDisplayed(),"View All Brands link is not displayed.");
+		return this;
+	}
+	public HomePageObjects verifyBrandsDropdown() throws Exception {
+		verifyShopByBrandsHeadingInBrandsDropdown();
+		brandsDropdownInstructions();
+		verifyBrandsDropdownLinks();
+		return this;
+	}
+
+	public HomePageObjects clickOnASpecificBrand(int specificBrand) {
+		brandDropdownLinks.get(specificBrand-1).click();
+		return this;
+	}
+	
+	public HomePageObjects clickOnASpecificManufacturer(int specificManufacturer) {
+		manufacturersDropdownLinks.get(specificManufacturer-1).click();
+		return this;
+	}
+	
+
+	public String getSpecificBrandLinkName(int specificBrand) {
+		
+		Waiting.explicitWaitVisibilityOfElements(brandDropdownLinks, 10);
+		String brandName = brandDropdownLinks.get(specificBrand-1).getText().trim();
+		return brandName;
+	}
+	
+	public String getSpecificManufacturersLinkName(int specificManufacturer) {
+		Waiting.explicitWaitVisibilityOfElements(manufacturersDropdownLinks, 10);
+		String brandName = manufacturersDropdownLinks.get(specificManufacturer-1).getText().trim();
+		return brandName;
+	}
+
+	public HomePageObjects verifyWhetherTitleAndBreadcrumpHaveTheManufacturersName(String manufacturerName) throws Exception{
+		Thread.sleep(2000);
+		Assert.assertTrue(productDetailsPage().breadCrumps.get(productDetailsPage().
+				breadCrumps.size()-1).getText().replace("/", "").trim().
+				contains(manufacturerName),
+				"breadcrump is not the same as the manufacturer name clicked. BreadCrump is -"
+				+ " "+productDetailsPage().breadCrumps.get(productDetailsPage().breadCrumps.size()-1)
+				.getText().replace("/", "").trim()+" , but manufacturer name is - "+manufacturerName+".");
+		Assert.assertTrue(driver.getTitle().trim().contains(manufacturerName), "Title does not contain the manufacturer name.");
+		return this;
+	}
+	
+	
+	public HomePageObjects verifyWhetherTitleAndBreadcrumpHaveTheBrandName(String brandName) throws Exception{
+		Thread.sleep(2000);
+		Assert.assertTrue(productDetailsPage().breadCrumps.get(productDetailsPage().
+				breadCrumps.size()-1).getText().replace("/", "").trim().
+				contains(brandName),
+				"breadcrump is not the same as the brand name clicked. BreadCrump is -"
+				+ " "+productDetailsPage().breadCrumps.get(productDetailsPage().breadCrumps.size()-1)
+				.getText().replace("/", "").trim()+" , but brand name is - "+brandName+".");
+		Assert.assertTrue(driver.getTitle().trim().contains(brandName), "Title does not contain the brand name.");
+		return this;
+	}
+
+	public ShopByBrandsPageObjects clickOnViewAllBrandsLink() {
+		Waiting.explicitWaitVisibilityOfElement(viewAllBrandsLink,3);
+		try
+		{
+		viewAllBrandsLink.click();
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			clickOnViewAllBrandsLink();
+		}
+		return new ShopByBrandsPageObjects();
+	}
+
+	public ShopByBrandsPageObjects clickOnBrandsLink() {
+		Waiting.explicitWaitVisibilityOfElement(brandsLink, 6);
+		brandsLink.click();
+		return new ShopByBrandsPageObjects();
+	}
+
+	public HomePageObjects hoverOverManufacturersLink() {
+		try
+		{
+	action.moveToElement(manufacturersLink).build().perform();
+		}
+		catch(StaleElementReferenceException e)
+		{
+			driver.navigate().refresh();
+			hoverOverManufacturersLink();
+		}
+		return this;
+	}
+
+	public HomePageObjects verifyManufacturersDropdown() {
+		Waiting.explicitWaitVisibilityOfElements(manufacturersDropdownLinks, 10);
+		for(WebElement manufacturerLinkDropdown : manufacturersDropdownLinks)
+		{
+		Assert.assertTrue(manufacturerLinkDropdown.isDisplayed(), "Manufacturers dropdown Links are not displayed.");
+		}
+		Assert.assertTrue(viewAllManufacturersLink.isDisplayed(),"View All Manufacturers link is not displayed.");
+		return this;
+	}
+
+	public ShopByManufacturersPageObjects clickOnViewAllManufacturersLink() {
+		Waiting.explicitWaitVisibilityOfElement(viewAllManufacturersLink, 4);
+		viewAllManufacturersLink.click();
+		return new ShopByManufacturersPageObjects();
+	}
+
+	public ShopByManufacturersPageObjects clickOnManufacturersLink() {
+		Waiting.explicitWaitVisibilityOfElement(manufacturersLink, 6);
+		manufacturersLink.click();
+		return new ShopByManufacturersPageObjects();
+	}
+
+	public HomePageObjects clickOnUserAccountDropdown() throws Exception {
+		if(setUp.getBrowser().equalsIgnoreCase("ghost"))
+		{
+			Thread.sleep(1500);
+		}
+		else
+		{
+		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 10);
+		
+		}
+		userAccountDropdown.click();
+		return this;
+	}
+
+	public HomePageObjects verifyAddManageDisablePANewPurchasingAgentIsDisplayedInUserAccountDropdown() throws Exception {
+		addNewPurchasingAgentInUserAccountDropdown();
+		managePurchasingAgentInUserAccountDropdown();
+		disablePurchasingAgentInuserAccountDropdown();
+		return this;
+	}
+	
+	public HomePageObjects addNewPurchasingAgentInUserAccountDropdown() throws Exception
+	{
+		if(setUp.getBrowser().equalsIgnoreCase("ghost"))
+		{
+			Thread.sleep(1000);
+		}
+		else
+		{
+		Waiting.explicitWaitVisibilityOfElement(addNewPurchasingAgentInUserAccountDropdown, 10);
+		}
+		Assert.assertTrue(addNewPurchasingAgentInUserAccountDropdown.isDisplayed(),"add new purchasing agent is not present in user account dropdown.");
+		return this;
+	}
+	
+	public HomePageObjects managePurchasingAgentInUserAccountDropdown()
+	{
+		Assert.assertTrue(managePurchasingAgentInUserAccountDropdown.isDisplayed(),"manage new purchasing agent is not present in user account dropdown.");
+return this;
+	}
+	
+	public HomePageObjects disablePurchasingAgentInuserAccountDropdown()
+	{
+		Assert.assertTrue(disablePurchasingAgentInuserAccountDropdown.isDisplayed(),"disable new purchasing agent is not present in user account dropdown.");
+		return this;
+	}
+
+	public AddNewPurchasingAgentPageObjects clickOnAddNewPurchasingAgent() {
+		Waiting.explicitWaitVisibilityOfElement(addNewPurchasingAgentInUserAccountDropdown, 10);
+		addNewPurchasingAgentInUserAccountDropdown.click();
+		return new AddNewPurchasingAgentPageObjects();	
+	}
+
+	public ProductPageObjects clickOnProductsLink() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",productsLink);
+		return new ProductPageObjects();
+	}
+
+}
 	

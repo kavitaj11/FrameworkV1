@@ -1,5 +1,6 @@
 package org.etna.modules;
 
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 import org.etna.maincontroller.MainController;
 import org.etna.utils.SearchDataPropertyFile;
@@ -10,14 +11,16 @@ SearchDataPropertyFile data = new SearchDataPropertyFile();
 LoginModule loginModule = new LoginModule();
 
 @Test(groups={"regression"})
-public void TC_PD_001__unsignedUser_verifyProductDetailsPage() throws Exception
+public void TC_PDP_001_TC_PDP_003_TC_PDP_013_TC_PDP_014_unsignedUser_verifyProductDetailsPageTest() throws Exception
 {
 	String searchText = data.getSearchTextForUPCLabelTest();
 	homePage()
 	.searchText(searchText)
 	.clickOnSearch()
 	.productDetailsPage()
-	.verifyPDPFilterSection()
+	.verifyPDPPageTitle()
+	.verifyPDPFilterSectionNOTLoggedIn()
+	.verifyPDPFilterSectionToggleButtons()
 	.verifyDisplayOfItemName(searchText)
 	.verifyDisplayOfShortDescription(searchText)
 	.verifyDisplayOfPartNumber()
@@ -33,19 +36,22 @@ public void TC_PD_001__unsignedUser_verifyProductDetailsPage() throws Exception
 	.verifyDisplayOfAccordians()
 	.verifyDisplayOfCustomerPartNumberButton()
 	.verifyAddToCartButton()
-	.verifyDisplayOfAddMyProductGroupButton();
+	.verifyDisplayOfAddMyProductGroupButton()
+	.verifyBreadCrump();
 }
 
 @Test(groups={"smoke","regression"})
-public void TC_PD_002_signedUser_verifyProductDetailsPage() throws Exception
+public void TC_PD_002_TC_PD_004_signedUser_verifyProductDetailsPageTest() throws Exception
 {
 	String searchText = data.getSearchTextForUPCLabelTest();
-	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027();
+	loginModule.loginAsASuperUser();
 	homePage()
 	.searchText(searchText)
 	.clickOnSearch()
 	.productDetailsPage()
-	.verifyPDPFilterSection()
+	.verifyPDPPageTitle()
+	.verifyPDPFilterSectionWhenLoggedIn()
+	.verifyPDPFilterSectionToggleButtons()
 	.verifyDisplayOfItemName(searchText)
 	.verifyDisplayOfShortDescription(searchText)
 	.verifyDisplayOfPartNumber()
@@ -62,14 +68,16 @@ public void TC_PD_002_signedUser_verifyProductDetailsPage() throws Exception
 	.verifyDisplayOfAccordians()
 	.verifyDisplayOfCustomerPartNumberButton()
 	.verifyAddToCartButton()
-	.verifyDisplayOfAddMyProductGroupButton();
+	.verifyDisplayOfAddMyProductGroupButton()
+	.verifyBreadCrump();
 }
 
-@Test(groups={"smoke","regression"})
-public void TC_PD_003_enlargeImageFunctionality() throws Exception
+
+@Test(groups={"regression"})
+public void TC_PDP_006_enlargeImageFunctionalityTest() throws Exception
 	{
-	String searchText = data.getSearchTextForUPCLabelTest();
-	loginModule.TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027();
+	String searchText = data.getSearchTextForEnlargeImageTest();
+	loginModule.loginAsASuperUser();
 	homePage()
 	.searchText(searchText)
 	.clickOnSearch()
@@ -79,5 +87,44 @@ public void TC_PD_003_enlargeImageFunctionality() throws Exception
 	productDetailsPage()
 	.clickOnEnlargeIcon()
 	.verifyImageHeightAndWidthAfterEnlarge(height,width);
+	}
+
+
+@Test
+public void TC_PDP_008_PrintFunctionalityTest(){
+	throw new SkipException("Feature not yet completely developed.");
+}
+
+
+@Test
+public void TC_PDP_009_TC_PDP_010_ShareFunctionalityTest(){
+	throw new SkipException("Feature not yet completely developed.");
+}
+
+@Test(groups={"smoke","regression"})
+public void TC_PDP_012_signedUser_createAndDeleteCPNInProductDetailsPageTest() throws Exception{
+	
+	String searchText = data.getSearchTextForUPCLabelTest();
+	String customerPartNumber = data.getCustomerPartNumber();
+	loginModule.loginAsASuperUser();
+	homePage()
+	.searchText(searchText)
+	.clickOnSearch()
+	.productDetailsPage()  
+	.clickOnAddOrRemoveCustomerPartNumber()
+	.enterCPN(customerPartNumber)
+	.clickOnAddButton()
+	.clickOnAddOrRemoveCustomerPartNumber()
+	.clickOnCheckbox(customerPartNumber)
+	.clickOnRemove()
+	.clickOnAddOrRemoveCustomerPartNumber()
+	.verifyDeletionOfCPN(customerPartNumber);	
+	}
+
+
+@Test(groups={"smoke","regression"})
+public void TC_PDP_013_signedUser_tryingToCreateCPNInProductDetailsPage_ErrorScenariosTest() throws Exception{
+	
+	throw new SkipException("pending.");
 	}
 }

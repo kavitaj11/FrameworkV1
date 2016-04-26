@@ -17,7 +17,7 @@ public class LoginModule extends MainController{
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	
 	  @Test(groups={"smoke","regression"})
-		public void TS_Login_001_TS_Login_006_TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027() throws Exception
+		public void TC_Login_001_TC_Login_002_TC_Login_024_TC_Login_025_TC_Login_026_TC_Login_027() throws Exception
 		{
 		   homePage()
 		  .clickLoginLink()
@@ -30,13 +30,39 @@ public class LoginModule extends MainController{
 		  .verifyWelcomeMsg();
 		}
 	  
+
+	  public void loginAsASuperUser() throws Exception
+	  {
+		  homePage()
+		  .clickLoginLink()
+		  .loginPopUp()
+		  .enterUserName()
+		  .enterPassword()
+		  .clickOnLoginButton()
+		  .homePage()
+		  .verifyWelcomeMsg();
+	  }
+	  
+		public void login(String userName,String password) throws Exception
+		{
+		   homePage()
+		  .clickLoginLink()
+		  .loginPopUp()
+		  .enterUsernameRegression(userName)
+		  .enterPasswordRegression(password)
+		  .clickOnLoginButton()
+		  .homePage()
+		  .verifyWelcomeMsg();
+		}
+	  
+	  
+	  
 	 @Test(groups={"regression"},dataProvider="excelSheetDataRead", dataProviderClass=SearchData.class)
-			public void TS_Login_001_TS_Login_006_TC_Login_001_AsASuperUser_PurchaseAgent_GeneralUser(String userName,String password,String expectedMsg) throws Exception
+			public void TC_Login_001_AsASuperUser_PurchaseAgent_GeneralUser(String userName,String password,String expectedMsg) throws Exception
 			{
 			   homePage()
 			  .clickLoginLink()
 			  .loginPopUp()
-			  .verifyLoginPopUp()
 			  .enterUsernameRegression(userName)
 			  .enterPasswordRegression(password)
 			  .clickOnLoginButton()
@@ -45,12 +71,11 @@ public class LoginModule extends MainController{
 			}
 
 	  @Test(groups={"regression"},dataProvider="excelSheetDataRead", dataProviderClass=SearchData.class)
-	  public void TS_Login_001_TC_Login_004_005_006_007_ErrorScenarios(String userName, String password,String expectedMsg) throws Exception
+	  public void TC_Login_004_TC_Login_005_TC_Login_006_TC_Login_007_ErrorScenarios(String userName, String password,String expectedMsg) throws Exception
 	  {
 		  homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .enterUsernameRegression(userName)
 		  .enterPasswordRegression(password)
 		  .clickOnLoginButton()
@@ -73,13 +98,12 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_009_010_RememberPassword_UserNameAndPasswordRefill() throws Exception
+	  public void TC_Login_009_010_RememberPassword_UserNameAndPasswordRefill() throws Exception
 	  {
 		  
 		  homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .enterUserName()
 		  .enterPassword()
 		  .clickOnRememberMe()
@@ -95,12 +119,11 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_011_AutofillLogin() throws Exception
+	  public void TC_Login_011_AutofillLogin() throws Exception
 	  {
 		  homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .enterUserName()
 		  .enterPassword()
 		  .clickOnRememberMe()
@@ -118,12 +141,11 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_012_uncheckRememberMeWhenInAutoFillForm() throws Exception
+	  public void TC_Login_012_uncheckRememberMeWhenInAutoFillForm() throws Exception
 	  {
 		  homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .enterUserName()
 		  .enterPassword()
 		  .clickOnRememberMe()
@@ -135,7 +157,6 @@ public class LoginModule extends MainController{
 		  .logout()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .clickOnRememberMe()
 		  .clickOnLoginButton()
 		  .homePage()
@@ -148,13 +169,12 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_013_myProductGroupLoginPopupRememberMeClickUncheck() throws Exception
+	  public void TC_Login_013_myProductGroupLoginPopupRememberMeClickUncheck() throws Exception
 	  {
 		  String searchText = data.getSearchText();
 		   homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .enterUserName()
 		  .enterPassword()
 		  .clickOnRememberMe()
@@ -179,7 +199,7 @@ public class LoginModule extends MainController{
 	  
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_015_rememberMeAsALink() throws Exception
+	  public void TC_Login_015_rememberMeAsALink() throws Exception
 	  {
 		  homePage()
 		  .clickLoginLink()
@@ -189,7 +209,7 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_016_017_018_rememberMeCheckboxTest() throws Exception
+	  public void TC_Login_016_TC_Login_017_TC_Login_018_rememberMeCheckboxTest() throws Exception
 	  {
 		  homePage()
 		  .clickLoginLink()
@@ -201,7 +221,7 @@ public class LoginModule extends MainController{
 	}
 
 	 @Test(groups={"regression"})
-	  public void TS_Login_002_TC_Login_014_myProductGroupLoginPopupRememberMeClickCheck() throws Exception
+	  public void TC_Login_014_myProductGroupLoginPopupRememberMeClickCheck() throws Exception
 	  {  
 		  String searchText = data.getSearchText();
 		  homePage()
@@ -225,34 +245,33 @@ public class LoginModule extends MainController{
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_005_TC_Login_021_loginVerifyOrderTopToBottom() throws Exception
+	  public void TC_Login_021_loginVerifyOrderTopToBottom() throws Exception
 	  {
 		  throw new SkipException("This feature is having a bug.");
 		  
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_005_TC_Login_022_loginVerifyOrderBottomToTop() throws Exception
+	  public void TC_Login_022_loginVerifyOrderBottomToTop() throws Exception
 	  {
 		  throw new SkipException("This feature is having a bug.");
 	  }
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_004_TC_Login_020_verifyForgotPasswordPage() throws Exception
+	  public void TC_Login_020_verifyForgotPasswordPage() throws Exception
 	  {
 		   homePage()
 		  .clickLoginLink()
 		  .loginPopUp()
-		  .verifyLoginPopUp()
 		  .clickOnForgotPassword()
 		  .forgotPasswordPage()
 		  .verifyRetrievePasswordPage();
 		}
 	  
 	  @Test(groups={"regression"})
-	  public void TS_Login_003_TC_Login_019_verifyRegisterPage() throws Exception
+	  public void TC_Login_019_verifyRegisterPage() throws Exception
 	  {
-		  throw new SkipException("Sign up yet to be implemented");
+		  throw new SkipException("Sign up yet to be implemented.");
 		  /* homePage()
 		  .clickLoginLink()
 		  .loginPage()

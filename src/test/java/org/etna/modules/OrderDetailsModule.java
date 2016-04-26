@@ -2,7 +2,7 @@ package org.etna.modules;
 
 import org.etna.maincontroller.MainController;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.annotations.Test;
+
 
 public class OrderDetailsModule extends MainController{
 	

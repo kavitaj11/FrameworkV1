@@ -3,9 +3,6 @@ package org.etna.modules;
 import org.etna.maincontroller.MainController;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.SkipException;
-import org.testng.annotations.Test;
-
 public class ProductsCompareModule extends MainController {
 
 	/*

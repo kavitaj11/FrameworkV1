@@ -8,15 +8,20 @@
   <test name="EtnaWebApplicationTesting">
   <groups>
       <run>
-        <include name="smoke"/>
         <include name="regression"/>
       </run>
     </groups>
-    <classes> 
-    		<class name="org.etna.modules.LoginModule"/>
-    		<class name="org.etna.modules.HomePageModule"/>
-    		<class name="org.etna.modules.ProductListModule"/>
-	</classes>
+    <classes>
+    		<class name="org.etna.modules.HomePageModule"/> 
+    		<class name="org.etna.modules.ProductDetailsModule"/> 
+    		<class name="org.etna.modules.ShopByModule"/>
+    		<class name="org.etna.modules.LoginModule"/> 
+    		<class name="org.etna.modules.CategoryModule"/> 
+    		<class name="org.etna.modules.APAModule"/>
+    		<class name="org.etna.modules.SearchModule"/>
+    		<class name="org.etna.modules.ProductGroupModule"/>
+    		<class name="org.etna.modules.ProductListModule"/> 
+    </classes>
   </test>
 </suite>
 
@@ -30,4 +35,5 @@
    <!-- <class name="org.etna.modules.QuickOrderPadModule"/>   -->
    <!-- <class name="org.etna.modules.CartFileUploadModule"/>   -->
    <!-- <class name="org.etna.modules.ProductsCompareModule"/>  -->
-   
+   <!-- <class name="org.etna.modules.HomePageModule"/>
+    		<class name="org.etna.modules.ProductListModule"/> -->

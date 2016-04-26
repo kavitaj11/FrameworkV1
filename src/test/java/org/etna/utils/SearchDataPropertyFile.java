@@ -8,6 +8,12 @@ public class SearchDataPropertyFile extends MainController{
 
 	private int numberOfItemsPerPage;
 	
+	private String specificBrandName;
+	
+	private String specificManufacturerName;
+	
+	private String specificCategory;
+	
 	private String userName = PropertyFileReader.propertiesReader(searchData, "userName");
 	
 	private String password = PropertyFileReader.propertiesReader(searchData, "password");
@@ -95,6 +101,46 @@ public class SearchDataPropertyFile extends MainController{
 	private String expectedResultsPerPageOptions = PropertyFileReader.propertiesReader(searchData, "expectedResultsPerPageOptions");
 	
 	private String searchTextForUPCLabelTest = PropertyFileReader.propertiesReader(searchData, "searchTextForUPCLabelTest");
+	
+	private String productGroupName = PropertyFileReader.propertiesReader(searchData, "productGroupName");
+	
+	private String deleteGroupAlertText = PropertyFileReader.propertiesReader(searchData, "deleteGroupAlertText");
+	
+	private String myProductGroupsPageName = PropertyFileReader.propertiesReader(searchData, "myProductGroupsPageName");
+	
+	private String customerPartNumber = PropertyFileReader.propertiesReader(searchData, "customerPartNumber");
+	
+	private String filterNamesInPDPAfterLogin = PropertyFileReader.propertiesReader(searchData, "filterNamesInPDPAfterLogin");
+	
+	private String filterNamesInPDPNotLogin = PropertyFileReader.propertiesReader(searchData, "filterNamesInPDPNotLogin");
+	
+	private String shopByBrandsBreadcrump = PropertyFileReader.propertiesReader(searchData, "shopByBrandsBreadcrump");
+	
+	private String shopByManufacturersBreadcrump = PropertyFileReader.propertiesReader(searchData, "shopByManufacturersBreadcrump");
+	
+	private String searchTextForEnlargeImageTest = PropertyFileReader.propertiesReader(searchData, "searchTextForEnlargeImageTest");
+	
+	private String addNewPurchasingAgentInstructions = PropertyFileReader.propertiesReader(searchData, "addNewPurchasingAgentInstructions");
+
+	private String expectedMandatoryFieldsInAddNewPurchasingAgent = PropertyFileReader.propertiesReader(searchData, "expectedMandatoryFieldsInAddNewPurchasingAgent");
+	
+	private String emailAddressInstruction = PropertyFileReader.propertiesReader(searchData, "emailAddressInstruction");
+	
+	private String addNewPurchasingAgentBreadcrump = PropertyFileReader.propertiesReader(searchData, "addNewPurchasingAgentBreadcrump");
+	
+	private String expectedRoleAssignmentDropdownOptions = PropertyFileReader.propertiesReader(searchData, "expectedRoleAssignmentDropdownOptions");
+	
+	private String generalUserEmailID = PropertyFileReader.propertiesReader(searchData, "generalUserEmailID");
+	
+	private String generalUserPassword = PropertyFileReader.propertiesReader(searchData, "generalUserPassword");
+	
+	private String myCartBreadcrump = PropertyFileReader.propertiesReader(searchData, "myCartBreadcrump");
+	
+	private String expectedButtonsInMyCartForGeneralUser = PropertyFileReader.propertiesReader(searchData, "expectedButtonsInMyCartForGeneralUser");
+	
+	private String productsPageBreadcrump = PropertyFileReader.propertiesReader(searchData, "productsPageBreadcrump");
+	
+	private String expectedBannerImagesInLevelOne = PropertyFileReader.propertiesReader(searchData, "expectedBannerImagesInLevelOne");
 	
 	public String getCopyRightsOfUnilogText() {
 		return copyRightsOfUnilog;
@@ -303,7 +349,7 @@ public class SearchDataPropertyFile extends MainController{
 	}
 
 	public String getAllSectionsText() {
-		// TODO Auto-generated method stub
+		
 		return allSectionsText;
 	}
 
@@ -336,6 +382,137 @@ public class SearchDataPropertyFile extends MainController{
 		
 		return searchTextForUPCLabelTest;
 	}
+
+	public String getMyProductGroupName() {
+		
+		return productGroupName;
+	}
+
+	public String getDeleteGroupAlertText() {
+		
+		return deleteGroupAlertText;
+	}
+
+	public String getMyProductGroupsPageName() {
+		
+		return myProductGroupsPageName;
+	}
+
+	public String getCustomerPartNumber() {
+		
+		return customerPartNumber;
+	}
+
+	public String getFilterNamesInPDPAfterLogin() {
+		
+		return filterNamesInPDPAfterLogin;
+	}
+
+	public String getFilterNamesInPDPNOTLogin() {
+		
+		return filterNamesInPDPNotLogin;
+	}
+
+	public String getShopByBrandsBreadcrump() {
+		
+		return shopByBrandsBreadcrump;
+	}
+
+	public String getShopByManufacturersBreadcrump() {
+
+		return shopByManufacturersBreadcrump;
+	}
+
+	public void setSpecificManufacturerName(String specificManufacturerName) {
+		
+		this.specificManufacturerName = specificManufacturerName;
+	}
+
+	public String getSpecificManufacturerName() {
+		
+		return specificManufacturerName;
+	}
+
+	public void setSpecificBrandName(String specificBrandName) {
+		this.specificBrandName = specificBrandName;
+		
+	}
 	
+public String getSpecificBrandname() {
+		
+		return specificBrandName;
+	}
+
+public String getSearchTextForEnlargeImageTest() {
+
+	return searchTextForEnlargeImageTest;
+}
+
+public String getAddNewPurchasingAgentInstructions() {
 	
+	return addNewPurchasingAgentInstructions;
+}
+
+public String getExpectedMandatoryFieldsInAddNewPurchasingAgent() {
+	
+	return expectedMandatoryFieldsInAddNewPurchasingAgent;
+}
+
+public String getEmailAddressInstruction() {
+	
+	return emailAddressInstruction;
+}
+
+public String getAddNewPurchasingAgentBreadcrump() {
+	
+	return addNewPurchasingAgentBreadcrump;
+}
+
+public String getExpectedRoleAssignmentDropdownOptions() {
+	
+	return expectedRoleAssignmentDropdownOptions;
+}
+
+public String getGeneralUserEmailID() {
+	
+	return generalUserEmailID;
+}
+
+public String getGeneralUserPassword() {
+	
+	return generalUserPassword;
+}
+
+public String getMyCartBreadcrump() {
+	
+	return myCartBreadcrump;
+}
+
+public String getExpectedButtonsInMyCartForGeneralUser() {
+
+	return expectedButtonsInMyCartForGeneralUser;
+}
+
+public String getProductsPageBreadCrump() {
+	
+	return productsPageBreadcrump;
+}
+
+public void setSpecificCategory(String specificCategory) {
+	
+	this.specificCategory = specificCategory;
+}
+
+public String getSpecificCategory() {
+	
+	return specificCategory;
+}
+
+public String getBannerImagesInLevelOne() {
+	
+	return expectedBannerImagesInLevelOne;
+}
+
+
+
 }

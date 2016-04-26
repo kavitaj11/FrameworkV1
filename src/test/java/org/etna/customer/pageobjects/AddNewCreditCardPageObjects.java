@@ -1,5 +1,4 @@
 package org.etna.customer.pageobjects;
-
 import org.etna.maincontroller.MainController;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;

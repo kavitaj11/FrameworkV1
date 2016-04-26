@@ -15,7 +15,7 @@ public class ProductListModule extends MainController{
 	LoginModule loginModule = new LoginModule();
 	
 	@Test(groups={"smoke","regression"})
-	  public void tc005_HGH_ListViewGridView() throws Exception
+	  public void tc005_ListViewGridView() throws Exception
 	  {
 		  String searchText = data.getSearchText();
 		  homePage()
@@ -26,7 +26,6 @@ public class ProductListModule extends MainController{
 		  .clickOnChangeView()
 		  .verifyGridView();
 	  }
-	  
 	  
 	  @Test(groups={"smoke","regression"})
 	  public void tc006_verifyProductListPage() throws Exception

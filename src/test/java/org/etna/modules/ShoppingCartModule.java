@@ -1,11 +1,7 @@
 package org.etna.modules;
 
 import org.etna.maincontroller.MainController;
-import org.etna.utils.PropertyFileReader;
 import org.etna.utils.SearchDataPropertyFile;
-import org.etna.utils.TestUtility;
-import org.testng.SkipException;
-import org.testng.annotations.Test;
 
 public class ShoppingCartModule extends MainController
 {

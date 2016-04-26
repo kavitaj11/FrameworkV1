@@ -1,7 +1,9 @@
 package org.etna.customer.pageobjects;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.etna.maincontroller.MainController;
+import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;
@@ -19,6 +21,7 @@ import org.testng.Assert;
 public class ProductsListPageObjects extends MainController
 {
  SearchDataPropertyFile data = new SearchDataPropertyFile();
+ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
    Actions action = new Actions(driver);
 	
 	@FindBy(xpath="//p[@class='cimm_productDetailBrand']")
@@ -28,7 +31,8 @@ public class ProductsListPageObjects extends MainController
 	@FindAll(@FindBy(xpath="//li[@id='getchangemode']"))
 	private List<WebElement> listOfProductsLocator;
 
-	@FindBy(xpath="//div[@class='gridListControler']")
+	
+	@FindBy(xpath="//div[contains(@class,'gridListControler')]/a")
 	private WebElement changeViewButtonLocator;
 	
 	@FindBy(xpath="//div[@class='searchResults']/h2")
@@ -61,6 +65,8 @@ public class ProductsListPageObjects extends MainController
 	@FindBy(xpath="//h4[contains(text(),'Brands')]/following-sibling::span")
 	public WebElement filterBrandsDropdownToggleButtonLocator;
 	
+
+	
 	@FindBy(xpath="//h4[contains(text(),'Brands')]")
 	public WebElement filterBrandsHeadingLocator;
 	
@@ -89,8 +95,12 @@ public class ProductsListPageObjects extends MainController
 	@FindAll(value={@FindBy(xpath="//a[@class='log-addTocart-btn addToCart']/ancestor::li[@class='sessionDesp']/descendant::h4/a")})
 	private List<WebElement> items;
 	
+	@FindBy(xpath="//p[@class='searchMatches']/b")
+	private WebElement searchItem;
+	
 	public ProductsListPageObjects verifyHeader(String searchText) {
 		String productsHeader = "//b[contains(text(),'"+searchText+"')]";
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement productHeaderLocator = driver.findElement(By.xpath(productsHeader));
 		Waiting.explicitWaitVisibilityOfElement(productHeaderLocator, 15);
 		Assert.assertEquals(productHeaderLocator.getText().trim().toLowerCase(), searchText.toLowerCase(),"products page search header is not displayed");
@@ -99,11 +109,14 @@ public class ProductsListPageObjects extends MainController
 	}
 
 
-	public ProductsListPageObjects verifyGridView() {
-		Waiting.explicitWaitVisibilityOfElements(listOfProductsLocator, 10);
+	public ProductsListPageObjects verifyGridView() throws Exception {
+		if(setUp.getBrowser().equalsIgnoreCase("safari"))
+		{
+			Thread.sleep(3000);
+		}
 		for(int i=0;i<listOfProductsLocator.size();i++)
 		{
-		Assert.assertTrue(listOfProductsLocator.get(i).getAttribute("class").equals("gridView"),"class name is not grid view");
+		Assert.assertTrue(listOfProductsLocator.get(i).getAttribute("class").equals("gridView"),"class name is not grid view. Class name is "+listOfProductsLocator.get(i).getAttribute("class")+". This is for the "+i+" product.");
 		
 	}
 		return this;
@@ -129,9 +142,17 @@ public class ProductsListPageObjects extends MainController
 	}
 	
 
-	public ProductsListPageObjects clickOnChangeView() {
-		Waiting.explicitWaitVisibilityOfElement(changeViewButtonLocator, 20);
+	public ProductsListPageObjects clickOnChangeView() throws Exception {
+		if(setUp.getBrowser().equalsIgnoreCase("safari"))
+		{
+		Thread.sleep(1500);
 		changeViewButtonLocator.click();
+		}
+		else
+		{
+		Thread.sleep(1000);
+		changeViewButtonLocator.click();
+		}
 		return this;
 		
 	}
@@ -195,13 +216,13 @@ public class ProductsListPageObjects extends MainController
 	}
 
 	public ProductsListPageObjects verifyFilterSection() {
-		Assert.assertTrue(filterSectionLocator.isDisplayed(), "filter section is not displayed");
-		Assert.assertTrue(filterSearchTextLocator.isDisplayed());
-		Assert.assertTrue(filterSearchButtonLocator.isDisplayed());
-		Assert.assertTrue(filterRefineResultsHeadingLocator.isDisplayed());
-		Assert.assertTrue(filterCategoryDropdownToggleButtonLocator.isDisplayed());
-		Assert.assertTrue(filterCategoryHeadingLocator.isDisplayed());
-		Assert.assertTrue(filterBrandsDropdownToggleButtonLocator.isDisplayed());
+		Assert.assertTrue(filterSectionLocator.isDisplayed(), "filter section is not displayed.");
+		Assert.assertTrue(filterSearchTextLocator.isDisplayed(),"filter search textbox is not displayed.");
+		Assert.assertTrue(filterSearchButtonLocator.isDisplayed(),"filter search button is not displayed.");
+		Assert.assertTrue(filterRefineResultsHeadingLocator.isDisplayed(),"filter refine results heading is not displayed." );
+		Assert.assertTrue(filterCategoryDropdownToggleButtonLocator.isDisplayed(),"Category Filter toggle button is not displayed.");
+		Assert.assertTrue(filterCategoryHeadingLocator.isDisplayed(),"Category Filter heading is not displayed.");
+		Assert.assertTrue(filterBrandsDropdownToggleButtonLocator.isDisplayed(),"filter brands dropdown is not displayed.");
 		return this;
 	}
 	
@@ -211,10 +232,12 @@ public class ProductsListPageObjects extends MainController
 	}
 
 
-	public ProductsListPageObjects clickOnMyProductGroup(int specificProductGroup) {
+	public ProductsListPageObjects clickOnMyProductGroup(int specificProductGroup) throws Exception {
+		
+		Waiting.explicitWaitVisibilityOfElements(myProductGroupsLocator, 10);
 		myProductGroupsLocator.get(specificProductGroup-1).click();
 		return this;
-	}
+	} 
 
 
 	public ProductsListPageObjects verifyAddDropdown() throws Exception{
@@ -266,9 +289,27 @@ public class ProductsListPageObjects extends MainController
 	}
 }
 
-
 	public ProductsListPageObjects clickOnSpecificItem(int specificItemNumber) {
 		items.get(specificItemNumber-1).click();
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifyBreadCrump(String lastBreadcrump) {
+		Assert.assertEquals(productDetailsPage().breadCrumps.get(productDetailsPage().breadCrumps.size()-1).getText().replace("/", "").trim(), lastBreadcrump);
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifyTitle(String lastBreadcrump) throws Exception {
+	
+		Assert.assertEquals(driver.getTitle().trim(),lastBreadcrump+" | "+setUp.getProductName().toUpperCase());
+		return this;
+	}
+
+
+	public ProductsListPageObjects verifySearchMatchesLink(String getSpecificCategory3) {
+		Assert.assertEquals(searchItem.getText().trim(),getSpecificCategory3);
 		return this;
 	}
 }	
