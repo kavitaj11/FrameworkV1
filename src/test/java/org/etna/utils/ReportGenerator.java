@@ -1,130 +1,100 @@
 package org.etna.utils;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.io.FileUtils;
 import org.etna.maincontroller.MainController;
-import org.testng.*;
+import org.testng.IReporter;
+import org.testng.ISuite;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
 import org.testng.xml.XmlSuite;
 import org.zeroturnaround.zip.ZipUtil;
 
-import java.io.File;
-import java.util.*;
-/*
- * @author Hemanth.Sridhar
- */
-public class ReportGenerator implements IReporter  {
-    
+public class ReportGenerator implements IReporter {
 	private static int passedtest;
-    
 	private static int failedtest;
-    
 	private static int skippedtest;
-	
-    private ExtentReports extent;
 
+	@Override
+	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 
-    ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
-
-    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-        extent = new ExtentReports(MainController.outputFolder+"/Automation Report.html", true);
-        try {
-			extent.config()
-			        .documentTitle("Automation Report")
-			        .reportName(setUp.getProductName().toUpperCase())
-			        .reportHeadline(setUp.getTypeOfTestForReport()+ " Test Report." + " Browser : "+setUp.getBrowser().toUpperCase());
-		
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-        for (ISuite suite : suites) {
-            Map<String, ISuiteResult> result = suite.getResults();
- 
-            for (ISuiteResult r : result.values()) {
-                ITestContext context = r.getTestContext();
-               // r.getTestContext().getCurrentXmlTest().getTestParameters().get("browser");
-                buildTestNodes(context.getPassedTests(), LogStatus.PASS);
-                buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-                buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-                passedtest = context.getPassedTests().size();
-                //System.out.println(passedtest);
-                failedtest = context.getFailedTests().size();
-               // System.out.println(failedtest);
-                skippedtest = context.getSkippedTests().size();
-               // System.out.println(skippedtest);
-            }
-        }
-
-        extent.flush();
-        extent.close();
-      File zipFile = new File(MainController.outputFolder+".zip");
-      ZipUtil.pack(new File(MainController.outputFolder), zipFile);
-      
-    		   
-        
-      try {
-
-      	if(setUp.getSendEmailPermisson().equalsIgnoreCase("yes"))
-			{
-		
-				SendEmailOutLook.sendemail(passedtest, failedtest, skippedtest,zipFile);
-			} 
+		 String outputReport = "./Report";
+		try {
+			FileUtils.forceMkdir(new File(outputReport));
+		} catch (IOException e1) {
 			
+			e1.printStackTrace();
+		}		
+		outputReport += "/Report_" + SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+		
+			if(System.getProperty("os.name").toUpperCase().contains("MAC"))
+				
+			{
+		String mvnSiteCommand;
+		try {
+			mvnSiteCommand = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "mvnSiteCommand");
+		
+		Runtime.getRuntime().exec("open /bin/bash "+mvnSiteCommand); 
 		}
-      
-      catch (Exception e) {
+		
+		catch (Exception e) {
+			
 			e.printStackTrace();
 		}
-    }
+			}
+		
+		else if (System.getProperty("os.name").contains("WIN"))
+		{
+			try
+			{
+			String mvnSiteCommand = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "mvnSiteCommand");
+			Runtime.getRuntime().exec("cmd /c start "+mvnSiteCommand);
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		try {
+			Thread.sleep(70000);
+		} catch (InterruptedException e1) {
+			
+			e1.printStackTrace();
+		}		
+		for (ISuite suite : suites) {
+			
+	        Map<String, ISuiteResult> result = suite.getResults();
 
-    private void buildTestNodes(IResultMap tests, LogStatus status) {
-        ExtentTest test;
-        if (tests.size() > 0) {
-        	for (ITestResult result : tests.getAllResults()) {
-        		//result.getTestContext().getCurrentXmlTest().getTestParameters().get("browser"); -> Will give the parameters
-        		String s = "";
-        		//for printing the name with data being used in extent report
-        		if(result.getParameters() != null) {
-        		for(int i =0;i<result.getParameters().length;i++){
-        			if(!s.isEmpty())
-        			{
-        				s += ",";
-        			}
-        			s += result.getParameters()[i].toString();
-        		}
-        		}
-                test = extent.startTest(result.getMethod().getMethodName() + " || " +  s);
-                test.getTest().startedTime = getTime(result.getStartMillis());
-                test.getTest().endedTime = getTime(result.getEndMillis());
-                  
-                if(result.getStatus()==ITestResult.FAILURE)
-                {
-                
-                test.log(status, test.addScreenCapture("./Screenshots/"+result.getMethod().getMethodName()+"_"+s+".png"));
-                }
-                for (String group : result.getMethod().getGroups())
-                    test.assignCategory(group);
-                	
-                String message = "Test " + status.toString().toLowerCase() + "ed";
-                if (result.getThrowable() != null)
-                    message = result.getThrowable().getMessage();
-                
-                test.log(status, message);
-
-                extent.endTest(test);
-            }
-        }
-    }
-    
-    
-    
-//for report 
-    public Date getTime(long millis) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(millis);
-        return calendar.getTime();
-    }
-  
+	        for (ISuiteResult r : result.values()) {
+	            ITestContext context = r.getTestContext();
+	            
+	            passedtest = context.getPassedTests().size();
+	           
+	            failedtest = context.getFailedTests().size();
+	           
+	            skippedtest = context.getSkippedTests().size();
+	 
+	        }
+	        
+	 File zipFile = new File((outputReport+".zip"));
+	 ZipUtil.pack(new File("./target/site/"),zipFile);
+			   
+	    
+	    try {
+			if(PropertyFileReader.propertiesReader(MainController.applicationSetUp, "sendEmailPermission").equalsIgnoreCase("yes"))
+			{
+				SendEmailOutLook.sendemail(passedtest, failedtest, skippedtest,zipFile);
+			}
+		} 
+	    catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		}
+	}
 }

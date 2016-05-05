@@ -29,7 +29,7 @@ public class HomePageObjects extends MainController{
 	@FindBy(id="pLoginErr")
 	private WebElement errorMsgLocator;
 	
-	@FindBy(xpath="//div[@class='cimm_headerRight hideInTab']/descendant::a[contains(text(),'Login')]")
+	@FindBy(xpath="//div[@class='cimm_headerRight hideForDevices']/descendant::a[contains(text(),'Login')]")
 	private WebElement loginLinkLocator;
 	
 	@FindBy(xpath="//li[@class='welcomeUser']")
@@ -228,6 +228,8 @@ public class HomePageObjects extends MainController{
 	@FindBy(xpath="//a[@href='Products']")
 	private WebElement productsLink;
 
+	@FindBy(css=".cimm_myAccountMenu>li>a[href='/SavedGroups/Cart']")
+	private WebElement mySaveCartLink;
 	
 	
 	public HomePageObjects errorScenarios(String expectedMsg) {
@@ -491,7 +493,7 @@ public class HomePageObjects extends MainController{
 
 	public HomePageObjects waitForProfileDropdownLink() {
 		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 20);
-		Assert.assertTrue(productCategoryPage().userAccountDropdown.isDisplayed(), "user account dropdown is not displayed");;
+		Assert.assertTrue(userAccountDropdown.isDisplayed(), "user account dropdown is not displayed");;
 		return this;
 	}
 
@@ -856,6 +858,12 @@ return this;
 	public ProductPageObjects clickOnProductsLink() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",productsLink);
 		return new ProductPageObjects();
+	}
+
+	public HomePageObjects clickOnMySaveCart() {
+		Waiting.explicitWaitVisibilityOfElement(mySaveCartLink, 3);
+		mySaveCartLink.click();
+		return this;
 	}
 
 }

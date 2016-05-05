@@ -1,22 +1,21 @@
-package org.etna.modules;
+package org.etna.testdefinitions;
 
-import org.etna.dataprovider.SearchData;
+import org.testng.annotations.Test;
 import org.etna.maincontroller.MainController;
+import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.testng.SkipException;
-import org.testng.annotations.Test;
 
-/*
- * @author Hemanth.Sridhar
- */
-
-public class APAModule extends MainController{
+public class APAModuleTest extends MainController {
 	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-
-	LoginModule loginModule = new LoginModule();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	String shopByBrandBreadcrump = data.getShopByBrandsBreadcrump();
+	String shopByManufacturersBreadcrump = data.getShopByManufacturersBreadcrump();
+	LoginModuleTest loginModule = new LoginModuleTest();
 	
-	@Test(groups={"regression"})
+	
+	
 	 public void TC_APA_001_verifyDisplayOfManageAddDisablePAafterSuperUserLogin() throws Exception{
 		
 		loginModule.loginAsASuperUser();
@@ -26,9 +25,11 @@ public class APAModule extends MainController{
 		
 	}
 	
-	@Test(groups={"regression"})
+
 	 public void TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
 		String addNewPurchasingAgentBreadcrump = data.getAddNewPurchasingAgentBreadcrump();
+		
+		homePage().clickLoginLink().loginPopUp().enterUserName().enterPassword().clickOnLoginButton();
 		loginModule.loginAsASuperUser();
 		homePage()
 		.clickOnUserAccountDropdown()
@@ -59,14 +60,14 @@ public class APAModule extends MainController{
 		
 	}
 	
-	@Test(groups={"regression"},enabled=false)
+	
 	 public void TC_APA_003_addNewPurchasingAgent_GeneralUser() throws Exception{
 		
 		throw new SkipException("pending.");
 	}
 	
 	
-	@Test(groups={"regression"})
+	
 	 public void TC_APA_004_generalUserLoginCheckoutButtonNotDisplayedInCart() throws Exception{
 		
 		loginModule.login(data.getGeneralUserEmailID(), data.getGeneralUserPassword());
@@ -84,13 +85,13 @@ public class APAModule extends MainController{
 		.verifyButtonsAvailableForGeneralUserInMyCart();
 	}
 	
-	@Test(groups={"regression"},enabled=false)
+	
 	 public void TC_APA_005_addNewPurchasingAgent_APA() throws Exception{
 		
 		throw new SkipException("pending.");
 	}
 	
-	@Test(groups={"regression"},enabled=false)
+	
 	 public void TC_APA_006() throws Exception{
 		
 		throw new SkipException("pending.");
@@ -102,8 +103,6 @@ public class APAModule extends MainController{
 		throw new SkipException("pending.");
 	}
 	
-	
-	@Test(groups={"regression"},dataProvider="excelSheetDataRead",dataProviderClass=SearchData.class)
 	public void TC_PA_008_To_TC_PA_022_errorScenarios(String emailId,String firstName, String lastName, String password, String confirmPassword,String address1, String address2, String city, String state, String zipCode,String phoneNumber,String roleAssignment,String faxNumber,String website,String expectedErrorMsg) throws Exception
 	{
 		loginModule.loginAsASuperUser();
@@ -128,4 +127,6 @@ public class APAModule extends MainController{
 		.clickOnSubmit()
 		.verifyErrorMsg(expectedErrorMsg);
 	}
+
 }
+

@@ -1,28 +1,25 @@
-package org.etna.modules;
-
+package org.etna.testdefinitions;
 import org.etna.maincontroller.MainController;
+import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.testng.SkipException;
-import org.testng.annotations.Test;
 
-public class HomePageModule extends MainController{
+public class HomePageModuleTest extends MainController{
 
-	/*
-	 * @author Hemanth.Sridhar
-	 */
-	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-
-	LoginModule loginModule = new LoginModule();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	String shopByBrandBreadcrump = data.getShopByBrandsBreadcrump();
+	String shopByManufacturersBreadcrump = data.getShopByManufacturersBreadcrump();
 	
-	@Test(groups={"smoke","regression"},enabled=false)
+
+
 	  public void tc008_verifyHomePage() throws Exception
 	  {
 		homePage()
 		.verifyHomePage();
 	  } 
 	
-	@Test(groups={"regression"})
+
 	  public void tc009_verifyAllSectionOptionPages() throws Exception
 	  {
 		throw new SkipException("Feature not completely implemented yet.");
@@ -33,7 +30,6 @@ public class HomePageModule extends MainController{
 				.verifyAllSectionOptionPages();*/
 	  } 	
 	
-	@Test(groups={"regression"})
 	  public void tc010_verifyAllFooterSectionPages() throws Exception
 	  {
 		throw new SkipException("Feature not completely implemented yet.");
@@ -41,7 +37,7 @@ public class HomePageModule extends MainController{
 	  } 
 	
 	
-	@Test(groups={"regression"})
+
 	  public void tc011_clickOnLogoNavigateBackToHomePage() throws Exception
 	  {
 		String searchText = data.getSearchText();
@@ -53,6 +49,5 @@ public class HomePageModule extends MainController{
 		.verifyCarousel()
 		.verifyFeaturedProductsSection();
 	  } 
-		
 	
 }

@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="EtnaSuite">
-    <listeners>
-        <listener class-name="org.etna.utils.ReportGenerator"/>
-    </listeners>
-  
-  <test name="EtnaWebApplicationTesting">
-  <groups>
+<suite name="EtnaTestAutomationSuite">
+	
+		<listeners>
+        	<listener class-name="org.etna.maincontroller.MainController"/>
+        	<listener class-name="org.etna.utils.ReportGenerator"/>
+  		</listeners>
+    
+  <test name="AutomationTesting">
+  	
+  	 <groups>
       <run>
-        <include name="regression"/>
+      <include name="regression"/>
       </run>
-    </groups>
+   </groups>
+   
     <classes>
-    		<class name="org.etna.modules.HomePageModule"/> 
-    		<class name="org.etna.modules.ProductDetailsModule"/> 
-    		<class name="org.etna.modules.ShopByModule"/>
-    		<class name="org.etna.modules.LoginModule"/> 
-    		<class name="org.etna.modules.CategoryModule"/> 
-    		<class name="org.etna.modules.APAModule"/>
-    		<class name="org.etna.modules.SearchModule"/>
-    		<class name="org.etna.modules.ProductGroupModule"/>
-    		<class name="org.etna.modules.ProductListModule"/> 
+      <class name="org.etna.testdeclarations.TestDeclarations"/>
     </classes>
-  </test>
-</suite>
-
-<!-- <packages> -->
-<!--  <package name="org.hgh.modules" /> -->     
-   <!-- </packages> -->
-   
-   
-   <!-- <class name="org.etna.modules.RequestForQuoteModule"/>  -->
-   <!-- <class name="org.etna.modules.RegistrationModule"/>  -->
-   <!-- <class name="org.etna.modules.QuickOrderPadModule"/>   -->
-   <!-- <class name="org.etna.modules.CartFileUploadModule"/>   -->
-   <!-- <class name="org.etna.modules.ProductsCompareModule"/>  -->
-   <!-- <class name="org.etna.modules.HomePageModule"/>
-    		<class name="org.etna.modules.ProductListModule"/> -->
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

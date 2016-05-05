@@ -46,11 +46,5 @@ public class CheckoutPageObjects extends MainController{
 		return new CheckoutWithCreditCardPageObjects();
 	}
 	
-	
-	
-	
-	
-	
-	
 
 }

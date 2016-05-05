@@ -145,6 +145,9 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	@FindAll(value={@FindBy(xpath="//dl/descendant::h4/following-sibling::span")})
 	private List <WebElement> toggleButtons;
 	
+	@FindBy(xpath="//li[@id='mPartNo']/descendant::span")
+	private WebElement mpn;
+	
 	public ProductsDetailsPageObjects verifyDisplayOfItemName(String searchText) {
 		String searchTextUpperCase =searchText.toUpperCase(); 
 		Waiting.explicitWaitVisibilityOfElement(itemTitleLocator, 5);
@@ -152,6 +155,10 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		return this;
 	}
 
+	public String getProductName(){
+	String productName = itemTitleLocator.getText().trim();
+		return productName;
+	}
 
 	public ProductsDetailsPageObjects verifyPDPFilterSectionNOTLoggedIn() {
 		Assert.assertTrue(productListPage().filterSectionLocator.isDisplayed(), "Filter section is not displayed in the PDP page.");
@@ -476,6 +483,22 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		Waiting.explicitWaitVisibilityOfElement(addToCartButton, 10);
 		addToCartButton.click();
 		return this;
+	}
+
+	public ProductsDetailsPageObjects enterQuanityInProductDetailsPage(String quantity) {
+		quantityTextbox.clear();
+		quantityTextbox.click();
+		quantityTextbox.sendKeys(quantity);
+		return this;
+	}
+
+	public String getMPN() {
+		return mpn.getText().trim();
+	}
+
+	public ProductsDetailsPageObjects verifyProductNameIsSameAsItWasInShoppingCart(String productNameFromShoppingCart) {
+		Assert.assertTrue(itemTitleLocator.getText().trim().equalsIgnoreCase(productNameFromShoppingCart),"Item name is not the same as it was in my cart page. It is "+itemTitleLocator.getText().trim()+" instead of "+productNameFromShoppingCart+".");
+	return this;
 	}
 }	
 

@@ -24,7 +24,7 @@ public class SearchDataPropertyFile extends MainController{
 	
 	private String saveCartName = PropertyFileReader.propertiesReader(searchData, "saveCartName");
 	
-	private String quantityForShoppingCart = PropertyFileReader.propertiesReader(searchData, "quantity.shoppingCartPage");
+	private String quantityForShoppingCart = PropertyFileReader.propertiesReader(searchData, "quantityForShoppingCart");
 	
 	private String nameOfShoppingCartButtons = PropertyFileReader.propertiesReader(searchData, "nameOfShoppingCartButtons");
 	
@@ -141,6 +141,12 @@ public class SearchDataPropertyFile extends MainController{
 	private String productsPageBreadcrump = PropertyFileReader.propertiesReader(searchData, "productsPageBreadcrump");
 	
 	private String expectedBannerImagesInLevelOne = PropertyFileReader.propertiesReader(searchData, "expectedBannerImagesInLevelOne");
+	
+	private String expectedButtonsInMyCartForSuperUser = PropertyFileReader.propertiesReader(searchData, "expectedButtonsInMyCartForSuperUser");
+	
+	private String expectedCartInstructions = PropertyFileReader.propertiesReader(searchData, "expectedCartInstructions");
+	
+	private String saveCartBreadcrump = PropertyFileReader.propertiesReader(searchData, "saveCartBreadcrump");
 	
 	public String getCopyRightsOfUnilogText() {
 		return copyRightsOfUnilog;
@@ -511,6 +517,21 @@ public String getSpecificCategory() {
 public String getBannerImagesInLevelOne() {
 	
 	return expectedBannerImagesInLevelOne;
+}
+
+public String getExpectedButtonsInMyCartForSuperUser() {
+
+	return expectedButtonsInMyCartForSuperUser;
+}
+
+public String getExpectedCartInstructions() {
+	
+	return expectedCartInstructions;
+}
+
+public String getSaveCartBreadcrump() {
+	
+	return saveCartBreadcrump;
 }
 
 

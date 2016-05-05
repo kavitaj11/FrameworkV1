@@ -17,9 +17,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-public class TestUtility extends MainController{
+public class TestUtility extends MainController {
 
-	static Actions action = new Actions(driver);
+	
 	
 	
 	
@@ -94,8 +94,8 @@ public class TestUtility extends MainController{
 	}
 
 	public static void alertAccept() {
-		Alert alert = driver.switchTo().alert();
 		Waiting.explicitWaitForAlert(5);
+		Alert alert = driver.switchTo().alert();
 		alert.accept();
 	}
 	
@@ -111,13 +111,13 @@ public class TestUtility extends MainController{
 	
 	public static void mouseHoverActions(WebElement element)
 	{
-		
+		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
 	
 	public static void clickAndHoldActions(WebElement element)
 	{
-		
+		Actions action = new Actions(driver);
 		action.clickAndHold(element).build().perform();
 	}
 	

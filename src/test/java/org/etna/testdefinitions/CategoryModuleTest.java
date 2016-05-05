@@ -1,23 +1,17 @@
-package org.etna.modules;
+package org.etna.testdefinitions;
 import org.etna.maincontroller.MainController;
+import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Description;
 
-/*
- * @author Hemanth.Sridhar
- */
+public class CategoryModuleTest extends MainController{
 
-public class CategoryModule extends MainController{
-	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-
-	LoginModule loginModule = new LoginModule();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	String shopByBrandBreadcrump = data.getShopByBrandsBreadcrump();
+	String shopByManufacturersBreadcrump = data.getShopByManufacturersBreadcrump();
 	
-	@Test(groups={"regression"})
-	@Description("Verification of breadcrumbs, Verification of Page Title, Verification of Page Name, Verification of categories in filter is displayed "
-			+ "in the page ")
-	  public void TC_categories_001_006_007_008() throws Exception
+	
+	  public void TC_categories_001_TC_categories_006_TC_categories_007_TC_categories_008() throws Exception
 	  {
 		  		
 		  		String productsPageBreadCrump = data.getProductsPageBreadCrump();
@@ -32,8 +26,7 @@ public class CategoryModule extends MainController{
 				
 	}
 	
-	@Test(groups={"regression"})
-	@Description("Verification of level 1 category link.")
+	
 	  public void TC_categories_002() throws Exception
 	  {
 		  		data.setSpecificCategory("Safety & Security");
@@ -48,8 +41,7 @@ public class CategoryModule extends MainController{
 				productsPage().verifyPageTitle(lastButOneBreadcrump,lastBreadcrump);
 	}
 	
-		@Test(groups={"regression"})
-		@Description("Verification of last level category link for Product List Page.")
+		
 		public void TC_categories_003_navigateProductListPage() throws Exception
 		{
 		  		data.setSpecificCategory("Safety & Security");
@@ -80,8 +72,7 @@ public class CategoryModule extends MainController{
 				.verifySearchMatchesLink(getSpecificCategory3);
 	  }
 		
-		@Test(groups={"regression"})
-		@Description("Verification of last level category link for Product Details Page.")
+	
 		public void TC_categories_003_navigateProductDetailsPage() throws Exception
 		{
 		  		data.setSpecificCategory("Safety & Security");
@@ -110,8 +101,7 @@ public class CategoryModule extends MainController{
 				.verifyPDPPageTitle();
 	  }
 		
-		@Test(groups={"regression"})
-		@Description("Verification of description and banners.")
+
 		public void TC_categories_004_verifyBanners() throws Exception
 			{
 		  		data.setSpecificCategory("Safety & Security");
@@ -125,8 +115,7 @@ public class CategoryModule extends MainController{
 			}
 		
 		
-			@Test(groups={"regression"})
-			@Description("Verification of image link of any category")
+		
 			public void TC_categories_005_ClickingOnImages() throws Exception
 				{
 			  		data.setSpecificCategory("Safety & Security");
@@ -140,7 +129,5 @@ public class CategoryModule extends MainController{
 					String lastButOneBreadcrump = productsPage().getLastButOneBreadCrump();
 					productsPage().verifyPageTitle(lastButOneBreadcrump,lastBreadcrump);
 				}
-			
-
 			
 }

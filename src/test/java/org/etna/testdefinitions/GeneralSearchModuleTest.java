@@ -1,23 +1,13 @@
-package org.etna.modules;
-
+package org.etna.testdefinitions;
 import org.etna.maincontroller.MainController;
 import org.etna.utils.SearchDataPropertyFile;
-import org.testng.annotations.Test;
 
-public class SearchModule extends MainController {
+public class GeneralSearchModuleTest extends MainController{
 
-	/*
-	 * @author Hemanth.Sridhar
-	 */
-	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
-	
-	LoginModule loginModule = new LoginModule();
-
-	@Test(groups={"smoke","regression"})
+	  
 	  public void tc004_generalSearch() throws Exception
 	  {
-		  //pdp page
 				String searchText = data.getSearchTextForUPCLabelTest();
 		  		homePage()
 		  		.searchText(searchText)
@@ -28,5 +18,4 @@ public class SearchModule extends MainController {
 		  		.verifyPDPFilterSectionToggleButtons()
 		  		.verifyDisplayOfItemName(searchText);
 			}
-	
 }
