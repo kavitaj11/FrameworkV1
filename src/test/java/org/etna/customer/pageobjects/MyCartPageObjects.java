@@ -86,7 +86,7 @@ public class MyCartPageObjects extends MainController{
 	@FindBy(xpath="//a[@class='button' and contains(text(),'Update Cart')]")
 	private WebElement updateCartButton;
 	
-	@FindAll(value={@FindBy(xpath="//div/a[contains(@onclick,'deleteItem')]")})
+	@FindAll(value={@FindBy(xpath="//a[@title='Delete']/i")})
 	private List<WebElement> deleteItemLink;
 	
 	@FindBy(xpath="//li/b[contains(text(),'MPN')]/following-sibling::span")
@@ -389,7 +389,7 @@ public class MyCartPageObjects extends MainController{
 
 
 	public MyCartPageObjects clickOnDeleteLink() {
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",deleteItemLink);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",deleteItemLink.get(0));
 		return this;
 	}
 

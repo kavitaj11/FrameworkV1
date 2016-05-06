@@ -402,6 +402,8 @@ public class MyCartModuleTest extends MainController{
 			.clickOnDeleteLink()
 			 .verifyDeleteAlertText(MPN);
 			 TestUtility.alertDismiss();
+			 myCartPage()
+			 .verifyEmptyCart();
 		  }
 	  }
 	  

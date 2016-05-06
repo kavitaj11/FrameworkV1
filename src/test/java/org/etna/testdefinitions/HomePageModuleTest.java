@@ -48,6 +48,6 @@ public class HomePageModuleTest extends MainController{
 		.clickOnLogo()
 		.verifyCarousel()
 		.verifyFeaturedProductsSection();
-	  } 
+	  }
 	
 }

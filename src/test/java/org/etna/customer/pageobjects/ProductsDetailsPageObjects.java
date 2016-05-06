@@ -378,9 +378,10 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	}
 
 
-	public ProductsDetailsPageObjects clickOnMyProductGroupButton() {
-		Waiting.explicitWaitVisibilityOfElement(myProductGroupButton, 15);
-		myProductGroupButton.click();
+	public ProductsDetailsPageObjects clickOnMyProductGroupButton() throws Exception {
+		homePage()
+		.clickOnUserAccountDropdown()
+		.navigateToMyProductGroups();
 		return this;
 	}
 

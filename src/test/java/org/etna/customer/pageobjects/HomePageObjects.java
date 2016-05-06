@@ -860,10 +860,10 @@ return this;
 		return new ProductPageObjects();
 	}
 
-	public HomePageObjects clickOnMySaveCart() {
+	public SaveCartPageObjects clickOnMySaveCart() {
 		Waiting.explicitWaitVisibilityOfElement(mySaveCartLink, 3);
 		mySaveCartLink.click();
-		return this;
+		return new SaveCartPageObjects();
 	}
 
 }

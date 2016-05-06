@@ -28,16 +28,12 @@ public class TestDeclarations extends MainController{
 
 	@Test(groups={"APAModule","regression"},alwaysRun=true)
 	 public void TC_APA_001_verifyDisplayOfManageAddDisablePAafterSuperUserLogin() throws Exception{
-		
 		apaModule.TC_APA_001_verifyDisplayOfManageAddDisablePAafterSuperUserLogin();
-		
-		
 	}
 	
 	@Test(groups={"APAModule","regression"},alwaysRun=true)
 	 public void TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
 		apaModule.TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent();
-		
 	}
 	
 	@Test(groups={"APAModule","regression"},enabled=false)
@@ -183,7 +179,6 @@ public class TestDeclarations extends MainController{
 	  @Test(alwaysRun=true,groups={"LoginModule","regression"})
 	  public void TC_Login_009_010_RememberPassword_UserNameAndPasswordRefill() throws Exception
 	  {
-		  
 		loginModule.TC_Login_009_010_RememberPassword_UserNameAndPasswordRefill();
 		}
 	  

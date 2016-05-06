@@ -74,7 +74,7 @@ public class ShopByBrandsPageObjects extends MainController{
 		{
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",listOfAlphabets.get(i));
 		}
-		Thread.sleep(2500);
+		Thread.sleep(4000);
 		
 		{
 			for(int j=0;j<listOfBrandsUnderEveryAlphabet.size();j++)

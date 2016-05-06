@@ -16,7 +16,7 @@ public class LoginPopUpPageObjects extends MainController {
 	@FindBy(xpath="//h2")
 	public WebElement pageName;
 	
-	@FindBy(xpath="//span[@class='customCheckBox']")
+	@FindBy(id="rememberMe")
 	private WebElement rememberMeCheckbox;
 	
 	@FindBy(xpath="//input[@id='popLoginBtn']")
@@ -34,7 +34,7 @@ public class LoginPopUpPageObjects extends MainController {
 	@FindBy(xpath="//h3[contains(.,'Login')]/a[contains(.,'Sign Up')]")
 	private WebElement signUp;
 	
-	@FindBy(xpath="//a[@class='closeBtn']")
+	@FindBy(xpath="//div[contains(@id,'loginPop')]/descendant::a[@class='closeBtn']")
 	private WebElement closeButton;
 	
 	@FindBy(xpath="//h3[contains(.,'Login')]")
@@ -114,7 +114,6 @@ public class LoginPopUpPageObjects extends MainController {
 		Assert.assertTrue(password.isDisplayed(),"password textbox is not displayed");
 		Assert.assertTrue(forgotYourPassword.isDisplayed(),"forgot your password link is not displayed");
 		Assert.assertTrue(signUp.isDisplayed(),"Sign up link is not displayed");
-		Waiting.explicitWaitVisibilityOfElement(closeButton, 10);
 		Assert.assertTrue(closeButton.isDisplayed(),"close button is not displayed");
 		return this;
 	}

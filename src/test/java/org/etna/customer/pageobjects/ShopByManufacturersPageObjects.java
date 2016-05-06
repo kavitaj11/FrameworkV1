@@ -15,7 +15,7 @@ public class ShopByManufacturersPageObjects extends MainController{
 	
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	
-	@FindBy(xpath="//h2[contains(text(),'Shop by Manufacturers')]")
+	@FindBy(xpath="//h2[contains(text(),'Shop By Manufacturers')]")
 	private WebElement shopByManufacturersName;
 	
 	
@@ -70,7 +70,7 @@ public class ShopByManufacturersPageObjects extends MainController{
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",listOfAlphabets.get(i));
 		}
 		
-		Thread.sleep(1500);
+		Thread.sleep(4000);
 		{
 			for(int j=0;j<listOfManufacturersUnderEveryAlphabet.size();j++)
 			{

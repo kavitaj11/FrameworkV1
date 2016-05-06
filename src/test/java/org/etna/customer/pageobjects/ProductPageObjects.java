@@ -26,7 +26,7 @@ public class ProductPageObjects extends MainController{
 	private WebElement categoryToggleButton;
 	
 	
-	@FindAll(value={@FindBy(xpath="(//h4[contains(text(),'Category')]/ancestor::dt/following-sibling::dd)[1]/div/ul/li/a")})
+	@FindAll(value={@FindBy(xpath="(//h4[contains(text(),'Category')]/ancestor::dt/following-sibling::dd)[1]/ul/li/a")})
 	private List<WebElement> categoriesList;
 	
 	@FindAll(value={@FindBy(xpath="//div[@class='cimm_productCategory']/descendant::h5")})

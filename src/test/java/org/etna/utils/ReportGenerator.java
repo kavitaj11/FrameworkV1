@@ -47,7 +47,7 @@ public class ReportGenerator implements IReporter {
 		}
 			}
 		
-		else if (System.getProperty("os.name").contains("WIN"))
+		else if (System.getProperty("os.name").toUpperCase().contains("WIN"))
 		{
 			try
 			{

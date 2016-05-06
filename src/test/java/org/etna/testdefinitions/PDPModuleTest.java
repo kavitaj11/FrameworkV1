@@ -22,7 +22,6 @@ public class PDPModuleTest extends MainController {
 	  	.clickOnSearch()
 	  	.productDetailsPage()
 	  	.verifyPDPPageTitle()
-	  	.verifyPDPFilterSectionNOTLoggedIn()
 	  	.verifyPDPFilterSectionToggleButtons()
 	  	.verifyDisplayOfItemName(searchText)
 	  	.verifyDisplayOfShortDescription(searchText)

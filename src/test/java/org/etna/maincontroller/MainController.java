@@ -1,4 +1,26 @@
 package org.etna.maincontroller;
+import java.io.File;
+import static org.monte.media.FormatKeys.EncodingKey;
+import static org.monte.media.FormatKeys.FrameRateKey;
+import static org.monte.media.FormatKeys.KeyFrameIntervalKey;
+import static org.monte.media.FormatKeys.MIME_AVI;
+import static org.monte.media.FormatKeys.MediaTypeKey;
+import static org.monte.media.FormatKeys.MimeTypeKey;
+import static org.monte.media.VideoFormatKeys.CompressorNameKey;
+import static org.monte.media.VideoFormatKeys.DepthKey;
+import static org.monte.media.VideoFormatKeys.ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE;
+import static org.monte.media.VideoFormatKeys.QualityKey;
+
+import java.awt.Dimension;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.lang.reflect.Method;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+
+import org.apache.commons.io.FileUtils;
 import org.etna.customer.pageobjects.AddNewCreditCardPageObjects;
 import org.etna.customer.pageobjects.AddNewPurchasingAgentPageObjects;
 import org.etna.customer.pageobjects.CheckoutPageObjects;
@@ -21,7 +43,10 @@ import org.etna.customer.pageobjects.ShopByBrandsPageObjects;
 import org.etna.customer.pageobjects.ShopByManufacturersPageObjects;
 import org.etna.customer.pageobjects.MyCartPageObjects;
 import org.etna.utils.ApplicationSetUpPropertyFile;
+import org.etna.utils.SendEmailGmail;
 import org.etna.utils.TestUtility;
+import org.etna.utils.Video;
+import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,14 +61,20 @@ import org.testng.IHookable;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import ru.yandex.qatools.allure.AllureConfig;
 import ru.yandex.qatools.allure.annotations.Attachment;
+import org.monte.media.Format;
+import org.monte.media.FormatKeys.MediaType;
+import org.monte.media.math.Rational;
 
 
-public class MainController implements IHookable{
+public class MainController implements ITestListener{
 	
 	
  public static WebDriver driver ;
@@ -51,6 +82,8 @@ public class MainController implements IHookable{
 /*
  * @author Hemanth.Sridhar
  */
+ public static String outputVideo="";
+ private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/PropertyFiles/ApplicationSetUp.properties";
 public static String searchData = "resources/PropertyFiles/SearchData.properties";
 
@@ -192,6 +225,15 @@ public SaveCartPageObjects saveCartPage()
 
 DesiredCapabilities caps = new DesiredCapabilities();
 
+	
+@BeforeSuite(alwaysRun=true)
+public void beforeSuite() throws Exception{
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+		outputVideo="./Videos";
+ 		FileUtils.forceMkdir(new File(outputVideo));	
+ 		outputVideo += "/Videos_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+}
+
 
 	@BeforeMethod(alwaysRun=true)
 	public boolean setUp() throws Exception{
@@ -213,6 +255,39 @@ DesiredCapabilities caps = new DesiredCapabilities();
 		return true;
 	
 	}
+	
+	@BeforeMethod(alwaysRun=true)
+	public void startRecording(Method methodName) throws Exception{
+ 		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+ 		 //File file = new File(outputFolder+"/"+"Videos/");
+ 		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
+ 		{
+ 		 File file = new File(outputVideo+"/");
+         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+         int width = screenSize.width;
+         int height = screenSize.height;    
+         String testcaseName = methodName.getName();
+         Rectangle captureSize = new Rectangle(0,0, width, height);
+                        
+       GraphicsConfiguration gc = GraphicsEnvironment
+          .getLocalGraphicsEnvironment()
+          .getDefaultScreenDevice()
+          .getDefaultConfiguration();
+ 
+	this.screenRecorder = new Video(gc, captureSize,
+          new Format(MediaTypeKey, MediaType.VIDEO, MimeTypeKey, MIME_AVI),
+          new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+               CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+               DepthKey, 24, FrameRateKey, Rational.valueOf(15),
+               QualityKey, 1.0f,
+               KeyFrameIntervalKey, 15 * 60),
+          new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black",
+               FrameRateKey, Rational.valueOf(30)),
+          null, file, testcaseName);
+     this.screenRecorder.start();
+ 		}
+ }
+	
 	
 		
 @BeforeTest(alwaysRun=true)
@@ -289,31 +364,94 @@ else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
 	driver.manage().deleteAllCookies();
 }
 
-@Override
+/*@Override
 public void run(IHookCallBack callBack, ITestResult testResult){
 	callBack.runTestMethod(testResult);
     if (testResult.getThrowable()!= null) {
+    	try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+    	try
+    	{
     	saveScreenshot(testResult.getName());
+    	}
+    	catch(Exception e)
+    	{
+    		e.printStackTrace();
+    	}
    }
-}
+}*/
 
 //@Override
 //public void onTestFailure(ITestResult tr) {
 //	saveScreenshot(tr.getMethod().getMethodName());
 //}
 
+@Override
+public void onTestFailure(ITestResult arg0) {
+	saveScreenshot(arg0.getMethod().getMethodName(),driver);	
+}
 
 
 @Attachment(value = "Screenshot of {0}", type = "image/png")
-  public byte[] saveScreenshot(String name) {
+  public byte[] saveScreenshot(String name,WebDriver driver) {
 	return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
   }
 
+
+@AfterMethod(alwaysRun=true)
+public void callStopRecording() throws Exception{
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
+		{
+		  this.screenRecorder.stop();
+		}	
+}
 
 @AfterSuite(alwaysRun=true)
 public void tearDownClass(){
 	System.out.println("Ending Test Suite");
 	driver.quit();
+}
+
+@Override
+public void onFinish(ITestContext arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void onStart(ITestContext arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+@Override
+public void onTestSkipped(ITestResult arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void onTestStart(ITestResult arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void onTestSuccess(ITestResult arg0) {
+	// TODO Auto-generated method stub
+	
 }
 
 }
