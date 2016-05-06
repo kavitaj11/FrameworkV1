@@ -126,7 +126,6 @@ public class LoginModuleTest extends MainController{
 		  .homePage()
 		  .verifyWelcomeMsg()
 		  .homePage()
-		  .waitForProfileDropdownLink()
 		  .logout()
 		  .clickLoginLink()
 		  .loginPopUp()

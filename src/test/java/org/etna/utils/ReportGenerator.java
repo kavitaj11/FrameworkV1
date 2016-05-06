@@ -52,7 +52,9 @@ public class ReportGenerator implements IReporter {
 			try
 			{
 			String mvnSiteCommand = PropertyFileReader.propertiesReader(MainController.applicationSetUp, "mvnSiteCommand");
-			Runtime.getRuntime().exec("cmd /c start "+mvnSiteCommand);
+			File file = new File(mvnSiteCommand);
+			System.out.println(file.getAbsolutePath());
+			Runtime.getRuntime().exec("cmd /c start "+file.getAbsolutePath());
 			}
 			catch(Exception e)
 			{

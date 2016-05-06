@@ -139,7 +139,7 @@ public class LoginPopUpPageObjects extends MainController {
 	}
 	
 	public LoginPopUpPageObjects verifyRememberMeCheckBoxSelected() throws InterruptedException {
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		Assert.assertEquals(((JavascriptExecutor) driver).executeScript("return $('#rememberMe').attr('checked');"),"checked","remember me checkbox is not checked");
 		return this;
 	}

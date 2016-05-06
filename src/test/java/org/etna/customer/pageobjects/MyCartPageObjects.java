@@ -89,6 +89,9 @@ public class MyCartPageObjects extends MainController{
 	@FindAll(value={@FindBy(xpath="//a[@title='Delete']/i")})
 	private List<WebElement> deleteItemLink;
 	
+	@FindAll(value={@FindBy(xpath="//div/a[contains(@onclick,'deleteItem')]")})
+	private List<WebElement> deleteItemLinkForTooltip;
+	
 	@FindBy(xpath="//li/b[contains(text(),'MPN')]/following-sibling::span")
 	private WebElement mpnValue;
 	
@@ -383,7 +386,7 @@ public class MyCartPageObjects extends MainController{
 
 
 	public MyCartPageObjects verifyDeleteToolTip() {
-		Assert.assertEquals(deleteItemLink.get(0).getAttribute("title").trim(), "Delete");
+		Assert.assertEquals(deleteItemLinkForTooltip.get(0).getAttribute("title").trim(), "Delete");
 		return this;
 	}
 

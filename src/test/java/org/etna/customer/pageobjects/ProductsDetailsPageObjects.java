@@ -45,7 +45,7 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	@FindBy(xpath="//li[@id='mPartNo']/b")
 	private WebElement mpnLabel;
 	
-	@FindBy(xpath="//span[contains(.,'My Product Group')]")
+	@FindBy(xpath="//div[@id='popSelector']/following-sibling::dl/descendant::span[contains(.,'My Product Group')]")
 	private WebElement myProductGroupButton;
 	
 	@FindBy(xpath="//span[contains(text(),'Customer Part Number')]/ancestor::a")
@@ -379,9 +379,7 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 
 
 	public ProductsDetailsPageObjects clickOnMyProductGroupButton() throws Exception {
-		homePage()
-		.clickOnUserAccountDropdown()
-		.navigateToMyProductGroups();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",myProductGroupButton);
 		return this;
 	}
 
@@ -406,10 +404,10 @@ ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	}
 
 
-	public MyProductGroupsPageObjects clickOnMyProductGroups() throws InterruptedException {
-		groupsToggleButton.click();
-		Thread.sleep(1500);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",myProductGroupsUnderGroups);
+	public MyProductGroupsPageObjects clickOnMyProductGroups() throws Exception {
+		homePage()
+		.clickOnUserAccountDropdown()
+		.navigateToMyProductGroups();
 		return new MyProductGroupsPageObjects();
 	}
 

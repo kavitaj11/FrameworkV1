@@ -1,5 +1,4 @@
 package org.etna.testdeclarations;
-
 import org.etna.dataprovider.SearchData;
 import org.etna.maincontroller.MainController;
 import org.etna.testdefinitions.APAModuleTest;
@@ -29,11 +28,12 @@ public class TestDeclarations extends MainController{
 	@Test(groups={"APAModule","regression"},alwaysRun=true)
 	 public void TC_APA_001_verifyDisplayOfManageAddDisablePAafterSuperUserLogin() throws Exception{
 		apaModule.TC_APA_001_verifyDisplayOfManageAddDisablePAafterSuperUserLogin();
+		
 	}
 	
 	@Test(groups={"APAModule","regression"},alwaysRun=true)
-	 public void TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
-		apaModule.TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent();
+	 public void TC_APA_002_TC_APA_050_verifyAddNewPA_afterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
+		apaModule.TC_APA_002_TC_APA_050_verifyAddNewPA_afterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent();
 	}
 	
 	@Test(groups={"APAModule","regression"},enabled=false)

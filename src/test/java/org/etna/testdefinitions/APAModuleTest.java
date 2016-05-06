@@ -26,10 +26,8 @@ public class APAModuleTest extends MainController {
 	}
 	
 
-	 public void TC_APA_002_TC_APA_050_verifyAddNewPAafterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
+	 public void TC_APA_002_TC_APA_050_verifyAddNewPA_afterSuperUserLogin_VerifyBreadcrumpOfAddNewPurchasingAgent() throws Exception{
 		String addNewPurchasingAgentBreadcrump = data.getAddNewPurchasingAgentBreadcrump();
-		
-		homePage().clickLoginLink().loginPopUp().enterUserName().enterPassword().clickOnLoginButton();
 		loginModule.loginAsASuperUser();
 		homePage()
 		.clickOnUserAccountDropdown()

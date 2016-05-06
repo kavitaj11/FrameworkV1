@@ -15,8 +15,10 @@ public class HomePageModuleTest extends MainController{
 
 	  public void tc008_verifyHomePage() throws Exception
 	  {
+		  
 		homePage()
 		.verifyHomePage();
+		
 	  } 
 	
 

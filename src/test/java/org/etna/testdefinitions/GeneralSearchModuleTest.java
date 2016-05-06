@@ -14,7 +14,6 @@ public class GeneralSearchModuleTest extends MainController{
 		  		.clickOnSearch()
 		  		.productDetailsPage()
 		  		.verifyPDPPageTitle()
-		  		.verifyPDPFilterSectionNOTLoggedIn()
 		  		.verifyPDPFilterSectionToggleButtons()
 		  		.verifyDisplayOfItemName(searchText);
 			}

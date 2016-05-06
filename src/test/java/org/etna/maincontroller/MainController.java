@@ -74,7 +74,7 @@ import org.monte.media.FormatKeys.MediaType;
 import org.monte.media.math.Rational;
 
 
-public class MainController implements ITestListener{
+public class MainController implements IHookable{
 	
 	
  public static WebDriver driver ;
@@ -364,7 +364,7 @@ else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
 	driver.manage().deleteAllCookies();
 }
 
-/*@Override
+@Override
 public void run(IHookCallBack callBack, ITestResult testResult){
 	callBack.runTestMethod(testResult);
     if (testResult.getThrowable()!= null) {
@@ -375,24 +375,20 @@ public void run(IHookCallBack callBack, ITestResult testResult){
 		}
     	try
     	{
-    	saveScreenshot(testResult.getName());
+    	saveScreenshot(testResult.getName(),driver);
     	}
     	catch(Exception e)
     	{
     		e.printStackTrace();
     	}
    }
+}
+
+/*@Override
+public void onTestFailure(ITestResult tr) {
+	saveScreenshot(tr.getMethod().getMethodName(),driver);
 }*/
 
-//@Override
-//public void onTestFailure(ITestResult tr) {
-//	saveScreenshot(tr.getMethod().getMethodName());
-//}
-
-@Override
-public void onTestFailure(ITestResult arg0) {
-	saveScreenshot(arg0.getMethod().getMethodName(),driver);	
-}
 
 
 @Attachment(value = "Screenshot of {0}", type = "image/png")
@@ -403,6 +399,7 @@ public void onTestFailure(ITestResult arg0) {
 
 @AfterMethod(alwaysRun=true)
 public void callStopRecording() throws Exception{
+	driver.manage().deleteAllCookies();
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
 		{
@@ -416,42 +413,5 @@ public void tearDownClass(){
 	driver.quit();
 }
 
-@Override
-public void onFinish(ITestContext arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public void onStart(ITestContext arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-
-@Override
-public void onTestSkipped(ITestResult arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public void onTestStart(ITestResult arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public void onTestSuccess(ITestResult arg0) {
-	// TODO Auto-generated method stub
-	
-}
 
 }

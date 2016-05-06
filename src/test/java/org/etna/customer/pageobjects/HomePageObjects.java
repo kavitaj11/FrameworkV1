@@ -247,7 +247,7 @@ public class HomePageObjects extends MainController{
 	public HomePageObjects verifyWelcomeMsg() {
 		try
 		{
-		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 10);
+		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 30);
 		Assert.assertTrue(userAccountDropdown.isDisplayed(),"user dropdown is not displayed");
 		}
 		catch(StaleElementReferenceException e)

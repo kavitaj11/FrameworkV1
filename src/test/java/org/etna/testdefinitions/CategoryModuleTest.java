@@ -18,11 +18,10 @@ public class CategoryModuleTest extends MainController{
 				homePage()
 				.clickOnProductsLink()
 				.productsPage()
-				.clickOnCategoryToggleButton()
 				.verifyBreadcrump(productsPageBreadCrump)
 				.verifyPageTitle(productsPageBreadCrump)
-				.verifyNamesOfAllTheCategoriesInListAndInPage()
-				.verifyPagename(productsPageBreadCrump);
+				.verifyNamesOfAllTheCategoriesInListAndInPage();
+				//.verifyPagename(productsPageBreadCrump);
 				
 	}
 	

@@ -52,7 +52,9 @@ public class ProductPageObjects extends MainController{
 	Waiting.explicitWaitVisibilityOfElements(categoriesList, 15);
 		for(int i=0;i<categoriesList.size(); i++)
 		{
-			Assert.assertTrue(categoriesList.get(i).getText().trim().equalsIgnoreCase(categoryNamesInThePage.get(i).getText().trim()),"category name is not the same as it was in the dropdown. The name in the category list is : "+categoriesList.get(i).getText().trim()+" and the name in the category page is "+categoryNamesInThePage.get(i).getText()+".");
+			/*String categoryListLinkText = categoriesList.get(i).getAttribute("href").trim();
+			String categoryLinkSubStringText = categoryListLinkText.substring(categoryListLinkText.lastIndexOf("/")+1);*/
+			Assert.assertTrue((categoriesList.get(i).getText().trim()).equalsIgnoreCase(categoryNamesInThePage.get(i).getText().trim()),"category name is not the same as it was in the dropdown. The name in the category list is : "+categoriesList.get(i).getText().trim()+" and the name in the category page is : "+categoryNamesInThePage.get(i).getText().trim()+".");
 		}
 	
 		return this;
