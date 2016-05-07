@@ -1,6 +1,5 @@
 package org.etna.customer.pageobjects;
-
-import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.WebElement;
@@ -10,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 /*
  * @author Hemanth.Sridhar
  */
-public class DropdownShoppingCartPageObjects extends MainController{
+public class DropdownShoppingCartPageObjects extends PageFactoryInitializer{
    Actions action = new Actions(driver);
 
 SearchDataPropertyFile data = new SearchDataPropertyFile();

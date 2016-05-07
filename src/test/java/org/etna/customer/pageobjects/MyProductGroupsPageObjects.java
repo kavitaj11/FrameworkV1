@@ -1,5 +1,6 @@
 package org.etna.customer.pageobjects;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
@@ -14,7 +15,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class MyProductGroupsPageObjects extends MainController{
+public class MyProductGroupsPageObjects extends PageFactoryInitializer {
 	public SearchDataPropertyFile data = new SearchDataPropertyFile();
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	

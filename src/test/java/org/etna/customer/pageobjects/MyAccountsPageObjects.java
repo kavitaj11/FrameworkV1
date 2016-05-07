@@ -1,8 +1,7 @@
 package org.etna.customer.pageobjects;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.etna.utils.Waiting;
@@ -17,7 +16,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class MyAccountsPageObjects extends MainController{
+public class MyAccountsPageObjects extends PageFactoryInitializer {
 	public SearchDataPropertyFile data = new SearchDataPropertyFile();
 	Actions action = new Actions(driver);
 

@@ -1,12 +1,13 @@
 package org.etna.modules;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-public class PDPModuleTest extends MainController {
+public class PDPModuleTest extends PageFactoryInitializer {
 	
 	
 	SearchDataPropertyFile data = new SearchDataPropertyFile();

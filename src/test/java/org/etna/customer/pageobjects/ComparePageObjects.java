@@ -1,5 +1,6 @@
 package org.etna.customer.pageobjects;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,7 +12,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class ComparePageObjects extends MainController
+public class ComparePageObjects extends PageFactoryInitializer
 {
  
    Actions action = new Actions(driver);

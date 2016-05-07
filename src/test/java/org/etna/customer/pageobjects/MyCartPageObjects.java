@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
@@ -25,7 +26,7 @@ import org.openqa.selenium.Keys;
 /*
  * @author Hemanth.Sridhar
  */
-public class MyCartPageObjects extends MainController{
+public class MyCartPageObjects extends PageFactoryInitializer {
 	public SearchDataPropertyFile data = new SearchDataPropertyFile();
 	public ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	Actions action = new Actions(driver);

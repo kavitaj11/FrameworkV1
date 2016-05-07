@@ -1,12 +1,13 @@
 package org.etna.modules;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.testng.annotations.Test;
 
 import ru.yandex.qatools.allure.annotations.Description;
 
-public class CategoryModuleTest extends MainController{
+public class CategoryModuleTest extends PageFactoryInitializer{
 
 	SearchDataPropertyFile data = new SearchDataPropertyFile();
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();

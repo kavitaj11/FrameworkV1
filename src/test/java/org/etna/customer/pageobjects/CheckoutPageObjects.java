@@ -1,12 +1,13 @@
 package org.etna.customer.pageobjects;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class CheckoutPageObjects extends MainController{
+public class CheckoutPageObjects extends PageFactoryInitializer{
 
 	@FindBy(xpath="//li[contains(.,'Checkout')]")
 	private WebElement checkoutBreadCrump;

@@ -1,7 +1,6 @@
 package org.etna.customer.pageobjects;
 import java.util.List;
-
-import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.PropertyFileReader;
 import org.etna.utils.SearchDataPropertyFile;
@@ -19,7 +18,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class HomePageObjects extends MainController{
+public class HomePageObjects extends PageFactoryInitializer {
 	
 	
 	 SearchDataPropertyFile data = new SearchDataPropertyFile();
@@ -231,6 +230,8 @@ public class HomePageObjects extends MainController{
 	@FindBy(css=".cimm_myAccountMenu>li>a[href='/SavedGroups/Cart']")
 	private WebElement mySaveCartLink;
 	
+	@FindAll(value={@FindBy(xpath="//span[contains(text(),'Use this address')]")})
+	private List<WebElement> useThisAddressButton;
 	
 	public HomePageObjects errorScenarios(String expectedMsg) {
 		System.out.println(expectedMsg);
@@ -243,7 +244,19 @@ public class HomePageObjects extends MainController{
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",loginLinkLocator);
 		return new LoginPopUpPageObjects();
 	}
-
+	
+	public boolean checkForUseThisAddress(){
+		try
+		{
+		homePage()
+		.verifyUseThisAddressButtonIsDisplayedAndIfDisplayedClickIt();
+		}
+		catch(Exception e)
+		{
+			return true;
+		}
+		return true;
+	}
 	public HomePageObjects verifyWelcomeMsg() {
 		try
 		{
@@ -498,6 +511,7 @@ public class HomePageObjects extends MainController{
 	}
 
 	public HomePageObjects verifyWelcomeMsg(String expectedMsg) {
+		checkForUseThisAddress();
 		try
 		{
 		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 20);
@@ -803,16 +817,9 @@ public class HomePageObjects extends MainController{
 	}
 
 	public HomePageObjects clickOnUserAccountDropdown() throws Exception {
-		if(setUp.getBrowser().equalsIgnoreCase("ghost"))
-		{
-			Thread.sleep(1500);
-		}
-		else
-		{
+		Thread.sleep(1500);
 		Waiting.explicitWaitVisibilityOfElement(userAccountDropdown, 10);
-		
-		}
-		userAccountDropdown.click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",userAccountDropdown);
 		return this;
 	}
 
@@ -864,6 +871,15 @@ return this;
 		Waiting.explicitWaitVisibilityOfElement(mySaveCartLink, 3);
 		mySaveCartLink.click();
 		return new SaveCartPageObjects();
+	}
+
+	public HomePageObjects verifyUseThisAddressButtonIsDisplayedAndIfDisplayedClickIt() throws Exception {
+		if(setUp.getBrowser().equalsIgnoreCase("safari")||setUp.getBrowser().equalsIgnoreCase("ie"))
+		{
+		Waiting.explicitWaitVisibilityOfElements(useThisAddressButton, 20);
+		}
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",useThisAddressButton.get(0));
+		return this;
 	}
 
 }

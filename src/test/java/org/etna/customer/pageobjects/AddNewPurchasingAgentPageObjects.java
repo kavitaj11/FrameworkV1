@@ -2,6 +2,7 @@ package org.etna.customer.pageobjects;
 import java.util.List;
 
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.Waiting;
@@ -12,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 
-public class AddNewPurchasingAgentPageObjects extends MainController{
+public class AddNewPurchasingAgentPageObjects extends PageFactoryInitializer{
 	
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	SearchDataPropertyFile data = new SearchDataPropertyFile();

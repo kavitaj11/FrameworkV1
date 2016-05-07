@@ -1,12 +1,13 @@
 package org.etna.customer.pageobjects;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class CheckoutWithCreditCardPageObjects extends MainController {
+public class CheckoutWithCreditCardPageObjects extends PageFactoryInitializer {
 	
 	@FindBy(xpath="//li[contains(.,'Checkout with Credit Card')]")
 	private WebElement checkoutWithCreditCardBreadCrump;

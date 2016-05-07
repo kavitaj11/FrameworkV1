@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
@@ -18,8 +19,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class ProductsListPageObjects extends MainController
-{
+public class ProductsListPageObjects extends PageFactoryInitializer{
  SearchDataPropertyFile data = new SearchDataPropertyFile();
  ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
    Actions action = new Actions(driver);

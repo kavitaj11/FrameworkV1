@@ -1,5 +1,5 @@
 package org.etna.customer.pageobjects;
-import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class LoginPopUpPageObjects extends MainController {
+public class LoginPopUpPageObjects extends PageFactoryInitializer {
 	public SearchDataPropertyFile data = new SearchDataPropertyFile();
 
 	@FindBy(id="pLoginErr")

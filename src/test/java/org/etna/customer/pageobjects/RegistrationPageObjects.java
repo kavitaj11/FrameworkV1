@@ -1,13 +1,13 @@
 package org.etna.customer.pageobjects;
 import org.testng.Assert;
-import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegistrationPageObjects extends MainController{
+public class RegistrationPageObjects extends PageFactoryInitializer{
 	
 	@FindBy(xpath="//span[@id='question' and contains(text(),'I am a current HGH Hardware Supply Customer')]")
 	private WebElement iAmAcurrentHGHHardwareCustomer;

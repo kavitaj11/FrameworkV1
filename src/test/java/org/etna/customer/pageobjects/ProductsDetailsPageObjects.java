@@ -1,6 +1,7 @@
 package org.etna.customer.pageobjects;
 import java.util.List;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.SearchDataPropertyFile;
 import org.etna.utils.TestUtility;
@@ -18,7 +19,7 @@ import org.testng.Assert;
 /*
  * @author Hemanth.Sridhar
  */
-public class ProductsDetailsPageObjects extends MainController{
+public class ProductsDetailsPageObjects extends PageFactoryInitializer{
    Actions action = new Actions(driver);
 
 SearchDataPropertyFile data = new SearchDataPropertyFile();

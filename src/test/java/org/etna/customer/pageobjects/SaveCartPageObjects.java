@@ -1,5 +1,6 @@
 package org.etna.customer.pageobjects;
 import org.etna.maincontroller.MainController;
+import org.etna.maincontroller.PageFactoryInitializer;
 import org.etna.utils.ApplicationSetUpPropertyFile;
 import org.etna.utils.Waiting;
 import org.openqa.selenium.By;
@@ -7,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class SaveCartPageObjects extends MainController{
+public class SaveCartPageObjects extends PageFactoryInitializer{
 
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	
