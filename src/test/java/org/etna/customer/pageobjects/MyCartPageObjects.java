@@ -257,7 +257,7 @@ public class MyCartPageObjects extends MainController{
 
 	public MyCartPageObjects verifySaveCartCreationMessage(String saveCartName) {
 		String saveCartSuccessMessage = driver.findElement(By.xpath("//div[@id='popSelector']/descendant::a")).getText().trim();
-		Assert.assertEquals(saveCartSuccessMessage, "Cart Saved Successfully -"+saveCartName);
+		Assert.assertEquals(saveCartSuccessMessage, "Cart Saved Successfully - "+saveCartName);
 		return this;
 	}
 
