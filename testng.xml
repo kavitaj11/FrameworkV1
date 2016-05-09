@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Etna Automation Suite">
+<suite name="Demo Automation Suite">
 	<listeners>
-        	<listener class-name="org.etna.maincontroller.MainController"/>
-        	<listener class-name="org.etna.utils.ReportGenerator"/>
+        	<listener class-name="org.projectname.maincontroller.MainController"/>
+        	<listener class-name="org.projectname.utils.ReportGenerator"/>
   	</listeners>
-  <test name="End to End Testing">
+  <test name="Demo Testing">
   	<groups>
   	<run>
   	<include name="regression"/>
   	</run>
   	</groups>
+  	
     <classes>
-      <class name="org.etna.modules.ShopByBrandsModuleTest"/>
-      <class name="org.etna.modules.GeneralSearchModuleTest"/>
-      <class name="org.etna.modules.PDPModuleTest"/>
-      <class name="org.etna.modules.ShopByManufacturersModuleTest"/>
-      <class name="org.etna.modules.LoginModuleTest"/>
-      <class name="org.etna.modules.MyCartModuleTest"/>
-      <class name="org.etna.modules.CategoryModuleTest"/>
-      <class name="org.etna.modules.HomePageModuleTest"/>
-      <class name="org.etna.modules.APAModuleTest"/>
+      <class name="org.projectname.LoginModuleTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
