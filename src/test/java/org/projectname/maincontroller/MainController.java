@@ -57,7 +57,7 @@ private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/PropertyFiles/ApplicationSetUp.properties";
 public static String searchData = "resources/PropertyFiles/SearchData.properties";
 DesiredCapabilities caps = new DesiredCapabilities();
-
+public static String outputFolder="";
 
 
 	
@@ -65,7 +65,10 @@ DesiredCapabilities caps = new DesiredCapabilities();
 public void beforeSuite() throws Exception{
 	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		outputVideo="./Videos";
- 		FileUtils.forceMkdir(new File(outputVideo));	
+ 		FileUtils.forceMkdir(new File(outputVideo));
+ 		outputFolder="./Screenshots";
+ 		FileUtils.forceMkdir(new File(outputFolder));
+ 		outputFolder += "/Screenshot_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
  		outputVideo += "/Videos_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
 }
 

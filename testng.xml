@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Demo Automation Suite">
+<suite name="projectname Automation Suite">
 	<listeners>
         	<listener class-name="org.projectname.maincontroller.MainController"/>
         	<listener class-name="org.projectname.utils.ReportGenerator"/>
   	</listeners>
-  <test name="Demo Testing">
+  <test name="Regression Testing">
   	<groups>
   	<run>
   	<include name="regression"/>
