@@ -26,7 +26,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.projectname.utils.ApplicationSetUpPropertyFile;
+import org.projectname.utils.ApplicationSetUp;
 import org.projectname.utils.SendEmailGmail;
 import org.projectname.utils.TestUtility;
 import org.projectname.utils.Video;
@@ -63,7 +63,7 @@ public static String outputFolder="";
 	
 @BeforeSuite(alwaysRun=true)
 public void beforeSuite() throws Exception{
-	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	ApplicationSetUp setUp = new ApplicationSetUp();
 		outputVideo="./Videos";
  		FileUtils.forceMkdir(new File(outputVideo));
  		outputFolder="./Screenshots";
@@ -76,7 +76,7 @@ public void beforeSuite() throws Exception{
 	@BeforeMethod(alwaysRun=true)
 	public void setUp() throws Exception {
 	
-		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+		ApplicationSetUp setUp = new ApplicationSetUp();
 		driver.get(setUp.getURL());
 		driver.manage().deleteAllCookies();
 	}
@@ -84,7 +84,7 @@ public void beforeSuite() throws Exception{
 	
 	@BeforeMethod(alwaysRun=true)
 	public void startRecording(Method methodName) throws Exception{
- 		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+ 		ApplicationSetUp setUp = new ApplicationSetUp();
  		 //File file = new File(outputFolder+"/"+"Videos/");
  		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
  		{
@@ -119,7 +119,7 @@ public void beforeSuite() throws Exception{
 @BeforeTest(alwaysRun=true)
 public void beforeTest() throws Exception
 {
-	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	ApplicationSetUp setUp = new ApplicationSetUp();
 if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	
 {
@@ -220,7 +220,7 @@ public void run(IHookCallBack callBack, ITestResult testResult){
 @AfterMethod(alwaysRun=true)
 public void callStopRecording() throws Exception{
 	driver.manage().deleteAllCookies();
-	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
+	ApplicationSetUp setUp = new ApplicationSetUp();
 	if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
 		{
 		  this.screenRecorder.stop();

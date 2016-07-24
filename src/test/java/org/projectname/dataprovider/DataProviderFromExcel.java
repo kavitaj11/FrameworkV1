@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import org.projectname.utils.ExcelLibrary;
 import org.testng.annotations.DataProvider;
 
-public class SearchData {
+public class DataProviderFromExcel {
 
 	
 	@DataProvider(name="excelSheetDataRead")

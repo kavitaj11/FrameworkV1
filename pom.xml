@@ -116,6 +116,13 @@
             </exclusions>
         </dependency>
 
+		
+    <dependency>
+            <groupId>ru.yandex.qatools.properties</groupId>
+            <artifactId>properties-loader</artifactId>
+            <version>1.6</version>
+            <scope>test</scope>
+        </dependency>
  
         <dependency>
             <groupId>org.hamcrest</groupId>

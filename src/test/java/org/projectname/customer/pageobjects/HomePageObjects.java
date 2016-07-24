@@ -10,9 +10,9 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.projectname.maincontroller.PageFactoryInitializer;
-import org.projectname.utils.ApplicationSetUpPropertyFile;
+import org.projectname.utils.ApplicationSetUp;
 import org.projectname.utils.PropertyFileReader;
-import org.projectname.utils.SearchDataPropertyFile;
+import org.projectname.utils.SearchData;
 import org.projectname.utils.Waiting;
 import org.testng.Assert;
 
