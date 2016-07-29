@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="projectname Automation Suite">
+<suite name="ETNA Automation Suite">
 	<listeners>
         	<listener class-name="org.projectname.maincontroller.MainController"/>
         	<listener class-name="org.projectname.utils.ReportGenerator"/>
@@ -13,7 +13,7 @@
   	</groups>
   	
     <classes>
-      <class name="org.projectname.LoginModuleTest"/>
+      <class name="org.projectname.modules.LoginModuleTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

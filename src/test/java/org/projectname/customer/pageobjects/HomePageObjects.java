@@ -1,25 +1,35 @@
 package org.projectname.customer.pageobjects;
-import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 import org.projectname.maincontroller.PageFactoryInitializer;
-import org.projectname.utils.ApplicationSetUp;
-import org.projectname.utils.PropertyFileReader;
-import org.projectname.utils.SearchData;
 import org.projectname.utils.Waiting;
 import org.testng.Assert;
 
-/*
- * @author Hemanth.Sridhar
- */
+import ru.yandex.qatools.allure.annotations.Step;
+
 public class HomePageObjects extends PageFactoryInitializer {
 
-}
+	@FindBy(xpath="//div[contains(@class,'header')]/descendant::a[contains(text(),'Login')]")
+	private WebElement loginLinkLocator;
 	
+	@FindBy(xpath="//div[@class='userProfile']/p")
+	private WebElement userAccountDropdownLocator;
+	
+	@Step("clicking on login link")
+	public LoginPopUpPageObjects clickOnLoginLink() {
+		
+		loginLinkLocator.click();
+		
+		return loginPopUp();
+	}
+	
+	@Step("verify whether the name of the user after logging in is  {0}")
+	public HomePageObjects verifyNameTheUser(String nameOfTheUser) {
+		Waiting.explicitWaitVisibilityOfElement(userAccountDropdownLocator, 5);
+		Assert.assertEquals(userAccountDropdownLocator.getText().trim(), nameOfTheUser);
+		return this;
+	}
+
+	
+}

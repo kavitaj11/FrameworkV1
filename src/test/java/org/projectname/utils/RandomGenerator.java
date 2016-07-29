@@ -2,7 +2,7 @@ package org.projectname.utils;
 
 import java.util.Random;
 
-public class RandomNumberGenerator {
+public class RandomGenerator {
 	
 public static int generateRandomNumber()
 {
@@ -12,10 +12,9 @@ public static int generateRandomNumber()
 }
 
 public static int generateEightRandomNumbers() {
-	// TODO Auto-generated method stub
+	
 	Random rnd = new Random();
 	int n = 1000000 + rnd.nextInt(9900000);
 	return n;
-}
-
+	}
 }

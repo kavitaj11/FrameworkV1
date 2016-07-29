@@ -10,6 +10,7 @@ import org.projectname.maincontroller.MainController;
 /*
  * @author Hemanth.Sridhar
  */
+
 public class Waiting extends MainController{
 
 	public static void explicitWaitElementToBeClickable(WebElement element, int time){

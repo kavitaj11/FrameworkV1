@@ -1,2 +1,2 @@
-cd E:/UnilogProjects/etna/
+cd ~/Projects/PersonalProjects/autframework
 mvn site
