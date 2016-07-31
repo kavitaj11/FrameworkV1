@@ -14,7 +14,7 @@ public class LoginModuleTest extends PageFactoryInitializer{
 	ApplicationSetUp setUp = new ApplicationSetUp();
 	
 	@Features("Login Module")
-	@Test(groups={"regression"},dataProvider="excelSheetDataRead",dataProviderClass=DataProviderFromExcel.class)
+	@Test(groups={"regression"},dataProvider="multipleSheetsSameExcel",dataProviderClass=DataProviderFromExcel.class)
 	@TestCaseId("TC_Login_001")
 	@Description("This is a test for qa engineering team")
 	public void loginTest1(String testCaseId,String userName,String password,String expectedName){
@@ -26,14 +26,24 @@ public class LoginModuleTest extends PageFactoryInitializer{
 	}
 	
 	@Features("Login Module")
-	@Test(groups={"regression"},dataProvider="excelSheetDataRead",dataProviderClass=DataProviderFromExcel.class)
+	@Test(groups={"regression"},dataProvider="multipleSheetsSameExcel",dataProviderClass=DataProviderFromExcel.class)
 	@TestCaseId("TC_Login_002")
 	@Description("This is a test for qa engineering team")
-	public void loginTest2(String testCaseId2,String userName2,String password2,String expectedName2){
+	public void loginTest2(String testCaseId,String userName,String password,String expectedName){
 		
-		System.out.println(testCaseId2);
-		System.out.println(userName2);
-		System.out.println(password2);
-		System.out.println(expectedName2);
+		System.out.println(testCaseId);
+		System.out.println(userName);
+		System.out.println(password);
+		System.out.println(expectedName);
+	}
+	
+	@Features("Login Module")
+	@Test(groups={"regression"},dataProvider="excelSheetDataRead",dataProviderClass=DataProviderFromExcel.class)
+	@TestCaseId("TC_Login_003")
+	@Description("This is a test for qa engineering team")
+	public void searchText_Scenarios(String testCaseId,String searchText){
+		
+		System.out.println(testCaseId);
+		System.out.println(searchText);
 	}
 }
