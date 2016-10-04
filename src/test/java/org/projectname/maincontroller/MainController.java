@@ -142,6 +142,7 @@ if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	
 	else if(setUp.getBrowser().trim().equalsIgnoreCase("firefox"))
 	{
+		System.setProperty("webdriver.gecko.driver", "resources/drivers/Mac/geckodriver.exe");
 		driver = new FirefoxDriver();
 		
 	}
@@ -156,6 +157,8 @@ if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	{
 		System.out.println("cannot load driver");
 	}
+	
+	TestUtility.maximizeScreen(driver);
 }
 
 else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
@@ -177,6 +180,7 @@ else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
 	
 	else if(setUp.getBrowser().trim().equalsIgnoreCase("firefox"))
 	{
+		System.setProperty("webdriver.gecko.driver", "resources/drivers/Windows/geckodriver.exe");
 		driver = new FirefoxDriver();
 		
 	}
@@ -186,7 +190,7 @@ else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
 	}
 }
 	
-	TestUtility.maximizeScreen(driver);
+	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 }
 
