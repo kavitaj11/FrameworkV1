@@ -7,9 +7,9 @@ import ru.yandex.qatools.properties.annotations.Property;
 import ru.yandex.qatools.properties.annotations.Resource;
 
 @Resource.File("resources/PropertyFiles/ApplicationSetUp.properties")
-public class ApplicationSetUp extends MainController{
+public class ApplicationSetUpPropertyFile extends MainController{
 	
-	public ApplicationSetUp()
+	public ApplicationSetUpPropertyFile()
 	{
 		PropertyLoader.populate(this);
 	}

@@ -2,7 +2,7 @@ package org.projectname.customer.pageobjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.projectname.maincontroller.PageFactoryInitializer;
+import org.projectname.initializer.PageFactoryInitializer;
 import org.projectname.utils.Waiting;
 import org.testng.Assert;
 

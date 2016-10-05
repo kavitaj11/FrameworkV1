@@ -16,6 +16,9 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.apache.commons.io.FileUtils;
 import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.OutputType;
@@ -26,7 +29,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
-import org.projectname.utils.ApplicationSetUp;
+import org.projectname.utils.ApplicationSetUpPropertyFile;
 import org.projectname.utils.SendEmailGmail;
 import org.projectname.utils.TestUtility;
 import org.projectname.utils.Video;
@@ -57,26 +60,26 @@ private ScreenRecorder screenRecorder;
 public static String applicationSetUp = "resources/PropertyFiles/ApplicationSetUp.properties";
 public static String searchData = "resources/PropertyFiles/SearchData.properties";
 DesiredCapabilities caps = new DesiredCapabilities();
-public static String outputFolder="";
+public static String outputReport="";
 
 
 	
 @BeforeSuite(alwaysRun=true)
 public void beforeSuite() throws Exception{
-	ApplicationSetUp setUp = new ApplicationSetUp();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		outputVideo="./Videos";
+		outputReport="./Reports";
  		FileUtils.forceMkdir(new File(outputVideo));
- 		outputFolder="./Screenshots";
- 		FileUtils.forceMkdir(new File(outputFolder));
- 		outputFolder += "/Screenshot_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+ 		FileUtils.forceMkdir(new File(outputReport));
  		outputVideo += "/Videos_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
+ 		outputReport += "/Report_" + setUp.getBrowser().toUpperCase()+"_"+SendEmailGmail.getDate()+"_" + SendEmailGmail.getTime();
 }
 
 
 	@BeforeMethod(alwaysRun=true)
 	public void setUp() throws Exception {
 	
-		ApplicationSetUp setUp = new ApplicationSetUp();
+		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 		driver.get(setUp.getURL());
 		driver.manage().deleteAllCookies();
 	}
@@ -84,7 +87,7 @@ public void beforeSuite() throws Exception{
 	
 	@BeforeMethod(alwaysRun=true)
 	public void startRecording(Method methodName) throws Exception{
- 		ApplicationSetUp setUp = new ApplicationSetUp();
+ 		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
  		 //File file = new File(outputFolder+"/"+"Videos/");
  		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
  		{
@@ -119,7 +122,7 @@ public void beforeSuite() throws Exception{
 @BeforeTest(alwaysRun=true)
 public void beforeTest() throws Exception
 {
-	ApplicationSetUp setUp = new ApplicationSetUp();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	
 {
@@ -142,7 +145,7 @@ if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	
 	else if(setUp.getBrowser().trim().equalsIgnoreCase("firefox"))
 	{
-		System.setProperty("webdriver.gecko.driver", "resources/drivers/Mac/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "resources/drivers/Mac/geckodriver");
 		driver = new FirefoxDriver();
 		
 	}
@@ -224,7 +227,7 @@ public void run(IHookCallBack callBack, ITestResult testResult){
 @AfterMethod(alwaysRun=true)
 public void callStopRecording() throws Exception{
 	driver.manage().deleteAllCookies();
-	ApplicationSetUp setUp = new ApplicationSetUp();
+	ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
 	if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
 		{
 		  this.screenRecorder.stop();
@@ -237,5 +240,113 @@ public void tearDownClass(){
 	driver.quit();
 }
 
+public void attachFile(String file) throws Exception
+{
+    if(file.contains("xlsx"))
+    {
+        saveXlsxAttachment(file);
+    }
+    else if(file.contains("txt"))
+    {
+        saveTextFileAttachment(file);
+    }
+    else if(file.contains("xml"))
+    {
+        saveXMLAttachment(file);
+    }
+    else if(file.contains("csv"))
+    {
+        saveCsvAttachment(file);
+    }
+    else if (file.contains("json"))
+    {
+        saveJSONFileAttachment(file);
+    }
+}
 
+
+public void attachFile(String fileName,String attachmentName,String format) throws Exception
+{
+    if(format.equals("xlsx"))
+    {
+        attachXLSXFile(attachmentName,fileName);
+    }
+    else if(format.equals("xml"))
+    {
+        attachXMLFile(attachmentName,fileName);
+    }
+    else if(format.equals("txt"))
+    {
+        attachTextFile(attachmentName,fileName);
+    }
+    else if(format.equals("csv"))
+    {
+        attachCSVFile(attachmentName,fileName);
+    }
+    else if (format.equals("json"))
+    {
+        attachJSONFile(attachmentName,fileName);
+    }
+}
+
+private byte[] getSampleFile(String fileName) throws Exception {
+	File file = new File(fileName);
+	return Files.readAllBytes(Paths.get(file.getAbsolutePath()));
+   
+}
+
+
+@Attachment(value = "json {0} attachment", type = "text/json")
+private byte[] attachJSONFile(String attachmentName,String file) {
+    return file.getBytes();
+}
+
+@Attachment(value = "xlsx {0} attachment")
+private byte[] attachXLSXFile(String attachmentName,String file) {
+    return file.getBytes();
+}
+
+@Attachment(value = "xml {0} attachment", type = "text/xml")
+private byte[] attachXMLFile(String attachmentName,String file) {
+    return file.getBytes();
+}
+
+@Attachment(value = "text {0} attachment", type = "text/plain")
+private byte[] attachTextFile(String attachmentName,String file) {
+    return file.getBytes();
+}
+
+
+@Attachment(value = "csv {0} attachment", type = "text/csv")
+private byte[] attachCSVFile(String attachmentName, String file) {
+    return file.getBytes();
+}
+
+
+@Attachment(value = "csv attachment", type = "text/csv")
+public byte[] saveCsvAttachment(String filePath) throws Exception {
+    return getSampleFile(filePath);
+}
+
+@Attachment(value = "xml attachment", type = "text/xml")
+public byte[] saveXMLAttachment(String filePath) throws Exception {
+    return getSampleFile(filePath);
+}
+
+
+@Attachment(value = "xlsx attachment")
+public byte[] saveXlsxAttachment(String filePath) throws Exception {
+    return getSampleFile(filePath);
+}
+
+@Attachment(value = "text attachment", type ="text/plain")
+public byte[] saveTextFileAttachment(String filePath) throws Exception {
+    return getSampleFile(filePath);
+}
+
+@Attachment(value="JSON attachment", type="text/json")
+public byte[] saveJSONFileAttachment(String filePath) throws Exception
+{
+	return getSampleFile(filePath);
+}
 }

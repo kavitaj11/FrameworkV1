@@ -21,16 +21,16 @@ public class ExcelLibrary {
 
 	
 	//xls
-	static HSSFSheet hssfwrksheet;
-	static HSSFWorkbook hssfwrkbook = null;
+	 HSSFSheet hssfwrksheet;
+	 HSSFWorkbook hssfwrkbook = null;
 	
 	//xlsx
-	static XSSFSheet xssfwrksheet;
-	static XSSFWorkbook xssfwrkbook =null;
+	 XSSFSheet xssfwrksheet;
+	 XSSFWorkbook xssfwrkbook =null;
 	
 	@SuppressWarnings("rawtypes")
 	
-	static Hashtable hash= new Hashtable();
+	 Hashtable hash= new Hashtable();
 	public ExcelLibrary(String ExcelSheetPath) throws IOException 
 	{
 			
@@ -89,7 +89,7 @@ public class ExcelLibrary {
 		}
 	}
 	
-	public static int xlsxColumnCount()
+	public  int xlsxColumnCount()
 	{
 		return xssfwrksheet.getRow(0).getLastCellNum();
 	}
@@ -108,7 +108,7 @@ public class ExcelLibrary {
 	}
 	
 	//Returns the number of rows for .xlsx
-	public static   int xlsxRowCount()
+	public    int xlsxRowCount()
 	{
 		int rowNum = xssfwrksheet.getLastRowNum()+1;
 		return rowNum;
@@ -131,7 +131,7 @@ public class ExcelLibrary {
 	}
 	
 	//for .xlsx
-	public static String xlsxReadCell(int colNum,int rowNum)
+	public  String xlsxReadCell(int colNum,int rowNum)
 	{
 		String data[][] = new String[rowNum+1][colNum+1];
 		XSSFRow row = xssfwrksheet.getRow(rowNum);
@@ -185,7 +185,7 @@ public class ExcelLibrary {
 	}
  
 	//Read Column Names
-	public static int GetCell(String colName)
+	public  int GetCell(String colName)
 	{
 		try {
 			int value;
@@ -198,7 +198,7 @@ public class ExcelLibrary {
 	}
 	
 	//for xls
-	public static String hssfcellToString(HSSFCell cell){
+	public  String hssfcellToString(HSSFCell cell){
 		int type;
 		Object result;
 		type = cell.getCellType();
@@ -225,7 +225,7 @@ public class ExcelLibrary {
 	}
 	
 	//for xlsx
-	public static String xssfcellToString(XSSFCell cell){
+	public  String xssfcellToString(XSSFCell cell){
 		int type;
 		Object result;
 		type = cell.getCellType();
@@ -252,7 +252,7 @@ public class ExcelLibrary {
 	}
 
 	//for testng dataprovider
-		public static String[][] readFromExcelDataForTestNGDataProvider(String ExcelSheetPath) throws Exception {
+		public  String[][] readFromExcelDataForTestNGDataProvider(String ExcelSheetPath) throws Exception {
 			File file = new File(ExcelSheetPath);
 			FileInputStream fis = new FileInputStream(file);
 			xssfwrkbook = new XSSFWorkbook(fis);
@@ -279,7 +279,7 @@ public class ExcelLibrary {
 		}
     
     //for testng dataprovider
-    public static String[][] readFromExcelDataForTestNGDataProvider(String excelSheetPath,String sheet) throws Exception {
+    public String[][] readFromExcelDataForTestNGDataProvider(String excelSheetPath,String sheet) throws Exception {
     	
         File file = new File(excelSheetPath);
         FileInputStream fis = new FileInputStream(file);
