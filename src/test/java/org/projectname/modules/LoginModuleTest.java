@@ -6,14 +6,11 @@ import org.projectname.dataprovider.DataDrivenTestingFromExcel;
 import org.projectname.initializer.PageFactoryInitializer;
 import org.projectname.utils.ApplicationSetUpPropertyFile;
 import org.projectname.utils.ExcelLibrary;
-import org.projectname.utils.RandomGenerator;
 import org.projectname.utils.SearchDataPropertyFile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
-import ru.yandex.qatools.allure.annotations.Issue;
-import ru.yandex.qatools.allure.annotations.Issues;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 public class LoginModuleTest extends PageFactoryInitializer{
@@ -64,6 +61,7 @@ public class LoginModuleTest extends PageFactoryInitializer{
 	}
 	
 	@Test(groups={"regression"})
+	@Features("Login Module")
 	public void loginTest3() throws IOException{
 		File file = new File("resources/ETNATestData.xlsx");
 		ExcelLibrary excel = new ExcelLibrary(file.getAbsolutePath(),"loginTest2");		
@@ -85,35 +83,18 @@ public class LoginModuleTest extends PageFactoryInitializer{
 	@Features("attachment test")
 	@Description("Simple attachment tests for different file formats")
 	public void attachmentsTest1(String format, String filePath) throws Exception{
-		switch(format)
-		{
-		case "json":attachFile(filePath);
-					break;
-		case "xlsx":attachFile(filePath);
-					break;
-		case "xml":attachFile(filePath);
-					break;
-		case "txt":attachFile(filePath);
-					break;
-		case "csv":attachFile(filePath);
-					break;
-		default: throw new Exception("invalid file extension");	
-		}
+	
+		attachFile(filePath);
 	}
 	
 	@Test(groups={"regression"},dataProvider="multipleSheetsSameExcel",dataProviderClass=DataDrivenTestingFromExcel.class)
+	@Features("Login Module")
 	@TestCaseId("")
 	@Description("")
 	public void login_ErrorScenarios(String userName,String password,String expectedErrorMsg) throws Exception
 	{
-		
-		homePage().clickOnLoginLink().enterUsername(userName).enterPassword(password).clickOnLoginButton().verifyErrorMessage(expectedErrorMsg);
+		homePage().clickOnLoginLink().enterUsername(userName).enterPassword(password)
+		.clickOnLoginButton().verifyErrorMessage(expectedErrorMsg);
 	}
 	
-	@Test(groups="regression")
-	public void videoAttachmentTest() throws InterruptedException{
-		Thread.sleep(5000);
-		Assert.assertTrue(false);
-		
-	}
 }

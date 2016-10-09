@@ -19,7 +19,6 @@
     </properties>
 
 
-
   <name>UAF</name>
   <url>http://maven.apache.org</url>
 
@@ -53,7 +52,7 @@
   <version>6.9.10</version>
   <scope>test</scope>
 </dependency>
-    
+  
     <dependency>
   <groupId>net.bramp.ffmpeg</groupId>
   <artifactId>ffmpeg</artifactId>

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.projectname.initializer.PageFactoryInitializer;
 import org.projectname.utils.Waiting;
-
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -25,7 +24,7 @@ public class LoginPopUpPageObjects extends PageFactoryInitializer {
 	private WebElement errorMsgLocator;
 	
 	
-	
+
 	@Step("enter username name as {0}")
 	public LoginPopUpPageObjects enterUsername(String userName) {
 		userNameLocator.sendKeys(userName);
@@ -44,7 +43,7 @@ public class LoginPopUpPageObjects extends PageFactoryInitializer {
 		return this;
 		
 	}
-
+	
 	@Step("verify error message is {0}")
 	public LoginPopUpPageObjects verifyErrorMessage(String expectedErrorMsg) {
 		
@@ -52,5 +51,6 @@ public class LoginPopUpPageObjects extends PageFactoryInitializer {
 		assertThat(errorMsgLocator.getText().trim(),equalTo(expectedErrorMsg));
 		return this;
 	}
+
 	
 }

@@ -41,7 +41,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-
 import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
 import net.bramp.ffmpeg.FFprobe;
@@ -93,7 +92,6 @@ public void beforeSuite() throws Exception{
 	@BeforeMethod(alwaysRun=true)
 	public void startRecording(Method methodName) throws Exception{
  		ApplicationSetUpPropertyFile setUp = new ApplicationSetUpPropertyFile();
- 		
  		if(setUp.getVideoPermission().equalsIgnoreCase("yes"))
  		{
  		 File file = new File(outputVideo+"/");
@@ -159,7 +157,6 @@ if(System.getProperty("os.name").toUpperCase().contains("MAC"))
 	{
 		driver = new SafariDriver();
 	}
-		
 	else
 	{
 		System.out.println("cannot load driver");
@@ -222,7 +219,6 @@ public void run(IHookCallBack callBack, ITestResult testResult){
     	saveVideo(testResult.getName(),driver);
 		}
     	}
-    	
     	catch(Exception e)
     	{
     		e.printStackTrace();
@@ -232,14 +228,16 @@ public void run(IHookCallBack callBack, ITestResult testResult){
 
 public void convert(String testCaseName) throws Exception
 {
+	if(System.getProperty("os.name").toUpperCase().contains("MAC"))
+	{
+	File ffmpegFile = new File("resources/ffmpeg/Mac/ffmpeg");
+	File ffProbeFile = new File("resources/ffmpeg/Mac/ffprobe");
 	
-	File ffmpegFile = new File("resources/ffmpeg");
-	File ffProbeFile = new File("resources/ffprobe");
 	FFmpeg ffmpeg = new FFmpeg(ffmpegFile.getAbsolutePath());
 	FFprobe ffprobe = new FFprobe(ffProbeFile.getAbsolutePath());
 	
 	FFmpegProbeResult probeResult = ffprobe.probe("Videos/"+testCaseName+".avi");
-
+	
 	FFmpegBuilder builder = new FFmpegBuilder()
 			.setInput(probeResult)
 			  .overrideOutputFiles(true) 
@@ -257,7 +255,35 @@ public void convert(String testCaseName) throws Exception
 			FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
 			executor.createJob(builder).run();
 		}
+	else if(System.getProperty("os.name").toUpperCase().contains("WIN"))
+	{
+		File ffmpegFile = new File("resources/ffmpeg/Windows/ffmpeg.exe");
+		File ffProbeFile = new File("resources/ffmpeg/Windows/ffprobe.exe");
 		
+		FFmpeg ffmpeg = new FFmpeg(ffmpegFile.getAbsolutePath());
+		FFprobe ffprobe = new FFprobe(ffProbeFile.getAbsolutePath());
+		
+		FFmpegProbeResult probeResult = ffprobe.probe("Videos/"+testCaseName+".avi");
+		
+		FFmpegBuilder builder = new FFmpegBuilder()
+				.setInput(probeResult)
+				  .overrideOutputFiles(true) 
+				  
+				  .addOutput("Videos/"+testCaseName+".mp4")
+				    .setFormat("mp4")   
+				    .setVideoCodec("libx264")
+				    .addExtraArgs("-pix_fmt", "yuv420p")
+				    .setVideoFrameRate(30,1)
+				    .addExtraArgs("-q","50")
+				    .setVideoResolution(1680, 1050) 
+				    .setStrict(FFmpegBuilder.Strict.EXPERIMENTAL)
+				    .done();
+
+				FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
+				executor.createJob(builder).run();
+	}
+}
+
 @Attachment(value = "Screenshot of {0}", type = "image/png")
   public byte[] saveScreenshot(String name,WebDriver driver) {
 	return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -296,8 +322,6 @@ public void tearDown(){
 	System.out.println("Ending Test Suite");
 	driver.quit();
 }
-
-
 
 public void attachFile(String file) throws Exception
 {
@@ -390,7 +414,9 @@ private byte[] saveCsvAttachment(String filePath) throws Exception {
 @Attachment(value = "xml attachment", type = "text/xml")
 private byte[] saveXMLAttachment(String filePath) throws Exception {
     return getFile(filePath);
+
 }
+
 
 
 @Attachment(value = "xlsx attachment")
