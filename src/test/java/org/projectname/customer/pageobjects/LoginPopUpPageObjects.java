@@ -24,7 +24,6 @@ public class LoginPopUpPageObjects extends PageFactoryInitializer {
 	private WebElement errorMsgLocator;
 	
 	
-
 	@Step("enter username name as {0}")
 	public LoginPopUpPageObjects enterUsername(String userName) {
 		userNameLocator.sendKeys(userName);
@@ -44,13 +43,14 @@ public class LoginPopUpPageObjects extends PageFactoryInitializer {
 		
 	}
 	
+	
 	@Step("verify error message is {0}")
 	public LoginPopUpPageObjects verifyErrorMessage(String expectedErrorMsg) {
 		
 		Waiting.explicitWaitVisibilityOfElement(errorMsgLocator, 2);
 		assertThat(errorMsgLocator.getText().trim(),equalTo(expectedErrorMsg));
 		return this;
-	}
+}
 
 	
 }

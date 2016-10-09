@@ -96,5 +96,4 @@ public class LoginModuleTest extends PageFactoryInitializer{
 		homePage().clickOnLoginLink().enterUsername(userName).enterPassword(password)
 		.clickOnLoginButton().verifyErrorMessage(expectedErrorMsg);
 	}
-	
 }

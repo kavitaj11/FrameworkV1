@@ -284,6 +284,7 @@ public void convert(String testCaseName) throws Exception
 	}
 }
 
+
 @Attachment(value = "Screenshot of {0}", type = "image/png")
   public byte[] saveScreenshot(String name,WebDriver driver) {
 	return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -318,7 +319,7 @@ private byte[] saveVideo(String name, WebDriver driver) throws Exception {
 
 
 @AfterSuite(alwaysRun=true)
-public void tearDown(){
+public void tearDownClass(){
 	System.out.println("Ending Test Suite");
 	driver.quit();
 }
